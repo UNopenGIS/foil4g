@@ -16,5 +16,16 @@ Specifically, FOIL4G can incorporate the following elements:
 
 In this way, FOIL4G applies Benjamin Franklin’s library concept to modern geospatial information systems, providing a platform where all participants can cooperate and grow together.
 
+## Goals
+
+- Create and provide a library of freely accessible geospatial data for everyone.
+- Develop and provide a library of skills and recipes for handling those data.
+- Facilitate effective decision-making and problem-solving through the sharing of that information.
+- Promote the automatic processing of geospatial information by generative AI through the sharing of that information.
+
 ## Implementation
 
+- `lib`
+  - `data`: Details for referencing geospatial information
+  - `recipes`: Recipes for processing and analyzing geospatial information
+  - `skills`: Skills for handling geospatial information
