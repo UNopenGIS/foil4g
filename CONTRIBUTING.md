@@ -20,7 +20,7 @@ We encourage contributions in the form of pull requests. Whether it's fixing a b
 
 Contributors to FOIL4G are expected to follow our Code of Conduct, which promotes a positive and inclusive environment. We are committed to providing a welcoming and respectful community for everyone.
 
-By participating in this project, you agree to abide by its terms.
+By participating in this project, you agree to abide by its terms. Please see our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file for more details.
 
 ## Questions?
 

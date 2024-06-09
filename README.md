@@ -32,4 +32,4 @@ In this way, FOIL4G applies Benjamin Franklin’s library concept to modern geos
 
 ## Contributing
 
-Interested in contributing to FOIL4G? We welcome contributions of all kinds from anyone. Please see our [CONTRIBUTING.md](CONTRIBUTING.md) file for more details on how to submit bug reports, feature requests, and pull requests, and what code of conduct to follow.
+Interested in contributing to FOIL4G? We welcome contributions of all kinds from anyone. Please see our [CONTRIBUTING.md](CONTRIBUTING.md) file for more details on how to submit bug reports, feature requests, and pull requests. For more information on our Code of Conduct, please refer to the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file.

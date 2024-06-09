@@ -32,4 +32,4 @@
 
 ## 貢献
 
-FOIL4G への貢献に興味がありますか？バグ報告、機能リクエスト、プルリクエストの提出方法、および従うべき行動規範の詳細については、[CONTRIBUTING.md](CONTRIBUTING.md) ファイルをご覧ください。
+FOIL4G への貢献に興味がありますか？バグ報告、機能リクエスト、プルリクエストの提出方法については、[CONTRIBUTING.md](CONTRIBUTING.md) ファイルをご覧ください。また、行動規範についての詳細は、[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) ファイルを参照してください。
