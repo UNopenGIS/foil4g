@@ -1,0 +1,11 @@
+data_id: openstreetmap_xyz
+license: ODbL
+attributions:
+  - OpenStreetMap contributors
+  - https://www.openstreetmap.org/
+description: Raster tile map of OpenStreetMap
+file_format: png
+file_size: unknown
+url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
+max_zoom: 19
+min_zoom: 0
