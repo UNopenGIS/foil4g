@@ -29,3 +29,7 @@ In this way, FOIL4G applies Benjamin Franklin’s library concept to modern geos
   - `data`: Details for referencing geospatial information
   - `recipes`: Recipes for processing and analyzing geospatial information
   - `skills`: Skills for handling geospatial information
+
+## Contributing
+
+Interested in contributing to FOIL4G? We welcome contributions of all kinds from anyone. Please see our [CONTRIBUTING.md](CONTRIBUTING.md) file for more details on how to submit bug reports, feature requests, and pull requests, and what code of conduct to follow.
