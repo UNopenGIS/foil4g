@@ -8,9 +8,15 @@ assignees: ""
 
 # Data Addition
 
-## Data Source Suggestion
+## Description of Data
 
 <!-- A clear and concise description of the data source you're suggesting. -->
+
+-
+
+## URL for Data
+
+<!-- Provide a URL where the data can be accessed or downloaded. -->
 
 -
 
@@ -29,12 +35,6 @@ assignees: ""
 ## Attribution
 
 <!-- Specify the attribution requirements for the data. -->
-
--
-
-## URL
-
-<!-- Provide a URL where the data can be accessed or downloaded. -->
 
 -
 
