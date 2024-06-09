@@ -4,6 +4,7 @@ attributions:
   - 国土地理院
   - https://www.gsi.go.jp/bousaichiri/hinanbasho.html
   - AIGID
+description: 国土地理院の提供している全国指定避難場所をShapefile化したデータ
 file_format: zipped_shapefile
 file_size: 4MB
 url: https://www.geospatial.jp/ckan/dataset/db74071f-cd0a-406d-ba3d-57c7a25d9925/resource/4db1e885-f688-4a92-aec0-f9ebf960c402/download/00.zip
