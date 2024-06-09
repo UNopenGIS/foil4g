@@ -1,0 +1,9 @@
+data_id: smartmaps_toshik
+license: unknown
+attributions:
+  - 国土交通省都市局都市計画課都市計画調査室
+  - https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html
+description: 都市計画決定GISデータ（国土交通省）をPMTiles形式に加工したもの
+file_format: pmtiles
+file_size: 152MB
+url: https://data.source.coop/smartmaps/toshik/a.pmtiles
