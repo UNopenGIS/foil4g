@@ -1,0 +1,11 @@
+data_id: gsi_xyz_std
+license: CC-BY-4.0
+attributions:
+  - 国土地理院
+  - https://maps.gsi.go.jp/development/ichiran.html
+description: 国土地理院の基本測量成果（名称：電子地形図（タイル））
+file_format: png
+file_size: unknown
+url: https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png
+max_zoom: 18
+min_zoom: 2
