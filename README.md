@@ -28,8 +28,8 @@ In this way, FOIL4G applies Benjamin Franklin’s library concept to modern geos
 - `lib`
   - `api`: API for accessing geospatial information
   - `data`: Details for referencing geospatial information
-  - `recipes`: Recipes for processing and analyzing geospatial information
   - `skills`: Skills for handling geospatial information
+  - `tasks`: Tasks for processing and analyzing geospatial information
 
 ## Contributing
 
