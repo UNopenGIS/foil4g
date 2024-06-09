@@ -12,6 +12,10 @@ If you encounter a bug in any of the tools or data within FOIL4G, please submit 
 
 To suggest new data sources for inclusion in FOIL4G, please use the [Data Addition template](.github/ISSUE_TEMPLATE/data_addition.md). Provide clear and concise information about the data source, including its format, license, and how it can be accessed.
 
+### API Addition Requests
+
+To suggest new API endpoints for accessing geospatial information, please use the [API Addition template](.github/ISSUE_TEMPLATE/api_addition.md). Describe the API, its purpose, and how to use it.
+
 ### Pull Requests
 
 We encourage contributions in the form of pull requests. Whether it's fixing a bug, adding new data, or improving documentation, your help is appreciated. Please follow the guidelines outlined in our [Pull Request template](.github/PULL_REQUEST_TEMPLATE.md) when submitting your contribution.
