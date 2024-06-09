@@ -1,0 +1,20 @@
+api_id: nominatim_reverse
+description: Nominatim is a tool to search OSM data by name and address geocoding and to generate synthetic addresses of OSM points (reverse geocoding).
+endpoint_url: https://nominatim.openstreetmap.org/reverse
+parameters:
+  - name: format
+    description: The format of the response, e.g., jsonv2.
+    required: true
+    type: string
+  - name: lat
+    description: Latitude of the location to reverse geocode.
+    required: true
+    type: float
+  - name: lon
+    description: Longitude of the location to reverse geocode.
+    required: true
+    type: float
+  - name: zoom
+    description: Level of detail required for the response, e.g., 10.
+    required: false
+    type: integer
