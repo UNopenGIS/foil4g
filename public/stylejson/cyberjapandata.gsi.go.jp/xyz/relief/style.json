@@ -1,0 +1,22 @@
+{
+  "version": 8,
+  "sources": {
+    "gsi_xyz_relief": {
+      "type": "raster",
+      "tiles": [
+        "https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256,
+      "attribution": "<a href=\"https://maps.gsi.go.jp/development/ichiran.html\">地理院タイル</a>, 海域部は海上保安庁海洋情報部の資料を使用して作成"
+    }
+  },
+  "layers": [
+    {
+      "id": "gsi_xyz_relief",
+      "source": "gsi_xyz_relief",
+      "type": "raster",
+      "maxzoom": 15,
+      "minzoom": 5
+    }
+  ]
+}
