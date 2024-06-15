@@ -4,6 +4,7 @@ attributions:
   - 国土地理院
   - https://maps.gsi.go.jp/development/ichiran.html
 description: 国土地理院の基本測量成果（名称：電子地形図（タイル））
+data_format: xyz_raster_tiles
 file_format: png
 file_size: unknown
 url: https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png
