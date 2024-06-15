@@ -1,12 +1,12 @@
 ---
-name: Data Addition
+name: Add new Data
 about: Suggest new data sources for inclusion
 title: ""
-labels: data addition
+labels: add data
 assignees: ""
 ---
 
-# Data Addition
+# Add new Data
 
 ## Description of Data
 
