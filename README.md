@@ -1,36 +1,30 @@
-# FOIL4G: Free and Open Information Library for Geospatial
+# React + TypeScript + Vite
 
-## Concept
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-We incorporate Benjamin Franklin’s library concept into the idea of the Free and Open Information Library for Geospatial (FOIL4G):
+Currently, two official plugins are available:
 
-> "Since our books were often referred to in our disquisitions upon the queries, it might be convenient to have them all together where we meet, so that they might be consulted when needed. Additionally, by pooling our books into a common library, we would, while we liked to keep them together, have the advantage of using the books of all the other members, which would be nearly as beneficial as if each owned the whole."
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-This quote is highly relevant to emphasize the philosophy behind FOIL4G. FOIL4G aims to create an open library of geospatial information, allowing all members to freely access and collaboratively utilize the data. By doing so, it leverages individual resources to enhance the collective knowledge and capabilities of the entire community.
+## Expanding the ESLint configuration
 
-Specifically, FOIL4G can incorporate the following elements:
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-1. **Aggregation of Shared Resources**: Collect smart maps, geospatial data, relevant documents, and more in one place where everyone can access them.
-2. **Collaborative Work and Learning**: Facilitate discussions among members, enabling them to consult necessary information on the spot for effective decision-making and problem-solving.
-3. **Expansion of Knowledge**: By utilizing the shared library, each member can benefit from the knowledge and resources of others, thus enhancing their own capabilities.
+- Configure the top-level `parserOptions` property like this:
 
-In this way, FOIL4G applies Benjamin Franklin’s library concept to modern geospatial information systems, providing a platform where all participants can cooperate and grow together.
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-## Goals
-
-- Create and provide a library of freely accessible geospatial data for everyone.
-- Develop and provide a library of skills and recipes for handling those data.
-- Facilitate effective decision-making and problem-solving through the sharing of that information.
-- Promote the automatic processing of geospatial information by generative AI through the sharing of that information.
-
-## Implementation
-
-- `lib`
-  - `api`: API for accessing geospatial information
-  - `data`: Details for referencing geospatial information
-  - `skills`: Skills for handling geospatial information
-  - `tasks`: Tasks for processing and analyzing geospatial information
-
-## Contributing
-
-Interested in contributing to FOIL4G? We welcome contributions of all kinds from anyone. Please see our [CONTRIBUTING.md](CONTRIBUTING.md) file for more details on how to submit bug reports, feature requests, and pull requests. For more information on our Code of Conduct, please refer to the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
