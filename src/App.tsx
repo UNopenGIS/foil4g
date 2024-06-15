@@ -1,7 +1,8 @@
 import './App.css'
-import { ArcGisWorldImagery } from './components/ArcGisWorldImagery'
+import { ArcGISWorldImagery } from './components/ArcGISWorldImagery'
 import { OpenStreetMapFrHotRaster } from './components/OpenStreetMapFrHotRaster'
 import { OpenStreetMapOrgRaster } from './components/OpenStreetMapOrgRaster'
+import { UNClearMapRaster } from './components/UNClearMapRaster'
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
         display: 'flex',
         flexDirection: 'column',
       }}>
+        <UNClearMapRaster />
         <OpenStreetMapOrgRaster />
         <OpenStreetMapFrHotRaster />
-        <ArcGisWorldImagery />
+        <ArcGISWorldImagery />
       </div>
     </div>
   )
