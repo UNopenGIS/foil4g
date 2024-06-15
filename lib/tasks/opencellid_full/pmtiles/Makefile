@@ -25,5 +25,5 @@ tmp/opencellid.org/cell_towers.pmtiles: tmp/opencellid.org/cell_towers.geojson
 		-pf \
 		-pk \
 		-P \
-		-o tmp/opencellid.org/cell_towers.pmtiless \
+		-o tmp/opencellid.org/cell_towers.pmtiles \
 		tmp/opencellid.org/cell_towers.geojson
