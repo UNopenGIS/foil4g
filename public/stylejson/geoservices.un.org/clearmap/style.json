@@ -1,0 +1,21 @@
+{
+  "version": 8,
+  "sources": {
+    "un_clearmap": {
+      "type": "raster",
+      "tiles": [
+        "https://geoservices.un.org/arcgis/rest/services/ClearMap_WebTopo/MapServer/tile/{z}/{y}/{x}"
+      ],
+      "attribution": "<a href=\"https://www.un.org/geospatial/\">UN Geospatial</a>"
+    }
+  },
+  "layers": [
+    {
+      "id": "un_clearmap",
+      "source": "un_clearmap",
+      "type": "raster",
+      "maxzoom": 6,
+      "minzoom": 0
+    }
+  ]
+}

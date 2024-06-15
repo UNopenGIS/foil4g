@@ -1,7 +1,7 @@
 import { Map } from "react-map-gl/maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
 
-export const ArcGisWorldImagery = () => {
+export const ArcGISWorldImagery = () => {
   return (
     <div>
       <h2>
