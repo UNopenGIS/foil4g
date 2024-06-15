@@ -1,0 +1,8 @@
+data_id: optgeo_electric_pole_point_v1
+license: unknown
+attributions: Vientiane Integrated Urban Information GIS-based Opendata Platform
+description: electric pole data for Vientiane, Lao P. D. R.
+data_format: shapefile
+file_format: shp
+file_size: unknown
+url: https://optgeo.github.io/virgo-data/electric_pole_point_v1.shp
