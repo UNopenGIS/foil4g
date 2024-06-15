@@ -4,6 +4,7 @@ attributions:
   - Esri, Maxar, Earthstar Geographics
   - https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/
 description: Raster tile map of World Imagery by ArcGIS, Esri.
+data_format: xyz_raster_tiles
 file_format: png
 file_size: unknown
 url: https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}

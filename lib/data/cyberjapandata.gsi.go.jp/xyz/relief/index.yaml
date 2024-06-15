@@ -5,6 +5,7 @@ attributions:
   - https://maps.gsi.go.jp/development/ichiran.html
   - 海域部は海上保安庁海洋情報部の資料を使用して作成
 description: 国土地理院の色別標高図（タイル）
+data_format: xyz_raster_tiles
 file_format: png
 file_size: unknown
 url: https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png

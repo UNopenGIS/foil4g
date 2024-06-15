@@ -4,6 +4,7 @@ attributions:
   - OpenStreetMap contributors
   - https://www.openstreetmap.org/
 description: Vector tile map of OpenStreetMap by OSMFJ
-file_format: style_json
+data_format: vector_tile_style_json
+file_format: json
 file_size: unknown
 url: https://tile.openstreetmap.jp/styles/osm-bright/style.json

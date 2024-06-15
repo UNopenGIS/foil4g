@@ -8,7 +8,8 @@ This directory contains YAML files that define various geospatial data sources. 
 - `license`: The license under which the data is made available.
 - `attributions`: Credits or attributions required by the data provider.
 - `description`: A brief description of the data source.
-- `file_format`: The format of the data files (e.g., png, pbf).
+- `data_format`: The format of the data (e.g., xyz_raster_tiles, xyz_vector_tiles, pmtiles).
+- `file_format`: The format of the data files (e.g., png, pbf, pmtiles).
 - `file_size`: The size of the data file, if known.
 - `url`: The URL where the data can be accessed.
 

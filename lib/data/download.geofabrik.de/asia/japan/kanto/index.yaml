@@ -4,6 +4,7 @@ attributions:
   - Geofabrik GmbH
   - OpenStreetMap Contributors
 description: OpenStreetMap data extracts for Kanto, Japan.
+data_format: osm_pbf
 file_format: pbf
 file_size: unknown
 url: https://download.geofabrik.de/asia/japan/kanto-latest.osm.pbf

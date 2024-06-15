@@ -4,6 +4,7 @@ attributions:
   - OpenStreetMap contributors
   - https://www.openstreetmap.org/
 description: Vector tile map of OpenStreetMap by OSMFJ
+data_format: xyz_vector_tiles
 file_format: pbf
 file_size: unknown
 url: https://tile.openstreetmap.jp/data/planet/{z}/{x}/{y}.pbf
