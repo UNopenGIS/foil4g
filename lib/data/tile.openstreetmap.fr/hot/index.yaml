@@ -7,6 +7,6 @@ description: Raster tile map of OpenStreetMap by OpenStreetMap France. This map 
 data_format: xyz_raster_tiles
 file_format: png
 file_size: unknown
-url: https://{a|b}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png
+url: https://{a|b|c}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png
 max_zoom: 19
 min_zoom: 0
