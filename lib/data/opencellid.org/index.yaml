@@ -1,0 +1,10 @@
+data_id: opencellid_full
+license: CC-BY-SA-4.0
+attributions:
+  - OpenCelliD
+  - https://opencellid.org/
+description: OpenCelliD is the world's largest collaborative community project collecting GPS positions of cell towers for various uses.
+data_format: csv
+file_format: gzipped_csv
+file_size: 105MB
+url: https://opencellid.org/ocid/downloads?token={api_key}&type=full&file=cell_towers.csv.gz
