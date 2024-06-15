@@ -1,11 +1,11 @@
 
-subdirs = \
-	lib/ucdp.uu.se/ged231-csv.zip \
-	lib/download.geofabrik.de/asia/japan/kanto
+SUBDIRS = \
+	./lib/tasks/opencellid_full/pmtiles/Makefile \
+	./lib/tasks/ucdp_ged_23_1/pmtiles/Makefile
 
-all: $(subdirs)
+all: $(SUBDIRS)
 
-clean: $(subdirs)
+$(SUBDIRS): FORCE
+	$(MAKE) -f $@ $(MAKECMDGOALS)
 
-$(subdirs):
-	$(MAKE) -C $@ $(MAKECMDGOALS)
+FORCE:
