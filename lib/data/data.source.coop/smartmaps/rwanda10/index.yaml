@@ -1,0 +1,10 @@
+data_id: smartmaps_rwanda10
+license: unknown
+attributions:
+  - Water and Sanitation Corporation (WASAC)
+  - National Land Authority (NLA)
+description: Terrain tiles from Dem_Rwanda_10m_allt_20230921150153_band1.tif
+data_format: pmtiles
+file_format: pmtiles
+file_size: 322MB
+url: https://data.source.coop/smartmaps/rwanda10/rwanda10.pmtiles
