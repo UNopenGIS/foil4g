@@ -1,6 +1,9 @@
+tmp
 !tmp/.gitkeep
 **/tmp
 !**/tmp/.gitkeep
+
+.vite
 
 # Logs
 logs
