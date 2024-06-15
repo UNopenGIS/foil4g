@@ -1,12 +1,12 @@
 ---
-name: API Addition
+name: Add new API
 about: Suggest new API endpoints for inclusion
 title: ""
-labels: api addition
+labels: add api
 assignees: ""
 ---
 
-# API Addition
+# Add new API
 
 ## Description of API
 
