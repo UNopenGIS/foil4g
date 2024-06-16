@@ -1,6 +1,7 @@
 import './App.css'
 import { ArcGISWorldImagery } from './components/ArcGISWorldImagery'
 import { OpenStreetMapFrHotRaster } from './components/OpenStreetMapFrHotRaster'
+import { OpenStreetMapJpOSMBrightVector } from './components/OpenStreetMapJpOSMBrightVector'
 import { OpenStreetMapOrgRaster } from './components/OpenStreetMapOrgRaster'
 import { UNClearMapRaster } from './components/UNClearMapRaster'
 
@@ -17,6 +18,7 @@ function App() {
         <UNClearMapRaster />
         <OpenStreetMapOrgRaster />
         <OpenStreetMapFrHotRaster />
+        <OpenStreetMapJpOSMBrightVector />
         <ArcGISWorldImagery />
       </div>
     </div>
