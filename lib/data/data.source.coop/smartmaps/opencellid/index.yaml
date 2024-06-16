@@ -1,0 +1,10 @@
+data_id: smartmaps_opencellid_pmtiles
+license: CC-BY-SA-4.0
+attributions:
+  - OpenCelliD
+  - https://opencellid.org/
+description: PMTiles converted data of the OpenCelliD by UN Smart Maps. OpenCelliD is the world's largest collaborative community project collecting GPS positions of cell towers for various uses.
+data_format: pmtiles
+file_format: pmtiles
+file_size: 533MB
+url: https://data.source.coop/smartmaps/opencellid/cellid.pmtiles
