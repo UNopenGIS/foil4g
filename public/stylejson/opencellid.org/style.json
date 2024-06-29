@@ -1,0 +1,20 @@
+{
+  "version": 8,
+  "sources": {
+    "opencellid": {
+      "type": "vector",
+      "url": "pmtiles://https://data.source.coop/smartmaps/opencellid/cellid.pmtiles",
+      "attribution": "<a href=\"https://opencellid.org/\">OpenCelliD</a>"
+    }
+  },
+  "layers": [
+    {
+      "id": "opencellid",
+      "source": "opencellid",
+      "source-layer": "a",
+      "type": "circle",
+      "maxzoom": 18,
+      "minzoom": 2
+    }
+  ]
+}
