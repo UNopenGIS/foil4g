@@ -9,8 +9,8 @@ export const OpenStreetMapOrgRaster = () => {
         latitude: 0,
         zoom: 4,
       }}
-      dragPan={false}
-      scrollZoom={false}
+      dragPan={true}
+      scrollZoom={true}
       hash={false}
       style={{ width: "100%", height: "100%" }}
       mapStyle="stylejson/tile.openstreetmap.org/style.json"
