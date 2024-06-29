@@ -6,6 +6,21 @@ const config: StorybookConfig = {
     options: {},
   },
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: [],
+  addons: [
+    {
+      name: "@storybook/addon-essentials",
+      options: {
+        actions: false,
+        backgrounds: false,
+        controls: true,
+        docs: false,
+        viewport: false,
+        toolbars: false,
+        measure: false,
+        outline: false,
+        highlight: false,
+      },
+    },
+  ],
 };
 export default config;
