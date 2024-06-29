@@ -13,6 +13,10 @@
       "source": "opencellid",
       "source-layer": "a",
       "type": "circle",
+      "paint": {
+        "circle-radius": 8,
+        "circle-color": "rgba(231, 84, 128, 0.8)"
+      },
       "maxzoom": 18,
       "minzoom": 2
     }
