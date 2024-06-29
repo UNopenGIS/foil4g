@@ -1,8 +1,8 @@
 import './App.css'
-import { ArcGISWorldImagery } from './components/BaseMaps/SatelliteImagery/ArcGISWorldImagery'
-import { OpenStreetMapFrHotRaster } from './components/BaseMaps/OpenStreetMap/OpenStreetMapFrHotRaster'
-import { OpenStreetMapJpOSMBrightVector } from './components/BaseMaps/OpenStreetMap/OpenStreetMapJpOSMBrightVector'
-import { OpenStreetMapOrgRaster } from './components/BaseMaps/OpenStreetMap/OpenStreetMapOrgRaster'
+import { ArcGISWorldImagery } from './components/Maps/SatelliteImagery/ArcGISWorldImagery'
+import { OpenStreetMapFrHotRaster } from './components/Maps/OpenStreetMap/OpenStreetMapFrHotRaster'
+import { OpenStreetMapJpOSMBrightVector } from './components/Maps/OpenStreetMap/OpenStreetMapJpOSMBrightVector'
+import { OpenStreetMapOrgRaster } from './components/Maps/OpenStreetMap/OpenStreetMapOrgRaster'
 import { UNClearMapRaster } from './components/UNClearMapRaster'
 
 function App() {

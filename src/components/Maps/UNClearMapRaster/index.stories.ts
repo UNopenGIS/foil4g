@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { UNClearMapRaster } from "./";
+import { UNClearMapRaster } from ".";
 
 const meta = {
   component: UNClearMapRaster,
