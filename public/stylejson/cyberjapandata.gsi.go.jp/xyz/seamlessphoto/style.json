@@ -1,0 +1,22 @@
+{
+  "version": 8,
+  "sources": {
+    "gsi_xyz_seamlessphoto": {
+      "type": "raster",
+      "tiles": [
+        "https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256,
+      "attribution": "<a href=\"https://maps.gsi.go.jp/development/ichiran.html\">地理院タイル</a>, データソース：Landsat8画像（GSI,TSIC,GEO Grid/AIST）, Landsat8画像（courtesy of the U.S. Geological Survey）, 海底地形（GEBCO） / Images on 世界衛星モザイク画像 obtained from site https://lpdaac.usgs.gov/data_access maintained by the NASA Land Processes Distributed Active Archive Center (LP DAAC), USGS/Earth Resources Observation and Science (EROS) Center, Sioux Falls, South Dakota, (Year). Source of image data product."
+    }
+  },
+  "layers": [
+    {
+      "id": "gsi_xyz_seamlessphoto",
+      "source": "gsi_xyz_seamlessphoto",
+      "type": "raster",
+      "maxzoom": 15,
+      "minzoom": 5
+    }
+  ]
+}
