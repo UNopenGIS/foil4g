@@ -3,14 +3,7 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Layer, Map, Source } from "react-map-gl/maplibre";
 import { useEffect } from "react";
-
-const source = {
-  id: "opencellid",
-  url: "pmtiles://https://data.source.coop/smartmaps/opencellid/cellid.pmtiles",
-  attribution: '<a href="https://opencellid.org/">OpenCelliD</a>',
-  maxzoom: 18,
-  minzoom: 2,
-};
+import { OpenCellIdPMTilesSource as source } from "../../../components/Datasets/OpenCellId/source";
 
 export const OpenCellIdWithBaseMap: React.FC<{ mapStyle: string }> = ({
   mapStyle,
@@ -39,23 +32,29 @@ export const OpenCellIdWithBaseMap: React.FC<{ mapStyle: string }> = ({
       <Source
         key={`${source.id}-source`}
         id={`${source.id}-source`}
-        type="vector"
+        type={source.type}
         url={source.url}
         attribution={source.attribution}
         maxzoom={source.maxzoom}
         minzoom={source.minzoom}
       >
-        <Layer
-          key={`${source.id}-layer`}
-          id={`${source.id}-layer`}
-          source={`${source.id}-source`}
-          source-layer="a"
-          type="circle"
-          paint={{
-            "circle-radius": 8,
-            "circle-color": "rgba(231, 84, 128, 0.8)",
-          }}
-        />
+        {source.layers?.map((layer) => {
+          switch (layer.type) {
+            case "circle":
+              return (
+                <Layer
+                  key={`${layer.id}-layer`}
+                  id={`${layer.id}-layer`}
+                  source={`${layer.id}-source`}
+                  source-layer={layer.sourceLayer}
+                  type={layer.type}
+                  paint={layer.paint}
+                />
+              );
+            default:
+              return null;
+          }
+        })}
       </Source>
     </Map>
   );
