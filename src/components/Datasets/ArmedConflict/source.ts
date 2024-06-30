@@ -15,7 +15,7 @@ export const ArmedConflictPMTilesSource: PMTilesSource = {
       type: "circle",
       paint: {
         "circle-radius": 8,
-        "circle-color": "rgba(141, 211, 199, 0.8)",
+        "circle-color": "rgba(231, 84, 128, 0.8)",
       },
     },
   ],
