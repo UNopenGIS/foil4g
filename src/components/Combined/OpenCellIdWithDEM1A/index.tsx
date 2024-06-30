@@ -3,9 +3,10 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Layer, Map, Source } from "react-map-gl/maplibre";
 import { useEffect } from "react";
-import { OpenCellIdPMTilesSource as source } from "../../../components/Datasets/OpenCellId/source";
+import { OpenCellIdPMTilesSource as dataSource } from "../../../components/Datasets/OpenCellId/source";
+import { DEM1APMTilesSource as terrainSource } from "../../../components/Datasets/DEM1A/source";
 
-export const OpenCellIdWithBaseMap: React.FC<{ mapStyle: string }> = ({
+export const OpenCellIdWithDEM1A: React.FC<{ mapStyle: string }> = ({
   mapStyle,
 }) => {
   useEffect(() => {
@@ -19,19 +20,27 @@ export const OpenCellIdWithBaseMap: React.FC<{ mapStyle: string }> = ({
   return (
     <Map
       initialViewState={{
-        longitude: 0,
-        latitude: 0,
-        zoom: 4,
+        longitude: 140.88,
+        latitude: 36.988,
+        zoom: 12,
+        pitch: 50,
+        bearing: 0,
       }}
       dragPan={true}
       scrollZoom={true}
-      hash={false}
+      hash={true}
       style={{ width: "100%", height: "100%" }}
       mapStyle={mapStyle}
+      terrain={{ source: terrainSource.id }}
     >
-      <Source key={source.id} {...source}>
-        {source.layers?.map((layer) => (
+      <Source key={dataSource.id} {...dataSource}>
+        {dataSource.layers?.map((layer) => (
           <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
+        ))}
+      </Source>
+      <Source key={terrainSource.id} {...terrainSource}>
+        {terrainSource.layers?.map((layer) => (
+          <Layer key={layer.id} {...layer} />
         ))}
       </Source>
     </Map>
