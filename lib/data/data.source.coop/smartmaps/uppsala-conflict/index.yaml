@@ -1,0 +1,10 @@
+data_id: smartmaps_uppsala_conflict_pmtiles
+license: CC-BY-4.0
+attributions:
+  - Uppsala Conflict Data Program
+  - UN Smart Maps
+description: PMTiles converted Armed conflict data from the Uppsala Conflict Data Program (UCDP) by UN Smart Maps.
+data_format: pmtiles
+file_format: pmtiles
+file_size: 130MB
+url: https://data.source.coop/smartmaps/uppsala-conflict/a.pmtiles

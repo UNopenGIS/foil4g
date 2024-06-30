@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { OpenCellIdWithStyle } from ".";
+import { OpenCellIdWithBaseMap } from ".";
 import { mapStyleOptions } from "../../mapStyleOptions";
 
 const meta = {
-  component: OpenCellIdWithStyle,
+  component: OpenCellIdWithBaseMap,
   argTypes: {
     mapStyle: {
       options: mapStyleOptions,
@@ -19,9 +19,9 @@ const meta = {
       bottomPanelHeight: 300,
     },
   },
-} satisfies Meta<typeof OpenCellIdWithStyle>;
+} satisfies Meta<typeof OpenCellIdWithBaseMap>;
 
 export default meta;
-type Story = StoryObj<typeof OpenCellIdWithStyle>;
+type Story = StoryObj<typeof OpenCellIdWithBaseMap>;
 
 export const Preview: Story = {};
