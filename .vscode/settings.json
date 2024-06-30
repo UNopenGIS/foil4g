@@ -15,6 +15,7 @@
     "geoservices",
     "hillshade",
     "hinanbasho",
+    "landuse",
     "Maxar",
     "NASADEM",
     "naturalearthdata",
@@ -30,6 +31,7 @@
     "TSIC",
     "UCDP",
     "USGS",
+    "vientina",
     "VMAP",
     "WASAC"
   ]
