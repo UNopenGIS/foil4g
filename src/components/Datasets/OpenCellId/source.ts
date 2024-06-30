@@ -9,7 +9,8 @@ export const OpenCellIdPMTilesSource: PMTilesSource = {
   minzoom: 2,
   layers: [
     {
-      id: "cell-layer",
+      id: "opencellid-layer",
+      source: "opencellid-source",
       sourceLayer: "a",
       type: "circle",
       paint: {
