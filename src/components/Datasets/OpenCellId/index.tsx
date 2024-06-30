@@ -4,6 +4,14 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { Layer, Map, Source } from "react-map-gl/maplibre";
 import { useEffect } from "react";
 
+const source = {
+  id: "opencellid",
+  url: "pmtiles://https://data.source.coop/smartmaps/opencellid/cellid.pmtiles",
+  attribution: '<a href="https://opencellid.org/">OpenCelliD</a>',
+  maxzoom: 18,
+  minzoom: 2,
+};
+
 export const OpenCellId = () => {
   useEffect(() => {
     const protocol = new Protocol();
@@ -12,14 +20,6 @@ export const OpenCellId = () => {
       maplibregl.removeProtocol("pmtiles");
     };
   }, []);
-
-  const layer = {
-    id: "opencellid",
-    url: "pmtiles://https://data.source.coop/smartmaps/opencellid/cellid.pmtiles",
-    attribution: '<a href="https://opencellid.org/">OpenCelliD</a>',
-    maxzoom: 18,
-    minzoom: 2,
-  };
 
   return (
     <Map
@@ -35,17 +35,18 @@ export const OpenCellId = () => {
       mapStyle="stylejson/tile.openstreetmap.jp/fiord-color-gl-style/style.json"
     >
       <Source
-        key={`${layer.id}-source`}
-        id={`${layer.id}-source`}
+        key={`${source.id}-source`}
+        id={`${source.id}-source`}
         type="vector"
-        url={layer.url}
-        attribution={layer.attribution}
-        maxzoom={layer.maxzoom}
-        minzoom={layer.minzoom}
+        url={source.url}
+        attribution={source.attribution}
+        maxzoom={source.maxzoom}
+        minzoom={source.minzoom}
       >
         <Layer
-          id={`${layer.id}-layer`}
-          source="opencellid-source"
+          key={`${source.id}-layer`}
+          id={`${source.id}-layer`}
+          source={`${source.id}-source`}
           source-layer="a"
           type="circle"
           paint={{
