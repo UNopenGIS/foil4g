@@ -36,3 +36,25 @@ export const OvertureMapsPMTilesSource: PMTilesSource = {
     },
   ],
 };
+
+export const OvertureMapsTransportationOnlyPMTilesSource: PMTilesSource = {
+  id: "overture-maps-source",
+  url: "pmtiles://https://tile.openstreetmap.jp/static/overture.pmtiles",
+  type: "vector",
+  attribution:
+    '<a href="https://overturemaps.org/">Overture Maps Foundation</a>',
+  maxzoom: 18,
+  minzoom: 2,
+  layers: [
+    {
+      id: "transportation-layer",
+      source: "overture-maps-source",
+      sourceLayer: "transportation",
+      type: "line",
+      paint: {
+        "line-color": "rgba(255, 255, 179, 0.8)",
+        "line-width": 1,
+      },
+    },
+  ],
+};
