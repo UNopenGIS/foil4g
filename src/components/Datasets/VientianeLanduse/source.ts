@@ -2,7 +2,9 @@ import { PMTilesSource } from "../../../types/PMTilesSource";
 
 export const VientianeLandusePMTilesSource: PMTilesSource = {
   id: "vientiane-landuse-source",
-  url: "pmtiles://https://optgeo.github.io/vientiane-landuse/vientiane-landuse.pmtiles/{z}/{x}/{y}",
+  tiles: [
+    "pmtiles://https://optgeo.github.io/vientiane-landuse/vientiane-landuse.pmtiles/{z}/{x}/{y}",
+  ],
   type: "vector",
   attribution: "VirGo",
   maxzoom: 14,
@@ -13,7 +15,7 @@ export const VientianeLandusePMTilesSource: PMTilesSource = {
       id: "vientiane-landuse-layer",
       type: "fill",
       source: "vientiane-landuse-source",
-      sourceLayer: "vientiane-landuse-source",
+      sourceLayer: "landuse",
       paint: {
         "fill-color": [
           "match",
