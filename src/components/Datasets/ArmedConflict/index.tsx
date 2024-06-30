@@ -23,7 +23,7 @@ export const ArmedConflictMap = () => {
       }}
       dragPan={true}
       scrollZoom={true}
-      hash={false}
+      hash={true}
       style={{ width: "100%", height: "100%" }}
       mapStyle="stylejson/tile.openstreetmap.jp/fiord-color-gl-style/style.json"
     >

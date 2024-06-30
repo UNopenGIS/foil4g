@@ -11,7 +11,7 @@ export const OpenStreetMapFrHotRaster = () => {
       }}
       dragPan={true}
       scrollZoom={true}
-      hash={false}
+      hash={true}
       style={{ width: "100%", height: "100%" }}
       mapStyle="stylejson/tile.openstreetmap.fr/hot/style.json"
     />

@@ -3,9 +3,10 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Layer, Map, Source } from "react-map-gl/maplibre";
 import { useEffect } from "react";
-import { OpenCellIdPMTilesSource as source } from "../../../components/Datasets/OpenCellId/source";
+import { ArmedConflictPMTilesSource as dataSource } from "../../../components/Datasets/ArmedConflict/source";
+import { OvertureMapsTransportationOnlyPMTilesSource as transportationSource } from "../../Datasets/OvertureMaps/source";
 
-export const OpenCellIdWithBaseMap: React.FC<{ mapStyle: string }> = ({
+export const ArmedConflictWithOverture: React.FC<{ mapStyle: string }> = ({
   mapStyle,
 }) => {
   useEffect(() => {
@@ -19,9 +20,9 @@ export const OpenCellIdWithBaseMap: React.FC<{ mapStyle: string }> = ({
   return (
     <Map
       initialViewState={{
-        longitude: 0,
-        latitude: 0,
-        zoom: 4,
+        longitude: 28.257,
+        latitude: 7.873,
+        zoom: 7,
       }}
       dragPan={true}
       scrollZoom={true}
@@ -29,8 +30,13 @@ export const OpenCellIdWithBaseMap: React.FC<{ mapStyle: string }> = ({
       style={{ width: "100%", height: "100%" }}
       mapStyle={mapStyle}
     >
-      <Source key={source.id} {...source}>
-        {source.layers?.map((layer) => (
+      <Source key={dataSource.id} {...dataSource}>
+        {dataSource.layers?.map((layer) => (
+          <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
+        ))}
+      </Source>
+      <Source key={transportationSource.id} {...transportationSource}>
+        {transportationSource.layers?.map((layer) => (
           <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
         ))}
       </Source>
