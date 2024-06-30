@@ -4,7 +4,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { Layer, Map, Source } from "react-map-gl/maplibre";
 import { useEffect } from "react";
 
-export const OpenCellIdWithStyle:React.FC<{mapStyle: string}> = ({mapStyle}) => {
+export const OpenCellIdWithBaseMap:React.FC<{mapStyle: string}> = ({mapStyle}) => {
   useEffect(() => {
     const protocol = new Protocol();
     maplibregl.addProtocol("pmtiles", protocol.tile);
@@ -45,7 +45,7 @@ export const OpenCellIdWithStyle:React.FC<{mapStyle: string}> = ({mapStyle}) => 
       >
         <Layer
           id={`${layer.id}-layer`}
-          source="opencellid-source"
+          source={`${layer.id}-source`}
           source-layer="a"
           type="circle"
           paint={{
