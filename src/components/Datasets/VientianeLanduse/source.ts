@@ -3,7 +3,7 @@ import { PMTilesSource } from "../../../types/PMTilesSource";
 export const VientianeLandusePMTilesSource: PMTilesSource = {
   id: "vientiane-landuse-source",
   tiles: [
-    "pmtiles://https://optgeo.github.io/vientiane-landuse/vientiane-landuse.pmtiles/{z}/{x}/{y}",
+    "pmtiles://https://data.source.coop/smartmaps/foil4gr1/vientiane-landuse.pmtiles/{z}/{x}/{y}.webp",
   ],
   type: "vector",
   attribution: "VirGo",
