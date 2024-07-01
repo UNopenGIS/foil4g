@@ -19,6 +19,7 @@ export const GELMap = () => {
       initialViewState={{
         longitude: 0,
         latitude: 0,
+        pitch: 50,
         zoom: 6,
       }}
       dragPan={true}
@@ -26,9 +27,10 @@ export const GELMap = () => {
       hash={true}
       style={{ width: "100%", height: "100%" }}
       mapStyle="stylejson/tile.openstreetmap.jp/fiord-color-gl-style/style.json"
+      terrain={{ source: source.id }}
     >
       <Source key={source.id} {...source}>
-        {source.layers?.map((layer) => <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />)}
+        {source.layers?.map((layer) => <Layer key={layer.id} {...layer} />)}
       </Source>
     </Map>
   );
