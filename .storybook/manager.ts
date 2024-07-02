@@ -4,7 +4,7 @@ import CustomTheme from "./CustomTheme.ts";
 
 addons.setConfig({
   theme: CustomTheme,
-  navSize: 500,
+  navSize: 300,
   bottomPanelHeight: 100,
   rightPanelWidth: 100,
   enableShortcuts: true,
