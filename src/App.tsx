@@ -3,7 +3,7 @@ import { ArcGISWorldImagery } from './components/Maps/SatelliteImagery/ArcGISWor
 import { OpenStreetMapFrHotRaster } from './components/Maps/OpenStreetMap/OpenStreetMapFrHotRaster'
 import { OpenStreetMapJpOSMBrightVector } from './components/Maps/OpenStreetMap/OpenStreetMapJpOSMBrightVector'
 import { OpenStreetMapOrgRaster } from './components/Maps/OpenStreetMap/OpenStreetMapOrgRaster'
-import { UNClearMapRaster } from './components/UNClearMapRaster'
+import { UNClearMapRaster } from './components/Maps/UNClearMapRaster'
 
 function App() {
   return (

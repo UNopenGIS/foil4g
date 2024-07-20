@@ -11,7 +11,7 @@ export const OpenStreetMapJpOSMBrightVector = () => {
       }}
       dragPan={true}
       scrollZoom={true}
-      hash={true}
+      hash={false}
       style={{ width: "100%", height: "100%" }}
       mapStyle="https://tile.openstreetmap.jp/styles/osm-bright/style.json"
     />

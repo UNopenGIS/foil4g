@@ -24,7 +24,7 @@ export const Rwanda10Map = () => {
       }}
       dragPan={true}
       scrollZoom={true}
-      hash={true}
+      hash={false}
       style={{ width: "100%", height: "100%" }}
       mapStyle="stylejson/tile.openstreetmap.jp/fiord-color-gl-style/style.json"
       terrain={{ source: source.id, exaggeration: 2 }}
