@@ -29,7 +29,7 @@ export const OpenCellIdWithDEM1AAndOverture: React.FC<{ mapStyle: string }> = ({
       }}
       dragPan={true}
       scrollZoom={true}
-      hash={true}
+      hash={false}
       style={{ width: "100%", height: "100%" }}
       mapStyle={mapStyle}
       terrain={{ source: terrainSource.id }}

@@ -27,7 +27,7 @@ export const VientianeLanduseWithOpenCellIdAndOverture: React.FC<{ mapStyle: str
       }}
       dragPan={true}
       scrollZoom={true}
-      hash={true}
+      hash={false}
       style={{ width: "100%", height: "100%" }}
       mapStyle={mapStyle}
     >

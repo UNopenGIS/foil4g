@@ -11,7 +11,7 @@ export const GSISeamlessPhoto = () => {
       }}
       dragPan={true}
       scrollZoom={true}
-      hash={true}
+      hash={false}
       style={{ width: "100%", height: "100%" }}
       mapStyle="stylejson/cyberjapandata.gsi.go.jp/xyz/seamlessphoto/style.json"
     />

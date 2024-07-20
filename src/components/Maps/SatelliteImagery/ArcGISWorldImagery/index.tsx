@@ -11,7 +11,7 @@ export const ArcGISWorldImagery = () => {
       }}
       dragPan={true}
       scrollZoom={true}
-      hash={true}
+      hash={false}
       style={{ width: "100%", height: "100%" }}
       mapStyle="stylejson/server.arcgisonline.com/world_imagery/style.json"
     />
