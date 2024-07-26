@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Terrain22Map as MapComponent } from '.';
+import { GoogleOpenBuildingsMap as MapComponent } from '.';
 
 const meta: Meta<typeof MapComponent> = {
   component: MapComponent,
