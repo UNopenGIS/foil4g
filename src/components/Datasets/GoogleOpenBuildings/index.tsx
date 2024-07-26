@@ -17,9 +17,9 @@ export const GoogleOpenBuildingsMap = () => {
   return (
     <Map
       initialViewState={{
-        longitude: 102.57100068372142,
-        latitude: 18.116012774056472,
-        zoom: 14,
+        longitude: 103.774538,
+        latitude: 13.554987,
+        zoom: 16.72,
       }}
       dragPan={true}
       scrollZoom={true}
