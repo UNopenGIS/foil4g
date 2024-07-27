@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { DEM1AMap } from ".";
+import { DEM1AMap as MapComponent } from ".";
 
-const meta = {
-  component: DEM1AMap,
+const meta: Meta<typeof MapComponent> = {
+  component: MapComponent,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
-} satisfies Meta<typeof DEM1AMap>;
+} satisfies Meta<typeof MapComponent>;
 
 export default meta;
-type Story = StoryObj<typeof DEM1AMap>;
+type Story = StoryObj<typeof MapComponent>;
 
 export const Preview: Story = {};

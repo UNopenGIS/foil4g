@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { GSISeamlessPhoto } from ".";
+import { GSISeamlessPhoto as MapComponent } from ".";
 
-const meta = {
-  component: GSISeamlessPhoto,
+const meta: Meta<typeof MapComponent> = {
+  component: MapComponent,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
-} satisfies Meta<typeof GSISeamlessPhoto>;
+} satisfies Meta<typeof MapComponent>;
 
 export default meta;
-type Story = StoryObj<typeof GSISeamlessPhoto>;
+type Story = StoryObj<typeof MapComponent>;
 
 export const Preview: Story = {};

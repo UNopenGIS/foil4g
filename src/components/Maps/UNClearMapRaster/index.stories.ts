@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { UNClearMapRaster } from ".";
+import { UNClearMapRaster as MapComponent } from ".";
 
-const meta = {
-  component: UNClearMapRaster,
+const meta: Meta<typeof MapComponent> = {
+  component: MapComponent,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
-} satisfies Meta<typeof UNClearMapRaster>;
+} satisfies Meta<typeof MapComponent>;
 
 export default meta;
-type Story = StoryObj<typeof UNClearMapRaster>;
+type Story = StoryObj<typeof MapComponent>;
 
 export const Preview: Story = {};

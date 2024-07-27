@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ArcGISWorldImagery } from ".";
+import { ArcGISWorldImagery as MapComponent } from ".";
 
-const meta = {
-  component: ArcGISWorldImagery,
+const meta: Meta<typeof MapComponent> = {
+  component: MapComponent,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
-} satisfies Meta<typeof ArcGISWorldImagery>;
+} satisfies Meta<typeof MapComponent>;
 
 export default meta;
-type Story = StoryObj<typeof ArcGISWorldImagery>;
+type Story = StoryObj<typeof MapComponent>;
 
 export const Preview: Story = {};

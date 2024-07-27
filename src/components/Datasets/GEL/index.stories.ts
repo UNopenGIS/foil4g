@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { GELMap } from '.';
+import { GELMap as MapComponent } from '.';
 
-const meta: Meta<typeof GELMap> = {
-  component: GELMap,
+const meta: Meta<typeof MapComponent> = {
+  component: MapComponent,
   parameters: {
     layout: 'fullscreen',
   },
-} satisfies Meta<typeof GELMap>;
+} satisfies Meta<typeof MapComponent>;
 
 export default meta;
-type Story = StoryObj<typeof GELMap>;
+type Story = StoryObj<typeof MapComponent>;
 
 export const Preview: Story = {};
