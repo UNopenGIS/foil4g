@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { OpenStreetMapJpOSMBrightVector } from ".";
+import { OpenStreetMapJpOSMBrightVector as MapComponent} from ".";
 
-const meta = {
-  component: OpenStreetMapJpOSMBrightVector,
+const meta: Meta<typeof MapComponent> = {
+  component: MapComponent,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
-} satisfies Meta<typeof OpenStreetMapJpOSMBrightVector>;
+} satisfies Meta<typeof MapComponent>;
 
 export default meta;
-type Story = StoryObj<typeof OpenStreetMapJpOSMBrightVector>;
+type Story = StoryObj<typeof MapComponent>;
 
 export const Preview: Story = {};

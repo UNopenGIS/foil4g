@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { OvertureMaps } from ".";
+import { OvertureMaps as MapComponent } from ".";
 
-const meta = {
-  component: OvertureMaps,
+const meta: Meta<typeof MapComponent> = {
+  component: MapComponent,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
-} satisfies Meta<typeof OvertureMaps>;
+} satisfies Meta<typeof MapComponent>;
 
 export default meta;
-type Story = StoryObj<typeof OvertureMaps>;
+type Story = StoryObj<typeof MapComponent>;
 
 export const Preview: Story = {};

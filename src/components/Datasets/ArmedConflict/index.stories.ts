@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ArmedConflictMap } from ".";
+import { ArmedConflictMap as MapComponent } from ".";
 
-const meta = {
-  component: ArmedConflictMap,
+const meta: Meta<typeof MapComponent> = {
+  component: MapComponent,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
-} satisfies Meta<typeof ArmedConflictMap>;
+} satisfies Meta<typeof MapComponent>;
 
 export default meta;
-type Story = StoryObj<typeof ArmedConflictMap>;
+type Story = StoryObj<typeof MapComponent>;
 
 export const Preview: Story = {};
