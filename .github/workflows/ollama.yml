@@ -11,18 +11,21 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Install Ollama
-        run: |
-          curl -fsSL https://ollama.com/install.sh | sudo -E sh
       - name: Make ollama models directory
         run: |
-          sudo mkdir -p ~/.ollama/models
+          mkdir -p ~/.ollama/models
       - name: Cache Ollama models
         id: cache-ollama-models
         uses: actions/cache@v4
         with:
           path: ~/.ollama/models
           key: ${{ runner.os }}-ollama-models
+      - name: Install Ollama
+        env:
+          OLLAMA_MODELS: ~/.ollama/models
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sudo -E sh
+          sudo systemctl stop ollama.service
       - name: Change permissions
         run: |
           sudo chown -R ollama:ollama ~/.ollama
