@@ -23,28 +23,20 @@ jobs:
             ~/.ollama/models
           key: ${{ runner.os }}-ollama
       - name: Install Ollama
-        env:
-          OLLAMA_MODELS: ~/.ollama/models
         run: |
           curl -fsSL https://ollama.com/install.sh | sudo -E sh
           sudo systemctl stop ollama.service
       - name: Start serving
-        env:
-          OLLAMA_MODELS: ~/.ollama/models
         run: |
-            ollama serve &
+            OLLAMA_MODELS=~/.ollama/models ollama serve &
             sleep 5
             time curl -i http://localhost:11434
       - name: Pull gemma2:2b
-        env:
-          OLLAMA_MODELS: ~/.ollama/models
         run: |
-            ollama pull gemma2:2b
+            OLLAMA_MODELS=~/.ollama/models ollama pull gemma2:2b
       - name: Output ~/.ollama/models
         run: |
             ls -alh ~/.ollama/models
       - name: Invoke gemma2:2b
-        env:
-          OLLAMA_MODELS: ~/.ollama/models
         run: |
-            ollama run gemma2:2b "Who is the current Secretary General of the United Nations?"
+            OLLAMA_MODELS=~/.ollama/models ollama run gemma2:2b "Who is the current President of the United States?"
