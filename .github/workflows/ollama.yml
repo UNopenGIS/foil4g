@@ -14,20 +14,31 @@ jobs:
       - name: Install Ollama
         run: |
           curl -fsSL https://ollama.com/install.sh | sudo -E sh
-      - name: Start serving
+      - name: Make ollama models directory
         run: |
-            ollama serve &
-            sleep 5
-            time curl -i http://localhost:11434
+          sudo mkdir -p ~/.ollama/models
+          sudo chown -R ollama:ollama ~/.ollama
+          sudo chmod -R 775 ~/.ollama
       - name: Cache Ollama models
         id: cache-ollama-models
         uses: actions/cache@v4
         with:
-          path: /usr/share/ollama/.ollama/models
+          path: ~/.ollama/models
           key: ${{ runner.os }}-ollama-models
+      - name: Start serving
+        env:
+          OLLAMA_MODELS: ~/.ollama/models
+        run: |
+            ollama serve &
+            sleep 5
+            time curl -i http://localhost:11434
       - name: Pull gemma2:2b
+        env:
+          OLLAMA_MODELS: ~/.ollama/models
         run: |
             ollama pull gemma2:2b
       - name: Invoke gemma2:2b
+        env:
+          OLLAMA_MODELS: ~/.ollama/models
         run: |
             ollama run gemma2:2b "Who is the current Secretary General of the United Nations?"
