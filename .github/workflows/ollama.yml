@@ -19,6 +19,12 @@ jobs:
             ollama serve &
             sleep 5
             time curl -i http://localhost:11434
+      - name: Cache Ollama models
+        id: cache-ollama-models
+        uses: actions/cache@v4
+        with:
+          path: /usr/share/ollama/.ollama/models
+          key: ${{ runner.os }}-ollama-models
       - name: Pull gemma2:2b
         run: |
             ollama pull gemma2:2b
