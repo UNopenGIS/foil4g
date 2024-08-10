@@ -40,6 +40,9 @@ jobs:
           OLLAMA_MODELS: ~/.ollama/models
         run: |
             ollama pull gemma2:2b
+      - name: Output ~/.ollama/models
+        run: |
+            ls -alh ~/.ollama/models
       - name: Invoke gemma2:2b
         env:
           OLLAMA_MODELS: ~/.ollama/models
