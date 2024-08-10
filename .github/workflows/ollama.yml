@@ -18,8 +18,8 @@ jobs:
         id: cache-ollama-models
         uses: actions/cache@v4
         with:
-          path: ~/.ollama/models
-          key: ${{ runner.os }}-ollama-models
+          path: ~/.ollama
+          key: ${{ runner.os }}-ollama
       - name: Install Ollama
         env:
           OLLAMA_MODELS: ~/.ollama/models
@@ -29,7 +29,7 @@ jobs:
       - name: Change permissions
         run: |
           sudo chown -R ollama:ollama ~/.ollama
-          sudo chmod -R 775 ~/.ollama
+          sudo chmod -R 777 ~/.ollama
       - name: Start serving
         env:
           OLLAMA_MODELS: ~/.ollama/models
