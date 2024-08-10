@@ -1,0 +1,42 @@
+name: ollama
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  ollama:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Make ollama models directory
+        run: |
+          mkdir -p ~/.ollama/models
+      - name: Cache Ollama dir
+        id: cache-ollama
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.ollama
+            ~/.ollama/models
+          key: ${{ runner.os }}-ollama
+      - name: Install Ollama
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sudo -E sh
+          sudo systemctl stop ollama.service
+      - name: Start serving
+        run: |
+            OLLAMA_MODELS=~/.ollama/models ollama serve &
+            sleep 5
+            time curl -i http://localhost:11434
+      - name: Pull gemma2:2b
+        run: |
+            OLLAMA_MODELS=~/.ollama/models ollama pull gemma2:2b
+      - name: Output ~/.ollama/models
+        run: |
+            ls -alh ~/.ollama/models
+      - name: Invoke gemma2:2b
+        run: |
+            OLLAMA_MODELS=~/.ollama/models ollama run gemma2:2b "Who is the current President of the United States?"
