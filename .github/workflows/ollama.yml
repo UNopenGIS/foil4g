@@ -1,4 +1,4 @@
-name: lint
+name: ollama
 
 on:
   push:
@@ -17,14 +17,16 @@ jobs:
       - name: Make ollama models directory
         run: |
           sudo mkdir -p ~/.ollama/models
-          sudo chown -R ollama:ollama ~/.ollama
-          sudo chmod -R 775 ~/.ollama
       - name: Cache Ollama models
         id: cache-ollama-models
         uses: actions/cache@v4
         with:
           path: ~/.ollama/models
           key: ${{ runner.os }}-ollama-models
+      - name: Change permissions
+        run: |
+          sudo chown -R ollama:ollama ~/.ollama
+          sudo chmod -R 775 ~/.ollama
       - name: Start serving
         env:
           OLLAMA_MODELS: ~/.ollama/models
