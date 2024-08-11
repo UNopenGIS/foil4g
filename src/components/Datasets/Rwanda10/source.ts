@@ -19,6 +19,7 @@ export const Rwanda10PMTilesSource: PMTilesSource = {
       id: "rwanda-10-hills",
       type: "hillshade",
       source: "rwanda-10-source",
+      sourceLayer: "hillshade",
       paint: {
         "hillshade-shadow-color": "#473B24",
       },

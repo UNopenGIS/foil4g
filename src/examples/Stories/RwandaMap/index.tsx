@@ -7,9 +7,18 @@ import { OpenCellIdPMTilesSource as cellDataSource } from "../../../components/D
 import { ArmedConflictPMTilesSource as conflictDataSource } from "../../../components/Datasets/ArmedConflict/source";
 import { Rwanda10PMTilesSource as terrainSource } from "../../../components/Datasets/Rwanda10/source";
 import { OvertureMapsTransportationOnlyPMTilesSource as transportationSource } from "../../../components/Datasets/OvertureMaps/source";
+import { PMTilesSource } from "../../../types/PMTilesSource";
 
-export const RwandaMap: React.FC<{ mapStyle: string }> = ({
+const AvailableSources: Record<string, PMTilesSource> = {
+  cell: cellDataSource,
+  conflict: conflictDataSource,
+  terrain: terrainSource,
+  transportation: transportationSource,
+};
+
+export const RwandaMap: React.FC<{ mapStyle: string; sources: string[] }> = ({
   mapStyle,
+  sources,
 }) => {
   useEffect(() => {
     const protocol = new Protocol();
@@ -33,26 +42,20 @@ export const RwandaMap: React.FC<{ mapStyle: string }> = ({
       style={{ width: "100%", height: "100%" }}
       mapStyle={mapStyle}
     >
-      <Source key={cellDataSource.id} {...cellDataSource}>
-        {cellDataSource.layers?.map((layer) => (
-          <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
-        ))}
-      </Source>
-      <Source key={conflictDataSource.id} {...conflictDataSource}>
-        {conflictDataSource.layers?.map((layer) => (
-          <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
-        ))}
-      </Source>
-      <Source key={terrainSource.id} {...terrainSource}>
-        {terrainSource.layers?.map((layer) => (
-          <Layer key={layer.id} {...layer} />
-        ))}
-      </Source>
-      <Source key={transportationSource.id} {...transportationSource}>
-        {transportationSource.layers?.map((layer) => (
-          <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
-        ))}
-      </Source>
+      {sources.map((source) => {
+        const dataSource = AvailableSources[source];
+        return (
+          <Source key={dataSource.id} {...dataSource}>
+            {dataSource.layers?.map((layer) => (
+              <Layer
+                key={layer.id}
+                source-layer={layer.sourceLayer}
+                {...layer}
+              />
+            ))}
+          </Source>
+        );
+      })}
     </Map>
   );
 };
