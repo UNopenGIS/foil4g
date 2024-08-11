@@ -9,9 +9,14 @@ const meta = {
       options: mapStyleOptions,
       control: { type: "select" },
     },
+    sources: {
+      options: ["cell", "conflict", "terrain", "transportation"],
+      control: { type: "inline-check" },
+    },
   },
   args: {
     mapStyle: "stylejson/tile.openstreetmap.jp/fiord-color-gl-style/style.json",
+    sources: ["cell", "conflict", "terrain", "transportation"],
   },
   parameters: {
     layout: "fullscreen",
