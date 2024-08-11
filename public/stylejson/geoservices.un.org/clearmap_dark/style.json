@@ -1,7 +1,7 @@
 {
   "version": 8,
   "sources": {
-    "un_clearmap": {
+    "un_clearmap_dark": {
       "type": "raster",
       "tiles": [
         "https://geoservices.un.org/arcgis/rest/services/ClearMap_WebDark/MapServer/tile/{z}/{y}/{x}"
