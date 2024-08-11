@@ -1,0 +1,21 @@
+{
+  "version": 8,
+  "sources": {
+    "un_clearmap": {
+      "type": "raster",
+      "tiles": [
+        "https://geoservices.un.org/arcgis/rest/services/ClearMap_WebDark/MapServer/tile/{z}/{y}/{x}"
+      ],
+      "attribution": "<a href=\"https://www.un.org/geospatial/\">UN Geospatial</a>"
+    }
+  },
+  "layers": [
+    {
+      "id": "un_clearmap_dark",
+      "source": "un_clearmap_dark",
+      "type": "raster",
+      "maxzoom": 6,
+      "minzoom": 0
+    }
+  ]
+}
