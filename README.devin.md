@@ -1,6 +1,6 @@
 # FOIL4G Developer Documentation
 
-> **Important Note**: This repository is a fork of [UNopenGIS/foil4g](https://github.com/UNopenGIS/foil4g). All pull requests should be submitted to the upstream repository (UNopenGIS/foil4g) rather than to any forks. This ensures that contributions are properly tracked and managed in the main project repository.
+> **Important Note**: This is the main UNopenGIS/foil4g repository. If you're working with a fork, please ensure all pull requests are submitted here rather than to other forks. This ensures that contributions are properly tracked and managed in the main project repository.
 
 ## Core Systems and Services
 
