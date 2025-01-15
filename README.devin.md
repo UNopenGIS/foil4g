@@ -50,6 +50,19 @@ foil4g/
 2. `pmtiles`: Efficient tile storage format
 3. `react-map-gl`: React wrapper for MapLibre GL
 
+## Contributing
+
+### Pull Request Workflow
+When contributing to this project, follow these steps:
+
+1. Fork the repository to your account if you haven't already
+2. Create a new branch with a descriptive name
+3. Make your changes and commit them
+4. Create a pull request to your fork first
+5. After the PR is created, you can change the base to point to UNopenGIS/foil4g
+
+> **Note**: Due to authentication requirements, it's recommended to first create your PR to your own fork and then change the base repository to UNopenGIS/foil4g. This helps bypass potential authentication issues that may occur when trying to create PRs directly to the upstream repository.
+
 ## Development Setup
 
 ### Prerequisites
