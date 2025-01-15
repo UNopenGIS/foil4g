@@ -1,6 +1,15 @@
 # FOIL4G Developer Documentation
 
-> **Important Note**: This is the main UNopenGIS/foil4g repository. If you're working with a fork, please ensure all pull requests are submitted here rather than to other forks. This ensures that contributions are properly tracked and managed in the main project repository.
+> **Important Note**: This is the main UNopenGIS/foil4g repository, a significant contribution to the UN Open GIS Initiative. The project supports the initiative's mission of leveraging open-source geospatial solutions for UN peacekeeping and humanitarian operations. If you're working with a fork, please ensure all pull requests are submitted here rather than to other forks to ensure proper contribution tracking.
+
+## Project Mission
+
+FOIL4G actively supports the UN Open GIS Initiative's goals by:
+- Providing open-source geospatial solutions for UN field operations
+- Supporting decision-making with accurate location-based data
+- Enabling collaborative mapping and data validation
+- Contributing to the UN Maps ecosystem for peacekeeping missions
+- Fostering knowledge sharing through the UN Maps Learning Hub
 
 ## Core Systems and Services
 
@@ -51,6 +60,13 @@ foil4g/
 3. `react-map-gl`: React wrapper for MapLibre GL
 
 ## Contributing
+
+FOIL4G welcomes contributions that enhance UN peacekeeping and humanitarian operations through open-source geospatial solutions. By contributing, you demonstrate technical capabilities in:
+- Geospatial data processing and visualization
+- Open-source GIS development
+- UN Maps ecosystem integration
+- Collaborative mapping solutions
+- Humanitarian technology applications
 
 ### Pull Request Workflow
 When contributing to this project, follow these steps:
@@ -123,9 +139,11 @@ Required fields in tasks/*.yaml:
 ## Glossary
 
 - **FOIL4G**: Free and Open Information Library for Geospatial
+- **UN Open GIS Initiative**: UN partnership established in 2016 to leverage open-source geospatial solutions for peacekeeping operations
+- **UN Maps**: Program supporting UN field operations with geospatial data and collaborative mapping
+- **UN Clear Map**: United Nations base map style for standardized visualization
 - **PMTiles**: Efficient tile storage format for geospatial data
 - **Vector Tiles**: Map data in vector format for flexible rendering
 - **Raster Tiles**: Pre-rendered map images
 - **MapLibre GL**: Open-source library for interactive maps
-- **OSM**: OpenStreetMap
-- **UN Clear Map**: United Nations base map style
+- **OSM**: OpenStreetMap, a collaborative mapping platform
