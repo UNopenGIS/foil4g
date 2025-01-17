@@ -25,11 +25,11 @@ In this way, FOIL4G applies Benjamin Franklin’s library concept to modern geos
 
 ## Implementation
 
+- `src`: Core React components and application logic for the web-based mapping interface
 - `lib`
   - `api`: API for accessing geospatial information
   - `data`: Details for referencing geospatial information
-  - `skills`: Skills for handling geospatial information
-  - `tasks`: Tasks for processing and analyzing geospatial information
+  - `tasks`: Tasks for processing, analyzing, and transforming geospatial information
 
 ## Contributing
 
