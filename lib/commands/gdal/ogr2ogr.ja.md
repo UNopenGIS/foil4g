@@ -45,3 +45,9 @@
 
 - CSVファイルを座標付きのGeoJSONに変換:
   `ogr2ogr -f GeoJSON output.geojson input.csv -oo X_POSSIBLE_NAMES=lon* -oo Y_POSSIBLE_NAMES=lat* -a_srs EPSG:4326`
+
+- GeoJSONシーケンス形式(GeoJSONSeq)で出力:
+  `ogr2ogr -f GeoJSONSeq output.geojsonl input.shp`
+
+- GeoJSONシーケンス形式で出力し、改行区切りの各フィーチャーを処理:
+  `ogr2ogr -of GeoJSONSeq output.geojsonl input.shp`
