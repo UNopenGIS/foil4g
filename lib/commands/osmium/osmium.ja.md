@@ -4,6 +4,15 @@
 > OSMデータの変換、フィルタリング、結合、抽出などの操作ができます。
 > 詳細: https://osmcode.org/osmium-tool/
 
+## ファイル形式について
+
+OpenStreetMapデータには主に以下の拡張子が使われます：
+- `.osm.pbf` - 標準的なOSMデータファイル（Protocol Bufferフォーマット）
+- `.osh.pbf` - OSM履歴データファイル（時間的な変更履歴を含む）
+- `.osc.gz` - OSM変更ファイル（差分データ）、通常gzipで圧縮される
+
+## 使用例
+
 - 基本的な使用法（OSMファイルの情報表示）:
   `osmium fileinfo input.osm.pbf`
 
