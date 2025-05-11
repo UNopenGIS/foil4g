@@ -1,6 +1,6 @@
 # gdalinfo
 
-> ラスターデータセットの情報を表示するGDALユーティリティ。
+> ラスターデータセットの情報を表示する[[GDAL]]ユーティリティ。
 > GDALでサポートされている様々な形式のラスターデータの情報を取得できます。
 > 詳細: https://gdal.org/programs/gdalinfo.html
 

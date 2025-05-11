@@ -1,6 +1,6 @@
 # gdalbuildvrt
 
-> 複数のラスターデータセットから仮想ラスターデータセット（VRT）を構築するGDALユーティリティ。
+> 複数のラスターデータセットから仮想ラスターデータセット（VRT）を構築する[[GDAL]]ユーティリティ。
 > VRTはデータを複製せずに複数のラスターデータを仮想的に結合します。
 > 詳細: https://gdal.org/programs/gdalbuildvrt.html
 
