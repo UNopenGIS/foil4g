@@ -2,7 +2,7 @@
 
 > tile-join は、[[tippecanoe]]の一部で、既存の[[ベクトルタイル]]（.mbtiles、.pmtiles、ディレクトリ）を結合したり、CSV ファイルから新しい属性を追加したりするためのツールです。
 
-- 複数のMBTilesファイルを結合:
+- 複数の[[MBTiles]]ファイルを結合:
   `tile-join -o combined.mbtiles input1.mbtiles input2.mbtiles input3.mbtiles`
 
 - CSVファイルの属性を既存のフィーチャーに結合:
