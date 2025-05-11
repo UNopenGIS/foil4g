@@ -1,10 +1,10 @@
 # tippecanoe
 
-> 大規模（または小規模）なGeoJSON、FlatGeobuf、CSVなどのデータからベクトルタイルセットを構築するツール。
+> 大規模（または小規模）な[[GeoJSON]]、[[FlatGeobuf]]、[[CSV]]などのデータから[[ベクトルタイル]]を構築するツール。
 > あらゆるズームレベルでデータの密度と特性を維持し、効率的なベクタータイルを生成します。
 > 詳細: https://github.com/felt/tippecanoe
 
-- 基本的な使用法（GeoJSONからMBTilesへの変換）:
+- 基本的な使用法（GeoJSONから[[MBTiles]]への変換）:
   `tippecanoe -o output.mbtiles input.geojson`
 
 - 自動的に適切なズームレベルを選択し、必要に応じて密度の高い地域のフィーチャーを間引く:
@@ -48,19 +48,3 @@
 
 - カスタム一時ディレクトリを指定:
   `tippecanoe -o output.mbtiles -t /path/to/temp/dir input.geojson`
-
-## tile-join
-
-tile-join は、既存のベクトルタイルセット（.mbtiles、.pmtiles、ディレクトリ）を結合したり、CSV ファイルから新しい属性を追加したりするためのツールです。
-
-- 複数のMBTilesファイルを結合:
-  `tile-join -o combined.mbtiles input1.mbtiles input2.mbtiles input3.mbtiles`
-
-- CSVファイルの属性を既存のフィーチャーに結合:
-  `tile-join -o with_attributes.mbtiles -c attributes.csv input.mbtiles`
-
-- レイヤー名を変更:
-  `tile-join -o renamed.mbtiles -r old_name:new_name input.mbtiles`
-
-- フィルタを適用して特定のフィーチャーのみを含める:
-  `tile-join -o filtered.mbtiles -j '{"*":["none",["==","property","value"]]}' input.mbtiles`
