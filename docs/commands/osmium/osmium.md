@@ -1,6 +1,6 @@
 # osmium
 
-> OpenStreetMap (OSM) データを処理するための多機能コマンドラインツール。
+> [[OpenStreetMap]] (OSM) データを処理するための多機能コマンドラインツール。
 > OSMデータの変換、フィルタリング、結合、抽出などの操作ができます。
 > 詳細: https://osmcode.org/osmium-tool/
 
