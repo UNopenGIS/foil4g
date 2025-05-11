@@ -1,7 +1,7 @@
 # charites
 
-> ベクトルタイル地図のスタイル設定を効率的に行うためのツール。
-> YAML形式でMapLibre/MapboxのStyle Specificationに準拠したスタイルを簡単に作成・編集できます。
+> [[ベクトルタイル]]地図のスタイル設定を効率的に行うためのツール。
+> [[YAML]]形式で[[MapLibre]]/[[Mapbox]]のStyle Specificationに準拠したスタイルを簡単に作成・編集できます。
 > 詳細: https://unvt.github.io/charites/
 
 - 基本的な使用法（スタイルYAMLファイルの初期化）:
