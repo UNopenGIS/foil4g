@@ -37,7 +37,7 @@
 - ジオメトリの簡略化レベルを設定（デフォルトは12）:
   `tippecanoe -o output.mbtiles -d 10 input.geojson`
 
-- PMTiles形式で出力:
+- [[PMTiles]]形式で出力:
   `tippecanoe -o output.pmtiles input.geojson`
 
 - フィーチャーIDを生成:
