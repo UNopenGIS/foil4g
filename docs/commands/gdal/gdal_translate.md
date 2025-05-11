@@ -1,6 +1,6 @@
 # gdal_translate
 
-> ラスターデータセットを別の形式に変換する[[GDAL]]ユーティリティ。
+> [[ラスターデータ]]を別の形式に変換する[[GDAL]]ユーティリティ。
 > フォーマット変換、リサイズ、リサンプリング、データ型変換などが可能です。
 > 詳細: https://gdal.org/programs/gdal_translate.html
 

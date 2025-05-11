@@ -1,7 +1,7 @@
 # gdal2tiles.py
 
-> ラスターデータをウェブマップタイル（XYZ または TMS）に変換する[[GDAL]]ユーティリティ。
-> Google Maps、OpenLayers、Leaflet などで使用可能なタイルセットを生成します。
+> [[ラスターデータ]]を[[ウェブマップタイル]]（XYZ または TMS）に変換する[[GDAL]]ユーティリティ。
+> Google Maps、[[OpenLayers]]、[[Leaflet]] などで使用可能なタイルセットを生成します。
 > 詳細: https://gdal.org/programs/gdal2tiles.html
 
 - 基本的な使用法（ラスターファイルからタイルを生成）:
