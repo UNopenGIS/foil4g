@@ -7,6 +7,7 @@
 ## ファイル形式について
 
 OpenStreetMapデータには主に以下の拡張子が使われます：
+
 - `.osm.pbf` - 標準的なOSMデータファイル（Protocol Bufferフォーマット）
 - `.osh.pbf` - OSM履歴データファイル（時間的な変更履歴を含む）
 - `.osc.gz` - OSM変更ファイル（差分データ）、通常gzipで圧縮される
