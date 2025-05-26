@@ -7,5 +7,5 @@ OpenMapTiles schema implementation for Planetiler.
 
 ## See Also
 
-- [[onthegomap/planetiler]]
-- [[openmaptiles/openmaptiles]]
+- [onthegomap/planetiler](https://github.com/onthegomap/planetiler)
+- [openmaptiles/openmaptiles](https://github.com/openmaptiles/openmaptiles)

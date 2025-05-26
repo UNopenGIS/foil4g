@@ -9,5 +9,5 @@ An open source visual editor for the 'MapLibre Style Specification'
 
 ## See Also
 
-- [[maplibre/maplibre-gl-js]]
-- [[facebook/react]]
+- [[maplibre-gl-js]]
+- [[react]]
