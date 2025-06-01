@@ -1,13 +1,13 @@
 # UCDP 武力紛争データ
 
-> **Uppsala Conflict Data Program (UCDP)**は、世界の武力紛争に関する包括的なデータベースを提供する研究機関です。このデータセットは地理的に特定された武力紛争事件データを含みます。
+> **[[Uppsala Conflict Data Program]]** (UCDP)は、世界の武力紛争に関する包括的なデータベースを提供する研究機関です。このデータセットは地理的に特定された武力紛争事件データを含みます。
 
 ## データソース情報
 
 - **データID**: ucdp_ged_23_1
 - **ライセンス**: [[CC-BY-4.0]]
 - **提供者**:
-  - Uppsala Conflict Data Program
+  - [[Uppsala Conflict Data Program]]
 - **データ形式**: [[Zipped CSV]]
 - **ファイル形式**: zip
 - **ファイルサイズ**: 23MB
@@ -15,7 +15,7 @@
 
 ## 説明
 
-**Uppsala Conflict Data Program (UCDP)**による武力紛争データ。地理的に特定された武力紛争事件の詳細情報を含み、平和研究、安全保障研究、政策立案などに活用されています。
+**[[Uppsala Conflict Data Program]]** (UCDP)による武力紛争データ。地理的に特定された武力紛争事件の詳細情報を含み、平和研究、安全保障研究、政策立案などに活用されています。
 
 ## データ処理コマンド
 
@@ -29,15 +29,15 @@ wget https://ucdp.uu.se/downloads/ged/ged231-csv.zip -O ./tmp/ged231-csv.zip
 # 2. 解凍
 unzip ./tmp/ged231-csv.zip -d ./tmp
 
-# 3. PostGISデータベースへのインポート（オプション）
-ogr2ogr \
+# 3. [[PostGIS]]データベースへのインポート（オプション）
+[[ogr2ogr]] \
   -overwrite \
-  -f "PostgreSQL" PG:"dbname=tileserv user=postgres password=postgres host=localhost port=54321" \
+  -f "[[PostgreSQL]]" PG:"dbname=tileserv user=postgres password=postgres host=localhost port=54321" \
   -oo AUTODETECT_TYPE=YES \
   -oo GEOM_POSSIBLE_NAMES=geom_wkt \
   -oo X_POSSIBLE_NAMES=longitude \
   -oo Y_POSSIBLE_NAMES=latitude \
-  -a_srs EPSG:4326 \
+  -a_srs [[EPSG:4326]] \
   -lco FID=id \
   -nln "ucdp_ged" \
   --config PG_USE_COPY YES \
@@ -57,19 +57,19 @@ wget https://ucdp.uu.se/downloads/ged/ged231-csv.zip -O tmp/ucdp.uu.se/ged231-cs
 # 2. 解凍
 unzip -f tmp/ucdp.uu.se/ged231-csv.zip -d tmp/ucdp.uu.se
 
-# 3. CSVからGeoJSONへの変換
-ogr2ogr \
+# 3. [[CSV]]から[[GeoJSON]]への変換
+[[ogr2ogr]] \
   -overwrite \
-  -f GeoJSON \
+  -f [[GeoJSON]] \
   -oo X_POSSIBLE_NAMES=longitude \
   -oo Y_POSSIBLE_NAMES=latitude \
-  -a_srs EPSG:4326 \
+  -a_srs [[EPSG:4326]] \
   --debug ON \
   tmp/ucdp.uu.se/GEDEvent_v23_1.geojson \
   tmp/ucdp.uu.se/GEDEvent_v23_1.csv
 
-# 4. GeoJSONからPMTilesへの変換
-tippecanoe \
+# 4. [[GeoJSON]]から[[PMTiles]]への変換
+[[tippecanoe]] \
   -Z1 \
   -z18 \
   -pf \
@@ -122,8 +122,8 @@ ogr2ogr \
 
 - **wget**: HTTPダウンロード
 - **unzip**: ZIP圧縮ファイルの展開
-- **ogr2ogr**: 地理空間データ変換とPostGISインポート
-- **tippecanoe**: GeoJSONからベクタータイル（PMTiles）への変換
+- **[[ogr2ogr]]**: 地理空間データ変換と[[PostGIS]]インポート
+- **[[tippecanoe]]**: [[GeoJSON]]からベクタータイル（[[PMTiles]]）への変換
 
 ## 関連項目
 
@@ -132,6 +132,11 @@ ogr2ogr \
 - [[平和研究]]
 - [[CC-BY-4.0]]
 - [[CSV]]
+- [[GeoJSON]]
+- [[PMTiles]]
 - [[SmartMaps Uppsala 紛争データ PMTiles]]
 - [[PostGIS]]
-- [[OGR]]
+- [[PostgreSQL]]
+- [[ogr2ogr]]
+- [[tippecanoe]]
+- [[EPSG:4326]]
