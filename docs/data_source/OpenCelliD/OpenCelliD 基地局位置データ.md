@@ -38,17 +38,17 @@ wget https://opencellid.org/downloads/cell_towers.csv.gz -O tmp/opencellid.org/c
 # 2. CSVファイルの展開
 gunzip -c tmp/opencellid.org/cell_towers.csv.gz > tmp/opencellid.org/cell_towers.csv
 
-# 3. CSVからGeoJSONへの変換
-ogr2ogr \
+# 3. [[CSV]]から[[GeoJSON]]への変換
+[[ogr2ogr]] \
   -overwrite \
-  -f GeoJSON \
+  -f [[GeoJSON]] \
   -oo X_POSSIBLE_NAMES=lon \
   -oo Y_POSSIBLE_NAMES=lat \
   tmp/opencellid.org/cell_towers.geojson \
   tmp/opencellid.org/cell_towers.csv
 
-# 4. GeoJSONからPMTilesへの変換
-tippecanoe \
+# 4. [[GeoJSON]]から[[PMTiles]]への変換
+[[tippecanoe]] \
   -Z1 \
   -z18 \
   -pf \
@@ -60,15 +60,15 @@ tippecanoe \
 
 ### 処理概要
 
-- **ダウンロード**: OpenCelliDサイトから圧縮CSVファイルを取得
-- **展開**: gzipファイルを展開してCSV形式に変換
-- **地理空間変換**: ogr2ogrでCSVからGeoJSONに変換（経度・緯度列を指定）
-- **ベクタータイル化**: tippecnoeでGeoJSONからPMTiles形式に変換
+- **ダウンロード**: [[OpenCelliD]]サイトから圧縮[[CSV]]ファイルを取得
+- **展開**: gzipファイルを展開して[[CSV]]形式に変換
+- **地理空間変換**: [[ogr2ogr]]で[[CSV]]から[[GeoJSON]]に変換（経度・緯度列を指定）
+- **ベクタータイル化**: [[tippecanoe]]で[[GeoJSON]]から[[PMTiles]]形式に変換
 - **結果**: ウェブマップで利用可能なベクタータイル形式の基地局データ
 
 ### 使用ツール
 
 - **wget**: HTTPダウンロード
 - **gunzip**: gzip圧縮ファイルの展開
-- **ogr2ogr**: CSVからGeoJSONへの地理空間データ変換
-- **tippecanoe**: GeoJSONからベクタータイル（PMTiles）への変換
+- **[[ogr2ogr]]**: [[CSV]]から[[GeoJSON]]への地理空間データ変換
+- **[[tippecanoe]]**: [[GeoJSON]]からベクタータイル（[[PMTiles]]）への変換
