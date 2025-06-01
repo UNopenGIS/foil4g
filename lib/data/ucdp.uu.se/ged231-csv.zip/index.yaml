@@ -1,9 +1,0 @@
-data_id: ucdp_ged_23_1
-license: CC-BY-4.0
-attributions:
-  - Uppsala Conflict Data Program
-description: Armed conflict data from the Uppsala Conflict Data Program (UCDP).
-data_format: zipped_csv
-file_format: zip
-file_size: 23MB
-url: https://ucdp.uu.se/downloads/ged231-csv.zip
