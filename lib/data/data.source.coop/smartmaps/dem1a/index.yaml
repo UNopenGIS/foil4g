@@ -1,9 +1,0 @@
-data_id: smartmaps_global_dem1a
-license: unknown
-attributions:
-  - 測量法に基づく国土地理院長承認（使用）R 6JHs 133
-description: This dataset is RGB elevation tiles of the world converted from open data namely NASADEM. Although we can find RGB elevation tiles dataset easily, sometimes it is difficult to use it because of the copyright. We made these RGB elevation tiles as open data to reduce constraints in the importation of geographical data and make the imported data flexible and effectively usable anywhere. This work is done under the UN Smart Maps Group of UN Open GIS Initiative.
-data_format: pmtiles
-file_format: pmtiles
-file_size: 182GB
-url: https://data.source.coop/smartmaps/dem1a/dem1a.pmtiles

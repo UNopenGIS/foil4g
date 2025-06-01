@@ -1,8 +1,0 @@
-api_id: overpass_api
-description: The Overpass API is a read-only API that serves up custom selected parts of the OpenStreetMap map data.
-endpoint_url: https://overpass-api.de/api/interpreter
-parameters:
-  - name: data
-    description: The query to send to the Overpass API. Must be a valid Overpass QL query.
-    required: true
-    type: string
