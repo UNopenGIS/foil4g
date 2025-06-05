@@ -17,4 +17,4 @@ GeoTIFFは空間参照情報を含むため、単なる画像の保存だけで�
 - [[gdalinfo]]: ラスタファイルの情報を取得
 - そのほか[[gdalwarp]]や[[gdalbuildvrt]]など[[GDAL]]のコマンドでも快適に処理できます
 
-GeoTIFFは[[UNopenGIS]]や[[foil4g]]など、さまざまなジオスプースデータの分配に広く利用されています。
+GeoTIFFは[[UNopenGIS]]や[[foil4g]]など、さまざまなジオスペーシャルデータの分配に広く利用されています。
