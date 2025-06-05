@@ -58,6 +58,7 @@ foil4g/
 1. `maplibre-gl`: Main mapping library
 2. `pmtiles`: Efficient tile storage format
 3. `react-map-gl`: React wrapper for MapLibre GL
+4. `react-leaflet`: React wrapper for Leaflet
 
 ## Contributing
 
