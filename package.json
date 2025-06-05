@@ -12,6 +12,12 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@deck.gl/core": "^9.1.12",
+    "@deck.gl/geo-layers": "^9.1.12",
+    "@deck.gl/layers": "^9.1.12",
+    "@deck.gl/mapbox": "^9.1.12",
+    "@deck.gl/react": "^9.1.12",
+    "deck.gl": "^9.1.12",
     "maplibre-gl": "^4.4.0",
     "pmtiles": "^3.0.6",
     "react": "^18.2.0",
