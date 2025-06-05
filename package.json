@@ -12,13 +12,14 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@vis.gl/react-google-maps": "^1.5.2",
+    "leaflet": "^1.9.4",
     "maplibre-gl": "^4.4.0",
     "pmtiles": "^3.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-map-gl": "^7.1.7",
-    "leaflet": "^1.9.4",
-    "react-leaflet": "^4.2.1"
+    "react-leaflet": "^4.2.1",
+    "react-map-gl": "^7.1.7"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.0",
