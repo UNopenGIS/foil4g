@@ -64,6 +64,7 @@ foil4g/
 1. `maplibre-gl`: メインマッピングライブラリ
 2. `pmtiles`: 効率的なタイルストレージフォーマット
 3. `react-map-gl`: MapLibre GLのReactラッパー
+4. `react-leaflet`: LeafletをReactで利用するラッパー
 
 ## APIとデータ構造
 
