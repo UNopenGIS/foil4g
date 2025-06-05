@@ -45,7 +45,7 @@ export const ArmedConflictWithBaseMap: React.FC<{ mapStyle: string }> = ({
                 <Layer
                   key={`${layer.id}-layer`}
                   id={`${layer.id}-layer`}
-                  source={`${layer.id}-source`}
+                  source={`${source.id}-source`}
                   source-layer={layer.sourceLayer}
                   type={layer.type}
                   paint={layer.paint}
