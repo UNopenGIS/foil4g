@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { BasicReactGoogleMaps } from ".";
 
 const meta: Meta<typeof BasicReactGoogleMaps> = {
