@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-export const BasicLeafletMap = () => {
+export const BasicReactLeafletMap = () => {
   return (
     <MapContainer
       center={[0, 0]}

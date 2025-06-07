@@ -1,6 +1,6 @@
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 
-export const BasicGoogleMap = () => {
+export const BasicReactGoogleMaps = () => {
   return (
     <APIProvider apiKey="YOUR_API_KEY">
       <Map
