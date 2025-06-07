@@ -1,15 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { BasicLeafletMap } from ".";
+import { BasicReactLeafletMap } from ".";
 
 const meta = {
-  component: BasicLeafletMap,
+  component: BasicReactLeafletMap,
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof BasicLeafletMap>;
+} satisfies Meta<typeof BasicReactLeafletMap>;
 
 export default meta;
 
-type Story = StoryObj<typeof BasicLeafletMap>;
+type Story = StoryObj<typeof BasicReactLeafletMap>;
 
 export const Preview: Story = {};

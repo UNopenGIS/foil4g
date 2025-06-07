@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { BasicGoogleMap } from ".";
+import { BasicReactGoogleMaps } from ".";
 
-const meta: Meta<typeof BasicGoogleMap> = {
-  component: BasicGoogleMap,
+const meta: Meta<typeof BasicReactGoogleMaps> = {
+  component: BasicReactGoogleMaps,
   parameters: {
     layout: "fullscreen",
   },
@@ -10,6 +10,6 @@ const meta: Meta<typeof BasicGoogleMap> = {
 
 export default meta;
 
-type Story = StoryObj<typeof BasicGoogleMap>;
+type Story = StoryObj<typeof BasicReactGoogleMaps>;
 
 export const Preview: Story = {};
