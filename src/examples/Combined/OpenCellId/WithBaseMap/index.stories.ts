@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { OpenCellIdWithBaseMap } from ".";
 import { mapStyleOptions } from "../../../../components/mapStyleOptions";
 

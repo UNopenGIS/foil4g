@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { ArmedConflictHeatMap as MapComponent } from ".";
 
 const meta: Meta<typeof MapComponent> = {

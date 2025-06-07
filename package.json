@@ -22,15 +22,11 @@
     "react-map-gl": "^7.1.7"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.6.0",
-    "@storybook/addon-essentials": "^8.6.12",
-    "@storybook/addon-interactions": "^8.6.12",
-    "@storybook/addon-links": "^8.6.12",
-    "@storybook/addon-onboarding": "^8.6.12",
-    "@storybook/blocks": "^8.6.12",
-    "@storybook/react": "^8.6.12",
-    "@storybook/react-vite": "^8.6.12",
-    "@storybook/test": "^8.6.12",
+    "@chromatic-com/storybook": "^4.0.0",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/addon-links": "^9.0.5",
+    "@storybook/addon-onboarding": "^9.0.5",
+    "@storybook/react-vite": "^9.0.5",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
@@ -39,9 +35,12 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "eslint-plugin-storybook": "^0.8.0",
-    "storybook": "^8.6.12",
+    "eslint-plugin-storybook": "^9.0.5",
+    "storybook": "^9.0.5",
     "typescript": "^5.2.2",
     "vite": "^6.3.4"
+  },
+  "overrides": {
+    "storybook": "$storybook"
   }
 }
