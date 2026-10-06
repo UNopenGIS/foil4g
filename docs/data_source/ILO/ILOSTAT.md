@@ -1,25 +1,27 @@
+---
+id: ilostat
+provider: [国際労働機関 (ILO, International Labour Organization)]
+source_data: 各国の労働力調査、人口センサス、事業所調査、行政記録などを ILO が集めた値と、ILO 自身の推計 (ILO Modelled Estimates)。IMF、世界銀行 ICP、UNICEF MICS などほかの国際機関の値も含む
+license: [CC-BY-4.0]
+license_note: CC-BY-4.0 (ILO の Rights and permissions により、2023-05-03 以降に公開されたデータベースとデータセットに適用)
+access: split
+access_note: split。指標 × 頻度の 1,964 ファイル、または国・地域 × 頻度の 741 ファイルから選ぶ。指標ファイルは `ref_area` (国) と `timefrom` (年) で行を絞って取れる。SDMX API でも指標ごとに国と期間で絞れる。各ファイルは Range 非対応
+format: 一括配布は `.csv.gz` (既定)、`.csv`、`.csv2`、`.tsv`、`.json`、`.xlsx`、`.parquet`、`.feather`、`.dta` を選べる。SDMX API は SDMX-ML と CSV
+coverage: 全世界。国・地域コード 327 (うち `X` で始まる 93 は世界・地域・所得グループなどの集計)。国より細かい行政単位は無い
+period: 1914 年から 2030 年 (目次の `data.start` と `data.end` の最小と最大。2026 年より後は推計・予測)
+resolution: 国 × 年 (一部は四半期・月) × 性別・年齢・産業などの分類
+size: 全体は測っていません。目次の行数の合計は 399,233,347 行。1 ファイルは 38,913 バイトから 33,150,844 バイト (`.csv.gz`、調査メモの値)。SDG 8.5.2 の失業率ファイルは 318,328 バイト、48,632 行
+update: 指標ごとに随時。2026-10-06 時点で 1,964 ファイルのうち 1,807 の最終更新が 2026-09 か 2026-10。決まった公開日の記載は確かめていません
+url: https://rplumber.ilo.org/files/website/bulk/indicator.html (指標別の一覧)
+docs: https://ilostat.ilo.org/data/bulk/ (Bulk download facility)
+checked: 2026-10-06
+details:
+  SDMX API: https://sdmx.ilo.org/rest/
+---
+
 # ILOSTAT
 
 > [[国際労働機関]] (ILO) が、雇用、失業、賃金、労働時間、非公式経済、児童労働、労働災害などの労働統計を、約 200 の国・地域と地域集計について、指標ごとまたは国ごとに分けた CSV などのファイルと SDMX API で配っている統計データベース
-
-## データソース情報
-
-| 項目 | 内容 |
-| ---- | ---- |
-| データID | ilostat |
-| 提供元 | [[国際労働機関]] (ILO、International Labour Organization) |
-| 元データ | 各国の労働力調査、人口センサス、事業所調査、行政記録などを ILO が集めた値と、ILO 自身の推計 (ILO Modelled Estimates)。IMF、世界銀行 ICP、UNICEF MICS などほかの国際機関の値も含む |
-| ライセンス | [[CC-BY-4.0]] (ILO の Rights and permissions により、2023-05-03 以降に公開されたデータベースとデータセットに適用) |
-| 取り出し方 | split。指標 × 頻度の 1,964 ファイル、または国・地域 × 頻度の 741 ファイルから選ぶ。指標ファイルは `ref_area` (国) と `timefrom` (年) で行を絞って取れる。SDMX API でも指標ごとに国と期間で絞れる。各ファイルは Range 非対応 |
-| データ形式 | 一括配布は `.csv.gz` (既定)、`.csv`、`.csv2`、`.tsv`、`.json`、`.xlsx`、`.parquet`、`.feather`、`.dta` を選べる。SDMX API は SDMX-ML と CSV |
-| 範囲 | 全世界。国・地域コード 327 (うち `X` で始まる 93 は世界・地域・所得グループなどの集計)。国より細かい行政単位は無い |
-| 期間 | 1914 年から 2030 年 (目次の `data.start` と `data.end` の最小と最大。2026 年より後は推計・予測) |
-| 解像度または単位 | 国 × 年 (一部は四半期・月) × 性別・年齢・産業などの分類 |
-| 大きさ | 全体は測っていません。目次の行数の合計は 399,233,347 行。1 ファイルは 38,913 バイトから 33,150,844 バイト (`.csv.gz`、調査メモの値)。SDG 8.5.2 の失業率ファイルは 318,328 バイト、48,632 行 |
-| 更新頻度 | 指標ごとに随時。2026-10-06 時点で 1,964 ファイルのうち 1,807 の最終更新が 2026-09 か 2026-10。決まった公開日の記載は確かめていません |
-| URL | https://rplumber.ilo.org/files/website/bulk/indicator.html (指標別の一覧) |
-| 説明ページ | https://ilostat.ilo.org/data/bulk/ (Bulk download facility) |
-| SDMX API | https://sdmx.ilo.org/rest/ |
 
 ## 概要
 

@@ -1,25 +1,27 @@
+---
+id: nasa_hls
+provider: NASA (処理は Marshall Space Flight Center の IMPACT チーム、保管と配布は LP DAAC)。Microsoft Planetary Computer が写しを置いている
+source_data: L30 は USGS の Landsat 8/9 Collection 2 L1TP (USGS Landsat Collection 2)、S30 は ESA の Sentinel-2 L1C。どちらも大気上端の Level-1 を入力にしている
+license: [CC0-1.0]
+license_note: NASA の方針では「印が無ければ CC0」。STAC の表記は `proprietary`。S30 の入力の Sentinel-2 には Copernicus の条件が付く (下の節を参照)
+access: catalog
+access_note: catalog。STAC で範囲、日時、雲量、コレクション (L30 / S30) を指定してアイテム (1 回の撮影の MGRS タイル 1 枚) を選び、1 バンド 1 ファイルの COG を取る。COG の中は HTTP Range (206 を確認) で窓読みできる
+format: [Cloud Optimized GeoTIFF (1 バンド 1 ファイル, DEFLATE 圧縮, 内部タイル 256x256, 概観 4 段)]
+coverage: 南極を除く全球の陸域と主な島。北緯 82 度より北は対象外
+period: L30 は 2013-04-11 から、S30 は 2015-11-28 から現在まで (CMR の値)。Planetary Computer が宣言する期間は 2020-01-01 から
+resolution: 30m (全バンドを 30m に再標本化)。UTM 投影、MGRS タイル 1 枚は 109.8 km 四方で 3660 x 3660 画素
+size: 1 アイテムの全ファイルで L30 が 225,079,728 バイト (16 ファイル)、S30 が 276,465,191 バイト (18 ファイル)。1 バンドは約 18MB から 24MB。2026-10-06 時点の CMR の件数は L30 が 16,102,344、S30 が 22,064,489 グラニュール。全体のバイト数は確かめていません
+update: 継続的に追加。撮影から LP DAAC で使えるまで 1 日から 2 日 (利用者ガイド)、Planetary Computer への反映はそれより遅れる
+url: 'STAC (Planetary Computer): https://planetarycomputer.microsoft.com/api/stac/v1 (コレクション `hls2-l30`、`hls2-s30`)'
+docs: https://doi.org/10.5067/HLS/HLSL30.002 、https://doi.org/10.5067/HLS/HLSS30.002 、利用者ガイド https://lpdaac.usgs.gov/documents/1698/HLS_User_Guide_V2.pdf
+checked: 2026-10-06
+details:
+  URL: 'STAC (NASA CMR): https://cmr.earthdata.nasa.gov/stac/LPCLOUD (コレクション `HLSL30_2.0`、`HLSS30_2.0`)'
+---
+
 # NASA HLS 衛星画像
 
 > [[NASA]] が Landsat 8/9 と Sentinel-2A/B/C の観測を同じ 30m の格子に揃えて作り、[[LP DAAC]] と [[Microsoft Planetary Computer]] から全球の陸域 (南極を除く) について [[Cloud Optimized GeoTIFF]] で配っている地表反射率の衛星画像 (Harmonized Landsat and Sentinel-2、HLS v2.0)
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | nasa_hls |
-| 提供元           | [[NASA]] (処理は Marshall Space Flight Center の IMPACT チーム、保管と配布は [[LP DAAC]])。[[Microsoft Planetary Computer]] が写しを置いている |
-| 元データ         | L30 は USGS の Landsat 8/9 Collection 2 L1TP ([[USGS Landsat Collection 2]])、S30 は ESA の [[Sentinel-2]] L1C。どちらも大気上端の Level-1 を入力にしている |
-| ライセンス       | NASA の方針では「印が無ければ [[CC0]]」。STAC の表記は `proprietary`。S30 の入力の Sentinel-2 には Copernicus の条件が付く (下の節を参照) |
-| 取り出し方       | catalog。STAC で範囲、日時、雲量、コレクション (L30 / S30) を指定してアイテム (1 回の撮影の MGRS タイル 1 枚) を選び、1 バンド 1 ファイルの COG を取る。COG の中は HTTP Range (206 を確認) で窓読みできる |
-| データ形式       | [[Cloud Optimized GeoTIFF]] (1 バンド 1 ファイル、DEFLATE 圧縮、内部タイル 256x256、概観 4 段) |
-| 範囲             | 南極を除く全球の陸域と主な島。北緯 82 度より北は対象外 |
-| 期間             | L30 は 2013-04-11 から、S30 は 2015-11-28 から現在まで (CMR の値)。Planetary Computer が宣言する期間は 2020-01-01 から |
-| 解像度または単位 | 30m (全バンドを 30m に再標本化)。UTM 投影、MGRS タイル 1 枚は 109.8 km 四方で 3660 x 3660 画素 |
-| 大きさ           | 1 アイテムの全ファイルで L30 が 225,079,728 バイト (16 ファイル)、S30 が 276,465,191 バイト (18 ファイル)。1 バンドは約 18MB から 24MB。2026-10-06 時点の CMR の件数は L30 が 16,102,344、S30 が 22,064,489 グラニュール。全体のバイト数は確かめていません |
-| 更新頻度         | 継続的に追加。撮影から LP DAAC で使えるまで 1 日から 2 日 (利用者ガイド)、Planetary Computer への反映はそれより遅れる |
-| URL              | STAC (Planetary Computer): https://planetarycomputer.microsoft.com/api/stac/v1 (コレクション `hls2-l30`、`hls2-s30`) |
-| URL              | STAC (NASA CMR): https://cmr.earthdata.nasa.gov/stac/LPCLOUD (コレクション `HLSL30_2.0`、`HLSS30_2.0`) |
-| 説明ページ       | https://doi.org/10.5067/HLS/HLSL30.002 、https://doi.org/10.5067/HLS/HLSS30.002 、利用者ガイド https://lpdaac.usgs.gov/documents/1698/HLS_User_Guide_V2.pdf |
 
 ## 概要
 

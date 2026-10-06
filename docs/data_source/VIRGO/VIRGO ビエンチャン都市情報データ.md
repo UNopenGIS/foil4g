@@ -1,16 +1,18 @@
+---
+provider: Vientiane Integrated Urban Information GIS-based Opendata Platform、https://virgo.mpwt.gov.la/disclaimer/#/
+license: [unknown]
+license_note: 不明
+access: unconfirmed
+format: Shapefile
+coverage: ビエンチャン、ラオス人民民主共和国
+checked: null
+details:
+  ファイル形式: shp
+---
+
 # VIRGO ビエンチャン都市情報データ
 
 > **VIRGO (Vientiane Integrated Urban Information GIS-based Opendata Platform)**は、ラオス人民民主共和国ビエンチャンの統合都市情報GISベースのオープンデータプラットフォームです。
-
-## データソース情報
-
-- **提供者**:
-  - Vientiane Integrated Urban Information GIS-based Opendata Platform
-  - https://virgo.mpwt.gov.la/disclaimer/#/
-- **ライセンス**: 不明
-- **データ形式**: [[Shapefile]]
-- **ファイル形式**: shp
-- **対象地域**: ビエンチャン、ラオス人民民主共和国
 
 ## 利用可能なデータセット
 

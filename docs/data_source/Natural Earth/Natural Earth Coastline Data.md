@@ -1,23 +1,25 @@
+---
+id: ne_10m_coastline
+provider: Natural Earth (https://www.naturalearthdata.com/)
+license: [public-domain]
+license_note: パブリックドメイン (帰属表示は不要)
+access: split
+access_note: split。縮尺 (10m、50m、110m) とレイヤーごとに zip が分かれていて、必要なレイヤーだけを取れる。zip の中は whole (Range は 206 を返すが、中身を選べない)
+format: [Zipped Shapefile (線, WGS84 の経緯度)]
+size: 3,069,451 バイト (約 2.9MB)
+update: 不定期 (配布ファイルの Last-Modified は 2021-12-08)
+url: https://naciscdn.org/naturalearth/10m/physical/ne_10m_coastline.zip
+docs: https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-coastline/
+checked: 2026-10-06
+details:
+  ファイル形式: zip
+  地物数: 4,133
+  版: 本家のページの表示は 4.1.0、zip の中の VERSION.txt は 5.0.0-pre9
+---
+
 # Natural Earth Coastline Data
 
 > [[Natural Earth]] が 1:10m の縮尺で配っている、全世界の海岸線の [[Shapefile]] (zip)
-
-## データソース情報
-
-| 項目             | 内容                                                                        |
-| ---------------- | --------------------------------------------------------------------------- |
-| データID         | ne_10m_coastline                                                            |
-| ライセンス       | パブリックドメイン (帰属表示は不要)                                         |
-| 提供元           | [[Natural Earth]] (https://www.naturalearthdata.com/)                       |
-| データ形式       | [[Zipped Shapefile]] (線、WGS84 の経緯度)                                   |
-| ファイル形式     | zip                                                                         |
-| ファイルサイズ   | 3,069,451 バイト (約 2.9MB)                                                 |
-| 地物数           | 4,133                                                                       |
-| 版               | 本家のページの表示は 4.1.0、zip の中の VERSION.txt は 5.0.0-pre9            |
-| 更新頻度         | 不定期 (配布ファイルの Last-Modified は 2021-12-08)                         |
-| 取り出し方       | split。縮尺 (10m、50m、110m) とレイヤーごとに zip が分かれていて、必要なレイヤーだけを取れる。zip の中は whole (Range は 206 を返すが、中身を選べない) |
-| URL              | https://naciscdn.org/naturalearth/10m/physical/ne_10m_coastline.zip         |
-| 説明ページ       | https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-coastline/ |
 
 ## 概要
 

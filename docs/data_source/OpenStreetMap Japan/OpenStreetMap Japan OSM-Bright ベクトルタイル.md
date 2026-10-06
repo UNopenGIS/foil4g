@@ -1,19 +1,21 @@
+---
+id: openstreetmap_jp_osm_bright
+provider: [OSMFJ (OpenStreetMap Foundation Japan), OpenStreetMap Contributors]
+license: [CC-BY-4.0, ODbL-1.0]
+license_note: データは ODbL、スキーマのデザインは CC-BY 4.0 (OpenMapTiles への帰属表示が要る)
+access: split
+access_note: style.json 自体は whole (約 47KB)。参照するタイルは XYZ で、1 枚ずつ必要な分だけ取る split
+format: Vector Tile Style JSON (MapLibre Style Spec の version 8)
+size: 46,841 バイト (style.json、2026-10-06 時点)
+url: https://tile.openstreetmap.jp/styles/osm-bright/style.json
+checked: 2026-10-06
+details:
+  レイヤー数: '121'
+---
+
 # OpenStreetMap Japan OSM-Bright ベクトルタイル
 
 > [[OSMFJ]] のタイルサーバーが配っている、OpenMapTiles の OSM Bright を元にした [[MapLibre]] 用のスタイル JSON
-
-## データソース情報
-
-| 項目             | 内容                                                                                  |
-| ---------------- | ------------------------------------------------------------------------------------- |
-| データID         | openstreetmap_jp_osm_bright                                                           |
-| ライセンス       | データは [[ODbL]]、スキーマのデザインは CC-BY 4.0 (OpenMapTiles への帰属表示が要る)  |
-| 提供元           | [[OSMFJ]] (OpenStreetMap Foundation Japan)、[[OpenStreetMap]] Contributors           |
-| データ形式       | [[Vector Tile Style JSON]] (MapLibre Style Spec の version 8)                         |
-| ファイルサイズ   | 46,841 バイト (style.json、2026-10-06 時点)                                          |
-| レイヤー数       | 121                                                                                   |
-| 取り出し方       | style.json 自体は whole (約 47KB)。参照するタイルは XYZ で、1 枚ずつ必要な分だけ取る split |
-| URL              | https://tile.openstreetmap.jp/styles/osm-bright/style.json                            |
 
 ## 概要
 

@@ -1,21 +1,23 @@
+---
+id: openstreetmap_jp_overture_pmtiles
+provider: [OSMFJ (OpenStreetMap Foundation Japan), Overture Maps Foundation]
+license: [CC-BY-4.0, ODbL-1.0]
+license_note: テーマごとに異なる (ODbL のほか CC-BY 4.0 などを含む)
+access: unconfirmed
+access_note: 確かめられない (ファイルが削除済み)。配っていたころは 1 つの PMTiles で range だったと考えられる
+format: PMTiles
+size: 51GB (以前のページの値。確かめていません)
+checked: 2026-10-06
+details:
+  状態: 削除済み (旧 URL は 404)
+  元のリリース: Overture Maps 2024-07-22 (2024-08 の OSMFJ の発表資料による)
+  旧 URL: https://tile.openstreetmap.jp/static/overture.pmtiles
+  移転先 (案内): https://dev.smellman.org/static/overture-latest/
+---
+
 # OpenStreetMap Japan Overture Maps PMTiles
 
 > [[OSMFJ]] のタイルサーバーがかつて配っていた、[[Overture Maps]] のデータをベクトルタイルにした [[PMTiles]] ファイル (2026-10-06 時点で削除済み)
-
-## データソース情報
-
-| 項目             | 内容                                                                                       |
-| ---------------- | ------------------------------------------------------------------------------------------ |
-| データID         | openstreetmap_jp_overture_pmtiles                                                          |
-| 状態             | 削除済み (旧 URL は 404)                                                                   |
-| ライセンス       | テーマごとに異なる ([[ODbL]] のほか CC-BY 4.0 などを含む)                                  |
-| 提供元           | [[OSMFJ]] (OpenStreetMap Foundation Japan)、[[Overture Maps Foundation]]                  |
-| データ形式       | [[PMTiles]]                                                                                |
-| 取り出し方       | 確かめられない (ファイルが削除済み)。配っていたころは 1 つの PMTiles で range だったと考えられる |
-| 元のリリース     | Overture Maps 2024-07-22 (2024-08 の OSMFJ の発表資料による)                              |
-| ファイルサイズ   | 51GB (以前のページの値。確かめていません)                                                  |
-| 旧 URL           | https://tile.openstreetmap.jp/static/overture.pmtiles                                      |
-| 移転先 (案内)    | https://dev.smellman.org/static/overture-latest/                                           |
 
 ## 概要
 

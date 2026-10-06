@@ -1,24 +1,25 @@
+---
+id: worldbank_wdi
+provider: [世界銀行 (World Bank, Development Data Group)]
+source_data: 一部は一次データ (世界銀行の推計)、多くは各国の統計局と国際機関 (国連人口部、FAO、ILO、ITU、UNESCO、SIPRI など) の統計を集めたもの。出典は指標ごとにメタデータの Source の欄にある
+license: [CC-BY-4.0, CC-BY-3.0-IGO, other]
+license_note: 既定は CC-BY-4.0 に紛争解決 (調停と仲裁) の追加条項を付けたもの。2026-10-01 版の `License Type` の欄では 1,498 指標のうち 9 指標が別の条件 (SIPRI の条件 6、CC BY 3.0 IGO 3)。ただし欄の値は版によって揺れ、第三者の出所の条件を反映しきれていない (下のライセンスの節を参照)
+access: range
+access_note: range。一括 zip (`WDI_CSV.zip`) は HTTP Range に 206 を返し、末尾の索引から 6 つの CSV の位置が分かるので、指標の定義表 (約 6MB) などのメンバーを 1 つだけ読める。API では指標、国、年で絞れ、指標ごとの CSV zip もある
+format: [CSV (一括 zip と指標ごとの zip), Excel (一括 zip), JSON と XML (API)]
+coverage: 全世界。国と地域 217 (台湾は含まない) と、地域別・所得別などの集計地域 47。ジオメトリは持たず、ISO 3166-1 alpha-3 に近い 3 文字のコードで国を表す
+period: 1960 年から 2025 年 (列の範囲。指標ごとに始まりと終わりは異なる)
+resolution: 国単位、年単位 (`WDIseries-time.csv` などに一部の注記がある)。値の単位は指標ごと (人、%、現在の US ドルなど)
+size: '`WDI_CSV.zip` が 282,847,680 バイト (2026-10-01 版)。中の `WDICSV.csv` (値の本体) が展開後 198,481,686 バイト。指標 1 つの CSV zip は `SP.POP.TOTL` で 89,654 バイト'
+update: 定期の周期は確かめていません。API の `lastupdated` は 2026-07-13、一括 zip の Last-Modified は 2026-10-01、データカタログの版番号は 130
+url: '一括: https://databank.worldbank.org/data/download/WDI_CSV.zip 、API: https://api.worldbank.org/v2/'
+docs: https://datacatalog.worldbank.org/search/dataset/0037712/World-Development-Indicators 、https://data.worldbank.org/
+checked: 2026-10-06
+---
+
 # World Bank 世界開発指標
 
 > [[世界銀行]] が、217 の国と地域と 47 の集計地域について、1960 年から 2025 年までの 1,498 の開発指標を、Indicators API と CSV の一括 zip で配っている World Development Indicators (WDI)
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | worldbank_wdi |
-| 提供元           | [[世界銀行]] (World Bank、Development Data Group) |
-| 元データ         | 一部は一次データ (世界銀行の推計)、多くは各国の統計局と国際機関 ([[国連人口部]]、[[FAO]]、[[ILO]]、[[ITU]]、[[UNESCO]]、[[SIPRI]] など) の統計を集めたもの。出典は指標ごとにメタデータの Source の欄にある |
-| ライセンス       | 既定は [[CC-BY-4.0]] に紛争解決 (調停と仲裁) の追加条項を付けたもの。2026-10-01 版の `License Type` の欄では 1,498 指標のうち 9 指標が別の条件 (SIPRI の条件 6、CC BY 3.0 IGO 3)。ただし欄の値は版によって揺れ、第三者の出所の条件を反映しきれていない (下のライセンスの節を参照) |
-| 取り出し方       | range。一括 zip (`WDI_CSV.zip`) は HTTP Range に 206 を返し、末尾の索引から 6 つの CSV の位置が分かるので、指標の定義表 (約 6MB) などのメンバーを 1 つだけ読める。API では指標、国、年で絞れ、指標ごとの CSV zip もある |
-| データ形式       | CSV (一括 zip と指標ごとの zip)、Excel (一括 zip)、JSON と XML (API) |
-| 範囲             | 全世界。国と地域 217 (台湾は含まない) と、地域別・所得別などの集計地域 47。ジオメトリは持たず、ISO 3166-1 alpha-3 に近い 3 文字のコードで国を表す |
-| 期間             | 1960 年から 2025 年 (列の範囲。指標ごとに始まりと終わりは異なる) |
-| 解像度または単位 | 国単位、年単位 (`WDIseries-time.csv` などに一部の注記がある)。値の単位は指標ごと (人、%、現在の US ドルなど) |
-| 大きさ           | `WDI_CSV.zip` が 282,847,680 バイト (2026-10-01 版)。中の `WDICSV.csv` (値の本体) が展開後 198,481,686 バイト。指標 1 つの CSV zip は `SP.POP.TOTL` で 89,654 バイト |
-| 更新頻度         | 定期の周期は確かめていません。API の `lastupdated` は 2026-07-13、一括 zip の Last-Modified は 2026-10-01、データカタログの版番号は 130 |
-| URL              | 一括: https://databank.worldbank.org/data/download/WDI_CSV.zip 、API: https://api.worldbank.org/v2/ |
-| 説明ページ       | https://datacatalog.worldbank.org/search/dataset/0037712/World-Development-Indicators 、https://data.worldbank.org/ |
 
 ## 概要
 

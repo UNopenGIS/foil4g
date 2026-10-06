@@ -1,18 +1,20 @@
+---
+id: smartmaps_rwanda10
+provider: [Water and Sanitation Corporation (WASAC), National Land Authority (NLA)]
+license: [unknown]
+license_note: 不明
+access: unconfirmed
+format: PMTiles
+size: 322MB
+url: https://data.source.coop/smartmaps/rwanda10/rwanda10.pmtiles
+checked: null
+details:
+  ファイル形式: pmtiles
+---
+
 # SmartMaps Rwanda 10m 地形データ
 
 > **UN Smart Maps**により提供されるルワンダの10m解像度地形タイルデータです。ルワンダの水・衛生公社と国土局のデータから作成されています。
-
-## データソース情報
-
-- **データID**: smartmaps_rwanda10
-- **ライセンス**: 不明
-- **提供者**:
-  - Water and Sanitation Corporation (WASAC)
-  - National Land Authority (NLA)
-- **データ形式**: [[PMTiles]]
-- **ファイル形式**: pmtiles
-- **ファイルサイズ**: 322MB
-- **URL**: https://data.source.coop/smartmaps/rwanda10/rwanda10.pmtiles
 
 ## 説明
 

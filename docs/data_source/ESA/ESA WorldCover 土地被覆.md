@@ -1,25 +1,26 @@
+---
+id: esa_worldcover
+provider: 欧州宇宙機関 (ESA) の WorldCover プロジェクト。製作は ESA WorldCover consortium、AWS での配布の管理は VITO
+source_data: Copernicus の Sentinel-1 (レーダー) と Sentinel-2 (光学) の観測 (各基準年の 1 月 1 日から 12 月 31 日)
+license: [CC-BY-4.0]
+access: range
+access_note: range。3 度四方のタイルに分かれ (split)、各タイルは COG なので HTTP Range (206 を確認) で必要な範囲とオーバービューだけを読める。タイルの選択は格子ファイル (FlatGeobuf) で行う
+format: [Cloud Optimized GeoTIFF (DEFLATE 圧縮, 内部タイル 1024×1024, オーバービュー 6 段)]
+coverage: 全球の陸域 (南極を除く、北は 82.75 度まで)。格子の外枠は経度 -180 から 180、緯度 -60 から 84
+period: 2020 年 (v100) と 2021 年 (v200) の 2 時点
+resolution: 1/12000 度 (赤道で約 10m)。値は 1 画素 1 区分のコード
+size: Map 層の合計が v100 で 123,713,470,558 バイト、v200 で 124,027,923,380 バイト (各 2,651 ファイル)。1 タイルは 1.9MB から 185MB
+update: AWS の登録ページは「Yearly」としているが、2021 年版 (2022 年 10 月公開) のあとに新しい版は出ていない
+url: https://esa-worldcover.s3.eu-central-1.amazonaws.com/ (s3://esa-worldcover/)
+docs: https://esa-worldcover.org/en/data-access 、https://registry.opendata.aws/esa-worldcover-vito/
+checked: 2026-10-06
+details:
+  技術資料: https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/docs/WorldCover_PUM_V2.0.pdf
+---
+
 # ESA WorldCover 土地被覆
 
 > [[欧州宇宙機関]] (ESA) が Sentinel-1 と Sentinel-2 の観測から作った、2020 年と 2021 年の全球 10m 土地被覆図 (11 区分) で、3 度四方の [[Cloud Optimized GeoTIFF]] 2,651 枚として AWS の公開バケットで配っているもの
-
-## データソース情報
-
-| 項目             | 内容                                                                                       |
-| ---------------- | ------------------------------------------------------------------------------------------ |
-| データID         | esa_worldcover                                                                             |
-| 提供元           | [[欧州宇宙機関]] (ESA) の WorldCover プロジェクト。製作は ESA WorldCover consortium、AWS での配布の管理は [[VITO]] |
-| 元データ         | [[Copernicus]] の Sentinel-1 (レーダー) と Sentinel-2 (光学) の観測 (各基準年の 1 月 1 日から 12 月 31 日) |
-| ライセンス       | [[CC-BY-4.0]]                                                                              |
-| 取り出し方       | range。3 度四方のタイルに分かれ (split)、各タイルは COG なので HTTP Range (206 を確認) で必要な範囲とオーバービューだけを読める。タイルの選択は格子ファイル (FlatGeobuf) で行う |
-| データ形式       | [[Cloud Optimized GeoTIFF]] (DEFLATE 圧縮、内部タイル 1024×1024、オーバービュー 6 段)       |
-| 範囲             | 全球の陸域 (南極を除く、北は 82.75 度まで)。格子の外枠は経度 -180 から 180、緯度 -60 から 84 |
-| 期間             | 2020 年 (v100) と 2021 年 (v200) の 2 時点                                                 |
-| 解像度または単位 | 1/12000 度 (赤道で約 10m)。値は 1 画素 1 区分のコード                                       |
-| 大きさ           | Map 層の合計が v100 で 123,713,470,558 バイト、v200 で 124,027,923,380 バイト (各 2,651 ファイル)。1 タイルは 1.9MB から 185MB |
-| 更新頻度         | AWS の登録ページは「Yearly」としているが、2021 年版 (2022 年 10 月公開) のあとに新しい版は出ていない |
-| URL              | https://esa-worldcover.s3.eu-central-1.amazonaws.com/ (s3://esa-worldcover/)               |
-| 説明ページ       | https://esa-worldcover.org/en/data-access 、https://registry.opendata.aws/esa-worldcover-vito/ |
-| 技術資料         | https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/docs/WorldCover_PUM_V2.0.pdf |
 
 ## 概要
 

@@ -1,22 +1,23 @@
+---
+id: smartmaps_opencellid_pmtiles
+provider: ['OpenCelliD (https://opencellid.org/)', UN Smart Maps Group (変換と配布)]
+license: [CC-BY-SA-4.0]
+access: range
+access_note: range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める
+format: [PMTiles v3 (タイルは MVT, gzip 圧縮)]
+period: 2024-06-14 (属性 `updated` の最大値)
+resolution: 0 から 14
+size: 559,569,057 バイト (約 534MiB)
+update: 更新されていません (ファイルは 2024-06-15 のまま)
+url: https://data.source.coop/smartmaps/opencellid/cellid.pmtiles
+checked: 2026-10-06
+details:
+  配布ページ: https://source.coop/smartmaps/opencellid
+---
+
 # SmartMaps OpenCelliD PMTiles
 
 > UN Smart Maps Group が [[OpenCelliD]] の携帯電話基地局の位置データを [[PMTiles]] にして、Source Cooperative で配っているベクトルタイル
-
-## データソース情報
-
-| 項目           | 内容                                                                     |
-| -------------- | ------------------------------------------------------------------------ |
-| データID       | smartmaps_opencellid_pmtiles                                             |
-| ライセンス     | [[CC-BY-SA-4.0]]                                                         |
-| 提供元         | [[OpenCelliD]] (https://opencellid.org/)、UN Smart Maps Group (変換と配布) |
-| データ形式     | [[PMTiles]] v3 (タイルは MVT、gzip 圧縮)                                 |
-| ファイルサイズ | 559,569,057 バイト (約 534MiB)                                           |
-| ズーム         | 0 から 14                                                                |
-| 基準日         | 2024-06-14 (属性 `updated` の最大値)                                     |
-| 更新頻度       | 更新されていません (ファイルは 2024-06-15 のまま)                        |
-| 取り出し方     | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
-| URL            | https://data.source.coop/smartmaps/opencellid/cellid.pmtiles             |
-| 配布ページ     | https://source.coop/smartmaps/opencellid                                 |
 
 ## 概要
 

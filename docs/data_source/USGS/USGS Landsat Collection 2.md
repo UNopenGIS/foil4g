@@ -1,27 +1,28 @@
+---
+id: landsat_c2
+provider: USGS の EROS Center (Earth Resources Observation and Science Center)。Landsat 計画は NASA と USGS の共同事業。Microsoft Planetary Computer と AWS が写しを置いている
+source_data: なし (一次データ)。同じ Collection 2 の Level-1 (大気上端の値) を USGS が大気補正したもの
+license: [public-domain]
+license_note: 利用の制限なし (米国政府のデータ。Landsat Data Distribution Policy)。キャプションへの「USGS/NASA Landsat Program.」の表示を求めている
+access: catalog
+access_note: catalog。STAC で範囲、日時、雲量、衛星、WRS-2 の path/row、品質の区分 (T1/T2) を指定してシーンを選び、1 バンド 1 ファイルの COG を取る。COG の中は HTTP Range (206 を確認) で窓読みできる。ただし無料かつアカウントなしで中身まで読めたのは Planetary Computer の経路だけ
+format: Cloud Optimized GeoTIFF (1 バンド 1 ファイル、DEFLATE 圧縮、内部タイル 256x256、概観 6 段)。メタデータは MTL (txt、xml、json)
+coverage: 全球 (STAC の空間範囲は経度 -180 から 180、緯度 -90 から 90)。実際に撮っているのは陸域と沿岸が中心
+period: 1982-08-22 から現在まで。衛星ごとの期間は下の「内容」の節
+resolution: 30m (反射率)。熱赤外の元の解像度は TM 120m、ETM+ 60m、TIRS 100m で、配布ファイルは 30m に再標本化されている。シーンごとの UTM 投影 (WGS 84)
+size: Landsat 8 の 1 シーン (LC08_L2SP_107036_20260820) の全 23 ファイルで 836,955,690 バイト。赤のバンド 1 つで 84,174,498 バイト。USGS の STAC の件数は 2026-10-06 時点で地表反射率 10,335,596 シーン、地表温度 9,505,511 シーン。全体のバイト数は確かめていません
+update: 毎日追加 (AWS の Registry of Open Data の記載)。撮影から公開までの日数は確かめていません
+url: 'STAC (USGS): https://landsatlook.usgs.gov/stac-server (コレクション `landsat-c2l2-sr`、`landsat-c2l2-st`)'
+docs: https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products 、https://registry.opendata.aws/usgs-landsat/ 、https://planetarycomputer.microsoft.com/dataset/landsat-c2-l2
+checked: 2026-10-06
+details:
+  URL: 'AWS S3 (requester pays): `s3://usgs-landsat/collection02/level-2/` (us-west-2)'
+  DOI: https://doi.org/10.5066/P9IAXOVV (Landsat 4-5 TM)、https://doi.org/10.5066/P9C7I13B (Landsat 7 ETM+)、https://doi.org/10.5066/P9OGBGM6 (Landsat 8-9 OLI/TIRS)
+---
+
 # USGS Landsat Collection 2
 
 > [[USGS]] が Landsat 4、5、7、8、9 の 1982 年から現在までの観測を大気補正し、全球について WRS-2 のシーンごとの [[Cloud Optimized GeoTIFF]] で配っている地表反射率と地表温度 (Landsat Collection 2 Level-2)
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | landsat_c2 |
-| 提供元           | [[USGS]] の EROS Center (Earth Resources Observation and Science Center)。Landsat 計画は [[NASA]] と USGS の共同事業。[[Microsoft Planetary Computer]] と [[AWS]] が写しを置いている |
-| 元データ         | なし (一次データ)。同じ Collection 2 の Level-1 (大気上端の値) を USGS が大気補正したもの |
-| ライセンス       | 利用の制限なし (米国政府のデータ。Landsat Data Distribution Policy)。キャプションへの「USGS/NASA Landsat Program.」の表示を求めている |
-| 取り出し方       | catalog。STAC で範囲、日時、雲量、衛星、WRS-2 の path/row、品質の区分 (T1/T2) を指定してシーンを選び、1 バンド 1 ファイルの COG を取る。COG の中は HTTP Range (206 を確認) で窓読みできる。ただし無料かつアカウントなしで中身まで読めたのは Planetary Computer の経路だけ |
-| データ形式       | [[Cloud Optimized GeoTIFF]] (1 バンド 1 ファイル、DEFLATE 圧縮、内部タイル 256x256、概観 6 段)。メタデータは MTL (txt、xml、json) |
-| 範囲             | 全球 (STAC の空間範囲は経度 -180 から 180、緯度 -90 から 90)。実際に撮っているのは陸域と沿岸が中心 |
-| 期間             | 1982-08-22 から現在まで。衛星ごとの期間は下の「内容」の節 |
-| 解像度または単位 | 30m (反射率)。熱赤外の元の解像度は TM 120m、ETM+ 60m、TIRS 100m で、配布ファイルは 30m に再標本化されている。シーンごとの UTM 投影 (WGS 84) |
-| 大きさ           | Landsat 8 の 1 シーン (LC08_L2SP_107036_20260820) の全 23 ファイルで 836,955,690 バイト。赤のバンド 1 つで 84,174,498 バイト。USGS の STAC の件数は 2026-10-06 時点で地表反射率 10,335,596 シーン、地表温度 9,505,511 シーン。全体のバイト数は確かめていません |
-| 更新頻度         | 毎日追加 (AWS の Registry of Open Data の記載)。撮影から公開までの日数は確かめていません |
-| URL              | STAC (USGS): https://landsatlook.usgs.gov/stac-server (コレクション `landsat-c2l2-sr`、`landsat-c2l2-st`) |
-| URL              | STAC (Planetary Computer): https://planetarycomputer.microsoft.com/api/stac/v1 (コレクション `landsat-c2-l2`) |
-| URL              | AWS S3 (requester pays): `s3://usgs-landsat/collection02/level-2/` (us-west-2) |
-| 説明ページ       | https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products 、https://registry.opendata.aws/usgs-landsat/ 、https://planetarycomputer.microsoft.com/dataset/landsat-c2-l2 |
-| DOI              | https://doi.org/10.5066/P9IAXOVV (Landsat 4-5 TM)、https://doi.org/10.5066/P9C7I13B (Landsat 7 ETM+)、https://doi.org/10.5066/P9OGBGM6 (Landsat 8-9 OLI/TIRS) |
 
 ## 概要
 

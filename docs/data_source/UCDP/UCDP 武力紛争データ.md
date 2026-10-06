@@ -1,22 +1,24 @@
+---
+id: ucdp_ged
+provider: Uppsala Conflict Data Program (ウプサラ大学 平和・紛争研究学部)
+license: [CC-BY-4.0]
+license_note: CC-BY-4.0 (論文の引用が求められる)
+access: whole
+access_note: whole。全世界・全期間の CSV が zip 1 つ (約 39MB) にまとまっていて、Range は 206 を返すが行を選べない。API (アクセストークンが要る) で絞れるかは未確認
+format: Zipped CSV
+period: 1989-01-01 から 2025-12-31
+size: 39,122,522 バイト (約 39MB、展開後の CSV は 273,992,720 バイト)
+update: 年 1 回 (版番号の上 2 桁が年)
+url: https://ucdp.uu.se/downloads/ged/ged261-csv.zip
+checked: 2026-10-06
+details:
+  版: 26.1 (2026-10-06 時点の最新)
+  コードブック: https://ucdp.uu.se/downloads/ged/ged261.pdf
+---
+
 # UCDP 武力紛争データ
 
 > [[Uppsala Conflict Data Program]] (UCDP) が配っている、世界の組織的暴力の出来事を 1 件 1 行で位置つきにまとめた UCDP Georeferenced Event Dataset (GED)
-
-## データソース情報
-
-| 項目             | 内容                                                            |
-| ---------------- | --------------------------------------------------------------- |
-| データID         | ucdp_ged                                                        |
-| 版               | 26.1 (2026-10-06 時点の最新)                                    |
-| ライセンス       | [[CC-BY-4.0]] (論文の引用が求められる)                          |
-| 提供元           | [[Uppsala Conflict Data Program]] (ウプサラ大学 平和・紛争研究学部) |
-| データ形式       | [[Zipped CSV]]                                                  |
-| ファイルサイズ   | 39,122,522 バイト (約 39MB、展開後の CSV は 273,992,720 バイト) |
-| 期間             | 1989-01-01 から 2025-12-31                                      |
-| 更新頻度         | 年 1 回 (版番号の上 2 桁が年)                                   |
-| 取り出し方       | whole。全世界・全期間の CSV が zip 1 つ (約 39MB) にまとまっていて、Range は 206 を返すが行を選べない。API (アクセストークンが要る) で絞れるかは未確認 |
-| URL              | https://ucdp.uu.se/downloads/ged/ged261-csv.zip                 |
-| コードブック     | https://ucdp.uu.se/downloads/ged/ged261.pdf                     |
 
 ## 概要
 

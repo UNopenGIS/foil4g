@@ -1,25 +1,27 @@
+---
+id: openaerialmap
+provider: Humanitarian OpenStreetMap Team (OpenAerialMap と Open Imagery Network)
+source_data: '`openaerialmap` は投稿者が撮影した一次データ (撮影者は Item ごとに `oam:producer_name` と `providers` に記録)。`noaa-emergency-response` は NOAA の Emergency Response Imagery を載せ直したもの'
+license: [CC-BY-4.0, CC-BY-NC-4.0, CC-BY-SA-4.0, public-domain]
+license_note: '`openaerialmap` はコレクションとしては CC-BY-4.0 だが、Item ごとに違う (CC-BY-4.0、CC-BY-NC-4.0、CC-BY-SA-4.0、記載なし)。`noaa-emergency-response` は public-domain。同じ API の `maxar-opendata` と `vantor-opendata` は CC-BY-NC-4.0 で、このカードの対象外'
+access: catalog
+access_note: catalog。STAC API の `/search` で、コレクション、bbox、日時、ライセンス (`query` または CQL2 の `filter`) で Item を絞れる。各画像は COG で HTTP Range に 206 を返すので、画像の中も範囲と縮尺を絞って読める
+format: STAC Item (GeoJSON) と、その asset の Cloud Optimized GeoTIFF (RGB、8 bit)。新しい投稿には未加工の `original` (GeoTIFF)、`mbtiles`、`pmtiles` が付くものもある
+coverage: 全世界 (`openaerialmap` のコレクションの bbox は経度 -175.5 から 178.6、緯度 -85.6 から 90)。画像のある場所は点在する。`noaa-emergency-response` は米国テネシー州ナッシュビル周辺だけ (経度 -87.03 から -85.42、緯度 36.10 から 36.23)
+period: '`openaerialmap` は撮影日がおおむね 2009 年から 2026 年 10 月 (それ以前の日付の Item も十数件あり、0206 年という誤入力も 1 件ある)。`noaa-emergency-response` は 2020-03-07 から 2020-03-11'
+resolution: 画素サイズは Item ごとに違う。新しい順 500 件の `gsd` は 0.008 m から 30.9 m、中央値 0.05 m。NOAA の画像は約 1.35e-6 度 (緯度方向で約 0.15 m、経度方向で約 0.12 m と換算した推定値)
+size: 1 Item の `visual` は 0.58MB から 5.7GB (新しい順 500 件で中央値約 100MB、合計約 115GB)。コレクション全体の合計は確かめていません。NOAA の 1 タイルは約 6MB
+update: '`openaerialmap` は投稿があるたびに増える (2026-10-05 投稿の Item を確認)。`noaa-emergency-response` は 2020 年の 1 イベントで止まっている'
+url: https://api.imagery.hotosm.org/stac (STAC API のルート)、https://api.imagery.hotosm.org/stac/search
+docs: https://openaerialmap.org/about/ 、https://github.com/openimagerynetwork/oin-register 、API の説明 https://api.imagery.hotosm.org/stac/api.html
+checked: 2026-10-06
+details:
+  件数: '`openaerialmap` 21,859 件、`noaa-emergency-response` 163 件 (2026-10-06 にページを最後までたどって数えた)'
+---
+
 # OpenAerialMap 航空・災害画像
 
 > [[Humanitarian OpenStreetMap Team]] (HOT) が運営する [[OpenAerialMap]] の STAC API で、利用者が投稿した世界各地のドローン・航空機・衛星の画像 (約 2 万 2 千件) と、NOAA の災害後航空写真 (2020 年ナッシュビル竜巻の 163 件) を [[Cloud Optimized GeoTIFF]] で配っているもの
-
-## データソース情報
-
-| 項目 | 内容 |
-| --- | --- |
-| データID | openaerialmap |
-| 提供元 | [[Humanitarian OpenStreetMap Team]] ([[OpenAerialMap]] と [[Open Imagery Network]]) |
-| 元データ | `openaerialmap` は投稿者が撮影した一次データ (撮影者は Item ごとに `oam:producer_name` と `providers` に記録)。`noaa-emergency-response` は [[NOAA]] の Emergency Response Imagery を載せ直したもの |
-| ライセンス | `openaerialmap` はコレクションとしては [[CC-BY-4.0]] だが、Item ごとに違う (CC-BY-4.0、CC-BY-NC-4.0、CC-BY-SA-4.0、記載なし)。`noaa-emergency-response` は public-domain。同じ API の `maxar-opendata` と `vantor-opendata` は CC-BY-NC-4.0 で、このカードの対象外 |
-| 取り出し方 | catalog。STAC API の `/search` で、コレクション、bbox、日時、ライセンス (`query` または CQL2 の `filter`) で Item を絞れる。各画像は COG で HTTP Range に 206 を返すので、画像の中も範囲と縮尺を絞って読める |
-| データ形式 | [[STAC]] Item (GeoJSON) と、その asset の [[Cloud Optimized GeoTIFF]] (RGB、8 bit)。新しい投稿には未加工の `original` (GeoTIFF)、`mbtiles`、`pmtiles` が付くものもある |
-| 範囲 | 全世界 (`openaerialmap` のコレクションの bbox は経度 -175.5 から 178.6、緯度 -85.6 から 90)。画像のある場所は点在する。`noaa-emergency-response` は米国テネシー州ナッシュビル周辺だけ (経度 -87.03 から -85.42、緯度 36.10 から 36.23) |
-| 期間 | `openaerialmap` は撮影日がおおむね 2009 年から 2026 年 10 月 (それ以前の日付の Item も十数件あり、0206 年という誤入力も 1 件ある)。`noaa-emergency-response` は 2020-03-07 から 2020-03-11 |
-| 解像度または単位 | 画素サイズは Item ごとに違う。新しい順 500 件の `gsd` は 0.008 m から 30.9 m、中央値 0.05 m。NOAA の画像は約 1.35e-6 度 (緯度方向で約 0.15 m、経度方向で約 0.12 m と換算した推定値) |
-| 大きさ | 1 Item の `visual` は 0.58MB から 5.7GB (新しい順 500 件で中央値約 100MB、合計約 115GB)。コレクション全体の合計は確かめていません。NOAA の 1 タイルは約 6MB |
-| 件数 | `openaerialmap` 21,859 件、`noaa-emergency-response` 163 件 (2026-10-06 にページを最後までたどって数えた) |
-| 更新頻度 | `openaerialmap` は投稿があるたびに増える (2026-10-05 投稿の Item を確認)。`noaa-emergency-response` は 2020 年の 1 イベントで止まっている |
-| URL | https://api.imagery.hotosm.org/stac (STAC API のルート)、https://api.imagery.hotosm.org/stac/search |
-| 説明ページ | https://openaerialmap.org/about/ 、https://github.com/openimagerynetwork/oin-register 、API の説明 https://api.imagery.hotosm.org/stac/api.html |
 
 ## 概要
 

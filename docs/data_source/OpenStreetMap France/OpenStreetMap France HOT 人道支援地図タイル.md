@@ -1,20 +1,22 @@
+---
+id: openstreetmap_fr_hot
+provider: [OpenStreetMap contributors, 'https://www.openstreetmap.org/']
+license: [ODbL-1.0]
+license_note: ODbL
+access: unconfirmed
+format: XYZ ラスタータイル
+size: 不明
+url: https://{a|b|c}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png
+checked: null
+details:
+  ファイル形式: png
+  最大ズームレベル: '19'
+  最小ズームレベル: '0'
+---
+
 # OpenStreetMap France HOT 人道支援地図タイル
 
 > **OpenStreetMap France**が提供するHOT（Humanitarian OpenStreetMap Team）スタイルの地図タイルです。人道支援組織や緊急事態での一般市民向けに最適化されています。
-
-## データソース情報
-
-- **データID**: openstreetmap_fr_hot
-- **ライセンス**: [[ODbL]]
-- **提供者**:
-  - [[OpenStreetMap]] contributors
-  - https://www.openstreetmap.org/
-- **データ形式**: [[XYZ ラスタータイル]]
-- **ファイル形式**: png
-- **ファイルサイズ**: 不明
-- **URL**: https://{a|b|c}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png
-- **最大ズームレベル**: 19
-- **最小ズームレベル**: 0
 
 ## 説明
 

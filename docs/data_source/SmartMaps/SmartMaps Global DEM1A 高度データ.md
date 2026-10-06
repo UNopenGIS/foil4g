@@ -1,25 +1,27 @@
+---
+id: smartmaps_global_dem1a
+provider: UN Smart Maps Group (UN Open GIS Initiative)
+source_data: 国土地理院 基盤地図情報 (数値標高モデル) 1m メッシュ (標高)
+license: [unknown]
+license_note: 明記なし
+access: range
+access_note: range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める
+format: PMTiles (v3)
+coverage: 経度 140.75 から 142.10、緯度 36.86 から 40.23 (ズーム 17 のタイルの外接矩形)
+resolution: 3 から 17
+size: 2,649,174,249 バイト (約 2.65GB、2.47GiB)
+url: https://data.source.coop/smartmaps/dem1a/dem1a.pmtiles
+docs: https://source.coop/smartmaps/dem1a
+checked: 2026-10-06
+details:
+  測量法の承認: 測量法に基づく国土地理院長承認 (使用) R 6JHs 133
+  タイル形式: WebP (可逆)、512 × 512 ピクセル、RGB
+  標高の符号化: Mapbox Terrain-RGB 方式 (`-10000 + (R × 65536 + G × 256 + B) × 0.1`)
+---
+
 # SmartMaps Global DEM1A 高度データ
 
 > UN Smart Maps Group が [[国土地理院]] の基盤地図情報 1m メッシュ数値標高モデルを、標高を RGB に詰めた WebP タイルにして 1 つにまとめた [[PMTiles]] ファイル (範囲は東北地方の太平洋側の一部)
-
-## データソース情報
-
-| 項目             | 内容                                                                 |
-| ---------------- | -------------------------------------------------------------------- |
-| データID         | smartmaps_global_dem1a                                               |
-| ライセンス       | 明記なし                                                             |
-| 作成者           | UN Smart Maps Group ([[UN Open GIS Initiative]])                     |
-| 元データ         | [[国土地理院]] 基盤地図情報 (数値標高モデル) 1m メッシュ (標高)      |
-| 測量法の承認     | 測量法に基づく国土地理院長承認 (使用) R 6JHs 133                     |
-| 範囲             | 経度 140.75 から 142.10、緯度 36.86 から 40.23 (ズーム 17 のタイルの外接矩形) |
-| データ形式       | [[PMTiles]] (v3)                                                     |
-| タイル形式       | WebP (可逆)、512 × 512 ピクセル、RGB                                 |
-| 標高の符号化     | Mapbox Terrain-RGB 方式 (`-10000 + (R × 65536 + G × 256 + B) × 0.1`) |
-| ズームレベル     | 3 から 17                                                            |
-| ファイルサイズ   | 2,649,174,249 バイト (約 2.65GB、2.47GiB)                            |
-| 取り出し方       | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
-| URL              | https://data.source.coop/smartmaps/dem1a/dem1a.pmtiles               |
-| 説明ページ       | https://source.coop/smartmaps/dem1a                                  |
 
 ## 概要
 

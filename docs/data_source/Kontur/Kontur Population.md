@@ -1,26 +1,28 @@
+---
+id: kontur_population
+provider: Kontur (Kontur, Inc.)
+source_data: GHSL 人口・建物・都市化度 の GHS-POP R2023A、Facebook (Meta) の High Resolution Settlement Layer (HRSL)、Microsoft Building Footprints、LINZ NZ Building Outlines、Copernicus Global Land Service Land Cover 100m、OpenStreetMap、Geoalert Urban Mapping、国連 World Population Prospects
+license: [CC-BY-4.0]
+license_note: CC-BY-4.0 と読むのが自然 (HDX と Kontur は「CC BY」とだけ書き、版番号は書いていない。下のライセンスの節を参照)
+access: split
+access_note: split。HDX に国別版 (250 の国と地域) があり、国を単位に取得できる。各ファイルは gzip 圧縮の GeoPackage で、ファイルの中は whole (Range は 206 を返すが、gzip の途中からは展開できない)
+format: [GeoPackage (`.gpkg.gz`), ポリゴン, 'EPSG:3857']
+coverage: 全世界 (人のいる陸地だけ)
+period: 2023-11-01 版が最新 (HDX の期間の表記は 2020-03-11 から 2023-11-01 で、これは版の日付の幅)
+resolution: H3 解像度 8 の六角形 (平均面積 0.737km²、Kontur は「400m」と呼んでいる)。値は六角形の中の人数
+size: 全世界版 2023-11-01 の `.gpkg.gz` が 2,436,991,241 バイト。国別版の日本 (2023-11-01) は `.gpkg.gz` が 16,070,678 バイト、展開後 45,776,896 バイト
+update: HDX の表記は「As needed」。版は 2020-03-11、2020-09-28、2021-11-09、2022-06-30、2023-11-01 の 5 つで、2023-11-01 より後の版はない (2026-10-06 時点)
+url: https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_population_20231101.gpkg.gz
+docs: https://data.humdata.org/dataset/kontur-population-dataset 、https://www.kontur.io/datasets/population-dataset/
+checked: 2026-10-06
+details:
+  国別版の一覧: https://data.humdata.org/organization/kontur
+  foil4g の表示用: https://data.source.coop/smartmaps/foil4gr1/kpop.pmtiles (PMTiles、作成手順は https://github.com/optgeo/kpop-pmtiles)
+---
+
 # Kontur Population
 
 > [[Kontur]] が全世界の人口を [[H3]] の解像度 8 の六角形 (約 400m) ごとに推計し、[[Humanitarian Data Exchange]] (HDX) で全世界版と国別版の [[GeoPackage]] として配っているデータ
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | kontur_population |
-| 提供元           | [[Kontur]] (Kontur, Inc.) |
-| 元データ         | [[GHSL 人口・建物・都市化度]] の GHS-POP R2023A、Facebook (Meta) の High Resolution Settlement Layer (HRSL)、Microsoft Building Footprints、LINZ NZ Building Outlines、Copernicus Global Land Service Land Cover 100m、[[OpenStreetMap]]、Geoalert Urban Mapping、国連 World Population Prospects |
-| ライセンス       | [[CC-BY-4.0]] と読むのが自然 (HDX と Kontur は「CC BY」とだけ書き、版番号は書いていない。下のライセンスの節を参照) |
-| 取り出し方       | split。HDX に国別版 (250 の国と地域) があり、国を単位に取得できる。各ファイルは gzip 圧縮の GeoPackage で、ファイルの中は whole (Range は 206 を返すが、gzip の途中からは展開できない) |
-| データ形式       | [[GeoPackage]] (`.gpkg.gz`)、ポリゴン、EPSG:3857 |
-| 範囲             | 全世界 (人のいる陸地だけ) |
-| 期間             | 2023-11-01 版が最新 (HDX の期間の表記は 2020-03-11 から 2023-11-01 で、これは版の日付の幅) |
-| 解像度または単位 | H3 解像度 8 の六角形 (平均面積 0.737km²、Kontur は「400m」と呼んでいる)。値は六角形の中の人数 |
-| 大きさ           | 全世界版 2023-11-01 の `.gpkg.gz` が 2,436,991,241 バイト。国別版の日本 (2023-11-01) は `.gpkg.gz` が 16,070,678 バイト、展開後 45,776,896 バイト |
-| 更新頻度         | HDX の表記は「As needed」。版は 2020-03-11、2020-09-28、2021-11-09、2022-06-30、2023-11-01 の 5 つで、2023-11-01 より後の版はない (2026-10-06 時点) |
-| URL              | https://geodata-eu-central-1-kontur-public.s3.eu-central-1.amazonaws.com/kontur_datasets/kontur_population_20231101.gpkg.gz |
-| 説明ページ       | https://data.humdata.org/dataset/kontur-population-dataset 、https://www.kontur.io/datasets/population-dataset/ |
-| 国別版の一覧     | https://data.humdata.org/organization/kontur |
-| foil4g の表示用  | https://data.source.coop/smartmaps/foil4gr1/kpop.pmtiles ([[PMTiles]]、作成手順は https://github.com/optgeo/kpop-pmtiles) |
 
 ## 概要
 

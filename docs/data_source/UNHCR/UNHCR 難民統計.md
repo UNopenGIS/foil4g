@@ -1,25 +1,27 @@
+---
+id: unhcr_refugee_statistics
+provider: UNHCR (UNHCR Refugee Population Statistics Database、Refugee Data Finder)
+source_data: なし (一次データ)。ただし各国政府と UNHCR の現地事務所の報告を UNHCR が集計したもの。パレスチナ難民の値は UNRWA、IDMC の国内避難民の値は IDMC が提供した第三者のデータ
+license: [CC-BY-4.0]
+license_note: CC-BY-4.0 と UNHCR の Terms of Use for Datasets (第三者のデータには別の条件がありうる)
+access: catalog
+access_note: catalog。API で年 (`year`、`yearFrom`、`yearTo`)、出身国 (`coo`)、庇護国 (`coa`) を指定して、必要な行だけを JSON か CSV (zip) で取れる。最小単位は 1 年、1 出身国、1 庇護国の 1 行
+format: API の JSON、API の CSV (`download=true` で zip に入った `population.csv` と `footnotes.csv`)。HDX にも CSV の写しがある
+coverage: 全世界。国と地域の一覧 (`countries`) は 232 件。2025 年の `population` には 212 の符号 (ISO3 と UNHCR 独自の符号) が出てくる
+period: 1951 年から 2025 年末まで (項目ごとに始まりの年が違う)。IDMC の値は 1990 年から、UNRWA の値は 1952 年から
+resolution: 国 (出身国と庇護国の組み合わせ) と年。単位は人 (庇護申請と決定には件で数えた国もある)。位置の列は無い
+size: '`population` の全期間、全組み合わせの zip が 1,080,972 バイト (138,893 行)。HDX の CSV 5 本で合計約 55MB'
+update: 年 2 回 (6 月に前年末の値、12 月ごろにその年の 1 月から 6 月の値)。公表のたびに過去の値も直る
+url: https://api.unhcr.org/population/v1/
+docs: https://api.unhcr.org/docs/refugee-statistics.html (API)、https://www.unhcr.org/refugee-statistics/methodology/ (方法と利用条件)
+checked: 2026-10-06
+details:
+  画面: https://www.unhcr.org/refugee-statistics/
+---
+
 # UNHCR 難民統計
 
 > [[UNHCR]] (国連難民高等弁務官事務所) が、難民、庇護希望者、国内避難民、無国籍者などの人数を、年、出身国、庇護国の組み合わせごとに全世界について集計し、Refugee Data Finder とその API (JSON と CSV) で配っている統計
-
-## データソース情報
-
-| 項目           | 内容 |
-| -------------- | ---- |
-| データID       | unhcr_refugee_statistics |
-| 提供元         | [[UNHCR]] (UNHCR Refugee Population Statistics Database、Refugee Data Finder) |
-| 元データ       | なし (一次データ)。ただし各国政府と UNHCR の現地事務所の報告を UNHCR が集計したもの。パレスチナ難民の値は [[UNRWA]]、IDMC の国内避難民の値は [[IDMC]] が提供した第三者のデータ |
-| ライセンス     | [[CC-BY-4.0]] と UNHCR の Terms of Use for Datasets (第三者のデータには別の条件がありうる) |
-| 取り出し方     | catalog。API で年 (`year`、`yearFrom`、`yearTo`)、出身国 (`coo`)、庇護国 (`coa`) を指定して、必要な行だけを JSON か CSV (zip) で取れる。最小単位は 1 年、1 出身国、1 庇護国の 1 行 |
-| データ形式     | API の JSON、API の CSV (`download=true` で zip に入った `population.csv` と `footnotes.csv`)。[[HDX]] にも CSV の写しがある |
-| 範囲           | 全世界。国と地域の一覧 (`countries`) は 232 件。2025 年の `population` には 212 の符号 (ISO3 と UNHCR 独自の符号) が出てくる |
-| 期間           | 1951 年から 2025 年末まで (項目ごとに始まりの年が違う)。IDMC の値は 1990 年から、UNRWA の値は 1952 年から |
-| 解像度または単位 | 国 (出身国と庇護国の組み合わせ) と年。単位は人 (庇護申請と決定には件で数えた国もある)。位置の列は無い |
-| 大きさ         | `population` の全期間、全組み合わせの zip が 1,080,972 バイト (138,893 行)。HDX の CSV 5 本で合計約 55MB |
-| 更新頻度       | 年 2 回 (6 月に前年末の値、12 月ごろにその年の 1 月から 6 月の値)。公表のたびに過去の値も直る |
-| URL            | https://api.unhcr.org/population/v1/ |
-| 説明ページ     | https://api.unhcr.org/docs/refugee-statistics.html (API)、https://www.unhcr.org/refugee-statistics/methodology/ (方法と利用条件) |
-| 画面           | https://www.unhcr.org/refugee-statistics/ |
 
 ## 概要
 

@@ -1,17 +1,19 @@
+---
+id: determiningroad_v0
+provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
+license: [unknown]
+license_note: 不明
+access: unconfirmed
+format: Shapefile
+url: https://optgeo.github.io/virgo-data/determiningroad_v0.shp
+checked: null
+details:
+  ファイル形式: SHP
+---
+
 # VIRGO ビエンチャン 道路決定データ
 
 > VIRGOプラットフォームが提供するラオス・ビエンチャンの道路決定データ
-
-## データソース情報
-
-| 項目             | 内容                                                               |
-| ---------------- | ------------------------------------------------------------------ |
-| **データID**     | determiningroad_v0                                                 |
-| **ライセンス**   | 不明                                                               |
-| **データ形式**   | Shapefile                                                          |
-| **ファイル形式** | SHP                                                                |
-| **提供元**       | Vientiane Integrated Urban Information GIS-based Opendata Platform |
-| **URL**          | https://optgeo.github.io/virgo-data/determiningroad_v0.shp         |
 
 ## 概要
 

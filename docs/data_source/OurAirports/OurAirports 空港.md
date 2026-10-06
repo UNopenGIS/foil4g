@@ -1,25 +1,27 @@
+---
+id: ourairports
+provider: OurAirports (創設者 David Megginson が運営するボランティアのサイト)
+source_data: なし (一次データ)。ただし会員が入力した値には、FAA、DAFIF、GeoNames、navaid.com、Wikipedia などから取り込んだものが含まれる (About ページの Credits)
+license: [public-domain]
+license_note: パブリックドメイン (サイトの Terms of use)。GitHub リポジトリの LICENSE は The Unlicense
+access: split
+access_note: split。全世界の 7 ファイルは種類 (空港、滑走路など) ごとに分かれていて、それぞれは whole。空港の表だけは国ごとの CSV (ISO 3166-1 alpha-2 の国コードで選ぶ) もある
+format: CSV (UTF-8)。国ごとの空港の表は HXL タグつき CSV もある
+coverage: 全世界。airports.csv の国コードは 247 種類、緯度 -90 から 83.09、経度 -179.88 から 179.98
+period: 現在の状態だけ (時系列ではない)。閉鎖された空港も `closed` として残る
+resolution: 1 行 1 空港 (点)、1 行 1 滑走路、1 行 1 周波数、1 行 1 航法援助施設
+size: 7 ファイルの合計 24,728,137 バイト (約 25MB)。airports.csv は 12,741,155 バイト (2026-10-06 版)
+update: 毎晩 (01:53 UTC ごろに GitHub へ書き出し)。中身が変わらないファイルもある
+url: https://davidmegginson.github.io/ourairports-data/airports.csv ほか
+docs: https://ourairports.com/data/ 、列の説明は https://ourairports.com/help/data-dictionary.html
+checked: 2026-10-06
+details:
+  リポジトリ: https://github.com/davidmegginson/ourairports-data
+---
+
 # OurAirports 空港
 
 > [[OurAirports]] が、会員の投稿で作った世界の空港、滑走路、通信周波数、航法援助施設の表を、パブリックドメインとして毎晩 CSV で配っているもの
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | ourairports |
-| 提供元           | [[OurAirports]] (創設者 David Megginson が運営するボランティアのサイト) |
-| 元データ         | なし (一次データ)。ただし会員が入力した値には、FAA、DAFIF、[[GeoNames]]、navaid.com、Wikipedia などから取り込んだものが含まれる (About ページの Credits) |
-| ライセンス       | [[パブリックドメイン]] (サイトの Terms of use)。GitHub リポジトリの LICENSE は [[The Unlicense]] |
-| 取り出し方       | split。全世界の 7 ファイルは種類 (空港、滑走路など) ごとに分かれていて、それぞれは whole。空港の表だけは国ごとの CSV (ISO 3166-1 alpha-2 の国コードで選ぶ) もある |
-| データ形式       | [[CSV]] (UTF-8)。国ごとの空港の表は [[HXL]] タグつき CSV もある |
-| 範囲             | 全世界。airports.csv の国コードは 247 種類、緯度 -90 から 83.09、経度 -179.88 から 179.98 |
-| 期間             | 現在の状態だけ (時系列ではない)。閉鎖された空港も `closed` として残る |
-| 解像度または単位 | 1 行 1 空港 (点)、1 行 1 滑走路、1 行 1 周波数、1 行 1 航法援助施設 |
-| 大きさ           | 7 ファイルの合計 24,728,137 バイト (約 25MB)。airports.csv は 12,741,155 バイト (2026-10-06 版) |
-| 更新頻度         | 毎晩 (01:53 UTC ごろに GitHub へ書き出し)。中身が変わらないファイルもある |
-| URL              | https://davidmegginson.github.io/ourairports-data/airports.csv ほか |
-| 説明ページ       | https://ourairports.com/data/ 、列の説明は https://ourairports.com/help/data-dictionary.html |
-| リポジトリ       | https://github.com/davidmegginson/ourairports-data |
 
 ## 概要
 

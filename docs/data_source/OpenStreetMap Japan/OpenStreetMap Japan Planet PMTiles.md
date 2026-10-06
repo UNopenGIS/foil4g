@@ -1,24 +1,26 @@
+---
+id: openstreetmap_jp_planet_pmtiles
+provider: [OSMFJ (OpenStreetMap Foundation Japan), OpenStreetMap Contributors]
+license: [CC-BY-4.0, ODbL-1.0]
+license_note: データは ODbL、スキーマのデザインは CC-BY 4.0 (OpenMapTiles への帰属表示が要る)
+access: range
+access_note: range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める
+format: [PMTiles v3 (タイルは MVT, gzip 圧縮)]
+coverage: 全世界 (経度 -180 から 180、緯度 -85.05113 から 85.05113)
+period: 2026-09-28T00:00:04Z (2026-10-06 時点の版)
+resolution: 0 から 14
+size: 84,416,925,121 バイト (約 84GB、2026-09-28 版)
+update: 毎週 (OSM Wiki の OSMFJ タイルサーバーのページによる)
+url: https://tile.openstreetmap.jp/static/planet.pmtiles
+checked: 2026-10-06
+details:
+  スキーマ: OpenMapTiles 3.16.0 (Planetiler 0.10.2 で生成)
+  日付つきの URL: https://tile.openstreetmap.jp/static/planet-20260928.pmtiles
+---
+
 # OpenStreetMap Japan Planet PMTiles
 
 > [[OSMFJ]] のタイルサーバーが静的に配っている、全世界の [[OpenStreetMap]] を OpenMapTiles スキーマのベクトルタイルにした [[PMTiles]] ファイル 1 本
-
-## データソース情報
-
-| 項目             | 内容                                                                                  |
-| ---------------- | ------------------------------------------------------------------------------------- |
-| データID         | openstreetmap_jp_planet_pmtiles                                                       |
-| ライセンス       | データは [[ODbL]]、スキーマのデザインは CC-BY 4.0 (OpenMapTiles への帰属表示が要る)  |
-| 提供元           | [[OSMFJ]] (OpenStreetMap Foundation Japan)、[[OpenStreetMap]] Contributors           |
-| データ形式       | [[PMTiles]] v3 (タイルは MVT、gzip 圧縮)                                              |
-| スキーマ         | OpenMapTiles 3.16.0 ([[Planetiler]] 0.10.2 で生成)                                    |
-| ズームレベル     | 0 から 14                                                                             |
-| 範囲             | 全世界 (経度 -180 から 180、緯度 -85.05113 から 85.05113)                            |
-| データ基準日     | 2026-09-28T00:00:04Z (2026-10-06 時点の版)                                           |
-| ファイルサイズ   | 84,416,925,121 バイト (約 84GB、2026-09-28 版)                                       |
-| 更新頻度         | 毎週 (OSM Wiki の OSMFJ タイルサーバーのページによる)                                |
-| 取り出し方       | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
-| URL              | https://tile.openstreetmap.jp/static/planet.pmtiles                                   |
-| 日付つきの URL   | https://tile.openstreetmap.jp/static/planet-20260928.pmtiles                         |
 
 ## 概要
 

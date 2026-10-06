@@ -1,26 +1,27 @@
+---
+id: un_wpp
+provider: 国連経済社会局 人口部 (国連人口部、United Nations, Department of Economic and Social Affairs, Population Division)
+source_data: なし (一次データ)。人口部が各国の国勢調査、標本調査、人口動態登録などを集めて推計したもの
+license: [CC-BY-3.0-IGO]
+access: split
+access_note: split。指標、予測のバリアント、期間ごとに分かれた 40 本の `.csv.gz` から要るものだけを取る。1 本の中は whole (Range に 206 は返るが、gzip の途中からは読めない)
+format: [CSV (UTF-8, BOM 付き, gzip 圧縮), Excel (XLSX), PDF (資料)]
+coverage: 全世界。国と地域 237、集計地域 318 (地理的地域、SDG 地域、所得グループ、開発グループ、特別集計など)、合わせて 555
+period: 推計 1950 年から 2023 年、予測 2024 年から 2100 年 (1 年ごと)
+resolution: 国と地域 (国より細かい行政区画は無い)。年ごと。人口は千人単位
+size: WPP 2024 の CSV 42 本で 4,039,910,774 バイト (約 4.0GB、gzip のまま)。最小の `WPP2024_Demographic_Indicators_Medium.csv.gz` は 16,557,272 バイト (展開後 40,819,701 バイト)
+update: 改訂はおおむね 2 年ごと。最新は WPP 2024 (2024-07-11 公表)。次の改訂は 2027-07-11 の予定
+url: https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/ (この下に各ファイル)
+docs: https://population.un.org/wpp/ (Downloads の画面)
+checked: 2026-10-06
+details:
+  ファイルの目録: https://population.un.org/wpp/assets/downloads.json
+  Data Portal: 'https://population.un.org/dataportal/ (API: https://population.un.org/dataportalapi/index.html)'
+---
+
 # World Population Prospects
 
 > [[国連経済社会局]] (UN DESA) の [[国連人口部]] が、世界の 237 の国と地域とその集計地域について、1950 年から 2023 年の人口の推計と 2024 年から 2100 年の予測を、CSV と Excel で配っている国連の公式の人口推計
-
-## データソース情報
-
-| 項目           | 内容 |
-| -------------- | ---- |
-| データID       | un_wpp |
-| 提供元         | [[国連経済社会局]] 人口部 ([[国連人口部]]、United Nations, Department of Economic and Social Affairs, Population Division) |
-| 元データ       | なし (一次データ)。人口部が各国の国勢調査、標本調査、人口動態登録などを集めて推計したもの |
-| ライセンス     | [[CC-BY-3.0-IGO]] |
-| 取り出し方     | split。指標、予測のバリアント、期間ごとに分かれた 40 本の `.csv.gz` から要るものだけを取る。1 本の中は whole (Range に 206 は返るが、gzip の途中からは読めない) |
-| データ形式     | CSV (UTF-8、BOM 付き、gzip 圧縮)、Excel (XLSX)、PDF (資料) |
-| 範囲           | 全世界。国と地域 237、集計地域 318 (地理的地域、SDG 地域、所得グループ、開発グループ、特別集計など)、合わせて 555 |
-| 期間           | 推計 1950 年から 2023 年、予測 2024 年から 2100 年 (1 年ごと) |
-| 解像度または単位 | 国と地域 (国より細かい行政区画は無い)。年ごと。人口は千人単位 |
-| 大きさ         | WPP 2024 の CSV 42 本で 4,039,910,774 バイト (約 4.0GB、gzip のまま)。最小の `WPP2024_Demographic_Indicators_Medium.csv.gz` は 16,557,272 バイト (展開後 40,819,701 バイト) |
-| 更新頻度       | 改訂はおおむね 2 年ごと。最新は WPP 2024 (2024-07-11 公表)。次の改訂は 2027-07-11 の予定 |
-| URL            | https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/ (この下に各ファイル) |
-| 説明ページ     | https://population.un.org/wpp/ (Downloads の画面) |
-| ファイルの目録 | https://population.un.org/wpp/assets/downloads.json |
-| Data Portal    | https://population.un.org/dataportal/ (API: https://population.un.org/dataportalapi/index.html) |
 
 ## 概要
 

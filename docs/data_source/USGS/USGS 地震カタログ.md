@@ -1,24 +1,25 @@
+---
+id: usgs_earthquakes
+provider: USGS Earthquake Hazards Program (National Earthquake Information Center ほか)
+source_data: なし (一次データ)。ただし震源の値の一部は、USGS 以外の地域観測網 (Alaska Earthquake Center など) が寄与したもの
+license: [public-domain]
+license_note: USGS が作ったデータは米国のパブリックドメイン (USGS の方針ページ)。USGS 以外の観測網が寄与した値の扱いは明記なし (下のライセンスの節を参照)
+access: catalog
+access_note: catalog。FDSN イベント API で期間、矩形 (bbox) または円、規模、深さ、寄与者で絞れる。1 回 20,000 件まで。リアルタイムのフィードは split (規模 5 種 × 期間 4 種の 20 本) で、各ファイルは whole (Range は効かない)
+format: API は GeoJSON、CSV、QuakeML (XML)、KML、テキスト。フィードは GeoJSON (ほかに ATOM、KML、CSV、QuakeML もある)
+coverage: 全世界 (米国とその周辺は小さな地震まで入る。米国外は大きめの地震が中心と見られるが、閾値は確かめていない)
+period: API では 1568 年の記録から現在まで。フィードは直近 1 時間、1 日、7 日、30 日
+resolution: 1 件 1 地震 (震源の点。経度、緯度、深さ km)
+size: フィード `all_month.geojson` 7,484,948 バイト (10,535 件)、`4.5_month.geojson` 359,761 バイト (515 件、gzip 転送で 43,865 バイト)。API で 2026 年 1 月の全件を GeoJSON で引くと 9,351,282 バイト (13,070 件)。いずれも 2026-10-06 の値
+update: フィードは毎分 (説明ページに「Updated every minute.」)。API は問い合わせた時点の値を返し、過去の地震の値も後から改訂される
+url: API https://earthquake.usgs.gov/fdsnws/event/1/ 、フィード https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/
+docs: https://earthquake.usgs.gov/fdsnws/event/1/ (API)、https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php (フィード)、https://earthquake.usgs.gov/data/comcat/ (ComCat)
+checked: 2026-10-06
+---
+
 # USGS 地震カタログ
 
 > 米国地質調査所 ([[USGS]]) が、世界の観測網から集めた地震の震源一覧 ([[ANSS Comprehensive Earthquake Catalog]]、ComCat) を、期間・範囲・規模で絞れる検索 API と、直近の地震を規模と期間ごとにまとめたリアルタイムの [[GeoJSON]] フィードで配っているもの
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | usgs_earthquakes |
-| 提供元           | [[USGS]] Earthquake Hazards Program (National Earthquake Information Center ほか) |
-| 元データ         | なし (一次データ)。ただし震源の値の一部は、USGS 以外の地域観測網 (Alaska Earthquake Center など) が寄与したもの |
-| ライセンス       | USGS が作ったデータは米国のパブリックドメイン (USGS の方針ページ)。USGS 以外の観測網が寄与した値の扱いは明記なし (下のライセンスの節を参照) |
-| 取り出し方       | catalog。FDSN イベント API で期間、矩形 (bbox) または円、規模、深さ、寄与者で絞れる。1 回 20,000 件まで。リアルタイムのフィードは split (規模 5 種 × 期間 4 種の 20 本) で、各ファイルは whole (Range は効かない) |
-| データ形式       | API は [[GeoJSON]]、CSV、QuakeML (XML)、KML、テキスト。フィードは GeoJSON (ほかに ATOM、KML、CSV、QuakeML もある) |
-| 範囲             | 全世界 (米国とその周辺は小さな地震まで入る。米国外は大きめの地震が中心と見られるが、閾値は確かめていない) |
-| 期間             | API では 1568 年の記録から現在まで。フィードは直近 1 時間、1 日、7 日、30 日 |
-| 解像度または単位 | 1 件 1 地震 (震源の点。経度、緯度、深さ km) |
-| 大きさ           | フィード `all_month.geojson` 7,484,948 バイト (10,535 件)、`4.5_month.geojson` 359,761 バイト (515 件、gzip 転送で 43,865 バイト)。API で 2026 年 1 月の全件を GeoJSON で引くと 9,351,282 バイト (13,070 件)。いずれも 2026-10-06 の値 |
-| 更新頻度         | フィードは毎分 (説明ページに「Updated every minute.」)。API は問い合わせた時点の値を返し、過去の地震の値も後から改訂される |
-| URL              | API https://earthquake.usgs.gov/fdsnws/event/1/ 、フィード https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/ |
-| 説明ページ       | https://earthquake.usgs.gov/fdsnws/event/1/ (API)、https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php (フィード)、https://earthquake.usgs.gov/data/comcat/ (ComCat) |
 
 ## 概要
 
