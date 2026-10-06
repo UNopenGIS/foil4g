@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import MapPreview from "../../components/MapPreview";
+import { previews } from "../../components/previews";
 
 export async function getStaticPaths() {
   const cards = await getCollection("dataSources");
@@ -30,6 +32,7 @@ const rows: [string, string | undefined][] = [
   ["確認日", d.checked?.toISOString().slice(0, 10) ?? "確かめていません"],
   ...Object.entries(d.details ?? {}),
 ];
+const hasPreview = d.id !== undefined && d.id in previews;
 const isUrl = (v: string) => /^https?:\/\/\S+$/.test(v);
 ---
 
@@ -49,6 +52,13 @@ const isUrl = (v: string) => /^https?:\/\/\S+$/.test(v);
       }
     </tbody>
   </table>
+  {
+    hasPreview && (
+      <section class="preview">
+        <MapPreview id={d.id!} client:only="react" />
+      </section>
+    )
+  }
   <div class="card-body">
     <Content />
   </div>
@@ -59,6 +69,11 @@ const isUrl = (v: string) => /^https?:\/\/\S+$/.test(v);
      card's own first heading. */
   .card-body > :global(h1:first-child) {
     display: none;
+  }
+  .preview {
+    height: 420px;
+    margin: 16px 0;
+    border: 1px solid #d0d7de;
   }
   .card-info th {
     width: 9em;

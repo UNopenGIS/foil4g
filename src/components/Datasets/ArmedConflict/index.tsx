@@ -25,7 +25,7 @@ export const ArmedConflictMap = () => {
       scrollZoom={true}
       hash={false}
       style={{ width: "100%", height: "100%" }}
-      mapStyle="stylejson/tile.openstreetmap.jp/fiord-color-gl-style/style.json"
+      mapStyle={`${import.meta.env.BASE_URL}stylejson/tile.openstreetmap.jp/fiord-color-gl-style/style.json`}
     >
       <Source
         key={`${source.id}-source`}
