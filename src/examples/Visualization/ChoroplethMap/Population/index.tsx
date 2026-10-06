@@ -4,7 +4,7 @@ import { PopulationChoroplethMapSource as source } from "./source";
 import { useEffect, useState } from "react";
 
 export const PopulationChoroplethMap = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<GeoJSON.GeoJSON | null>(null);
   useEffect(() => {
     if (!source.url) {
       console.error("Source URL is not defined.");
@@ -33,40 +33,42 @@ export const PopulationChoroplethMap = () => {
       style={{ width: "100%", height: "100%" }}
       mapStyle="stylejson/tile.openstreetmap.jp/fiord-color-gl-style/style.json"
     >
-      <Source
-        key={`${source.id}-source`}
-        id={`${source.id}-source`}
-        type={source.type}
-        data={data}
-        attribution={source.attribution}
-      >
-        {source.layers?.map((layer) => {
-          switch (layer.type) {
-            case "fill":
-              return (
-                <Layer
-                  key={`${layer.id}-layer`}
-                  id={`${layer.id}-layer`}
-                  source={`${source.id}-source`}
-                  type={layer.type}
-                  paint={layer.paint}
-                />
-              );
-            case "line":
-              return (
-                <Layer
-                  key={`${layer.id}-layer`}
-                  id={`${layer.id}-layer`}
-                  source={`${source.id}-source`}
-                  type={layer.type}
-                  paint={layer.paint}
-                />
-              );
-            default:
-              return null;
-          }
-        })}
-      </Source>
+      {data && (
+        <Source
+          key={`${source.id}-source`}
+          id={`${source.id}-source`}
+          type={source.type}
+          data={data}
+          attribution={source.attribution}
+        >
+          {source.layers?.map((layer) => {
+            switch (layer.type) {
+              case "fill":
+                return (
+                  <Layer
+                    key={`${layer.id}-layer`}
+                    id={`${layer.id}-layer`}
+                    source={`${source.id}-source`}
+                    type={layer.type}
+                    paint={layer.paint}
+                  />
+                );
+              case "line":
+                return (
+                  <Layer
+                    key={`${layer.id}-layer`}
+                    id={`${layer.id}-layer`}
+                    source={`${source.id}-source`}
+                    type={layer.type}
+                    paint={layer.paint}
+                  />
+                );
+              default:
+                return null;
+            }
+          })}
+        </Source>
+      )}
     </Map>
   );
 };
