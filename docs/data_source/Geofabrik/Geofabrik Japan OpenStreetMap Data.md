@@ -1,64 +1,87 @@
 # Geofabrik Japan OpenStreetMap Data
 
-> **[[Geofabrik]]**は、世界各国・地域別の**[[OpenStreetMap]]**データ抽出ファイルを提供するサービスです。このデータソースは日本のOSMデータの最新版を提供します。
+> [[Geofabrik]] が [[OpenStreetMap]] の planet から日本の範囲を切り出して、毎日配っている [[OSM PBF]] ファイル
 
 ## データソース情報
 
-- **データID**: geofabrik_asia_japan
-- **ライセンス**: [[ODbL-1.0]]
-- **提供者**:
-  - [[Geofabrik]] GmbH
-  - [[OpenStreetMap]] Contributors
-- **データ形式**: [[OSM PBF]]
-- **ファイル形式**: pbf
-- **ファイルサイズ**: 不明
-- **URL**: https://download.geofabrik.de/asia/japan-latest.osm.pbf
+| 項目             | 内容                                                       |
+| ---------------- | ---------------------------------------------------------- |
+| データID         | geofabrik_asia_japan                                       |
+| ライセンス       | [[ODbL-1.0]]                                               |
+| 提供元           | [[Geofabrik]] GmbH、[[OpenStreetMap]] Contributors         |
+| データ形式       | [[OSM PBF]]                                                |
+| ファイルサイズ   | 2,538,602,425 バイト (約 2.5GB、2026-09-27 版)             |
+| 更新頻度         | 毎日                                                       |
+| 取り出し方       | split。Geofabrik が定義した地域ごとにファイルが分かれていて、`index-v1.json` の境界ポリゴンから地域を選べる。ファイルの中の PBF は whole (Range は 206 を返すが、範囲の索引が無い) |
+| URL              | https://download.geofabrik.de/asia/japan-latest.osm.pbf    |
+| 索引             | https://download.geofabrik.de/index-v1.json                |
 
-## 説明
+## 概要
 
-日本の**OpenStreetMap**データ抽出ファイル。地理空間データの解析や地図作成に使用できます。
+ドイツの Geofabrik GmbH が配布している、日本全体の [[OpenStreetMap]] データです。
+planet を毎日更新して地域ごとに分割しており、日本全体のほかに 8 つの地方 (北海道、東北、関東、中部、関西、中国、四国、九州) のファイルもあります。
+地方のファイルには Shapefile (`.shp.zip`) と GeoPackage (`.gpkg.zip`) もありますが、日本全体には PBF しかありません。
+
+`-latest` の URL は日付つきのファイル (`japan-260927.osm.pbf` など) へリダイレクトします。
+大きさを HEAD で確かめるときは、リダイレクトを追う必要があります (`curl -L`)。
+
+利用者名、利用者 ID、変更セット ID は取り除かれています。
+これらを含むファイルは、OSM アカウントでログインした人だけが内部サーバーから取得できます。
+
+## 取り出し方
+
+Geofabrik が定義した地域ごとにファイルが分かれていて、必要な地域のファイルだけを取得できます。
+地域の一覧と境界ポリゴンは `index-v1.json` にあり、2026-10-06 時点で 554 地域です。
+
+PBF の中には範囲の索引が無いため、HTTP Range で一部だけを読み出しても、必要な範囲を選べません。
+範囲を絞るには、ファイル全体を取得してから [[osmium]] などで切り出します。
+日本全体は約 2.5GB あるので、小さく試すなら地方のファイル (最小は四国の約 89MB) を使います。
+
+## 古い版と差分
+
+- 日付つきの版は直近 7 日分、月初の版、毎年 1 月 1 日の版 (日本は 2014 年から) が残っています。
+- 差分 (`.osc.gz`) が `https://download.geofabrik.de/asia/japan-updates` にあり、手元の PBF を osmium や osmosis で最新に追いつかせられます。
+
+## 帰属表示
+
+- © OpenStreetMap contributors
+
+Geofabrik のサイトには「Data processed by Geofabrik GmbH and created by OpenStreetMap Contributors | License: ODbL 1.0」とあります。
+Geofabrik 自身の帰属表示を別に求めているかどうかは確かめていません。
 
 ## データ処理コマンド
 
-### ダウンロード処理
-
 ```bash
-# ディレクトリ作成とPBFファイルダウンロード
+# ダウンロード (リダイレクトを追う)
 mkdir -p ./tmp
-wget https://download.geofabrik.de/asia/japan/japan-latest.osm.pbf -O ./tmp/japan-latest.osm.pbf
+curl -L -o ./tmp/japan-latest.osm.pbf https://download.geofabrik.de/asia/japan-latest.osm.pbf
+
+# ファイルの情報を表示する
+osmium fileinfo ./tmp/japan-latest.osm.pbf
+
+# 範囲を切り出す (例: 東京都区部のおおよその範囲)
+osmium extract -b 139.56,35.52,139.92,35.82 ./tmp/japan-latest.osm.pbf -o ./tmp/tokyo.osm.pbf
+
+# GeoJSON に書き出す
+osmium export ./tmp/tokyo.osm.pbf -f geojson -o ./tmp/tokyo.geojson
+
+# PostGIS に取り込む
+osm2pgsql -d osm_japan -H localhost -U postgres ./tmp/japan-latest.osm.pbf
 ```
-
-### データ変換・活用例
-
-```bash
-# [[osmium]]を使用したOSMデータ処理
-[[osmium]] fileinfo tmp/japan-latest.osm.pbf
-[[osmium]] export tmp/japan-latest.osm.pbf -f geojson -o tmp/japan.geojson
-
-# osm2pgsqlを使用した[[PostGIS]]インポート
-osm2pgsql -d osm_japan -H localhost -U postgres tmp/japan-latest.osm.pbf
-
-# [[ogr2ogr]]を使用した形式変換
-[[ogr2ogr]] -f [[GeoJSON]] tmp/japan.geojson tmp/japan-latest.osm.pbf
-```
-
-### 処理概要
-
-- **ダウンロード**: [[Geofabrik]]サイトから[[OSM PBF]]ファイルを取得
-- **変換**: [[osmium]]、osm2pgsql、[[ogr2ogr]]を使用して各種形式に変換可能
-- **用途**: [[QGIS]]での直接読み込み、[[PostgreSQL]]/[[PostGIS]]へのインポート、他の地理空間データ形式への変換
 
 ## 関連項目
 
-- [[OpenStreetMap]]
-- [[Geofabrik]]
-- [[ODbL]]
-- [[OSM PBF]]
 - [[Geofabrik Japan Kanto OpenStreetMap Data]]
+- [[Geofabrik Monaco OpenStreetMap Data]]
+- [[Geofabrik]]
+- [[OpenStreetMap]]
+- [[ODbL-1.0]]
+- [[OSM PBF]]
 - [[osmium]]
 - [[osm2pgsql]]
-- [[ogr2ogr]]
-- [[QGIS]]
-- [[PostgreSQL]]
 - [[PostGIS]]
-- [[GeoJSON]]
+
+## 確認日
+
+2026-10-06 に `index-v1-nogeom.json` を読んで確かめました。
+ファイルサイズは 2026-09-27 版の値です (この日は日本全体のファイルへの HEAD がタイムアウトしました)。
