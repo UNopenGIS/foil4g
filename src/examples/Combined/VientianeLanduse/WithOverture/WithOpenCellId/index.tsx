@@ -1,7 +1,8 @@
 import { Protocol } from "pmtiles";
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Layer, Map, Source } from "react-map-gl/maplibre";
+import { sourceProps } from "../../../../../components/sourceProps";
 import { useEffect } from "react";
 import { VientianeLandusePMTilesSource as landuseDataSource } from "../../../../../components/Datasets/VientianeLanduse/source";
 import { OpenCellIdPMTilesSource as cellIdDataSource } from "../../../../../components/Datasets/OpenCellId/source";
@@ -31,17 +32,17 @@ export const VientianeLanduseWithOpenCellIdAndOverture: React.FC<{ mapStyle: str
       style={{ width: "100%", height: "100%" }}
       mapStyle={mapStyle}
     >
-      <Source key={cellIdDataSource.id} {...cellIdDataSource}>
+      <Source key={cellIdDataSource.id} {...sourceProps(cellIdDataSource)}>
         {cellIdDataSource.layers?.map((layer) => (
           <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
         ))}
       </Source>
-      <Source key={transportationSource.id} {...transportationSource}>
+      <Source key={transportationSource.id} {...sourceProps(transportationSource)}>
         {transportationSource.layers?.map((layer) => (
           <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
         ))}
       </Source>
-      <Source key={landuseDataSource.id} {...landuseDataSource}>
+      <Source key={landuseDataSource.id} {...sourceProps(landuseDataSource)}>
         {landuseDataSource.layers?.map((layer) => (
           <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
         ))}

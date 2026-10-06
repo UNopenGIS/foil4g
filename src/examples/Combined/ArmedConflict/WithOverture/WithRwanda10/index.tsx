@@ -1,7 +1,8 @@
 import { Protocol } from "pmtiles";
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Layer, Map, Source } from "react-map-gl/maplibre";
+import { sourceProps } from "../../../../../components/sourceProps";
 import { useEffect } from "react";
 import { ArmedConflictPMTilesSource as dataSource } from "../../../../../components/Datasets/ArmedConflict/source";
 import { Rwanda10PMTilesSource as terrainSource } from "../../../../../components/Datasets/Rwanda10/source";
@@ -32,17 +33,17 @@ export const ArmedConflictWithRwanda10WithOverture: React.FC<{ mapStyle: string 
       style={{ width: "100%", height: "100%" }}
       mapStyle={mapStyle}
     >
-      <Source key={dataSource.id} {...dataSource}>
+      <Source key={dataSource.id} {...sourceProps(dataSource)}>
         {dataSource.layers?.map((layer) => (
           <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
         ))}
       </Source>
-      <Source key={terrainSource.id} {...terrainSource}>
+      <Source key={terrainSource.id} {...sourceProps(terrainSource)}>
         {terrainSource.layers?.map((layer) => (
           <Layer key={layer.id} {...layer} />
         ))}
       </Source>
-      <Source key={transportationSource.id} {...transportationSource}>
+      <Source key={transportationSource.id} {...sourceProps(transportationSource)}>
         {transportationSource.layers?.map((layer) => (
           <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
         ))}

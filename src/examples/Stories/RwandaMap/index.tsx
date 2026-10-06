@@ -1,7 +1,8 @@
 import { Protocol } from "pmtiles";
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Layer, Map, Source } from "react-map-gl/maplibre";
+import { sourceProps } from "../../../components/sourceProps";
 import { useEffect } from "react";
 import { OpenCellIdPMTilesSource as cellDataSource } from "../../../components/Datasets/OpenCellId/source";
 import { ArmedConflictPMTilesSource as conflictDataSource } from "../../../components/Datasets/ArmedConflict/source";
@@ -45,7 +46,7 @@ export const RwandaMap: React.FC<{ mapStyle: string; sources: string[] }> = ({
       {sources.map((source) => {
         const dataSource = AvailableSources[source];
         return (
-          <Source key={dataSource.id} {...dataSource}>
+          <Source key={dataSource.id} {...sourceProps(dataSource)}>
             {dataSource.layers?.map((layer) => (
               <Layer
                 key={layer.id}

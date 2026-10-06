@@ -1,7 +1,8 @@
 import { Protocol } from "pmtiles";
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Layer, Map, Source } from "react-map-gl/maplibre";
+import { sourceProps } from "../../../../components/sourceProps";
 import { useEffect } from "react";
 import { OpenCellIdPMTilesSource as source } from "../../../../components/Datasets/OpenCellId/source";
 
@@ -29,7 +30,7 @@ export const OpenCellIdWithBaseMap: React.FC<{ mapStyle: string }> = ({
       style={{ width: "100%", height: "100%" }}
       mapStyle={mapStyle}
     >
-      <Source key={source.id} {...source}>
+      <Source key={source.id} {...sourceProps(source)}>
         {source.layers?.map((layer) => (
           <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
         ))}

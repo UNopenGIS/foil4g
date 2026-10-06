@@ -1,7 +1,8 @@
 import { Protocol } from "pmtiles";
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Layer, Map, Source } from "react-map-gl/maplibre";
+import { sourceProps } from "../../../components/sourceProps";
 import { useEffect } from "react";
 import { VientianeLandusePMTilesSource as dataSource } from "../../../components/Datasets/VientianeLanduse/source";
 
@@ -29,7 +30,7 @@ export const VientianeLanduseMap: React.FC<{ mapStyle: string }> = ({
       style={{ width: "100%", height: "100%" }}
       mapStyle={mapStyle}
     >
-      <Source key={dataSource.id} {...dataSource}>
+      <Source key={dataSource.id} {...sourceProps(dataSource)}>
         {dataSource.layers?.map((layer) => (
           <Layer key={layer.id} source-layer={layer.sourceLayer} {...layer} />
         ))}
