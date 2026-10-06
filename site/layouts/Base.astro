@@ -16,6 +16,9 @@ const home = import.meta.env.BASE_URL;
   <body>
     <header>
       <a href={home}>FOIL4G</a>
+      <a class="logo" href="https://github.com/UNopenGIS/7/issues">
+        <img src={`${home}images/un-open-gis-smart-maps.jpg`} alt="UN Open GIS Initiative / Smart Maps" height="40" />
+      </a>
     </header>
     <main>
       <slot />
@@ -34,9 +37,18 @@ const home = import.meta.env.BASE_URL;
     background: #fff;
   }
   header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
     padding: 16px 0;
     border-bottom: 1px solid #d0d7de;
     margin-bottom: 24px;
+  }
+  header .logo img {
+    display: block;
+    height: 40px;
+    width: auto;
   }
   header a {
     font-weight: 700;
