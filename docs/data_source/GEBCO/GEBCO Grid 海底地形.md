@@ -1,26 +1,28 @@
+---
+id: gebco_grid
+provider: GEBCO (General Bathymetric Chart of the Oceans、国際水路機関 と ユネスコ政府間海洋学委員会 の共同プロジェクト)。作成は Nippon Foundation-GEBCO Seabed 2030 の Global Center (英国の British Oceanographic Data Centre)、配布は英国 NERC の CEDA
+source_data: 複数の格子を合成した派生物。土台は SRTM15+ V2.8 (おおむね南緯 50 度から北緯 60 度)。その上に Seabed 2030 の 4 つの地域センターがまとめた格子 (主にマルチビーム測深) を重ねる。極域の陸と氷は BedMachine Greenland v6 と BedMachine Antarctica v3、北極海は IBCAO 5.2、南大洋は IBCSO (いずれも GEBCO_2026 の場合)
+license: [public-domain]
+license_note: public domain (GEBCO の Terms of use。ただし出典表示などの義務つき)。CEDA の配布ディレクトリは Open Government Licence v3.0 と書く。詳しくは下の節
+access: range
+access_note: range。GeoTIFF は 90 度 x 90 度の 8 枚に分かれ (split)、各枚は無圧縮で 1 行 1 ストリップなので HTTP Range (206 を確認) で必要な行だけ読める。全球 netCDF は CEDA の OPeNDAP で格子の添字を指定して切り出せる
+format: netCDF 4 (CF-1.6、全球 1 ファイル)、GeoTIFF (8 枚)、Esri ASCII raster (8 枚)。それぞれ zip のまとめもある
+coverage: 全球 (緯度 -90 から 90、経度 -180 から 180)。陸も含む
+period: 年ごとの版 (スナップショット)。最新は GEBCO_2026 (2026 年 4 月公開)。時系列ではない
+resolution: 15 秒 (1/240 度、赤道で約 460m)、43,200 行 x 86,400 列。値は 16bit 符号付き整数のメートル (海は負、陸は正)、格子の中心の値
+size: 'GEBCO_2026 の氷の表面の版: netCDF 7,466,018,396 バイト、GeoTIFF 1 枚 約 933MB (933,257,450 バイトなど)、GeoTIFF 8 枚の zip 4,241,629,269 バイト。TID Grid の netCDF 3,733,523,740 バイト'
+update: 年 1 回 (GEBCO は「generally in July」と書くが、GEBCO_2026 は 4 月公開)
+url: https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2026/
+docs: https://www.gebco.net/data-products/gridded-bathymetry-data
+checked: 2026-10-06
+details:
+  文書: https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2026/GEBCO_Grid_docmentation.pdf
+  DOI: https://doi.org/10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa (GEBCO_2026)
+---
+
 # GEBCO Grid 海底地形
 
 > [[GEBCO]] (国際水路機関 IHO とユネスコ政府間海洋学委員会 IOC の共同プロジェクト) が、全球の海底地形と陸の標高を 15 秒間隔の 1 枚の格子にまとめ、毎年の版として netCDF、GeoTIFF、Esri ASCII で無料で配っている地形モデル
-
-## データソース情報
-
-| 項目             | 内容                                                                                             |
-| ---------------- | ------------------------------------------------------------------------------------------------ |
-| データID         | gebco_grid                                                                                       |
-| 提供元           | [[GEBCO]] (General Bathymetric Chart of the Oceans、[[国際水路機関]] と [[ユネスコ政府間海洋学委員会]] の共同プロジェクト)。作成は [[Nippon Foundation-GEBCO Seabed 2030]] の Global Center (英国の [[British Oceanographic Data Centre]])、配布は英国 NERC の [[CEDA]] |
-| 元データ         | 複数の格子を合成した派生物。土台は [[SRTM15+]] V2.8 (おおむね南緯 50 度から北緯 60 度)。その上に Seabed 2030 の 4 つの地域センターがまとめた格子 (主にマルチビーム測深) を重ねる。極域の陸と氷は BedMachine Greenland v6 と BedMachine Antarctica v3、北極海は [[IBCAO]] 5.2、南大洋は [[IBCSO]] (いずれも GEBCO_2026 の場合) |
-| ライセンス       | public domain (GEBCO の Terms of use。ただし出典表示などの義務つき)。CEDA の配布ディレクトリは [[Open Government Licence v3.0]] と書く。詳しくは下の節 |
-| 取り出し方       | range。GeoTIFF は 90 度 x 90 度の 8 枚に分かれ (split)、各枚は無圧縮で 1 行 1 ストリップなので HTTP Range (206 を確認) で必要な行だけ読める。全球 netCDF は CEDA の OPeNDAP で格子の添字を指定して切り出せる |
-| データ形式       | netCDF 4 (CF-1.6、全球 1 ファイル)、GeoTIFF (8 枚)、Esri ASCII raster (8 枚)。それぞれ zip のまとめもある |
-| 範囲             | 全球 (緯度 -90 から 90、経度 -180 から 180)。陸も含む                                              |
-| 期間             | 年ごとの版 (スナップショット)。最新は GEBCO_2026 (2026 年 4 月公開)。時系列ではない              |
-| 解像度または単位 | 15 秒 (1/240 度、赤道で約 460m)、43,200 行 x 86,400 列。値は 16bit 符号付き整数のメートル (海は負、陸は正)、格子の中心の値 |
-| 大きさ           | GEBCO_2026 の氷の表面の版: netCDF 7,466,018,396 バイト、GeoTIFF 1 枚 約 933MB (933,257,450 バイトなど)、GeoTIFF 8 枚の zip 4,241,629,269 バイト。TID Grid の netCDF 3,733,523,740 バイト |
-| 更新頻度         | 年 1 回 (GEBCO は「generally in July」と書くが、GEBCO_2026 は 4 月公開)                          |
-| URL              | https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2026/                                             |
-| 説明ページ       | https://www.gebco.net/data-products/gridded-bathymetry-data                                      |
-| 文書             | https://dap.ceda.ac.uk/bodc/gebco/global/gebco_2026/GEBCO_Grid_docmentation.pdf                  |
-| DOI              | https://doi.org/10.5285/4f68d5c7-45eb-f999-e063-7086abc036fa (GEBCO_2026)                        |
 
 ## 概要
 

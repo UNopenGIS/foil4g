@@ -1,25 +1,27 @@
+---
+id: ghsl
+provider: 欧州委員会 共同研究センター (JRC)。Copernicus 緊急管理サービスの一部として公開
+source_data: 衛星画像 (Sentinel-2 の 2018 年合成画像、Landsat)、CIESIN の Gridded Population of the World v4.11 の国勢調査の値、国連 World Population Prospects 2022 と World Urbanization Prospects 2018 を JRC が加工したもの
+license: [CC-BY-4.0]
+license_note: CC-BY-4.0 (配布サーバーの `copyright.txt` に明記)
+access: split
+access_note: split。製品・エポック・解像度・投影法ごとに 1 ファイルで、モルワイデ図法のものはさらに 1,000km 四方の 375 タイルに分かれる。タイルはタイル区画の Shapefile で緯度経度から選べる。zip なので Range で中を部分読みすることはできない
+format: zip に入った GeoTIFF (1 バンド)。GHS-SMOD は色表 (`.clr`) と、都市の中心部などの境界の Shapefile も付く
+coverage: 全世界 (モルワイデ図法の範囲 x ±18,041,000m、y ±9,000,000m)
+period: 1975 年から 2030 年まで 5 年ごとの 12 エポック。2025 年と 2030 年は推計。別の版 (GHS-WUP R2025A) は 2100 年まで
+resolution: GHS-POP は 100m・1km (モルワイデ) と 3 秒・30 秒 (WGS84)。GHS-BUILT-S は同じ 4 種と 2018 年だけ 10m。GHS-SMOD は 1km と 30 秒。値は人数 (POP)、平方メートル (BUILT-S)、区分コード (SMOD)
+size: '2020 年の全球 1 ファイル: GHS-POP 1km 322,293,568 バイト、100m 5,097,074,334 バイト、30 秒 482,351,880 バイト、3 秒 12,554,406,149 バイト。GHS-BUILT-S 1km 152,527,564 バイト、100m 2,036,312,871 バイト、10m (2018 年) 32,708,182,978 バイト。GHS-SMOD 1km 35,853,870 バイト。タイル 1 枚は GHS-POP 1km で 2〜3MB 程度'
+update: 不定期の版 (リリース) ごと。R2023A のファイルの Last-Modified は 2025-01-27
+url: https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/
+docs: https://human-settlement.emergency.copernicus.eu/datasets.php
+checked: 2026-10-06
+details:
+  技術資料: GHSL Data Package 2023 (doi:10.2760/098587)。各 zip に `GHSL_Data_Package_2023_light.pdf` として同梱
+---
+
 # GHSL 人口・建物・都市化度
 
 > [[欧州委員会]]の[[共同研究センター]] (JRC) が、全世界の人口 (GHS-POP)、建物の面積 (GHS-BUILT-S)、都市化度の区分 (GHS-SMOD) を 1975 年から 2030 年まで 5 年ごとの格子にして、[[GeoTIFF]] の zip で配っている Global Human Settlement Layer (GHSL)
-
-## データソース情報
-
-| 項目 | 内容 |
-| --- | --- |
-| データID | ghsl |
-| 提供元 | [[欧州委員会]] [[共同研究センター]] (JRC)。[[Copernicus]] 緊急管理サービスの一部として公開 |
-| 元データ | 衛星画像 (Sentinel-2 の 2018 年合成画像、Landsat)、[[CIESIN]] の Gridded Population of the World v4.11 の国勢調査の値、国連 World Population Prospects 2022 と World Urbanization Prospects 2018 を JRC が加工したもの |
-| ライセンス | [[CC-BY-4.0]] (配布サーバーの `copyright.txt` に明記) |
-| 取り出し方 | split。製品・エポック・解像度・投影法ごとに 1 ファイルで、モルワイデ図法のものはさらに 1,000km 四方の 375 タイルに分かれる。タイルはタイル区画の Shapefile で緯度経度から選べる。zip なので Range で中を部分読みすることはできない |
-| データ形式 | zip に入った [[GeoTIFF]] (1 バンド)。GHS-SMOD は色表 (`.clr`) と、都市の中心部などの境界の Shapefile も付く |
-| 範囲 | 全世界 (モルワイデ図法の範囲 x ±18,041,000m、y ±9,000,000m) |
-| 期間 | 1975 年から 2030 年まで 5 年ごとの 12 エポック。2025 年と 2030 年は推計。別の版 (GHS-WUP R2025A) は 2100 年まで |
-| 解像度または単位 | GHS-POP は 100m・1km (モルワイデ) と 3 秒・30 秒 (WGS84)。GHS-BUILT-S は同じ 4 種と 2018 年だけ 10m。GHS-SMOD は 1km と 30 秒。値は人数 (POP)、平方メートル (BUILT-S)、区分コード (SMOD) |
-| 大きさ | 2020 年の全球 1 ファイル: GHS-POP 1km 322,293,568 バイト、100m 5,097,074,334 バイト、30 秒 482,351,880 バイト、3 秒 12,554,406,149 バイト。GHS-BUILT-S 1km 152,527,564 バイト、100m 2,036,312,871 バイト、10m (2018 年) 32,708,182,978 バイト。GHS-SMOD 1km 35,853,870 バイト。タイル 1 枚は GHS-POP 1km で 2〜3MB 程度 |
-| 更新頻度 | 不定期の版 (リリース) ごと。R2023A のファイルの Last-Modified は 2025-01-27 |
-| URL | https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/ |
-| 説明ページ | https://human-settlement.emergency.copernicus.eu/datasets.php |
-| 技術資料 | GHSL Data Package 2023 (doi:10.2760/098587)。各 zip に `GHSL_Data_Package_2023_light.pdf` として同梱 |
 
 ## 概要
 

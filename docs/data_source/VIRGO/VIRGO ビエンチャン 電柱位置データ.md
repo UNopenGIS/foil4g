@@ -1,17 +1,19 @@
+---
+id: electric_pole_point_v1
+provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
+license: [unknown]
+license_note: 不明
+access: unconfirmed
+format: Shapefile
+url: https://optgeo.github.io/virgo-data/electric_pole_point_v1.shp
+checked: null
+details:
+  ファイル形式: SHP
+---
+
 # VIRGO ビエンチャン 電柱位置データ
 
 > [[VIRGO]]プラットフォームが提供する[[ラオス]]・[[ビエンチャン]]の電柱位置データ
-
-## データソース情報
-
-| 項目             | 内容                                                               |
-| ---------------- | ------------------------------------------------------------------ |
-| **データID**     | electric_pole_point_v1                                             |
-| **ライセンス**   | 不明                                                               |
-| **データ形式**   | [[Shapefile]]                                                      |
-| **ファイル形式** | SHP                                                                |
-| **提供元**       | Vientiane Integrated Urban Information GIS-based Opendata Platform |
-| **URL**          | https://optgeo.github.io/virgo-data/electric_pole_point_v1.shp     |
 
 ## 概要
 

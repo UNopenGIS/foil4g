@@ -1,25 +1,27 @@
+---
+id: fao_agera5_monthly
+provider: 国際連合食糧農業機関 (FAO) の地理空間データ基盤 GISMGR (ワークスペース `C3S`)
+source_data: Copernicus Climate Change Service (C3S) が ECMWF を通じて作る AgERA5 (Agrometeorological indicators from 1979 to present derived from reanalysis、DOI 10.24381/cds.6c68c9bb)。AgERA5 は ERA5 再解析を元にしている
+license: [CC-BY-SA-4.0, CC-BY-4.0]
+license_note: FAO のカタログでは、降水量と基準蒸発散量が CC-BY-SA-4.0、最高気温と最低気温が CC-BY-4.0。元の AgERA5 は Copernicus の配布元で CC-BY-4.0
+access: range
+access_note: range。1 か月 1 変数が 1 つの COG で、ファイル名の年月でファイルを選び、HTTP Range (206 を確認) で必要な範囲の 256 x 256 タイルだけを読める
+format: [Cloud Optimized GeoTIFF (Float32 1 バンド, LZW 圧縮, 256 x 256 タイル, 概観 4 段)]
+coverage: 全球 (経度 -180 から 180 度、緯度 -90 から 90 度)。値があるのは陸だけで、海は欠損値
+period: 1979-01 から 2026-08 まで (各 572 か月、2026-10-06 時点)
+resolution: 0.1 度 (3600 x 1800 格子、EPSG:4326)。月ごと
+size: 4 変数の GeoTIFF の合計 25,815,935,505 バイト (約 25.8GB)。1 ファイルは降水量で約 6.9MB、ほか 3 つで約 12MB から 14MB
+update: 毎月 (FAO のカタログの値。2026-08 の月のファイルが 2026-09-08 に置かれていた)
+url: https://storage.googleapis.com/fao-gismgr-c3s-data/DATA/C3S/MAPSET/ (Google Cloud Storage)、https://data.apps.fao.org/static/data/c3s/MAPSET/ (FAO のサーバー)
+docs: https://data.apps.fao.org/catalog/iso/36a3a273-cbb2-438a-bfb5-5758b1bf5e36 (降水量)、https://data.apps.fao.org/catalog/iso/c91430cc-681e-4ca8-a5f4-8c97dc92c547 (基準蒸発散量)、https://data.apps.fao.org/catalog/iso/66e22621-a62c-4c92-a2a2-57cce04ac991 (最高気温)、https://data.apps.fao.org/catalog/iso/55e81992-6f0a-4d67-acd1-98b10b0fcdcc (最低気温)
+checked: 2026-10-06
+details:
+  元データの説明: https://cds.climate.copernicus.eu/datasets/sis-agrometeorological-indicators
+---
+
 # FAO AgERA5 農業気象データ
 
 > [[国際連合食糧農業機関]] (FAO) が、[[Copernicus Climate Change Service]] の農業気象データ [[AgERA5]] を月ごとに集計し、降水量、基準蒸発散量、最高気温、最低気温の 4 つを全球の陸について 0.1 度格子の [[Cloud Optimized GeoTIFF]] で配っているもの
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | fao_agera5_monthly |
-| 提供元           | [[国際連合食糧農業機関]] (FAO) の地理空間データ基盤 GISMGR (ワークスペース `C3S`) |
-| 元データ         | [[Copernicus Climate Change Service]] (C3S) が [[ECMWF]] を通じて作る AgERA5 (Agrometeorological indicators from 1979 to present derived from reanalysis、DOI 10.24381/cds.6c68c9bb)。AgERA5 は [[ERA5]] 再解析を元にしている |
-| ライセンス       | FAO のカタログでは、降水量と基準蒸発散量が [[CC-BY-SA-4.0]]、最高気温と最低気温が [[CC-BY-4.0]]。元の AgERA5 は Copernicus の配布元で CC-BY-4.0 |
-| 取り出し方       | range。1 か月 1 変数が 1 つの COG で、ファイル名の年月でファイルを選び、HTTP Range (206 を確認) で必要な範囲の 256 x 256 タイルだけを読める |
-| データ形式       | [[Cloud Optimized GeoTIFF]] (Float32 1 バンド、LZW 圧縮、256 x 256 タイル、概観 4 段) |
-| 範囲             | 全球 (経度 -180 から 180 度、緯度 -90 から 90 度)。値があるのは陸だけで、海は欠損値 |
-| 期間             | 1979-01 から 2026-08 まで (各 572 か月、2026-10-06 時点) |
-| 解像度または単位 | 0.1 度 (3600 x 1800 格子、[[EPSG:4326]])。月ごと |
-| 大きさ           | 4 変数の GeoTIFF の合計 25,815,935,505 バイト (約 25.8GB)。1 ファイルは降水量で約 6.9MB、ほか 3 つで約 12MB から 14MB |
-| 更新頻度         | 毎月 (FAO のカタログの値。2026-08 の月のファイルが 2026-09-08 に置かれていた) |
-| URL              | https://storage.googleapis.com/fao-gismgr-c3s-data/DATA/C3S/MAPSET/ (Google Cloud Storage)、https://data.apps.fao.org/static/data/c3s/MAPSET/ (FAO のサーバー) |
-| 説明ページ       | https://data.apps.fao.org/catalog/iso/36a3a273-cbb2-438a-bfb5-5758b1bf5e36 (降水量)、https://data.apps.fao.org/catalog/iso/c91430cc-681e-4ca8-a5f4-8c97dc92c547 (基準蒸発散量)、https://data.apps.fao.org/catalog/iso/66e22621-a62c-4c92-a2a2-57cce04ac991 (最高気温)、https://data.apps.fao.org/catalog/iso/55e81992-6f0a-4d67-acd1-98b10b0fcdcc (最低気温) |
-| 元データの説明   | https://cds.climate.copernicus.eu/datasets/sis-agrometeorological-indicators |
 
 ## 概要
 

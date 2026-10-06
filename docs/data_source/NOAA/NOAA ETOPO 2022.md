@@ -1,27 +1,29 @@
+---
+id: noaa_etopo_2022
+provider: NOAA NCEI (National Centers for Environmental Information)
+source_data: [GEBCO 2022 (海の水深の土台), Copernicus DEM 30m と FABDEM (陸の標高), BedMachine (氷床の下の岩盤), GMRT, NOAA の沿岸 DEM (CUDEM ほか) など 13 の層を重ねた合成物]
+license: [CC0-1.0]
+license_note: CC0 1.0 (NCEI の ISO メタデータに明記)。ただし元データの GEBCO の利用条件は出典の表示を求めている (下のライセンスの節を参照)
+access: split
+access_note: split。15 秒は 15 度四方のタイル (ice surface 288 枚、bedrock 62 枚) に分かれていて、ファイル名の北西の角の緯度経度で選べる。1 枚の中は range (HTTP Range に 206、256 x 256 画素の内部タイル) で窓読みできる。netCDF は THREDDS の OPeNDAP で添字を指定して一部だけ取れる
+format: GeoTIFF (float32、Deflate 圧縮、256 x 256 の内部タイル、オーバービューなし) と netCDF4 (CF-1.5)。中身は同じ
+coverage: 全世界 (経度 -180 から 180、緯度 -90 から 90)
+period: 単一時点の地形。ISO メタデータの時間範囲は 1998-01-01 から 2022-09-01 (元データの取得期間)
+resolution: 15 秒 (約 460m)、30 秒、60 秒 (1 分)。値は EGM2008 ジオイド高に対するメートル
+size: 15 秒 ice surface は 1 枚 2.1MB から 36MB、全 288 枚で約 5.2GB (一覧の丸めた表示値を足した概算)。30 秒全球 1 枚は surface 1,585,813,987 バイト、bed 1,624,895,430 バイト。60 秒全球 1 枚は surface 465,969,062 バイト、bed 478,386,633 バイト (いずれも GeoTIFF、HEAD の Content-Length)
+update: 不定期 (ISO メタデータは asNeeded)。ファイルは 2022-10-04 から更新されていない
+url: https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO2022/data/
+docs: https://www.ncei.noaa.gov/products/etopo-global-relief-model
+checked: 2026-10-06
+details:
+  netCDF (THREDDS): https://www.ngdc.noaa.gov/thredds/catalog/global/ETOPO2022/
+  利用者ガイド: https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO2022/docs/1.2%20ETOPO%202022%20User%20Guide.pdf
+  DOI: https://doi.org/10.25921/fd45-gt74
+---
+
 # NOAA ETOPO 2022
 
 > [[NOAA]] の [[NCEI]] (米国環境情報センター) が、陸の標高と海底の水深を 1 つにつないだ全球の格子を、15 秒、30 秒、60 秒の 3 つの解像度で、[[GeoTIFF]] と [[netCDF]] で [[CC0]] として配っているもの
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | noaa_etopo_2022 |
-| 提供元           | [[NOAA]] [[NCEI]] (National Centers for Environmental Information) |
-| 元データ         | [[GEBCO]] 2022 (海の水深の土台)、[[Copernicus DEM]] 30m と [[FABDEM]] (陸の標高)、BedMachine (氷床の下の岩盤)、GMRT、NOAA の沿岸 DEM (CUDEM ほか) など 13 の層を重ねた合成物 |
-| ライセンス       | [[CC0]] 1.0 (NCEI の ISO メタデータに明記)。ただし元データの GEBCO の利用条件は出典の表示を求めている (下のライセンスの節を参照) |
-| 取り出し方       | split。15 秒は 15 度四方のタイル (ice surface 288 枚、bedrock 62 枚) に分かれていて、ファイル名の北西の角の緯度経度で選べる。1 枚の中は range (HTTP Range に 206、256 x 256 画素の内部タイル) で窓読みできる。netCDF は THREDDS の OPeNDAP で添字を指定して一部だけ取れる |
-| データ形式       | GeoTIFF (float32、Deflate 圧縮、256 x 256 の内部タイル、オーバービューなし) と netCDF4 (CF-1.5)。中身は同じ |
-| 範囲             | 全世界 (経度 -180 から 180、緯度 -90 から 90) |
-| 期間             | 単一時点の地形。ISO メタデータの時間範囲は 1998-01-01 から 2022-09-01 (元データの取得期間) |
-| 解像度または単位 | 15 秒 (約 460m)、30 秒、60 秒 (1 分)。値は EGM2008 ジオイド高に対するメートル |
-| 大きさ           | 15 秒 ice surface は 1 枚 2.1MB から 36MB、全 288 枚で約 5.2GB (一覧の丸めた表示値を足した概算)。30 秒全球 1 枚は surface 1,585,813,987 バイト、bed 1,624,895,430 バイト。60 秒全球 1 枚は surface 465,969,062 バイト、bed 478,386,633 バイト (いずれも GeoTIFF、HEAD の Content-Length) |
-| 更新頻度         | 不定期 (ISO メタデータは asNeeded)。ファイルは 2022-10-04 から更新されていない |
-| URL              | https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO2022/data/ |
-| netCDF (THREDDS) | https://www.ngdc.noaa.gov/thredds/catalog/global/ETOPO2022/ |
-| 説明ページ       | https://www.ncei.noaa.gov/products/etopo-global-relief-model |
-| 利用者ガイド     | https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO2022/docs/1.2%20ETOPO%202022%20User%20Guide.pdf |
-| DOI              | https://doi.org/10.25921/fd45-gt74 |
 
 ## 概要
 

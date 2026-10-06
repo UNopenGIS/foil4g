@@ -1,25 +1,27 @@
+---
+id: google_open_buildings
+provider: [Google Research (Open Buildings チーム, ガーナのアクラの拠点が中心)]
+source_data: なし (一次データ)。ポリゴンは Google が使う解像度 50cm の高解像度衛星画像から、2.5D Temporal は Sentinel-2 (Copernicus) の画像から推定したもの。元の画像は配っていない
+license: [CC-BY-4.0, ODbL-1.0]
+license_note: CC-BY-4.0 と ODbL-1.0 の二重ライセンス。利用者がどちらか一方を選んで、その条件で使う
+access: split
+access_note: ポリゴンは split (S2 セル レベル 4 で 333 本、レベル 6 で 3,330 本。1 本の CSV.gz の中は whole)。2.5D Temporal は range (S2 セルと年でフォルダが分かれ、各 GeoTIFF はタイル化とオーバービューつきで部分読みできる)
+format: ポリゴンと点は gzip 圧縮の CSV (幾何は WKT)。2.5D Temporal は 3 バンド Float32 の GeoTIFF。ほかに Google Earth Engine の FeatureCollection と ImageCollection
+coverage: ポリゴン v3 は 111 の国と地域、2.5D Temporal は 112 の国と地域 (アフリカ、南アジア、東南アジア、中南米・カリブ)。日本、欧州、米国本土、カナダ、中国、ロシア、オーストラリアは含まれない。v3 の分割タイルの外接矩形は緯度 -59.97〜39.98 度
+period: ポリゴン v3 は 2023 年 5 月に推論した 1 時点 (画像の撮影時期は場所ごとに違い、数年前の画像のこともある)。2.5D Temporal は 2016〜2023 年の毎年 (各年 6 月 30 日前後の画像から推論)
+resolution: ポリゴンは建物 1 棟が 1 行。2.5D Temporal は画素 0.5m だが実効解像度は約 4m
+size: ポリゴン v3 の CSV.gz 333 本で 178.26GB (1 本 393 バイト〜8.42GB、中央値 145MB)。点 v3 は 333 本で 48.12GB。2.5D Temporal の GeoTIFF は 1 本 10MB〜1GB 程度 (全体の合計は数えていない)
+update: 不定期。v1 (2021 年 4 月)、v2 (2022 年 8 月)、v3 (2023 年 5 月) と版を出してきたが、v3 のファイルは 2023-06-23 から更新されていない。2.5D Temporal は v1 のみ (GeoTIFF の更新日は 2024-10-31)
+url: 'ポリゴン: `gs://open-buildings-data/` (https://storage.googleapis.com/open-buildings-data/)。2.5D Temporal: `gs://open-buildings-temporal-data/v1/`'
+docs: https://sites.research.google/gr/open-buildings/ と https://sites.research.google/gr/open-buildings/temporal/
+checked: 2026-10-06
+details:
+  索引: https://openbuildings-public-dot-gweb-research.uw.r.appspot.com/public/tiles.geojson (ポリゴン v3 の 333 タイルの範囲と URL)
+---
+
 # Google Open Buildings
 
 > [[Google Research]] が、アフリカ、南アジア、東南アジア、中南米・カリブの約 5,800 万 km2 について、衛星画像から機械学習で推定した建物のポリゴン (v1〜v3、CSV) と、建物の有無・件数・高さの年ごとのラスタ (2.5D Temporal、2016〜2023 年、GeoTIFF) を Google Cloud Storage で配っているデータ
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | google_open_buildings |
-| 提供元           | [[Google Research]] (Open Buildings チーム、ガーナのアクラの拠点が中心) |
-| 元データ         | なし (一次データ)。ポリゴンは Google が使う解像度 50cm の高解像度衛星画像から、2.5D Temporal は [[Sentinel-2]] (Copernicus) の画像から推定したもの。元の画像は配っていない |
-| ライセンス       | [[CC-BY-4.0]] と [[ODbL-1.0]] の二重ライセンス。利用者がどちらか一方を選んで、その条件で使う |
-| 取り出し方       | ポリゴンは split (S2 セル レベル 4 で 333 本、レベル 6 で 3,330 本。1 本の CSV.gz の中は whole)。2.5D Temporal は range (S2 セルと年でフォルダが分かれ、各 GeoTIFF はタイル化とオーバービューつきで部分読みできる) |
-| データ形式       | ポリゴンと点は gzip 圧縮の CSV (幾何は WKT)。2.5D Temporal は 3 バンド Float32 の [[GeoTIFF]]。ほかに [[Google Earth Engine]] の FeatureCollection と ImageCollection |
-| 範囲             | ポリゴン v3 は 111 の国と地域、2.5D Temporal は 112 の国と地域 (アフリカ、南アジア、東南アジア、中南米・カリブ)。日本、欧州、米国本土、カナダ、中国、ロシア、オーストラリアは含まれない。v3 の分割タイルの外接矩形は緯度 -59.97〜39.98 度 |
-| 期間             | ポリゴン v3 は 2023 年 5 月に推論した 1 時点 (画像の撮影時期は場所ごとに違い、数年前の画像のこともある)。2.5D Temporal は 2016〜2023 年の毎年 (各年 6 月 30 日前後の画像から推論) |
-| 解像度または単位 | ポリゴンは建物 1 棟が 1 行。2.5D Temporal は画素 0.5m だが実効解像度は約 4m |
-| 大きさ           | ポリゴン v3 の CSV.gz 333 本で 178.26GB (1 本 393 バイト〜8.42GB、中央値 145MB)。点 v3 は 333 本で 48.12GB。2.5D Temporal の GeoTIFF は 1 本 10MB〜1GB 程度 (全体の合計は数えていない) |
-| 更新頻度         | 不定期。v1 (2021 年 4 月)、v2 (2022 年 8 月)、v3 (2023 年 5 月) と版を出してきたが、v3 のファイルは 2023-06-23 から更新されていない。2.5D Temporal は v1 のみ (GeoTIFF の更新日は 2024-10-31) |
-| URL              | ポリゴン: `gs://open-buildings-data/` (https://storage.googleapis.com/open-buildings-data/)。2.5D Temporal: `gs://open-buildings-temporal-data/v1/` |
-| 説明ページ       | https://sites.research.google/gr/open-buildings/ と https://sites.research.google/gr/open-buildings/temporal/ |
-| 索引             | https://openbuildings-public-dot-gweb-research.uw.r.appspot.com/public/tiles.geojson (ポリゴン v3 の 333 タイルの範囲と URL) |
 
 ## 概要
 

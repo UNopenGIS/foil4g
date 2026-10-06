@@ -1,27 +1,29 @@
+---
+id: undp_hdr
+provider: 国連開発計画 (UNDP) の Human Development Report Office (HDRO)。多次元貧困指数 (MPI) は HDRO とオックスフォード大学の OPHI の共同作成
+source_data: 他機関の統計 (UNDESA の World Population Prospects、UNESCO 統計研究所、Barro and Lee、IMF、World Bank、国連統計部、ILOSTAT、IPU、WHO などの共同推計、Global Carbon Project、UNEP) と、DHS・MICS などの世帯調査の個票 (MPI)。HDRO はこれらを集めて指数を計算している
+license: [CC-BY-3.0-IGO]
+license_note: CC-BY-3.0-IGO (hdr.undp.org の Terms of use)。報告書本体の PDF は「All rights reserved」
+access: whole
+access_note: whole。全指数・全期間・全か国の時系列が 2,001,263 バイトの CSV 1 本。国・年・指標で絞れる API (HDRO Data API 2.0) もあるが、登録して API キーを取る必要がある
+format: [CSV (横持ち, Windows-1252, 改行 CRLF), XLSX (統計付録の表, 列の説明, MPI の表), PDF (Technical Notes)]
+coverage: 全世界。195 の国と地域 (うち北朝鮮とモナコは HDI の値なし) と、11 の集計 (HDI の 4 区分、6 つの開発途上地域、世界)。国の中の地方の値は無い (MPI の地方別推計は別)
+period: 1990〜2023 年 (IHDI とその構成要素は 2010〜2023 年、順位は 2023 年だけ)
+resolution: 国 (ISO 3166-1 alpha-3 の `iso3`) × 年。位置の列は無い
+size: 時系列 CSV 2,001,263 バイト (HDR 2025 の全指数、206 行 × 1,112 列)。MPI の表 `2025_gMPI_Table1and2.xlsx` 139,761 バイト
+update: 年 1 回 (Human Development Report の刊行に合わせる)。毎回、過去の年も含めて全系列を計算し直す。MPI は別の日程で更新
+url: https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_complete_time_series.csv
+docs: https://hdr.undp.org/data-center/documentation-and-downloads
+checked: 2026-10-06
+details:
+  現行の版: Human Development Report 2025 (HDR 2025、データ更新 2025-05-06)。MPI は 2025-10-17 更新
+  計算方法: https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Technical_Notes.pdf
+  利用条件: https://hdr.undp.org/terms-use
+---
+
 # UNDP 人間開発指数
 
 > [[国連開発計画]] (UNDP) の人間開発報告書室 (HDRO) が、人間開発指数 (HDI) とそれに連なる複合指数を、195 か国と 11 の集計について 1990 年から 2023 年まで計算し、1 本の CSV と XLSX の表で配っている国別統計
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | undp_hdr |
-| 提供元           | [[国連開発計画]] (UNDP) の Human Development Report Office (HDRO)。多次元貧困指数 (MPI) は HDRO とオックスフォード大学の [[OPHI]] の共同作成 |
-| 元データ         | 他機関の統計 (UNDESA の [[World Population Prospects]]、UNESCO 統計研究所、Barro and Lee、IMF、World Bank、国連統計部、[[ILOSTAT]]、IPU、WHO などの共同推計、Global Carbon Project、UNEP) と、DHS・MICS などの世帯調査の個票 (MPI)。HDRO はこれらを集めて指数を計算している |
-| ライセンス       | [[CC-BY-3.0-IGO]] (hdr.undp.org の Terms of use)。報告書本体の PDF は「All rights reserved」 |
-| 取り出し方       | whole。全指数・全期間・全か国の時系列が 2,001,263 バイトの CSV 1 本。国・年・指標で絞れる API (HDRO Data API 2.0) もあるが、登録して API キーを取る必要がある |
-| データ形式       | [[CSV]] (横持ち、Windows-1252、改行 CRLF)、XLSX (統計付録の表、列の説明、MPI の表)、PDF (Technical Notes) |
-| 範囲             | 全世界。195 の国と地域 (うち北朝鮮とモナコは HDI の値なし) と、11 の集計 (HDI の 4 区分、6 つの開発途上地域、世界)。国の中の地方の値は無い (MPI の地方別推計は別) |
-| 期間             | 1990〜2023 年 (IHDI とその構成要素は 2010〜2023 年、順位は 2023 年だけ) |
-| 解像度または単位 | 国 (ISO 3166-1 alpha-3 の `iso3`) × 年。位置の列は無い |
-| 大きさ           | 時系列 CSV 2,001,263 バイト (HDR 2025 の全指数、206 行 × 1,112 列)。MPI の表 `2025_gMPI_Table1and2.xlsx` 139,761 バイト |
-| 更新頻度         | 年 1 回 (Human Development Report の刊行に合わせる)。毎回、過去の年も含めて全系列を計算し直す。MPI は別の日程で更新 |
-| 現行の版         | Human Development Report 2025 (HDR 2025、データ更新 2025-05-06)。MPI は 2025-10-17 更新 |
-| URL              | https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_complete_time_series.csv |
-| 説明ページ       | https://hdr.undp.org/data-center/documentation-and-downloads |
-| 計算方法         | https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Technical_Notes.pdf |
-| 利用条件         | https://hdr.undp.org/terms-use |
 
 ## 概要
 

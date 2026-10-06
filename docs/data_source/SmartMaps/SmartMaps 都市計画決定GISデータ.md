@@ -1,23 +1,25 @@
+---
+id: smartmaps_toshik
+provider: [国土交通省 都市局都市計画課都市計画調査室 (元データ), UN Smart Maps Group (変換と配布)]
+source_data: https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html
+license: [PDL-1.0]
+license_note: 公共データ利用規約 (第1.0版) (PDL1.0) によると読めます (帰属表示の節を参照)
+access: range
+access_note: range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める
+format: [PMTiles v3 (タイルは MVT, gzip 圧縮)]
+period: 確かめていません (令和4年度版から作ったと考えられます)
+resolution: 0 から 14
+size: 159,930,151 バイト (約 153MiB)
+update: 更新されていません (ファイルは 2024-05-08 のまま)
+url: https://data.source.coop/smartmaps/toshik/a.pmtiles
+checked: 2026-10-06
+details:
+  配布ページ: https://source.coop/smartmaps/toshik
+---
+
 # SmartMaps 都市計画決定GISデータ
 
 > UN Smart Maps Group が [[国土交通省]] の都市計画決定 GIS データ (全国) を [[PMTiles]] にして、Source Cooperative で配っているベクトルタイル
-
-## データソース情報
-
-| 項目           | 内容                                                                                                      |
-| -------------- | --------------------------------------------------------------------------------------------------------- |
-| データID       | smartmaps_toshik                                                                                          |
-| ライセンス     | 公共データ利用規約 (第1.0版) (PDL1.0) によると読めます (帰属表示の節を参照)                               |
-| 提供元         | [[国土交通省]] 都市局都市計画課都市計画調査室 (元データ)、UN Smart Maps Group (変換と配布)                 |
-| 元データ       | https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html                                           |
-| データ形式     | [[PMTiles]] v3 (タイルは MVT、gzip 圧縮)                                                                  |
-| ファイルサイズ | 159,930,151 バイト (約 153MiB)                                                                            |
-| ズーム         | 0 から 14                                                                                                 |
-| 基準日         | 確かめていません (令和4年度版から作ったと考えられます)                                                     |
-| 更新頻度       | 更新されていません (ファイルは 2024-05-08 のまま)                                                          |
-| 取り出し方     | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
-| URL            | https://data.source.coop/smartmaps/toshik/a.pmtiles                                                       |
-| 配布ページ     | https://source.coop/smartmaps/toshik                                                                      |
 
 ## 概要
 

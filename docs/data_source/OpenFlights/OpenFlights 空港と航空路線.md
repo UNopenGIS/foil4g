@@ -1,24 +1,25 @@
+---
+id: openflights
+provider: [OpenFlights (openflights.org, GitHub の jpatokal/openflights)]
+source_data: 空港は OurAirports と DAFIF (2006 年 10 月サイクル) に利用者の追加と修正を加えたもの。路線は Airline Route Mapper、航空会社は Wikipedia の List of airlines、機材は Wikipedia の List of ICAO aircraft type designators から
+license: [ODbL-1.0]
+license_note: ODbL-1.0 (データ)。個々の内容は Database Contents License。リポジトリ直下の AGPL-3.0 はウェブサイトのコードの条件
+access: whole
+access_note: whole。表ごとに 1 ファイルで、範囲や国で絞る手段は無い。最大の `routes.dat` でも約 2.4MB なので全体を取って手元で絞る
+format: [カンマ区切りのテキスト (拡張子 `.dat`, 見出し行なし, UTF-8, 欠損は `\N`)]
+coverage: 全世界。`airports.dat` は 237 の国と地域、`airports-extended.dat` は 241
+period: 路線は 2014 年 6 月時点。空港は配布元の説明で 2017 年 1 月時点、GitHub のファイルの最終更新は 2019-05-13
+resolution: 1 行 1 空港 (点、緯度経度の十進度)、1 行 1 路線 (航空会社、出発空港、到着空港の組)
+size: '`.dat` 6 ファイルの合計 5,585,751 バイト。`routes.dat` 2,377,148、`airports-extended.dat` 1,670,162、`airports.dat` 1,127,225、`airlines.dat` 396,896、`planes.dat` 8,331、`countries.dat` 5,989 バイト'
+update: 実質的に止まっている。路線の供給元は 2014 年 6 月に更新をやめた。GitHub のデータファイルの最後の変更は `countries.dat` の 2020-01-31
+url: https://github.com/jpatokal/openflights/tree/master/data (生ファイルは https://raw.githubusercontent.com/jpatokal/openflights/master/data/ の下)
+docs: https://openflights.org/data.php
+checked: 2026-10-06
+---
+
 # OpenFlights 空港と航空路線
 
 > [[OpenFlights]] が GitHub で配っている、全世界の空港、航空会社、航空路線、機材、国の 5 種類の表 (区切りがカンマのテキスト `.dat`)。路線は 2014 年 6 月、空港は 2019 年 5 月のコミットで止まった古いスナップショット
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | openflights |
-| 提供元           | [[OpenFlights]] (openflights.org、GitHub の jpatokal/openflights) |
-| 元データ         | 空港は [[OurAirports]] と [[DAFIF]] (2006 年 10 月サイクル) に利用者の追加と修正を加えたもの。路線は [[Airline Route Mapper]]、航空会社は Wikipedia の List of airlines、機材は Wikipedia の List of ICAO aircraft type designators から |
-| ライセンス       | [[ODbL-1.0]] (データ)。個々の内容は Database Contents License。リポジトリ直下の AGPL-3.0 はウェブサイトのコードの条件 |
-| 取り出し方       | whole。表ごとに 1 ファイルで、範囲や国で絞る手段は無い。最大の `routes.dat` でも約 2.4MB なので全体を取って手元で絞る |
-| データ形式       | カンマ区切りのテキスト (拡張子 `.dat`、見出し行なし、UTF-8、欠損は `\N`) |
-| 範囲             | 全世界。`airports.dat` は 237 の国と地域、`airports-extended.dat` は 241 |
-| 期間             | 路線は 2014 年 6 月時点。空港は配布元の説明で 2017 年 1 月時点、GitHub のファイルの最終更新は 2019-05-13 |
-| 解像度または単位 | 1 行 1 空港 (点、緯度経度の十進度)、1 行 1 路線 (航空会社、出発空港、到着空港の組) |
-| 大きさ           | `.dat` 6 ファイルの合計 5,585,751 バイト。`routes.dat` 2,377,148、`airports-extended.dat` 1,670,162、`airports.dat` 1,127,225、`airlines.dat` 396,896、`planes.dat` 8,331、`countries.dat` 5,989 バイト |
-| 更新頻度         | 実質的に止まっている。路線の供給元は 2014 年 6 月に更新をやめた。GitHub のデータファイルの最後の変更は `countries.dat` の 2020-01-31 |
-| URL              | https://github.com/jpatokal/openflights/tree/master/data (生ファイルは https://raw.githubusercontent.com/jpatokal/openflights/master/data/ の下) |
-| 説明ページ       | https://openflights.org/data.php |
 
 ## 概要
 

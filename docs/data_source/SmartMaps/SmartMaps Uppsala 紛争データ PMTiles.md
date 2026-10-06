@@ -1,23 +1,25 @@
+---
+id: smartmaps_uppsala_conflict_pmtiles
+provider: UN Smart Maps (Source Cooperative の UN Smart Maps Group)
+source_data: Uppsala Conflict Data Program の UCDP GED Global version 23.1
+license: [CC-BY-4.0]
+license_note: PMTiles には明記なし (元データの UCDP は CC-BY-4.0 としている、下の帰属表示を参照)
+access: range
+access_note: range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める
+format: [PMTiles v3 (ベクトルタイル MVT, gzip 圧縮)]
+size: 136,162,985 バイト (約 130MB)
+update: なし (23.1 から作った 1 ファイルだけ)
+url: https://data.source.coop/smartmaps/uppsala-conflict/a.pmtiles
+docs: https://source.coop/smartmaps/uppsala-conflict
+checked: 2026-10-06
+details:
+  更新日: 2024-06-29 (Last-Modified)
+  作成手順: https://github.com/optgeo/uppsala-conflict
+---
+
 # SmartMaps Uppsala 紛争データ PMTiles
 
 > [[UN Smart Maps]] が [[Uppsala Conflict Data Program]] の UCDP GED Global 23.1 (1989 年から 2022 年の武力紛争の出来事) を地図表示用に [[PMTiles]] にしたファイル
-
-## データソース情報
-
-| 項目           | 内容                                                                              |
-| -------------- | --------------------------------------------------------------------------------- |
-| データID       | smartmaps_uppsala_conflict_pmtiles                                                |
-| ライセンス     | PMTiles には明記なし (元データの UCDP は [[CC-BY-4.0]] としている、下の帰属表示を参照) |
-| 提供元         | [[UN Smart Maps]] (Source Cooperative の UN Smart Maps Group)                     |
-| 元データ       | [[Uppsala Conflict Data Program]] の UCDP GED Global version 23.1                 |
-| データ形式     | [[PMTiles]] v3 (ベクトルタイル MVT、gzip 圧縮)                                     |
-| ファイルサイズ | 136,162,985 バイト (約 130MB)                                                      |
-| 更新日         | 2024-06-29 (Last-Modified)                                                        |
-| 更新頻度       | なし (23.1 から作った 1 ファイルだけ)                                              |
-| 取り出し方     | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
-| URL            | https://data.source.coop/smartmaps/uppsala-conflict/a.pmtiles                     |
-| 説明ページ     | https://source.coop/smartmaps/uppsala-conflict                                    |
-| 作成手順       | https://github.com/optgeo/uppsala-conflict                                        |
 
 ## 概要
 

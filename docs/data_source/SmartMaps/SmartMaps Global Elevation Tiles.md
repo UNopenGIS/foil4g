@@ -1,23 +1,25 @@
+---
+id: smartmaps_global_elevation_tiles
+provider: UN Smart Maps Group (UN Open GIS Initiative)
+source_data: [NASADEM (ズーム 6 から 12), Global Map (ズーム 2 から 5)]
+license: [CC0-1.0]
+license_note: CC0
+access: range
+access_note: range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める
+format: PMTiles (v3)
+resolution: 2 から 12
+size: 195,962,954,103 バイト (約 196GB、182.5GiB)
+url: https://data.source.coop/smartmaps/gel/gel.pmtiles
+docs: https://source.coop/smartmaps/gel
+checked: 2026-10-06
+details:
+  タイル形式: WebP (可逆)、512 × 512 ピクセル
+  標高の符号化: Mapbox Terrain-RGB 方式 (`-10000 + (R × 65536 + G × 256 + B) × 0.1`)
+---
+
 # SmartMaps Global Elevation Tiles
 
 > UN Smart Maps Group が NASADEM と地球地図 (Global Map) から作った、全世界の標高を RGB に詰めた WebP タイルを 1 つにまとめた [[PMTiles]] ファイル
-
-## データソース情報
-
-| 項目             | 内容                                                                 |
-| ---------------- | -------------------------------------------------------------------- |
-| データID         | smartmaps_global_elevation_tiles                                     |
-| ライセンス       | [[CC0]]                                                              |
-| 作成者           | UN Smart Maps Group ([[UN Open GIS Initiative]])                     |
-| 元データ         | [[NASADEM]] (ズーム 6 から 12)、[[Global Map]] (ズーム 2 から 5)     |
-| データ形式       | [[PMTiles]] (v3)                                                     |
-| タイル形式       | WebP (可逆)、512 × 512 ピクセル                                      |
-| 標高の符号化     | Mapbox Terrain-RGB 方式 (`-10000 + (R × 65536 + G × 256 + B) × 0.1`) |
-| ズームレベル     | 2 から 12                                                            |
-| ファイルサイズ   | 195,962,954,103 バイト (約 196GB、182.5GiB)                          |
-| 取り出し方       | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
-| URL              | https://data.source.coop/smartmaps/gel/gel.pmtiles                   |
-| 説明ページ       | https://source.coop/smartmaps/gel                                    |
 
 ## 概要
 

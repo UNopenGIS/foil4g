@@ -1,25 +1,27 @@
+---
+id: nasa_blue_marble
+provider: NASA Earth Observatory (NASA Goddard Space Flight Center)。作成者は Reto Stöckli
+source_data: MODIS の地表面反射率 MOD09A1 と土地被覆 MOD12Q1。陰影つきの版は、陰影に SRTM (60S から 60N)、GTOPO30 (60N より北と SRTM の欠損の穴埋め)、RAMP II (60S より南)、GEBCO 1 分格子 (海底) を使っている
+license: [public-domain]
+license_note: 米国内では著作権の対象にならない NASA のコンテンツ (NASA Images and Media Usage Guidelines)。利用時に「NASA Earth Observatory」の表示を求めている
+access: range
+access_note: range。GeoTIFF はサーバーが Range に 206 を返し、行ごとのストリップ (21600x1 画素) なので、GDAL の /vsicurl/ で必要な範囲だけを読める (ハワイ島 1.3 x 1.4 度で約 7.1MB)。500m はさらに月ごと 8 枚 (A1 から D2) に分割されている。JPEG は whole
+format: JPEG (8bit RGB) と GeoTIFF (8bit RGB、DEFLATE 圧縮、EPSG:4326)。旧サイトには PNG も残っている
+coverage: 全球 (経度 -180 から 180、緯度 -90 から 90)
+period: 2004 年 1 月から 12 月の月別合成 (12 か月)
+resolution: 15 秒 (500m 版、赤道で約 463m)、60 秒 (2km 版)、240 秒 (8km 版)。値は表示用の RGB で、物理量ではない
+size: 地形と水深の陰影つき、2004 年 8 月の 1 か月分で、500m の 8 枚の GeoTIFF が合計 3,266,445,239 バイト、JPEG が合計 420,820,616 バイト。最小は 8km 全球 JPEG の 2,308,163 バイト
+update: なし (2005 年に公開された 2004 年の製品。配布ファイルの Last-Modified は 2025-12-16 で、置き場所の移転によるもの)
+url: https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-topography-bathymetry/ (地形と水深の陰影つきの配布ページ)
+docs: https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/
+checked: 2026-10-06
+details:
+  技術文書: https://assets.science.nasa.gov/content/dam/science/esd/eo/content-feature/bluemarble/bmng.pdf
+---
+
 # NASA Blue Marble
 
 > [[NASA Earth Observatory]] が [[MODIS]] の観測から作った、2004 年の 12 か月それぞれの雲の無い全球トゥルーカラー合成画像 (Blue Marble: Next Generation) を、陰影なし・地形陰影つき・地形と水深の陰影つきの 3 版、8km・2km・500m の 3 解像度で、JPEG と [[GeoTIFF]] で配っているもの
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | nasa_blue_marble |
-| 提供元           | [[NASA Earth Observatory]] ([[NASA]] Goddard Space Flight Center)。作成者は Reto Stöckli |
-| 元データ         | [[MODIS]] の地表面反射率 MOD09A1 と土地被覆 MOD12Q1。陰影つきの版は、陰影に [[SRTM]] (60S から 60N)、[[GTOPO30]] (60N より北と SRTM の欠損の穴埋め)、RAMP II (60S より南)、[[GEBCO]] 1 分格子 (海底) を使っている |
-| ライセンス       | 米国内では著作権の対象にならない NASA のコンテンツ (NASA Images and Media Usage Guidelines)。利用時に「NASA Earth Observatory」の表示を求めている |
-| 取り出し方       | range。GeoTIFF はサーバーが Range に 206 を返し、行ごとのストリップ (21600x1 画素) なので、GDAL の /vsicurl/ で必要な範囲だけを読める (ハワイ島 1.3 x 1.4 度で約 7.1MB)。500m はさらに月ごと 8 枚 (A1 から D2) に分割されている。JPEG は whole |
-| データ形式       | JPEG (8bit RGB) と GeoTIFF (8bit RGB、DEFLATE 圧縮、EPSG:4326)。旧サイトには PNG も残っている |
-| 範囲             | 全球 (経度 -180 から 180、緯度 -90 から 90) |
-| 期間             | 2004 年 1 月から 12 月の月別合成 (12 か月) |
-| 解像度または単位 | 15 秒 (500m 版、赤道で約 463m)、60 秒 (2km 版)、240 秒 (8km 版)。値は表示用の RGB で、物理量ではない |
-| 大きさ           | 地形と水深の陰影つき、2004 年 8 月の 1 か月分で、500m の 8 枚の GeoTIFF が合計 3,266,445,239 バイト、JPEG が合計 420,820,616 バイト。最小は 8km 全球 JPEG の 2,308,163 バイト |
-| 更新頻度         | なし (2005 年に公開された 2004 年の製品。配布ファイルの Last-Modified は 2025-12-16 で、置き場所の移転によるもの) |
-| URL              | https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-topography-bathymetry/ (地形と水深の陰影つきの配布ページ) |
-| 説明ページ       | https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/ |
-| 技術文書         | https://assets.science.nasa.gov/content/dam/science/esd/eo/content-feature/bluemarble/bmng.pdf |
 
 ## 概要
 

@@ -1,24 +1,25 @@
+---
+id: wikidata
+provider: [Wikimedia Foundation (運営), Wikidata の編集者 (内容)]
+source_data: なし (一次データ。ただし各ステートメントは編集者が外部の資料から書き写したもので、出典 (reference) が付くものと付かないものがある)
+license: [CC-BY-SA-4.0, CC0-1.0]
+license_note: 構造化データ (main、Property、Lexeme、EntitySchema の名前空間) は CC0。それ以外の名前空間の文章は CC-BY-SA-4.0
+access: catalog
+access_note: catalog。SPARQL エンドポイントで、緯度経度の矩形 (`wikibase:box`)、点からの距離 (`wikibase:around`)、種類 (P31)、国 (P17)、行政区域 (P131) などで絞って必要な項目だけを取れる。ダンプは whole (全項目で 1 ファイル、範囲の索引が無い)
+format: [SPARQL の結果 (JSON, XML, CSV, TSV), '項目ごとの JSON (`Special:EntityData`)', ダンプ (JSON, N-Triples, Turtle を gzip か bzip2 で圧縮)]
+coverage: 全世界 (座標の多くは地球上。P625 は `globe` で月や火星などの天体も表せる)
+period: 現在の状態。過去の状態は日付つきのダンプと各項目の編集履歴から得る。事物ごとの時期は、廃止 (P576) や開始・終了の修飾子で表される
+resolution: 項目 (Q で始まる ID) 1 件。位置は代表点 1 つ (またはいくつか) で、境界は持たない
+size: ダンプ全体 (latest-all.json.gz) 156,315,459,742 バイト、最良ランクだけのダンプ (latest-truthy.nt.bz2) 43,507,090,513 バイト。項目数 123,562,593 (MediaWiki API の統計)
+update: 編集は随時。ダンプは 2 日から 3 日おきに作られる (種類ごとに作る日が違う)
+url: https://query.wikidata.org/sparql (SPARQL)、https://dumps.wikimedia.org/wikidatawiki/entities/ (ダンプ)
+docs: https://www.wikidata.org/wiki/Wikidata:Copyright、https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual
+checked: 2026-10-06
+---
+
 # Wikidata
 
 > [[Wikimedia Foundation]] が運営し、世界中の編集者が書いている構造化データの知識ベースで、座標 (P625) を持つ約 1,244 万件の項目を含む全世界の事物を、SPARQL の問い合わせと JSON や RDF のダンプで [[CC0]] で配っているもの
-
-## データソース情報
-
-| 項目             | 内容                                                                 |
-| ---------------- | -------------------------------------------------------------------- |
-| データID         | wikidata                                                             |
-| 提供元           | [[Wikimedia Foundation]] (運営)、[[Wikidata]] の編集者 (内容)         |
-| 元データ         | なし (一次データ。ただし各ステートメントは編集者が外部の資料から書き写したもので、出典 (reference) が付くものと付かないものがある) |
-| ライセンス       | 構造化データ (main、Property、Lexeme、EntitySchema の名前空間) は [[CC0]]。それ以外の名前空間の文章は [[CC-BY-SA-4.0]] |
-| 取り出し方       | catalog。SPARQL エンドポイントで、緯度経度の矩形 (`wikibase:box`)、点からの距離 (`wikibase:around`)、種類 (P31)、国 (P17)、行政区域 (P131) などで絞って必要な項目だけを取れる。ダンプは whole (全項目で 1 ファイル、範囲の索引が無い) |
-| データ形式       | SPARQL の結果 (JSON、XML、CSV、TSV)、項目ごとの JSON (`Special:EntityData`)、ダンプ (JSON、N-Triples、Turtle を gzip か bzip2 で圧縮) |
-| 範囲             | 全世界 (座標の多くは地球上。P625 は `globe` で月や火星などの天体も表せる) |
-| 期間             | 現在の状態。過去の状態は日付つきのダンプと各項目の編集履歴から得る。事物ごとの時期は、廃止 (P576) や開始・終了の修飾子で表される |
-| 解像度または単位 | 項目 (Q で始まる ID) 1 件。位置は代表点 1 つ (またはいくつか) で、境界は持たない |
-| 大きさ           | ダンプ全体 (latest-all.json.gz) 156,315,459,742 バイト、最良ランクだけのダンプ (latest-truthy.nt.bz2) 43,507,090,513 バイト。項目数 123,562,593 (MediaWiki API の統計) |
-| 更新頻度         | 編集は随時。ダンプは 2 日から 3 日おきに作られる (種類ごとに作る日が違う) |
-| URL              | https://query.wikidata.org/sparql (SPARQL)、https://dumps.wikimedia.org/wikidatawiki/entities/ (ダンプ) |
-| 説明ページ       | https://www.wikidata.org/wiki/Wikidata:Copyright、https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual |
 
 ## 概要
 

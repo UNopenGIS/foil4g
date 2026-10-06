@@ -1,21 +1,22 @@
+---
+id: geofabrik_asia_japan_kanto
+provider: [Geofabrik GmbH, OpenStreetMap Contributors]
+license: [ODbL-1.0]
+access: split
+access_note: split。Geofabrik が定義した地域ごとにファイルが分かれていて、`index-v1.json` の境界ポリゴンから地域を選べる。ファイルの中の PBF は whole (Range は 206 を返すが、範囲の索引が無い)
+format: OSM PBF (ほかに Shapefile と GeoPackage)
+size: 516,386,456 バイト (約 516MB、2026-10-04 版の PBF)
+update: 毎日
+url: https://download.geofabrik.de/asia/japan/kanto-latest.osm.pbf
+checked: 2026-10-06
+details:
+  地域のページ: https://download.geofabrik.de/asia/japan/kanto.html
+  索引: https://download.geofabrik.de/index-v1.json
+---
+
 # Geofabrik Japan Kanto OpenStreetMap Data
 
 > [[Geofabrik]] が [[OpenStreetMap]] の planet から日本の関東地方を切り出して、毎日配っている [[OSM PBF]] ファイル
-
-## データソース情報
-
-| 項目             | 内容                                                                 |
-| ---------------- | -------------------------------------------------------------------- |
-| データID         | geofabrik_asia_japan_kanto                                           |
-| ライセンス       | [[ODbL-1.0]]                                                         |
-| 提供元           | [[Geofabrik]] GmbH、[[OpenStreetMap]] Contributors                   |
-| データ形式       | [[OSM PBF]] (ほかに Shapefile と GeoPackage)                         |
-| ファイルサイズ   | 516,386,456 バイト (約 516MB、2026-10-04 版の PBF)                   |
-| 更新頻度         | 毎日                                                                 |
-| 取り出し方       | split。Geofabrik が定義した地域ごとにファイルが分かれていて、`index-v1.json` の境界ポリゴンから地域を選べる。ファイルの中の PBF は whole (Range は 206 を返すが、範囲の索引が無い) |
-| URL              | https://download.geofabrik.de/asia/japan/kanto-latest.osm.pbf        |
-| 地域のページ     | https://download.geofabrik.de/asia/japan/kanto.html                  |
-| 索引             | https://download.geofabrik.de/index-v1.json                          |
 
 ## 概要
 

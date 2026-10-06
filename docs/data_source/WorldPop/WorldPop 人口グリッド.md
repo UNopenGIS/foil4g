@@ -1,25 +1,26 @@
+---
+id: worldpop
+provider: WorldPop (University of Southampton, School of Geography and Environmental Science)
+source_data: 各国の国勢調査と公式推計 (行政区域別)、国連の World Population Prospects 2024 年版の国別総数、GHSL 人口・建物・都市化度 の建物データ、Google Open Buildings と Microsoft の建物外形、ESA WorldCover 土地被覆 などの共変量。推計値なので一次データではない
+license: [CC-BY-4.0]
+access: split
+access_note: split。国 (ISO 3166-1 alpha-3) × 年 × 製品 × 解像度ごとにファイルが分かれ、STAC API で国と年と製品を選べる。ファイルの中は whole (data.worldpop.org は Range を無視して 200 で全体を返す。FTP は途中から読める)
+format: GeoTIFF (Float32、LZW 圧縮、タイル 512x512)。年齢・性別は国・年ごとの ZIP もある。都市化度は GeoTIFF と ZIP (Shapefile、XLS)
+coverage: 242 の国と地域 (リリース文書)。STAC のコレクションは 248
+period: 2015 年から 2030 年の毎年 (2025 年以降は予測)。旧版 (Global1) は 2000 年から 2020 年
+resolution: 3 秒角 (赤道で約 100m) と 30 秒角 (約 1km)。値は 1 セルあたりの推計人数。都市化度は 1km (モルワイデ図法)
+size: 2020 年の総人口で、モナコ 100m 版 7,811 バイト、日本 100m 版 108,705,121 バイト、日本 1km 版 2,195,362 バイト、全世界 1km モザイク 288,986,559 バイト。日本 2020 年の年齢・性別 100m 版 ZIP は 5,815,803,230 バイト
+update: 不定期のリリース (R2024A、R2024B、R2025A)。R2025A は「alpha version」と明記され、今後変わりうる
+url: https://data.worldpop.org/GIS/ (ファイル)、https://api.stac.worldpop.org/ (STAC API)、https://hub.worldpop.org/rest/data (REST API)
+docs: https://hub.worldpop.org/ 、リリース文書 https://data.worldpop.org/repo/prj/Global_2015_2030/R2025A/doc/Global2_Release_Statement_R2025A_v1.pdf
+checked: 2026-10-06
+details:
+  DOI: 総人口 100m 10.5258/SOTON/WP00839、総人口 1km 10.5258/SOTON/WP00840、年齢・性別 1km 10.5258/SOTON/WP00842、都市化度 10.5258/SOTON/WP00879
+---
+
 # WorldPop 人口グリッド
 
 > 英国サウサンプトン大学の [[WorldPop]] が、国勢調査の人口を機械学習で約 100m と約 1km の格子に配分して、国ごとの [[GeoTIFF]] で配っている、2015 年から 2030 年の毎年の人口推計 (総人口、年齢・性別、都市化度)
-
-## データソース情報
-
-| 項目           | 内容 |
-| -------------- | ---- |
-| データID       | worldpop |
-| 提供元         | [[WorldPop]] (University of Southampton, School of Geography and Environmental Science) |
-| 元データ       | 各国の国勢調査と公式推計 (行政区域別)、国連の [[World Population Prospects]] 2024 年版の国別総数、[[GHSL 人口・建物・都市化度]] の建物データ、[[Google Open Buildings]] と Microsoft の建物外形、[[ESA WorldCover 土地被覆]] などの共変量。推計値なので一次データではない |
-| ライセンス     | [[CC-BY-4.0]] |
-| 取り出し方     | split。国 (ISO 3166-1 alpha-3) × 年 × 製品 × 解像度ごとにファイルが分かれ、[[STAC]] API で国と年と製品を選べる。ファイルの中は whole (data.worldpop.org は Range を無視して 200 で全体を返す。FTP は途中から読める) |
-| データ形式     | [[GeoTIFF]] (Float32、LZW 圧縮、タイル 512x512)。年齢・性別は国・年ごとの ZIP もある。都市化度は GeoTIFF と ZIP (Shapefile、XLS) |
-| 範囲           | 242 の国と地域 (リリース文書)。STAC のコレクションは 248 |
-| 期間           | 2015 年から 2030 年の毎年 (2025 年以降は予測)。旧版 (Global1) は 2000 年から 2020 年 |
-| 解像度または単位 | 3 秒角 (赤道で約 100m) と 30 秒角 (約 1km)。値は 1 セルあたりの推計人数。都市化度は 1km (モルワイデ図法) |
-| 大きさ         | 2020 年の総人口で、モナコ 100m 版 7,811 バイト、日本 100m 版 108,705,121 バイト、日本 1km 版 2,195,362 バイト、全世界 1km モザイク 288,986,559 バイト。日本 2020 年の年齢・性別 100m 版 ZIP は 5,815,803,230 バイト |
-| 更新頻度       | 不定期のリリース (R2024A、R2024B、R2025A)。R2025A は「alpha version」と明記され、今後変わりうる |
-| URL            | https://data.worldpop.org/GIS/ (ファイル)、https://api.stac.worldpop.org/ (STAC API)、https://hub.worldpop.org/rest/data (REST API) |
-| 説明ページ     | https://hub.worldpop.org/ 、リリース文書 https://data.worldpop.org/repo/prj/Global_2015_2030/R2025A/doc/Global2_Release_Statement_R2025A_v1.pdf |
-| DOI            | 総人口 100m 10.5258/SOTON/WP00839、総人口 1km 10.5258/SOTON/WP00840、年齢・性別 1km 10.5258/SOTON/WP00842、都市化度 10.5258/SOTON/WP00879 |
 
 ## 概要
 

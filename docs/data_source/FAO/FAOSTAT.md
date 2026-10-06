@@ -1,25 +1,27 @@
+---
+id: faostat
+provider: 国連食糧農業機関 (FAO、Food and Agriculture Organization of the United Nations) の統計部 (Statistics Division、ESS)。林業は Forestry Division、食事と栄養は Food and Nutrition Division
+source_data: 主に各国政府から FAO が集めた統計と FAO の推計。一部の領域は他機関のデータを使う (OECD、UNSD、ILO、国連人口部など。下の「内容」を参照)
+license: [CC-BY-4.0]
+license_note: CC-BY-4.0 に FAO の追加条項 (宣伝への利用の禁止、出典の書式、UNCITRAL 仲裁など) が付く
+access: split
+access_note: split。領域ごとに zip が分かれ、目録 `datasets_E.json` で選べる。zip の中は CSV 1 本で、行や国では絞れない (whole)
+format: zip に入った CSV (UTF-8、カンマ区切り、全項目を引用符で囲む)。データ本体のほかに地域、品目、要素、フラグのコード表が入る
+coverage: 全世界。国と地域のほかに大陸や経済圏などの集計値を持つ (生産 QCL は 244 地域のうち 34 が集計)。国より細かい単位は無い
+period: 領域ごとに違う。生産 QCL は 1961 年から 2024 年、SDG 指標 SDGB は 1974 年から 2026 年
+resolution: 国 × 年 × 品目 × 要素 (生産量、収穫面積など) が 1 行。空間の解像度は国
+size: 目録の 69 本の zip の合計は 1,488,229KB (約 1.4GB)、行数の合計は 177,586,737 行 (2026-10-05 版の目録)。最大は詳細な貿易行列 TM の 420,650,070 バイト、最小は MDDW の 12,146 バイト
+update: 領域ごとに随時。同じファイル名のまま上書きされる
+url: https://bulks-faostat.fao.org/production/datasets_E.json (一括配布の目録)
+docs: https://www.fao.org/faostat/en/
+checked: 2026-10-06
+details:
+  利用規約: https://www.fao.org/contact-us/terms/db-terms-of-use/en/
+---
+
 # FAOSTAT
 
 > [[国連食糧農業機関]] (FAO) が、食料と農業の国別・年別の統計 (生産、貿易、食料需給表、食料安全保障、土地利用、農業由来の温室効果ガス排出など) を、69 の領域 (domain) ごとの CSV の zip にして全世界分を配っているデータベース
-
-## データソース情報
-
-| 項目           | 内容 |
-| -------------- | ---- |
-| データID       | faostat |
-| 提供元         | [[国連食糧農業機関]] (FAO、Food and Agriculture Organization of the United Nations) の統計部 (Statistics Division、ESS)。林業は Forestry Division、食事と栄養は Food and Nutrition Division |
-| 元データ       | 主に各国政府から FAO が集めた統計と FAO の推計。一部の領域は他機関のデータを使う (OECD、UNSD、ILO、国連人口部など。下の「内容」を参照) |
-| ライセンス     | [[CC-BY-4.0]] に FAO の追加条項 (宣伝への利用の禁止、出典の書式、UNCITRAL 仲裁など) が付く |
-| 取り出し方     | split。領域ごとに zip が分かれ、目録 `datasets_E.json` で選べる。zip の中は CSV 1 本で、行や国では絞れない (whole) |
-| データ形式     | zip に入った CSV (UTF-8、カンマ区切り、全項目を引用符で囲む)。データ本体のほかに地域、品目、要素、フラグのコード表が入る |
-| 範囲           | 全世界。国と地域のほかに大陸や経済圏などの集計値を持つ (生産 QCL は 244 地域のうち 34 が集計)。国より細かい単位は無い |
-| 期間           | 領域ごとに違う。生産 QCL は 1961 年から 2024 年、SDG 指標 SDGB は 1974 年から 2026 年 |
-| 解像度または単位 | 国 × 年 × 品目 × 要素 (生産量、収穫面積など) が 1 行。空間の解像度は国 |
-| 大きさ         | 目録の 69 本の zip の合計は 1,488,229KB (約 1.4GB)、行数の合計は 177,586,737 行 (2026-10-05 版の目録)。最大は詳細な貿易行列 TM の 420,650,070 バイト、最小は MDDW の 12,146 バイト |
-| 更新頻度       | 領域ごとに随時。同じファイル名のまま上書きされる |
-| URL            | https://bulks-faostat.fao.org/production/datasets_E.json (一括配布の目録) |
-| 説明ページ     | https://www.fao.org/faostat/en/ |
-| 利用規約       | https://www.fao.org/contact-us/terms/db-terms-of-use/en/ |
 
 ## 概要
 

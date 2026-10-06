@@ -1,24 +1,24 @@
+---
+id: geonames
+provider: GeoNames (Unxos GmbH、スイス St. Gallen。創始者は Marc Wick)
+source_data: 100 を超える出典の集約と、利用者の wiki 編集。主な出典は米国 NGA の GNS、USGS の GNIS、各国の地図機関と統計機関など (datasources ページに 436 件)
+license: [CC-BY-4.0]
+access: split
+access_note: split。国 (ISO 3166-1 alpha-2) ごとの zip が 253 個と、国に属さない地物の `no-country.zip` がある。別名も同じ単位で `alternatenames/XX.zip` に分かれる。全世界は whole の `allCountries.zip`。Range は 206 を返すが、zip の中は deflate されたテキストで索引が無く、範囲や種類では絞れない
+format: [タブ区切りテキスト (UTF-8, 見出し行なし, 引用符なし) を zip で圧縮]
+coverage: 全世界 (統計ページで 252 の国と地域、ほかに国に属さない海底地形など)
+period: 現在の地名。廃止された行政区画 (`ADM1H` など) と歴史上の別名 (`isHistoric`) も含む。過去の版は無料では残らない
+resolution: 地物 1 件につき 1 点 (WGS84 の緯度経度、10 進度)。面は国境の簡略版だけ
+size: allCountries.zip 422,006,079 バイト、alternateNamesV2.zip 204,813,820 バイト、JP.zip 4,959,088 バイト、MC.zip 9,030 バイト (いずれも 2026-10-06 版の zip の大きさ)
+update: 毎日 (同じ URL の中身が差し替わる)。前日分の差分ファイルも毎日出る
+url: https://download.geonames.org/export/dump/
+docs: https://download.geonames.org/export/dump/readme.txt 、https://www.geonames.org/export/codes.html 、https://www.geonames.org/export/
+checked: 2026-10-06
+---
+
 # GeoNames 地名
 
 > スイスの Unxos GmbH が運営する [[GeoNames]] が、全世界の約 1,300 万件の地名 (点) と別名を、国別と全世界のタブ区切りテキストの zip で毎日作り直して配っている地名辞書 (gazetteer)
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | geonames |
-| 提供元           | [[GeoNames]] (Unxos GmbH、スイス St. Gallen。創始者は Marc Wick) |
-| 元データ         | 100 を超える出典の集約と、利用者の wiki 編集。主な出典は米国 NGA の GNS、USGS の GNIS、各国の地図機関と統計機関など (datasources ページに 436 件) |
-| ライセンス       | [[CC-BY-4.0]] |
-| 取り出し方       | split。国 (ISO 3166-1 alpha-2) ごとの zip が 253 個と、国に属さない地物の `no-country.zip` がある。別名も同じ単位で `alternatenames/XX.zip` に分かれる。全世界は whole の `allCountries.zip`。Range は 206 を返すが、zip の中は deflate されたテキストで索引が無く、範囲や種類では絞れない |
-| データ形式       | タブ区切りテキスト (UTF-8、見出し行なし、引用符なし) を zip で圧縮 |
-| 範囲             | 全世界 (統計ページで 252 の国と地域、ほかに国に属さない海底地形など) |
-| 期間             | 現在の地名。廃止された行政区画 (`ADM1H` など) と歴史上の別名 (`isHistoric`) も含む。過去の版は無料では残らない |
-| 解像度または単位 | 地物 1 件につき 1 点 (WGS84 の緯度経度、10 進度)。面は国境の簡略版だけ |
-| 大きさ           | allCountries.zip 422,006,079 バイト、alternateNamesV2.zip 204,813,820 バイト、JP.zip 4,959,088 バイト、MC.zip 9,030 バイト (いずれも 2026-10-06 版の zip の大きさ) |
-| 更新頻度         | 毎日 (同じ URL の中身が差し替わる)。前日分の差分ファイルも毎日出る |
-| URL              | https://download.geonames.org/export/dump/ |
-| 説明ページ       | https://download.geonames.org/export/dump/readme.txt 、https://www.geonames.org/export/codes.html 、https://www.geonames.org/export/ |
 
 ## 概要
 

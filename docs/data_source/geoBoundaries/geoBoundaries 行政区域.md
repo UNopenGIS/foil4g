@@ -1,26 +1,28 @@
+---
+id: geoboundaries
+provider: William & Mary geoLab (米国ウィリアム・アンド・メアリー大学) と協力者
+source_data: 国と階層ごとに違う。各国の政府機関、OpenStreetMap (osm-boundaries.com 経由)、HDX の COD-AB、UN SALB、Wikimedia Commons など。各ファイルのメタデータに出所がある
+license: [ODbL-1.0, public-domain, CC-BY-4.0, CC-BY-3.0-IGO, other]
+license_note: ファイルごとに違う。gbOpen は 25 種類 (ODbL 1.0 が 225 件、Public Domain が 102 件、CC BY 4.0 が 148 件など)、gbHumanitarian は全件 CC-BY-3.0-IGO、gbAuthoritative は全件 UN SALB Data License (非営利のみ)。配布元はサイト全体を CC-BY-4.0 と案内している
+access: split
+access_note: split。国 (ISO 3166-1 alpha-3) と行政階層 (ADM0 から ADM5) の組でファイルが分かれ、API でその組を指定して 1 件ずつ取れる。空間や日時での検索は無い
+format: GeoJSON、簡略化 GeoJSON、TopoJSON、Shapefile (一式 zip に同梱)、プレビュー PNG。全世界の合成版 CGAZ は GeoPackage もある
+coverage: 全世界。gbOpen は 232 の国と地域、gbHumanitarian は 142、gbAuthoritative は 32
+period: 境界が表す年は国と階層ごとに違う。gbOpen は 1995 年から 2023 年
+resolution: 行政区画 1 つが 1 地物 (ポリゴンまたはマルチポリゴン)。座標系は WGS84 経緯度
+size: 1 件ごとに違う。日本の ADM2 の GeoJSON が 10,897,321 バイト、日本の ADM1 の一式 zip が 45,855,447 バイト。CGAZ の GeoPackage は ADM0 が 162,144,256、ADM1 が 144,470,016、ADM2 が 240,824,320 バイト
+update: 決まった周期は無い。年ごとのリリース (5.0.0 が 2022-12-19) と、その間の随時の更新。現行のファイルの大半は 2023-12-12 の build
+url: https://www.geoboundaries.org/api/current/gbOpen/ALL/ALL/ (API の目録)
+docs: https://www.geoboundaries.org/ 、https://www.geoboundaries.org/api.html
+checked: 2026-10-06
+details:
+  配布の実体: https://github.com/wmgeolab/geoBoundaries (`releaseData/` の下)
+  論文: 'Runfola, D. et al. (2020) PLoS ONE 15(4): e0231866'
+---
+
 # geoBoundaries 行政区域
 
 > [[William & Mary geoLab]] が、各国の政府、国連機関、[[OpenStreetMap]] などから集めた行政区域の境界 (国境から ADM5 まで) を、国と階層の組ごとに GeoJSON、Shapefile、TopoJSON で配っている全世界のデータベース
-
-## データソース情報
-
-| 項目             | 内容                                                                                                   |
-| ---------------- | ------------------------------------------------------------------------------------------------------ |
-| データID         | geoboundaries                                                                                          |
-| 提供元           | [[William & Mary geoLab]] (米国ウィリアム・アンド・メアリー大学) と協力者                              |
-| 元データ         | 国と階層ごとに違う。各国の政府機関、[[OpenStreetMap]] (osm-boundaries.com 経由)、[[HDX]] の COD-AB、[[UN SALB]]、Wikimedia Commons など。各ファイルのメタデータに出所がある |
-| ライセンス       | ファイルごとに違う。gbOpen は 25 種類 (ODbL 1.0 が 225 件、Public Domain が 102 件、CC BY 4.0 が 148 件など)、gbHumanitarian は全件 [[CC-BY-3.0-IGO]]、gbAuthoritative は全件 UN SALB Data License (非営利のみ)。配布元はサイト全体を [[CC-BY-4.0]] と案内している |
-| 取り出し方       | split。国 (ISO 3166-1 alpha-3) と行政階層 (ADM0 から ADM5) の組でファイルが分かれ、API でその組を指定して 1 件ずつ取れる。空間や日時での検索は無い |
-| データ形式       | [[GeoJSON]]、簡略化 GeoJSON、[[TopoJSON]]、[[Shapefile]] (一式 zip に同梱)、プレビュー PNG。全世界の合成版 CGAZ は [[GeoPackage]] もある |
-| 範囲             | 全世界。gbOpen は 232 の国と地域、gbHumanitarian は 142、gbAuthoritative は 32                        |
-| 期間             | 境界が表す年は国と階層ごとに違う。gbOpen は 1995 年から 2023 年                                        |
-| 解像度または単位 | 行政区画 1 つが 1 地物 (ポリゴンまたはマルチポリゴン)。座標系は WGS84 経緯度                          |
-| 大きさ           | 1 件ごとに違う。日本の ADM2 の GeoJSON が 10,897,321 バイト、日本の ADM1 の一式 zip が 45,855,447 バイト。CGAZ の GeoPackage は ADM0 が 162,144,256、ADM1 が 144,470,016、ADM2 が 240,824,320 バイト |
-| 更新頻度         | 決まった周期は無い。年ごとのリリース (5.0.0 が 2022-12-19) と、その間の随時の更新。現行のファイルの大半は 2023-12-12 の build |
-| URL              | https://www.geoboundaries.org/api/current/gbOpen/ALL/ALL/ (API の目録)                                 |
-| 説明ページ       | https://www.geoboundaries.org/ 、https://www.geoboundaries.org/api.html                                |
-| 配布の実体       | https://github.com/wmgeolab/geoBoundaries (`releaseData/` の下)                                       |
-| 論文             | Runfola, D. et al. (2020) PLoS ONE 15(4): e0231866                                                    |
 
 ## 概要
 

@@ -1,29 +1,29 @@
+---
+id: edgar_ghg
+provider: 欧州委員会 共同研究センター (European Commission, Joint Research Centre, JRC) の EDGAR チーム。化石 CO2 は 国際エネルギー機関 (IEA) との共同
+source_data: なし (一次データ。ただし推計の材料として IEA World Energy Balances、IEA Greenhouse Gas Emissions from Energy、FAOSTAT、USGS、IFA、GFMR/NOAA、UNFCCC、worldsteel などの統計を使っている)
+license: [CC-BY-NC-ND-4.0, CC-BY-4.0]
+license_note: 'CH4、N2O、F ガス、バイオ CO2: CC-BY-4.0。改変、再配布、商用利用ができる。出典の表示と、変更したならその旨の表示が要る / 化石 CO2 = IEA-EDGAR CO2: CC BY-NC-ND 4.0。自由には使えない。非商用に限られ、改変したものは配れない。それ以外の使い方は IEA (compliance@iea.org) の許可が要る / CO2 換算の合計 GWP_100_AR5_GHG: 配布元に明記なし。化石 CO2 を足し込んだ値なので、化石 CO2 と同じ条件で扱うのが安全 (下の「ライセンスと帰属表示」)'
+access: split
+access_note: split。物質 × 部門 × 形式 × 年でファイルが分かれていて、必要な物質・部門・年の zip だけを取れる。最小単位は 1 物質 1 部門 1 年の格子 zip (CH4 合計の 2025 年で 16,477,890 バイト)。zip の中の NetCDF は deflate 圧縮なので、ファイルの中は whole (Range で zip の目次は読めるが、NetCDF の一部の領域だけは読めない)
+format: 国別の表は xlsx (zip 入り)。格子は NetCDF-4 (排出量 `emi_nc` とフラックス `flx_nc`) とテキスト (`emi_txt`)、どれも zip 入り
+coverage: 全世界。格子は経度 -180〜180、緯度 -90〜90。国別の表は CH4 で 221 の国・地域と国際航空 (AIR)、国際海運 (SEA)
+period: '年別: 1970〜2025 年 (F ガスは 1990〜2025 年)。月別の国別表: 1970〜2025 年 (CO2、CO2bio、CH4、N2O のみ)。月別の格子: 2000〜2025 年'
+resolution: 格子は 0.1 度 × 0.1 度 (3600 × 1800 セル)。国別の表は国 × 部門 (IPCC 1996 と IPCC 2006 の区分コード) × 年。単位は表が Gg (= kt) / 年、格子が t / セル / 年 (排出量) と kg / m2 / s (フラックス)
+size: '年別の国別表: CH4 5,719,692 バイト、N2O 6,241,014 バイト、F ガス 1,467,444 バイト (各 zip)。格子: CH4 合計の 1 年分 zip 16,477,890 バイト (展開後の NetCDF 25,972,785 バイト)、CH4 合計の全年分 zip (56 年) 913,817,687 バイト、N2O 合計の全年分 zip 898,892,033 バイト'
+update: 年 1 回 (2024 年 11 月、2025 年 9 月、2026 年 9 月に新しい版)。版ごとに期間が 1 年延び、過去の年も計算し直される
+url: https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/EDGAR/datasets/EDGAR_2026_GHG/
+docs: https://edgar.jrc.ec.europa.eu/dataset_ghg2026
+checked: 2026-10-06
+details:
+  最新の版: EDGAR_2026_GHG (2026 年 9 月公開)
+  readme: https://edgar.jrc.ec.europa.eu/readme/edgar_2026_ghg_readme.txt
+  過去の版: https://edgar.jrc.ec.europa.eu/archived_datasets
+---
+
 # EDGAR 温室効果ガス排出
 
 > [[欧州委員会 共同研究センター]] (JRC) が、全世界の温室効果ガス (CO2、CH4、N2O、F ガス) の排出量の推計を、国別・部門別の表 (xlsx) と全球 0.1 度格子 (NetCDF とテキスト) にして、版ごとに配っている EDGAR (Emissions Database for Global Atmospheric Research) の温室効果ガス版
-
-## データソース情報
-
-| 項目 | 内容 |
-| ---- | ---- |
-| データID | edgar_ghg |
-| 最新の版 | EDGAR_2026_GHG (2026 年 9 月公開) |
-| 提供元 | [[欧州委員会 共同研究センター]] (European Commission, Joint Research Centre, JRC) の EDGAR チーム。化石 CO2 は [[国際エネルギー機関]] (IEA) との共同 |
-| 元データ | なし (一次データ。ただし推計の材料として IEA World Energy Balances、IEA Greenhouse Gas Emissions from Energy、FAOSTAT、USGS、IFA、GFMR/NOAA、UNFCCC、worldsteel などの統計を使っている) |
-| ライセンス (CH4、N2O、F ガス、バイオ CO2) | [[CC-BY-4.0]]。改変、再配布、商用利用ができる。出典の表示と、変更したならその旨の表示が要る |
-| ライセンス (化石 CO2 = IEA-EDGAR CO2) | CC BY-NC-ND 4.0。自由には使えない。非商用に限られ、改変したものは配れない。それ以外の使い方は IEA (compliance@iea.org) の許可が要る |
-| ライセンス (CO2 換算の合計 GWP_100_AR5_GHG) | 配布元に明記なし。化石 CO2 を足し込んだ値なので、化石 CO2 と同じ条件で扱うのが安全 (下の「ライセンスと帰属表示」) |
-| 取り出し方 | split。物質 × 部門 × 形式 × 年でファイルが分かれていて、必要な物質・部門・年の zip だけを取れる。最小単位は 1 物質 1 部門 1 年の格子 zip (CH4 合計の 2025 年で 16,477,890 バイト)。zip の中の NetCDF は deflate 圧縮なので、ファイルの中は whole (Range で zip の目次は読めるが、NetCDF の一部の領域だけは読めない) |
-| データ形式 | 国別の表は xlsx (zip 入り)。格子は NetCDF-4 (排出量 `emi_nc` とフラックス `flx_nc`) とテキスト (`emi_txt`)、どれも zip 入り |
-| 範囲 | 全世界。格子は経度 -180〜180、緯度 -90〜90。国別の表は CH4 で 221 の国・地域と国際航空 (AIR)、国際海運 (SEA) |
-| 期間 | 年別: 1970〜2025 年 (F ガスは 1990〜2025 年)。月別の国別表: 1970〜2025 年 (CO2、CO2bio、CH4、N2O のみ)。月別の格子: 2000〜2025 年 |
-| 解像度または単位 | 格子は 0.1 度 × 0.1 度 (3600 × 1800 セル)。国別の表は国 × 部門 (IPCC 1996 と IPCC 2006 の区分コード) × 年。単位は表が Gg (= kt) / 年、格子が t / セル / 年 (排出量) と kg / m2 / s (フラックス) |
-| 大きさ | 年別の国別表: CH4 5,719,692 バイト、N2O 6,241,014 バイト、F ガス 1,467,444 バイト (各 zip)。格子: CH4 合計の 1 年分 zip 16,477,890 バイト (展開後の NetCDF 25,972,785 バイト)、CH4 合計の全年分 zip (56 年) 913,817,687 バイト、N2O 合計の全年分 zip 898,892,033 バイト |
-| 更新頻度 | 年 1 回 (2024 年 11 月、2025 年 9 月、2026 年 9 月に新しい版)。版ごとに期間が 1 年延び、過去の年も計算し直される |
-| URL (配布の入口) | https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/EDGAR/datasets/EDGAR_2026_GHG/ |
-| 説明ページ | https://edgar.jrc.ec.europa.eu/dataset_ghg2026 |
-| readme | https://edgar.jrc.ec.europa.eu/readme/edgar_2026_ghg_readme.txt |
-| 過去の版 | https://edgar.jrc.ec.europa.eu/archived_datasets |
 
 ## 概要
 

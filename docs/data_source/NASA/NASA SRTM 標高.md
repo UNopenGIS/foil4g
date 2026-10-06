@@ -1,24 +1,25 @@
+---
+id: nasa_srtm
+provider: NASA (Jet Propulsion Laboratory の SRTM プロジェクト)。配布は LP DAAC。複製の配布に OpenTopography と Microsoft Planetary Computer
+source_data: なし (一次データ)。ただし SRTM v3 の欠測は ASTER GDEM v2、GMTED2010、NED で、NASADEM の欠測は ASTER GDEM と ALOS AW3D30 などで埋めてある
+license: [CC0-1.0]
+license_note: NASA の一般方針で CC0 (個別ページは「openly shared, without restriction」)。CGIAR-CSI 版は別条件で再配布不可
+access: split
+access_note: split。1 度四方のタイルに分かれ、ファイル名 (南西隅の緯度経度) か、Planetary Computer の STAC の bbox 検索でタイルを選ぶ。OpenTopography と Planetary Computer の GeoTIFF は Range に 206 を返すので、タイルの中も range で部分読みできる
+format: LP DAAC は HGT (16 bit 整数、big-endian) の zip。OpenTopography は GeoTIFF (DEFLATE、512 x 512 の内部タイル)。Planetary Computer は Cloud Optimized GeoTIFF
+coverage: 北緯 60 度から南緯 56 度の陸地 (LP DAAC の記載で地球の陸地の約 80%)。NASADEM には北緯 60 度から 61 度の行のタイルもある
+period: 2000-02-11 から 2000-02-21 の観測 (11 日間)
+resolution: 1 秒 (約 30m、SRTMGL1 と NASADEM) と 3 秒 (約 90m、SRTMGL3)。値は標高 (m、EGM96 ジオイド基準)
+size: OpenTopography の GeoTIFF の合計で、SRTM 1 秒 135,122,864,564 バイト (14,280 枚)、SRTM 3 秒 19,451,183,487 バイト (14,280 枚)、NASADEM 136,059,553,142 バイト (14,520 枚)。東京を含む 1 タイルは SRTM 1 秒 10,623,899 バイト、NASADEM 10,517,920 バイト
+update: なし。SRTM v3 は 2015-09-02 更新、NASADEM は 2020-02-13 公開のまま
+url: https://opentopography.s3.sdsc.edu/raster/SRTM_GL1/ (SRTM v3 1 秒)、https://opentopography.s3.sdsc.edu/raster/NASADEM/ (NASADEM)、https://planetarycomputer.microsoft.com/api/stac/v1/collections/nasadem (NASADEM の STAC)
+docs: https://lpdaac.usgs.gov/products/srtmgl1v003/ 、https://lpdaac.usgs.gov/products/nasadem_hgtv001/ 、https://portal.opentopography.org/raster?opentopoID=OTSRTM.082015.4326.1 、https://doi.org/10.5069/G93T9FD9
+checked: 2026-10-06
+---
+
 # NASA SRTM 標高
 
 > [[NASA]] が 2000 年 2 月のスペースシャトルのレーダー観測 (SRTM) から作った、北緯 60 度から南緯 56 度の陸地の標高データ (SRTM v3 と、処理し直した [[NASADEM]]) で、1 度四方のタイルに分けて [[LP DAAC]] (要ログイン)、[[OpenTopography]] と [[Microsoft Planetary Computer]] (ログイン不要) から配られているもの
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | nasa_srtm |
-| 提供元           | [[NASA]] ([[Jet Propulsion Laboratory]] の SRTM プロジェクト)。配布は [[LP DAAC]]。複製の配布に [[OpenTopography]] と [[Microsoft Planetary Computer]] |
-| 元データ         | なし (一次データ)。ただし SRTM v3 の欠測は ASTER GDEM v2、GMTED2010、NED で、NASADEM の欠測は ASTER GDEM と ALOS AW3D30 などで埋めてある |
-| ライセンス       | NASA の一般方針で [[CC0]] (個別ページは「openly shared, without restriction」)。CGIAR-CSI 版は別条件で再配布不可 |
-| 取り出し方       | split。1 度四方のタイルに分かれ、ファイル名 (南西隅の緯度経度) か、Planetary Computer の [[STAC]] の bbox 検索でタイルを選ぶ。OpenTopography と Planetary Computer の GeoTIFF は Range に 206 を返すので、タイルの中も range で部分読みできる |
-| データ形式       | LP DAAC は HGT (16 bit 整数、big-endian) の zip。OpenTopography は [[GeoTIFF]] (DEFLATE、512 x 512 の内部タイル)。Planetary Computer は [[Cloud Optimized GeoTIFF]] |
-| 範囲             | 北緯 60 度から南緯 56 度の陸地 (LP DAAC の記載で地球の陸地の約 80%)。NASADEM には北緯 60 度から 61 度の行のタイルもある |
-| 期間             | 2000-02-11 から 2000-02-21 の観測 (11 日間) |
-| 解像度または単位 | 1 秒 (約 30m、SRTMGL1 と NASADEM) と 3 秒 (約 90m、SRTMGL3)。値は標高 (m、EGM96 ジオイド基準) |
-| 大きさ           | OpenTopography の GeoTIFF の合計で、SRTM 1 秒 135,122,864,564 バイト (14,280 枚)、SRTM 3 秒 19,451,183,487 バイト (14,280 枚)、NASADEM 136,059,553,142 バイト (14,520 枚)。東京を含む 1 タイルは SRTM 1 秒 10,623,899 バイト、NASADEM 10,517,920 バイト |
-| 更新頻度         | なし。SRTM v3 は 2015-09-02 更新、NASADEM は 2020-02-13 公開のまま |
-| URL              | https://opentopography.s3.sdsc.edu/raster/SRTM_GL1/ (SRTM v3 1 秒)、https://opentopography.s3.sdsc.edu/raster/NASADEM/ (NASADEM)、https://planetarycomputer.microsoft.com/api/stac/v1/collections/nasadem (NASADEM の STAC) |
-| 説明ページ       | https://lpdaac.usgs.gov/products/srtmgl1v003/ 、https://lpdaac.usgs.gov/products/nasadem_hgtv001/ 、https://portal.opentopography.org/raster?opentopoID=OTSRTM.082015.4326.1 、https://doi.org/10.5069/G93T9FD9 |
 
 ## 概要
 

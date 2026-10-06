@@ -1,20 +1,21 @@
+---
+id: opencellid_full
+provider: [OpenCelliD (2017 年から Unwired Labs が運営), OpenCelliD の貢献者]
+license: [CC-BY-SA-4.0]
+access: unconfirmed
+access_note: 未確認。国別と全世界のファイル、bbox で引ける API (`cell/getInArea`) があるが、どれもアクセストークンが要り、実測していない
+format: CSV (gzip 圧縮)
+size: 確かめていません (以前のページには 105MB とありました)
+update: 毎日 (02:00 GMT までに作り直し)
+url: https://opencellid.org/downloads.php
+checked: 2026-10-06
+details:
+  列の説明: https://docs.opencellid.org/docs/downloads/database-format
+---
+
 # OpenCelliD 基地局位置データ
 
 > [[OpenCelliD]] が利用者の観測から推定した、世界の携帯電話基地局 (セル) の位置を [[CSV]] で配っている一括ダウンロード
-
-## データソース情報
-
-| 項目             | 内容                                                                                          |
-| ---------------- | --------------------------------------------------------------------------------------------- |
-| データID         | opencellid_full                                                                               |
-| ライセンス       | [[CC-BY-SA-4.0]]                                                                              |
-| 提供元           | [[OpenCelliD]] (2017 年から Unwired Labs が運営)、OpenCelliD の貢献者                         |
-| データ形式       | [[CSV]] (gzip 圧縮)                                                                           |
-| ファイルサイズ   | 確かめていません (以前のページには 105MB とありました)                                       |
-| 更新頻度         | 毎日 (02:00 GMT までに作り直し)                                                              |
-| 取り出し方       | 未確認。国別と全世界のファイル、bbox で引ける API (`cell/getInArea`) があるが、どれもアクセストークンが要り、実測していない |
-| URL              | https://opencellid.org/downloads.php                                                          |
-| 列の説明         | https://docs.opencellid.org/docs/downloads/database-format                                    |
 
 ## 概要
 

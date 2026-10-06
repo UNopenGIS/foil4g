@@ -1,23 +1,25 @@
+---
+id: openstreetmap_jp_planet
+provider: [OSMFJ (OpenStreetMap Foundation Japan), OpenStreetMap Contributors]
+license: [CC-BY-4.0, ODbL-1.0]
+license_note: データは ODbL、スキーマのデザインは CC-BY 4.0 (OpenMapTiles への帰属表示が要る)
+access: split
+access_note: split。XYZ のタイル 1 枚が単位で、必要なズームと位置のタイルだけを取る。広い範囲は Planet PMTiles から range で切り出す
+format: [XYZ の ベクトルタイル (MVT, 拡張子は `.pbf`)]
+coverage: 全世界 (経度 -180 から 180、緯度 -85.05113 から 85.05113)
+period: 2026-09-28T00:00:04Z (2026-10-06 時点)
+resolution: 0 から 14
+update: 毎週 (OSM Wiki の OSMFJ タイルサーバーのページによる)
+url: https://tile.openstreetmap.jp/data/planet/{z}/{x}/{y}.pbf
+checked: 2026-10-06
+details:
+  スキーマ: OpenMapTiles 3.16.0 (Planetiler 0.10.2 で生成)
+  TileJSON: https://tile.openstreetmap.jp/data/planet.json
+---
+
 # OpenStreetMap Japan Planet ベクトルタイル
 
 > [[OSMFJ]] のタイルサーバーが XYZ で配信している、全世界の [[OpenStreetMap]] を OpenMapTiles スキーマにした [[ベクトルタイル]]
-
-## データソース情報
-
-| 項目             | 内容                                                                                  |
-| ---------------- | ------------------------------------------------------------------------------------- |
-| データID         | openstreetmap_jp_planet                                                               |
-| ライセンス       | データは [[ODbL]]、スキーマのデザインは CC-BY 4.0 (OpenMapTiles への帰属表示が要る)  |
-| 提供元           | [[OSMFJ]] (OpenStreetMap Foundation Japan)、[[OpenStreetMap]] Contributors           |
-| データ形式       | XYZ の [[ベクトルタイル]] (MVT、拡張子は `.pbf`)                                      |
-| スキーマ         | OpenMapTiles 3.16.0 ([[Planetiler]] 0.10.2 で生成)                                    |
-| ズームレベル     | 0 から 14                                                                             |
-| 範囲             | 全世界 (経度 -180 から 180、緯度 -85.05113 から 85.05113)                            |
-| データ基準日     | 2026-09-28T00:00:04Z (2026-10-06 時点)                                               |
-| 更新頻度         | 毎週 (OSM Wiki の OSMFJ タイルサーバーのページによる)                                |
-| 取り出し方       | split。XYZ のタイル 1 枚が単位で、必要なズームと位置のタイルだけを取る。広い範囲は Planet PMTiles から range で切り出す |
-| URL              | https://tile.openstreetmap.jp/data/planet/{z}/{x}/{y}.pbf                             |
-| TileJSON         | https://tile.openstreetmap.jp/data/planet.json                                        |
 
 ## 概要
 

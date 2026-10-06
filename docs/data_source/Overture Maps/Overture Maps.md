@@ -1,27 +1,28 @@
+---
+id: overture_maps
+provider: Overture Maps Foundation
+source_data: [OpenStreetMap, Microsoft と Google の機械学習による建物, Esri Community Maps, geoBoundaries 行政区域, ESA WorldCover 土地被覆, Meta や Microsoft などの施設データ, OpenAddresses などの住所データ, TomTom の道路データほか (テーマごとに下で説明)]
+license: [ODbL-1.0, CDLA-Permissive-2.0, Apache-2.0, CC0-1.0, other]
+license_note: テーマごとに違う。base、buildings、divisions、transportation は ODbL-1.0。places は出典ごとに CDLA-Permissive-2.0、Apache-2.0、CC0-1.0。addresses は出典ごとに 175 を超える別々の条件 (STAC では places と addresses の license は `other`)
+access: range
+access_note: range。テーマと種類ごとのフォルダに分かれた GeoParquet で、STAC の item がファイルごとの範囲 (bbox) を持つ。ファイルの中は行グループごとに bbox 列の統計があり、HTTP Range (206 を確認) で必要な行グループと列だけを読める
+format: GeoParquet 1.1.0 (ジオメトリは WKB、zstd 圧縮、bbox の covering 列つき)。ほかにテーマごとの PMTiles
+coverage: 全世界 (テーマによって網羅度が違う。addresses は 41 か国だけ)
+period: 毎月のリリース時点のスナップショット。最新は 2026-09-23.1 (OSM の取り込み締め日は 2026-09-09 から 2026-09-16)。公開バケットには直近 2 か月分だけが残る
+resolution: 地物 (点、線、面) ごとの 1 行。座標は経緯度 (OGC:CRS84)
+size: 2026-09-23.1 の GeoParquet 全体で 619,188,730,173 バイト (約 619GB、1,278 ファイル)。テーマ別 PMTiles は 18GB (places) から 190GB (base)
+update: '毎月 (次は 2026-10-21.0 の予定)。修正版は末尾の番号が上がる (例: 2026-09-23.0 の修正が 2026-09-23.1)'
+url: s3://overturemaps-us-west-2/release/2026-09-23.1/ (HTTPS では https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/release/2026-09-23.1/)、https://overturemapswestus2.blob.core.windows.net/release/2026-09-23.1/
+docs: https://docs.overturemaps.org/getting-data/cloud-sources/
+checked: 2026-10-06
+details:
+  STAC カタログ: https://stac.overturemaps.org/catalog.json
+  リリース一覧: https://docs.overturemaps.org/release-calendar/
+---
+
 # Overture Maps
 
 > [[Overture Maps Foundation]] が、[[OpenStreetMap]] や各社・各国のオープンデータを統合した全世界の地図データ (住所、基盤、建物、行政区域、施設、交通の 6 テーマ) を、毎月 [[GeoParquet]] で Amazon S3 と Microsoft Azure から配り、[[STAC]] カタログで目録を公開しているもの
-
-## データソース情報
-
-| 項目             | 内容 |
-| ---------------- | ---- |
-| データID         | overture_maps |
-| 提供元           | [[Overture Maps Foundation]] |
-| 元データ         | [[OpenStreetMap]]、Microsoft と Google の機械学習による建物、Esri Community Maps、[[geoBoundaries 行政区域]]、[[ESA WorldCover 土地被覆]]、Meta や Microsoft などの施設データ、OpenAddresses などの住所データ、TomTom の道路データほか (テーマごとに下で説明) |
-| ライセンス       | テーマごとに違う。base、buildings、divisions、transportation は [[ODbL-1.0]]。places は出典ごとに [[CDLA-Permissive-2.0]]、Apache-2.0、CC0-1.0。addresses は出典ごとに 175 を超える別々の条件 (STAC では places と addresses の license は `other`) |
-| 取り出し方       | range。テーマと種類ごとのフォルダに分かれた GeoParquet で、STAC の item がファイルごとの範囲 (bbox) を持つ。ファイルの中は行グループごとに bbox 列の統計があり、HTTP Range (206 を確認) で必要な行グループと列だけを読める |
-| データ形式       | [[GeoParquet]] 1.1.0 (ジオメトリは WKB、zstd 圧縮、bbox の covering 列つき)。ほかにテーマごとの [[PMTiles]] |
-| 範囲             | 全世界 (テーマによって網羅度が違う。addresses は 41 か国だけ) |
-| 期間             | 毎月のリリース時点のスナップショット。最新は 2026-09-23.1 (OSM の取り込み締め日は 2026-09-09 から 2026-09-16)。公開バケットには直近 2 か月分だけが残る |
-| 解像度または単位 | 地物 (点、線、面) ごとの 1 行。座標は経緯度 (OGC:CRS84) |
-| 大きさ           | 2026-09-23.1 の GeoParquet 全体で 619,188,730,173 バイト (約 619GB、1,278 ファイル)。テーマ別 PMTiles は 18GB (places) から 190GB (base) |
-| 更新頻度         | 毎月 (次は 2026-10-21.0 の予定)。修正版は末尾の番号が上がる (例: 2026-09-23.0 の修正が 2026-09-23.1) |
-| URL              | s3://overturemaps-us-west-2/release/2026-09-23.1/ (HTTPS では https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/release/2026-09-23.1/)、https://overturemapswestus2.blob.core.windows.net/release/2026-09-23.1/ |
-| STAC カタログ    | https://stac.overturemaps.org/catalog.json |
-| 説明ページ       | https://docs.overturemaps.org/getting-data/cloud-sources/ |
-| ライセンスと帰属 | https://docs.overturemaps.org/attribution/ |
-| リリース一覧     | https://docs.overturemaps.org/release-calendar/ |
 
 ## 概要
 

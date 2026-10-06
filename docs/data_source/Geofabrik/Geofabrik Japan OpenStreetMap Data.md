@@ -1,20 +1,21 @@
+---
+id: geofabrik_asia_japan
+provider: [Geofabrik GmbH, OpenStreetMap Contributors]
+license: [ODbL-1.0]
+access: split
+access_note: split。Geofabrik が定義した地域ごとにファイルが分かれていて、`index-v1.json` の境界ポリゴンから地域を選べる。ファイルの中の PBF は whole (Range は 206 を返すが、範囲の索引が無い)
+format: OSM PBF
+size: 2,538,602,425 バイト (約 2.5GB、2026-09-27 版)
+update: 毎日
+url: https://download.geofabrik.de/asia/japan-latest.osm.pbf
+checked: 2026-10-06
+details:
+  索引: https://download.geofabrik.de/index-v1.json
+---
+
 # Geofabrik Japan OpenStreetMap Data
 
 > [[Geofabrik]] が [[OpenStreetMap]] の planet から日本の範囲を切り出して、毎日配っている [[OSM PBF]] ファイル
-
-## データソース情報
-
-| 項目             | 内容                                                       |
-| ---------------- | ---------------------------------------------------------- |
-| データID         | geofabrik_asia_japan                                       |
-| ライセンス       | [[ODbL-1.0]]                                               |
-| 提供元           | [[Geofabrik]] GmbH、[[OpenStreetMap]] Contributors         |
-| データ形式       | [[OSM PBF]]                                                |
-| ファイルサイズ   | 2,538,602,425 バイト (約 2.5GB、2026-09-27 版)             |
-| 更新頻度         | 毎日                                                       |
-| 取り出し方       | split。Geofabrik が定義した地域ごとにファイルが分かれていて、`index-v1.json` の境界ポリゴンから地域を選べる。ファイルの中の PBF は whole (Range は 206 を返すが、範囲の索引が無い) |
-| URL              | https://download.geofabrik.de/asia/japan-latest.osm.pbf    |
-| 索引             | https://download.geofabrik.de/index-v1.json                |
 
 ## 概要
 

@@ -1,32 +1,32 @@
+---
+id: meta_movement
+provider: [AI for Good at Meta (HDX の組織名 `meta`, データセットの出典欄は「Data for Good at Meta」)]
+source_data: なし (一次データ。位置情報サービスを有効にした Facebook アプリ利用者の位置から Meta が集計したもの。区域の境界と名前は GADM のもの)
+license: [CC-BY-4.0]
+license_note: 4 つとも CC-BY-4.0 (HDX の `license_id` が `cc-by`、表示名は「Creative Commons Attribution International (CC BY)」)
+access: whole
+access_note: whole。HDX の CKAN API でデータセットとファイルの一覧は引けるが、ファイルの中は区域でも日付でも絞れない (Range に 206 は返るが、CSV にも zip にも索引が無い)
+format: CSV (Movement Distribution、Commuting Zones、Business Activity Trends)、zip に入った TSV (Movement Range Maps)。Commuting Zones の形は WKT の列
+coverage: 全世界。HDX が付けた国の数は Movement Distribution 214、Movement Range Maps 203、Commuting Zones 216、Business Activity Trends 23
+period: Movement Distribution は HDX に残る直近約 90 日 (2026-10-06 時点のファイルは 2026-06-01 から 2026-08-31)。Movement Range Maps は 2020-03-01 から 2022-05-22 (終了)。Commuting Zones は 2023-03 版。Business Activity Trends は 2024-05 から 2025-03 の 5 つの災害
+resolution: 行政区域 (GADM level 2、無ければ level 1) × 日。Commuting Zones は通勤圏のポリゴン
+size: Movement Distribution は CSV 12 本で 944,684,358 バイト (2026-10-06 時点で HDX にある分)。Movement Range Maps は zip 2 本で 129,615,027 バイト (展開後は 2021〜2022 年分だけで 598,707,347 バイト)。Commuting Zones は CSV 1 本 16,526,463 バイト。Business Activity Trends は CSV 5 本 154,264,787 バイト
+update: Movement Distribution は 2 週間ごと (HDX の `data_update_frequency` は 14)。ほかの 3 つは更新なし
+url: https://data.humdata.org/dataset/movement-distribution ほか (下の表)
+docs: https://ai.meta.com/ai-for-good/datasets/movement-distribution-maps/
+checked: 2026-10-06
+details:
+  API: https://data.humdata.org/api/3/action/package_show?id=movement-distribution
+  データセット: HDX の id | ライセンス | 最終更新 (HDX)
+  Movement Distribution: '`movement-distribution` | `cc-by` | 2026-09-16'
+  Movement Range Maps: '`movement-range-maps` | `cc-by` | 2022-05-24'
+  Facebook Commuting Zones: '`commuting-zones` | `cc-by` | 2025-05-12'
+  Facebook Business Activity Trends during Crisis: '`facebook-business-activity-trends-during-crisis` | `cc-by` | 2026-05-11'
+---
+
 # Meta 移動データ
 
 > [[AI for Good at Meta]] (旧 Data for Good at Meta) が、Facebook アプリの位置情報から行政区域ごとに集計した人の移動の指標を、[[Humanitarian Data Exchange]] (HDX) で全世界分の CSV として配っているデータ群 (Movement Distribution、Movement Range Maps、Commuting Zones、Business Activity Trends during Crisis)
-
-## データソース情報
-
-| 項目 | 内容 |
-| ---- | ---- |
-| データID | meta_movement |
-| 提供元 | [[AI for Good at Meta]] (HDX の組織名 `meta`、データセットの出典欄は「Data for Good at Meta」) |
-| 元データ | なし (一次データ。位置情報サービスを有効にした Facebook アプリ利用者の位置から Meta が集計したもの。区域の境界と名前は [[GADM]] のもの) |
-| ライセンス | 4 つとも [[CC-BY-4.0]] (HDX の `license_id` が `cc-by`、表示名は「Creative Commons Attribution International (CC BY)」) |
-| 取り出し方 | whole。HDX の CKAN API でデータセットとファイルの一覧は引けるが、ファイルの中は区域でも日付でも絞れない (Range に 206 は返るが、CSV にも zip にも索引が無い) |
-| データ形式 | CSV (Movement Distribution、Commuting Zones、Business Activity Trends)、zip に入った TSV (Movement Range Maps)。Commuting Zones の形は WKT の列 |
-| 範囲 | 全世界。HDX が付けた国の数は Movement Distribution 214、Movement Range Maps 203、Commuting Zones 216、Business Activity Trends 23 |
-| 期間 | Movement Distribution は HDX に残る直近約 90 日 (2026-10-06 時点のファイルは 2026-06-01 から 2026-08-31)。Movement Range Maps は 2020-03-01 から 2022-05-22 (終了)。Commuting Zones は 2023-03 版。Business Activity Trends は 2024-05 から 2025-03 の 5 つの災害 |
-| 解像度または単位 | 行政区域 (GADM level 2、無ければ level 1) × 日。Commuting Zones は通勤圏のポリゴン |
-| 大きさ | Movement Distribution は CSV 12 本で 944,684,358 バイト (2026-10-06 時点で HDX にある分)。Movement Range Maps は zip 2 本で 129,615,027 バイト (展開後は 2021〜2022 年分だけで 598,707,347 バイト)。Commuting Zones は CSV 1 本 16,526,463 バイト。Business Activity Trends は CSV 5 本 154,264,787 バイト |
-| 更新頻度 | Movement Distribution は 2 週間ごと (HDX の `data_update_frequency` は 14)。ほかの 3 つは更新なし |
-| URL | https://data.humdata.org/dataset/movement-distribution ほか (下の表) |
-| API | https://data.humdata.org/api/3/action/package_show?id=movement-distribution |
-| 説明ページ | https://ai.meta.com/ai-for-good/datasets/movement-distribution-maps/ |
-
-| データセット | HDX の id | ライセンス | 最終更新 (HDX) |
-| ------------ | --------- | ---------- | -------------- |
-| Movement Distribution | `movement-distribution` | `cc-by` | 2026-09-16 |
-| Movement Range Maps | `movement-range-maps` | `cc-by` | 2022-05-24 |
-| Facebook Commuting Zones | `commuting-zones` | `cc-by` | 2025-05-12 |
-| Facebook Business Activity Trends during Crisis | `facebook-business-activity-trends-during-crisis` | `cc-by` | 2026-05-11 |
 
 ## 概要
 
