@@ -1,4 +1,5 @@
 ---
+title: Wikidata
 id: wikidata
 provider: [Wikimedia Foundation (運営), Wikidata の編集者 (内容)]
 source_data: なし (一次データ。ただし各ステートメントは編集者が外部の資料から書き写したもので、出典 (reference) が付くものと付かないものがある)

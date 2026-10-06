@@ -13,6 +13,7 @@ const dataSources = defineCollection({
   }),
   schema: z
     .object({
+      title: z.string(),
       id: z.string().optional(),
       provider: stringOrList.optional(),
       source_data: stringOrList.optional(),

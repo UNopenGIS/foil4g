@@ -1,4 +1,5 @@
 ---
+title: OpenAerialMap 航空・災害画像
 id: openaerialmap
 provider: Humanitarian OpenStreetMap Team (OpenAerialMap と Open Imagery Network)
 source_data: '`openaerialmap` は投稿者が撮影した一次データ (撮影者は Item ごとに `oam:producer_name` と `providers` に記録)。`noaa-emergency-response` は NOAA の Emergency Response Imagery を載せ直したもの'

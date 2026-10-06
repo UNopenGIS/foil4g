@@ -1,4 +1,5 @@
 ---
+title: SmartMaps Rwanda 10m 地形データ
 id: smartmaps_rwanda10
 provider: [Water and Sanitation Corporation (WASAC), National Land Authority (NLA)]
 license: [unknown]

@@ -1,4 +1,5 @@
 ---
+title: Geofabrik Monaco OpenStreetMap Data
 id: geofabrik_europe_monaco
 provider: [Geofabrik GmbH, OpenStreetMap Contributors]
 license: [ODbL-1.0]

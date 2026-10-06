@@ -1,4 +1,5 @@
 ---
+title: OpenStreetMap Japan OSM-Bright ベクトルタイル
 id: openstreetmap_jp_osm_bright
 provider: [OSMFJ (OpenStreetMap Foundation Japan), OpenStreetMap Contributors]
 license: [CC-BY-4.0, ODbL-1.0]

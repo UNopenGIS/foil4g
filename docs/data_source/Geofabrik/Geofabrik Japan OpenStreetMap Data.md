@@ -1,4 +1,5 @@
 ---
+title: Geofabrik Japan OpenStreetMap Data
 id: geofabrik_asia_japan
 provider: [Geofabrik GmbH, OpenStreetMap Contributors]
 license: [ODbL-1.0]

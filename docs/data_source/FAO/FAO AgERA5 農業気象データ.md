@@ -1,4 +1,5 @@
 ---
+title: FAO AgERA5 農業気象データ
 id: fao_agera5_monthly
 provider: 国際連合食糧農業機関 (FAO) の地理空間データ基盤 GISMGR (ワークスペース `C3S`)
 source_data: Copernicus Climate Change Service (C3S) が ECMWF を通じて作る AgERA5 (Agrometeorological indicators from 1979 to present derived from reanalysis、DOI 10.24381/cds.6c68c9bb)。AgERA5 は ERA5 再解析を元にしている

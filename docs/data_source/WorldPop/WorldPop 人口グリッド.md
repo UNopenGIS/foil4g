@@ -1,4 +1,5 @@
 ---
+title: WorldPop 人口グリッド
 id: worldpop
 provider: WorldPop (University of Southampton, School of Geography and Environmental Science)
 source_data: 各国の国勢調査と公式推計 (行政区域別)、国連の World Population Prospects 2024 年版の国別総数、GHSL 人口・建物・都市化度 の建物データ、Google Open Buildings と Microsoft の建物外形、ESA WorldCover 土地被覆 などの共変量。推計値なので一次データではない

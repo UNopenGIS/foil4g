@@ -1,4 +1,5 @@
 ---
+title: UNHCR 難民統計
 id: unhcr_refugee_statistics
 provider: UNHCR (UNHCR Refugee Population Statistics Database、Refugee Data Finder)
 source_data: なし (一次データ)。ただし各国政府と UNHCR の現地事務所の報告を UNHCR が集計したもの。パレスチナ難民の値は UNRWA、IDMC の国内避難民の値は IDMC が提供した第三者のデータ

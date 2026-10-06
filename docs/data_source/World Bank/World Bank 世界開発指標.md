@@ -1,4 +1,5 @@
 ---
+title: World Bank 世界開発指標
 id: worldbank_wdi
 provider: [世界銀行 (World Bank, Development Data Group)]
 source_data: 一部は一次データ (世界銀行の推計)、多くは各国の統計局と国際機関 (国連人口部、FAO、ILO、ITU、UNESCO、SIPRI など) の統計を集めたもの。出典は指標ごとにメタデータの Source の欄にある

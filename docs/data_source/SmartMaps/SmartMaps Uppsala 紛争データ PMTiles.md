@@ -1,4 +1,5 @@
 ---
+title: SmartMaps Uppsala 紛争データ PMTiles
 id: smartmaps_uppsala_conflict_pmtiles
 provider: UN Smart Maps (Source Cooperative の UN Smart Maps Group)
 source_data: Uppsala Conflict Data Program の UCDP GED Global version 23.1

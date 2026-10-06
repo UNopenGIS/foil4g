@@ -1,4 +1,5 @@
 ---
+title: USGS 地震カタログ
 id: usgs_earthquakes
 provider: USGS Earthquake Hazards Program (National Earthquake Information Center ほか)
 source_data: なし (一次データ)。ただし震源の値の一部は、USGS 以外の地域観測網 (Alaska Earthquake Center など) が寄与したもの

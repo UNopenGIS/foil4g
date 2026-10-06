@@ -1,4 +1,5 @@
 ---
+title: ArcGIS World Imagery 衛星画像タイル
 id: arcgis_world_imagery
 provider: Esri, Maxar, Earthstar Geographics、https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/
 license: [unknown]

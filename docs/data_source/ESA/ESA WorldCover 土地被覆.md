@@ -1,4 +1,5 @@
 ---
+title: ESA WorldCover 土地被覆
 id: esa_worldcover
 provider: 欧州宇宙機関 (ESA) の WorldCover プロジェクト。製作は ESA WorldCover consortium、AWS での配布の管理は VITO
 source_data: Copernicus の Sentinel-1 (レーダー) と Sentinel-2 (光学) の観測 (各基準年の 1 月 1 日から 12 月 31 日)

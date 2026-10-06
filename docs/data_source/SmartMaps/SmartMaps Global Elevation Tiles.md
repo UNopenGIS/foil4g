@@ -1,4 +1,5 @@
 ---
+title: SmartMaps Global Elevation Tiles
 id: smartmaps_global_elevation_tiles
 provider: UN Smart Maps Group (UN Open GIS Initiative)
 source_data: [NASADEM (ズーム 6 から 12), Global Map (ズーム 2 から 5)]

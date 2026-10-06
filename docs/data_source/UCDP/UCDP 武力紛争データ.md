@@ -1,4 +1,5 @@
 ---
+title: UCDP 武力紛争データ
 id: ucdp_ged
 provider: Uppsala Conflict Data Program (ウプサラ大学 平和・紛争研究学部)
 license: [CC-BY-4.0]

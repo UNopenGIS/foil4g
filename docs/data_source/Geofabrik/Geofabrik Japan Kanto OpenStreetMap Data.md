@@ -1,4 +1,5 @@
 ---
+title: Geofabrik Japan Kanto OpenStreetMap Data
 id: geofabrik_asia_japan_kanto
 provider: [Geofabrik GmbH, OpenStreetMap Contributors]
 license: [ODbL-1.0]

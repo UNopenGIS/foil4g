@@ -1,4 +1,5 @@
 ---
+title: OpenStreetMap Japan Overture Maps PMTiles
 id: openstreetmap_jp_overture_pmtiles
 provider: [OSMFJ (OpenStreetMap Foundation Japan), Overture Maps Foundation]
 license: [CC-BY-4.0, ODbL-1.0]

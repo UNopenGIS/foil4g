@@ -1,4 +1,5 @@
 ---
+title: OpenStreetMap France HOT 人道支援地図タイル
 id: openstreetmap_fr_hot
 provider: [OpenStreetMap contributors, 'https://www.openstreetmap.org/']
 license: [ODbL-1.0]

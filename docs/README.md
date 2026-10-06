@@ -67,6 +67,7 @@ find docs -name "*.md" -type f | xargs -I {} sh -c 'echo "$(basename "{}" .md)::
 
 | キー | 内容 |
 | --- | --- |
+| `title` | カードの名前。ファイル名と本文の `#` 見出しと同じにする |
 | `id` | データの識別子。英小文字とアンダースコア |
 | `provider` | 作って配っている組織 |
 | `source_data` | 別のデータを加工したものなら、その出所 |

@@ -1,4 +1,5 @@
 ---
+title: SmartMaps 都市計画決定GISデータ
 id: smartmaps_toshik
 provider: [国土交通省 都市局都市計画課都市計画調査室 (元データ), UN Smart Maps Group (変換と配布)]
 source_data: https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html

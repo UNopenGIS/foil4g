@@ -1,4 +1,5 @@
 ---
+title: VIRGO ビエンチャン 22kV送電線データ
 id: electric_22kv_vtc_line_v1
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

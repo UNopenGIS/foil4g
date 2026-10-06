@@ -1,4 +1,5 @@
 ---
+title: VIRGO ビエンチャン都市情報データ
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform、https://virgo.mpwt.gov.la/disclaimer/#/
 license: [unknown]
 license_note: 不明

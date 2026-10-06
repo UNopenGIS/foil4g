@@ -1,4 +1,5 @@
 ---
+title: NASA SRTM 標高
 id: nasa_srtm
 provider: NASA (Jet Propulsion Laboratory の SRTM プロジェクト)。配布は LP DAAC。複製の配布に OpenTopography と Microsoft Planetary Computer
 source_data: なし (一次データ)。ただし SRTM v3 の欠測は ASTER GDEM v2、GMTED2010、NED で、NASADEM の欠測は ASTER GDEM と ALOS AW3D30 などで埋めてある

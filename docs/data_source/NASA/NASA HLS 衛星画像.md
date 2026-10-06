@@ -1,4 +1,5 @@
 ---
+title: NASA HLS 衛星画像
 id: nasa_hls
 provider: NASA (処理は Marshall Space Flight Center の IMPACT チーム、保管と配布は LP DAAC)。Microsoft Planetary Computer が写しを置いている
 source_data: L30 は USGS の Landsat 8/9 Collection 2 L1TP (USGS Landsat Collection 2)、S30 は ESA の Sentinel-2 L1C。どちらも大気上端の Level-1 を入力にしている

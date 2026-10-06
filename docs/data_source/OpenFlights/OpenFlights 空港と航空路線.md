@@ -1,4 +1,5 @@
 ---
+title: OpenFlights 空港と航空路線
 id: openflights
 provider: [OpenFlights (openflights.org, GitHub の jpatokal/openflights)]
 source_data: 空港は OurAirports と DAFIF (2006 年 10 月サイクル) に利用者の追加と修正を加えたもの。路線は Airline Route Mapper、航空会社は Wikipedia の List of airlines、機材は Wikipedia の List of ICAO aircraft type designators から

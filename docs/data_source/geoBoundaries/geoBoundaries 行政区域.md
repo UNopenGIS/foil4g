@@ -1,4 +1,5 @@
 ---
+title: geoBoundaries 行政区域
 id: geoboundaries
 provider: William & Mary geoLab (米国ウィリアム・アンド・メアリー大学) と協力者
 source_data: 国と階層ごとに違う。各国の政府機関、OpenStreetMap (osm-boundaries.com 経由)、HDX の COD-AB、UN SALB、Wikimedia Commons など。各ファイルのメタデータに出所がある
