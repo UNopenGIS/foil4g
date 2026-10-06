@@ -1,0 +1,14 @@
+---
+// Starlight override: put the frontmatter table and the map preview above
+// the body of each data source card.
+import Default from "@astrojs/starlight/components/MarkdownContent.astro";
+import CardInfo from "./CardInfo.astro";
+
+const { entry } = Astro.locals.starlightRoute;
+const isCard = entry.id.startsWith("data_source/") && "license" in entry.data;
+---
+
+<Default>
+  {isCard && <CardInfo data={entry.data} />}
+  <slot />
+</Default>
