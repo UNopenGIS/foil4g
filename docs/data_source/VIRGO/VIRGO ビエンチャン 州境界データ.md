@@ -1,4 +1,5 @@
 ---
+title: VIRGO ビエンチャン 州境界データ
 id: provinceboundary_cdudcp_v1
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

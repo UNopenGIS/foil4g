@@ -1,4 +1,5 @@
 ---
+title: SmartMaps OpenCelliD PMTiles
 id: smartmaps_opencellid_pmtiles
 provider: ['OpenCelliD (https://opencellid.org/)', UN Smart Maps Group (変換と配布)]
 license: [CC-BY-SA-4.0]

@@ -1,4 +1,5 @@
 ---
+title: ILOSTAT
 id: ilostat
 provider: [国際労働機関 (ILO, International Labour Organization)]
 source_data: 各国の労働力調査、人口センサス、事業所調査、行政記録などを ILO が集めた値と、ILO 自身の推計 (ILO Modelled Estimates)。IMF、世界銀行 ICP、UNICEF MICS などほかの国際機関の値も含む

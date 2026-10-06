@@ -1,4 +1,5 @@
 ---
+title: VIRGO ビエンチャン 政府庁舎データ
 id: goverment_office_v0
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

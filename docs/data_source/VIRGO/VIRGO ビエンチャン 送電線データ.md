@@ -1,4 +1,5 @@
 ---
+title: VIRGO ビエンチャン 送電線データ
 id: transmission_line_v1
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

@@ -1,4 +1,5 @@
 ---
+title: VIRGO ビエンチャン 道路決定データ
 id: determiningroad_v0
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

@@ -1,4 +1,5 @@
 ---
+title: VIRGO ビエンチャン 電柱位置データ
 id: electric_pole_point_v1
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

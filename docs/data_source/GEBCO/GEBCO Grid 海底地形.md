@@ -1,4 +1,5 @@
 ---
+title: GEBCO Grid 海底地形
 id: gebco_grid
 provider: GEBCO (General Bathymetric Chart of the Oceans、国際水路機関 と ユネスコ政府間海洋学委員会 の共同プロジェクト)。作成は Nippon Foundation-GEBCO Seabed 2030 の Global Center (英国の British Oceanographic Data Centre)、配布は英国 NERC の CEDA
 source_data: 複数の格子を合成した派生物。土台は SRTM15+ V2.8 (おおむね南緯 50 度から北緯 60 度)。その上に Seabed 2030 の 4 つの地域センターがまとめた格子 (主にマルチビーム測深) を重ねる。極域の陸と氷は BedMachine Greenland v6 と BedMachine Antarctica v3、北極海は IBCAO 5.2、南大洋は IBCSO (いずれも GEBCO_2026 の場合)

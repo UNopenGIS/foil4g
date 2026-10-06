@@ -1,4 +1,5 @@
 ---
+title: SmartMaps Global DEM1A 高度データ
 id: smartmaps_global_dem1a
 provider: UN Smart Maps Group (UN Open GIS Initiative)
 source_data: 国土地理院 基盤地図情報 (数値標高モデル) 1m メッシュ (標高)

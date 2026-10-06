@@ -1,4 +1,5 @@
 ---
+title: World Population Prospects
 id: un_wpp
 provider: 国連経済社会局 人口部 (国連人口部、United Nations, Department of Economic and Social Affairs, Population Division)
 source_data: なし (一次データ)。人口部が各国の国勢調査、標本調査、人口動態登録などを集めて推計したもの

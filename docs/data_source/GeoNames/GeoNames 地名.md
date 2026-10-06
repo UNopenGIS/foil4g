@@ -1,4 +1,5 @@
 ---
+title: GeoNames 地名
 id: geonames
 provider: GeoNames (Unxos GmbH、スイス St. Gallen。創始者は Marc Wick)
 source_data: 100 を超える出典の集約と、利用者の wiki 編集。主な出典は米国 NGA の GNS、USGS の GNIS、各国の地図機関と統計機関など (datasources ページに 436 件)

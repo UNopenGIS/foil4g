@@ -1,4 +1,5 @@
 ---
+title: OpenStreetMap Japan Planet PMTiles
 id: openstreetmap_jp_planet_pmtiles
 provider: [OSMFJ (OpenStreetMap Foundation Japan), OpenStreetMap Contributors]
 license: [CC-BY-4.0, ODbL-1.0]

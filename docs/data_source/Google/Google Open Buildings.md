@@ -1,4 +1,5 @@
 ---
+title: Google Open Buildings
 id: google_open_buildings
 provider: [Google Research (Open Buildings チーム, ガーナのアクラの拠点が中心)]
 source_data: なし (一次データ)。ポリゴンは Google が使う解像度 50cm の高解像度衛星画像から、2.5D Temporal は Sentinel-2 (Copernicus) の画像から推定したもの。元の画像は配っていない

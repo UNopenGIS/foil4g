@@ -1,4 +1,5 @@
 ---
+title: VIRGO ビエンチャン 消火栓データ
 id: firehydrant_2023_v1
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

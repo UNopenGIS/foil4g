@@ -1,4 +1,5 @@
 ---
+title: EDGAR 温室効果ガス排出
 id: edgar_ghg
 provider: 欧州委員会 共同研究センター (European Commission, Joint Research Centre, JRC) の EDGAR チーム。化石 CO2 は 国際エネルギー機関 (IEA) との共同
 source_data: なし (一次データ。ただし推計の材料として IEA World Energy Balances、IEA Greenhouse Gas Emissions from Energy、FAOSTAT、USGS、IFA、GFMR/NOAA、UNFCCC、worldsteel などの統計を使っている)

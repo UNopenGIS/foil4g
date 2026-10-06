@@ -1,4 +1,5 @@
 ---
+title: Meta 移動データ
 id: meta_movement
 provider: [AI for Good at Meta (HDX の組織名 `meta`, データセットの出典欄は「Data for Good at Meta」)]
 source_data: なし (一次データ。位置情報サービスを有効にした Facebook アプリ利用者の位置から Meta が集計したもの。区域の境界と名前は GADM のもの)

@@ -1,4 +1,5 @@
 ---
+title: GHSL 人口・建物・都市化度
 id: ghsl
 provider: 欧州委員会 共同研究センター (JRC)。Copernicus 緊急管理サービスの一部として公開
 source_data: 衛星画像 (Sentinel-2 の 2018 年合成画像、Landsat)、CIESIN の Gridded Population of the World v4.11 の国勢調査の値、国連 World Population Prospects 2022 と World Urbanization Prospects 2018 を JRC が加工したもの

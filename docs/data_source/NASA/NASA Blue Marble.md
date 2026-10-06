@@ -1,4 +1,5 @@
 ---
+title: NASA Blue Marble
 id: nasa_blue_marble
 provider: NASA Earth Observatory (NASA Goddard Space Flight Center)。作成者は Reto Stöckli
 source_data: MODIS の地表面反射率 MOD09A1 と土地被覆 MOD12Q1。陰影つきの版は、陰影に SRTM (60S から 60N)、GTOPO30 (60N より北と SRTM の欠損の穴埋め)、RAMP II (60S より南)、GEBCO 1 分格子 (海底) を使っている

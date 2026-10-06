@@ -1,4 +1,5 @@
 ---
+title: Natural Earth Coastline Data
 id: ne_10m_coastline
 provider: Natural Earth (https://www.naturalearthdata.com/)
 license: [public-domain]

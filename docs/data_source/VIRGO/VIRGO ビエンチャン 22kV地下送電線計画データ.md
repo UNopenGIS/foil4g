@@ -1,4 +1,5 @@
 ---
+title: VIRGO ビエンチャン 22kV地下送電線計画データ
 id: 22kv_underground_line_future_plan_v1
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

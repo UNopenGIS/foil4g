@@ -1,4 +1,5 @@
 ---
+title: UNDP 人間開発指数
 id: undp_hdr
 provider: 国連開発計画 (UNDP) の Human Development Report Office (HDRO)。多次元貧困指数 (MPI) は HDRO とオックスフォード大学の OPHI の共同作成
 source_data: 他機関の統計 (UNDESA の World Population Prospects、UNESCO 統計研究所、Barro and Lee、IMF、World Bank、国連統計部、ILOSTAT、IPU、WHO などの共同推計、Global Carbon Project、UNEP) と、DHS・MICS などの世帯調査の個票 (MPI)。HDRO はこれらを集めて指数を計算している

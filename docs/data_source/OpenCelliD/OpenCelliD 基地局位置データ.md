@@ -1,4 +1,5 @@
 ---
+title: OpenCelliD 基地局位置データ
 id: opencellid_full
 provider: [OpenCelliD (2017 年から Unwired Labs が運営), OpenCelliD の貢献者]
 license: [CC-BY-SA-4.0]

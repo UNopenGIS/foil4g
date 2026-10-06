@@ -1,4 +1,5 @@
 ---
+title: FAOSTAT
 id: faostat
 provider: 国連食糧農業機関 (FAO、Food and Agriculture Organization of the United Nations) の統計部 (Statistics Division、ESS)。林業は Forestry Division、食事と栄養は Food and Nutrition Division
 source_data: 主に各国政府から FAO が集めた統計と FAO の推計。一部の領域は他機関のデータを使う (OECD、UNSD、ILO、国連人口部など。下の「内容」を参照)

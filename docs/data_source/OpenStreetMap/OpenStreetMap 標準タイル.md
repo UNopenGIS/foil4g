@@ -1,4 +1,5 @@
 ---
+title: OpenStreetMap 標準タイル
 id: openstreetmap_xyz
 provider: [OpenStreetMap contributors, 'https://www.openstreetmap.org/']
 license: [ODbL-1.0]
