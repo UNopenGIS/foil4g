@@ -1,6 +1,7 @@
 import React from "react";
 import type { Preview } from "@storybook/react-vite";
 import { themes } from "storybook/theming";
+import "../src/maplibreWorker";
 
 const preview: Preview = {
   parameters: {

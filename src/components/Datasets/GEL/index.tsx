@@ -1,7 +1,8 @@
 import { Protocol } from "pmtiles";
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Layer, Map, Source } from "react-map-gl/maplibre";
+import { sourceProps } from "../../sourceProps";
 import { useEffect } from "react";
 import { GELPMTilesSource as source } from "./source";
 
@@ -29,7 +30,7 @@ export const GELMap = () => {
       mapStyle="stylejson/tile.openstreetmap.jp/fiord-color-gl-style/style.json"
       terrain={{ source: source.id }}
     >
-      <Source key={source.id} {...source}>
+      <Source key={source.id} {...sourceProps(source)}>
         {source.layers?.map((layer) => <Layer key={layer.id} {...layer} />)}
       </Source>
     </Map>
