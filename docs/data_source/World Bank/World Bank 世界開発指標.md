@@ -9,7 +9,7 @@
 | データID         | worldbank_wdi |
 | 提供元           | [[世界銀行]] (World Bank、Development Data Group) |
 | 元データ         | 一部は一次データ (世界銀行の推計)、多くは各国の統計局と国際機関 ([[国連人口部]]、[[FAO]]、[[ILO]]、[[ITU]]、[[UNESCO]]、[[SIPRI]] など) の統計を集めたもの。出典は指標ごとにメタデータの Source の欄にある |
-| ライセンス       | 既定は [[CC-BY-4.0]] に紛争解決 (調停と仲裁) の追加条項を付けたもの。2026-10-01 版では 1,498 指標のうち 9 指標が別の条件 (SIPRI の条件 6、CC BY 3.0 IGO 3) |
+| ライセンス       | 既定は [[CC-BY-4.0]] に紛争解決 (調停と仲裁) の追加条項を付けたもの。2026-10-01 版の `License Type` の欄では 1,498 指標のうち 9 指標が別の条件 (SIPRI の条件 6、CC BY 3.0 IGO 3)。ただし欄の値は版によって揺れ、第三者の出所の条件を反映しきれていない (下のライセンスの節を参照) |
 | 取り出し方       | range。一括 zip (`WDI_CSV.zip`) は HTTP Range に 206 を返し、末尾の索引から 6 つの CSV の位置が分かるので、指標の定義表 (約 6MB) などのメンバーを 1 つだけ読める。API では指標、国、年で絞れ、指標ごとの CSV zip もある |
 | データ形式       | CSV (一括 zip と指標ごとの zip)、Excel (一括 zip)、JSON と XML (API) |
 | 範囲             | 全世界。国と地域 217 (台湾は含まない) と、地域別・所得別などの集計地域 47。ジオメトリは持たず、ISO 3166-1 alpha-3 に近い 3 文字のコードで国を表す |
@@ -116,7 +116,7 @@ WDI なら、たとえば「The World Bank: World Development Indicators: World 
 - API の指標メタデータ `https://api.worldbank.org/v2/sources/2/series/<指標コード>/metadata?format=json` の `License_Type` と `License_URL` の欄。
 - 一括 zip の `WDISeries.csv` の `License Type` の列 (1,498 指標を一度に見られる)。
 
-値が `CC BY-4.0` なら既定のライセンスです。
+欄の値が `CC BY-4.0` なら、世界銀行はその版で既定のライセンスを示しています。
 それ以外の値が入っている指標は、提供元の条件に従います。
 2026-10-01 版で `CC BY-4.0` 以外だったのは次の 9 指標でした。
 
@@ -125,8 +125,12 @@ WDI なら、たとえば「The World Bank: World Development Indicators: World 
 
 指標のライセンスは版によって変わります。
 2025-04-17 版 (`WDI_CSV_2025_04_17.zip`) の `WDISeries.csv` では 1,509 指標のうち 25 指標が `CC BY-4.0` と `CC BY 4.0` 以外で、IEA の条件 14、SIPRI 4、Protected Planet (WDPA) 3、ITU 2、空欄 2 (FAO 出典) でした。
-2026-10-01 版では IEA、Protected Planet、ITU の条件の付いた指標はありません。
-全部を再配布する前に、使う版の `License Type` の列を確かめてください。
+2026-10-01 版では、欄の値が IEA、Protected Planet、ITU の条件になっている指標はありません。
+しかし、これらを出所とする指標が無くなったのではなく、欄の値だけが `CC BY-4.0` に変わっています。
+2026-10-01 版の `WDISeries.csv` の `Source` の欄で数えると、IEA を出所とする指標が 61、ITU が 9、Protected Planet (WDPA、UNEP-WCMC) が 6 あり、どれも `CC BY-4.0` と書かれていました。
+このうち Protected Planet は、提供元の利用規約 (https://www.protectedplanet.net/en/legal) が「You may not redistribute the WDPCA and GD-PAME Data contained in the WDPCA and GD-PAME in whole or in part by any means」と再配布を禁じています。
+つまり `License Type` の欄は、その版の世界銀行の表示であって、出所の条件を保証するものではありません。
+第三者が出所の指標を再配布するときは、`Source` の欄を見て、出所の側の条件も確かめてください。
 複数の版を貯めて配るなら、どれかの版で制限の付いた指標をまとめて除く、という考え方もあります。
 
 ## 気をつけること
