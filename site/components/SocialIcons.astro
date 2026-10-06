@@ -1,0 +1,20 @@
+---
+// Starlight override: the UN Open GIS and Smart Maps logo, linking to the
+// UNopenGIS/7 issues, next to the default social links.
+import Default from "@astrojs/starlight/components/SocialIcons.astro";
+
+const src = `${import.meta.env.BASE_URL}images/un-open-gis-smart-maps.jpg`;
+---
+
+<a class="logo" href="https://github.com/UNopenGIS/7/issues">
+  <img {src} alt="UN Open GIS Initiative / Smart Maps" height="32" />
+</a>
+<Default />
+
+<style>
+  .logo img {
+    display: block;
+    height: 32px;
+    width: auto;
+  }
+</style>

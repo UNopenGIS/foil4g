@@ -1,0 +1,68 @@
+---
+import type { CollectionEntry } from "astro:content";
+import MapPreview from "./MapPreview";
+import { previews } from "./previews";
+
+interface Props {
+  data: CollectionEntry<"docs">["data"];
+}
+const d = Astro.props.data;
+const list = (v?: string | string[]) => (Array.isArray(v) ? v.join(", ") : v);
+const rows: [string, string | undefined][] = [
+  ["データID", d.id],
+  ["提供元", list(d.provider)],
+  ["元データ", list(d.source_data)],
+  ["ライセンス", d.license.join(", ")],
+  ["ライセンスの補足", d.license_note],
+  ["取り出し方", d.access],
+  ["取り出し方の補足", d.access_note],
+  ["データ形式", list(d.format)],
+  ["範囲", d.coverage],
+  ["期間", d.period],
+  ["解像度または単位", d.resolution],
+  ["大きさ", d.size],
+  ["更新頻度", d.update],
+  ["URL", d.url],
+  ["説明ページ", d.docs],
+  ["確認日", d.checked?.toISOString().slice(0, 10) ?? "確かめていません"],
+  ...Object.entries(d.details ?? {}),
+];
+const hasPreview = d.id !== undefined && d.id in previews;
+const isUrl = (v: string) => /^https?:\/\/\S+$/.test(v);
+---
+
+<table class="card-info">
+  <tbody>
+    {
+      rows
+        .filter(([, v]) => v)
+        .map(([k, v]) => (
+          <tr>
+            <th>{k}</th>
+            <td>{isUrl(v!) ? <a href={v}>{v}</a> : v}</td>
+          </tr>
+        ))
+    }
+  </tbody>
+</table>
+{
+  hasPreview && (
+    <section class="preview">
+      <MapPreview id={d.id!} client:only="react" />
+    </section>
+  )
+}
+
+<style>
+  .card-info th {
+    width: 9em;
+  }
+  .card-info td {
+    overflow-wrap: anywhere;
+  }
+  .preview {
+    height: 420px;
+    margin-block: 1rem;
+    border: 1px solid var(--sl-color-gray-5);
+  }
+</style>
