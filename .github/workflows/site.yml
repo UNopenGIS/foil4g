@@ -1,0 +1,25 @@
+name: site
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      ASTRO_TELEMETRY_DISABLED: 1
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Test the site plugins
+        run: npm run test:site
+      # The content schema checks every card's frontmatter during the build.
+      - name: Build the site
+        run: npm run site:build
