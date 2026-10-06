@@ -12,7 +12,7 @@
 | データ形式       | [[Vector Tile Style JSON]] (MapLibre Style Spec の version 8)                         |
 | ファイルサイズ   | 46,841 バイト (style.json、2026-10-06 時点)                                          |
 | レイヤー数       | 121                                                                                   |
-| 取り出し方       | style.json を地図ライブラリに渡すと、タイル・フォント・スプライトを必要な分だけ取る |
+| 取り出し方       | style.json 自体は whole (約 47KB)。参照するタイルは XYZ で、1 枚ずつ必要な分だけ取る split |
 | URL              | https://tile.openstreetmap.jp/styles/osm-bright/style.json                            |
 
 ## 概要

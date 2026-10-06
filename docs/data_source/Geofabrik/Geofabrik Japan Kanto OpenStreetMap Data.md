@@ -12,7 +12,7 @@
 | データ形式       | [[OSM PBF]] (ほかに Shapefile と GeoPackage)                         |
 | ファイルサイズ   | 516,386,456 バイト (約 516MB、2026-10-04 版の PBF)                   |
 | 更新頻度         | 毎日                                                                 |
-| 取り出し方       | 地域ごとのファイルを丸ごと取得する (部分取得はできない)              |
+| 取り出し方       | split。Geofabrik が定義した地域ごとにファイルが分かれていて、`index-v1.json` の境界ポリゴンから地域を選べる。ファイルの中の PBF は whole (Range は 206 を返すが、範囲の索引が無い) |
 | URL              | https://download.geofabrik.de/asia/japan/kanto-latest.osm.pbf        |
 | 地域のページ     | https://download.geofabrik.de/asia/japan/kanto.html                  |
 | 索引             | https://download.geofabrik.de/index-v1.json                          |

@@ -15,7 +15,7 @@
 | 標高の符号化     | Mapbox Terrain-RGB 方式 (`-10000 + (R × 65536 + G × 256 + B) × 0.1`) |
 | ズームレベル     | 2 から 12                                                            |
 | ファイルサイズ   | 195,962,954,103 バイト (約 196GB、182.5GiB)                          |
-| 取り出し方       | HTTP Range で必要なタイルだけを読み出せる                            |
+| 取り出し方       | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
 | URL              | https://data.source.coop/smartmaps/gel/gel.pmtiles                   |
 | 説明ページ       | https://source.coop/smartmaps/gel                                    |
 

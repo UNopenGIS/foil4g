@@ -15,7 +15,7 @@
 | 地物数           | 4,133                                                                       |
 | 版               | 本家のページの表示は 4.1.0、zip の中の VERSION.txt は 5.0.0-pre9            |
 | 更新頻度         | 不定期 (配布ファイルの Last-Modified は 2021-12-08)                         |
-| 取り出し方       | レイヤーごとの zip を丸ごと取得する (部分取得はできない)                    |
+| 取り出し方       | split。縮尺 (10m、50m、110m) とレイヤーごとに zip が分かれていて、必要なレイヤーだけを取れる。zip の中は whole (Range は 206 を返すが、中身を選べない) |
 | URL              | https://naciscdn.org/naturalearth/10m/physical/ne_10m_coastline.zip         |
 | 説明ページ       | https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-coastline/ |
 

@@ -11,6 +11,7 @@
 | ライセンス       | テーマごとに異なる ([[ODbL]] のほか CC-BY 4.0 などを含む)                                  |
 | 提供元           | [[OSMFJ]] (OpenStreetMap Foundation Japan)、[[Overture Maps Foundation]]                  |
 | データ形式       | [[PMTiles]]                                                                                |
+| 取り出し方       | 確かめられない (ファイルが削除済み)。配っていたころは 1 つの PMTiles で range だったと考えられる |
 | 元のリリース     | Overture Maps 2024-07-22 (2024-08 の OSMFJ の発表資料による)                              |
 | ファイルサイズ   | 51GB (以前のページの値。確かめていません)                                                  |
 | 旧 URL           | https://tile.openstreetmap.jp/static/overture.pmtiles                                      |

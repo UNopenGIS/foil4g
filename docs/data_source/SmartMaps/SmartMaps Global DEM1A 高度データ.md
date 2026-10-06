@@ -17,7 +17,7 @@
 | 標高の符号化     | Mapbox Terrain-RGB 方式 (`-10000 + (R × 65536 + G × 256 + B) × 0.1`) |
 | ズームレベル     | 3 から 17                                                            |
 | ファイルサイズ   | 2,649,174,249 バイト (約 2.65GB、2.47GiB)                            |
-| 取り出し方       | HTTP Range で必要なタイルだけを読み出せる                            |
+| 取り出し方       | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
 | URL              | https://data.source.coop/smartmaps/dem1a/dem1a.pmtiles               |
 | 説明ページ       | https://source.coop/smartmaps/dem1a                                  |
 

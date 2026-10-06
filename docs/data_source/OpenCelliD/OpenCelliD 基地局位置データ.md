@@ -12,7 +12,7 @@
 | データ形式       | [[CSV]] (gzip 圧縮)                                                                           |
 | ファイルサイズ   | 確かめていません (以前のページには 105MB とありました)                                       |
 | 更新頻度         | 毎日 (02:00 GMT までに作り直し)                                                              |
-| 取り出し方       | 国別のファイルか全世界のファイルを丸ごと取得する。取得には API アクセストークンが要る         |
+| 取り出し方       | 未確認。国別と全世界のファイル、bbox で引ける API (`cell/getInArea`) があるが、どれもアクセストークンが要り、実測していない |
 | URL              | https://opencellid.org/downloads.php                                                          |
 | 列の説明         | https://docs.opencellid.org/docs/downloads/database-format                                    |
 

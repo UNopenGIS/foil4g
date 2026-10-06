@@ -14,7 +14,7 @@
 | ファイルサイズ | 136,162,985 バイト (約 130MB)                                                      |
 | 更新日         | 2024-06-29 (Last-Modified)                                                        |
 | 更新頻度       | なし (23.1 から作った 1 ファイルだけ)                                              |
-| 取り出し方     | HTTP Range で必要なタイルだけを読める                                              |
+| 取り出し方     | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
 | URL            | https://data.source.coop/smartmaps/uppsala-conflict/a.pmtiles                     |
 | 説明ページ     | https://source.coop/smartmaps/uppsala-conflict                                    |
 | 作成手順       | https://github.com/optgeo/uppsala-conflict                                        |

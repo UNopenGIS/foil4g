@@ -12,7 +12,7 @@
 | データ形式       | [[OSM PBF]]                                                |
 | ファイルサイズ   | 2,538,602,425 バイト (約 2.5GB、2026-09-27 版)             |
 | 更新頻度         | 毎日                                                       |
-| 取り出し方       | 地域ごとのファイルを丸ごと取得する (部分取得はできない)    |
+| 取り出し方       | split。Geofabrik が定義した地域ごとにファイルが分かれていて、`index-v1.json` の境界ポリゴンから地域を選べる。ファイルの中の PBF は whole (Range は 206 を返すが、範囲の索引が無い) |
 | URL              | https://download.geofabrik.de/asia/japan-latest.osm.pbf    |
 | 索引             | https://download.geofabrik.de/index-v1.json                |
 

@@ -15,7 +15,7 @@
 | 範囲             | 全世界 (経度 -180 から 180、緯度 -85.05113 から 85.05113)                            |
 | データ基準日     | 2026-09-28T00:00:04Z (2026-10-06 時点)                                               |
 | 更新頻度         | 毎週 (OSM Wiki の OSMFJ タイルサーバーのページによる)                                |
-| 取り出し方       | タイル 1 枚につき 1 回の HTTP 要求                                                   |
+| 取り出し方       | split。XYZ のタイル 1 枚が単位で、必要なズームと位置のタイルだけを取る。広い範囲は Planet PMTiles から range で切り出す |
 | URL              | https://tile.openstreetmap.jp/data/planet/{z}/{x}/{y}.pbf                             |
 | TileJSON         | https://tile.openstreetmap.jp/data/planet.json                                        |
 

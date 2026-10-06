@@ -14,7 +14,7 @@
 | ズーム         | 0 から 14                                                                |
 | 基準日         | 2024-06-14 (属性 `updated` の最大値)                                     |
 | 更新頻度       | 更新されていません (ファイルは 2024-06-15 のまま)                        |
-| 取り出し方     | HTTP Range で必要なタイルだけ読み出せる                                  |
+| 取り出し方     | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
 | URL            | https://data.source.coop/smartmaps/opencellid/cellid.pmtiles             |
 | 配布ページ     | https://source.coop/smartmaps/opencellid                                 |
 

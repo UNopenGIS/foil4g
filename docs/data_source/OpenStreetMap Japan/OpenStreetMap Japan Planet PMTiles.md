@@ -16,7 +16,7 @@
 | データ基準日     | 2026-09-28T00:00:04Z (2026-10-06 時点の版)                                           |
 | ファイルサイズ   | 84,416,925,121 バイト (約 84GB、2026-09-28 版)                                       |
 | 更新頻度         | 毎週 (OSM Wiki の OSMFJ タイルサーバーのページによる)                                |
-| 取り出し方       | HTTP Range で必要な範囲とズームのタイルだけを読める                                  |
+| 取り出し方       | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
 | URL              | https://tile.openstreetmap.jp/static/planet.pmtiles                                   |
 | 日付つきの URL   | https://tile.openstreetmap.jp/static/planet-20260928.pmtiles                         |
 

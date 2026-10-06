@@ -15,7 +15,7 @@
 | ズーム         | 0 から 14                                                                                                 |
 | 基準日         | 確かめていません (令和4年度版から作ったと考えられます)                                                     |
 | 更新頻度       | 更新されていません (ファイルは 2024-05-08 のまま)                                                          |
-| 取り出し方     | HTTP Range で必要なタイルだけ読み出せる                                                                    |
+| 取り出し方     | range。1 つの PMTiles で、HTTP Range (206 を確認) で必要な範囲とズームのタイルだけを読める |
 | URL            | https://data.source.coop/smartmaps/toshik/a.pmtiles                                                       |
 | 配布ページ     | https://source.coop/smartmaps/toshik                                                                      |
 
