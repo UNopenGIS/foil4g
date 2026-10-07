@@ -7,6 +7,7 @@ const cards = [...html.matchAll(/data-catalog-card="([^"]+)"/g)].map(([, value])
   value.replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'),
 ));
 const additions = [
+  ['Mapterhorn', 'Mapterhorn 標高タイル', 'range', 'other'],
   ['デジタル庁', 'デジタル庁 アドレス・ベース・レジストリ', 'split', 'PDL-1.0'],
   ['e-Stat', 'e-Stat 国勢調査 小地域境界', 'split', 'CC-BY-4.0'],
   ['国土交通省', '国土数値情報 鉄道データ N02', 'whole', 'CC-BY-4.0'],
@@ -28,4 +29,12 @@ test('new practical datasets have explicit classifications and accurate access a
       assert.ok(card[axis].length && !card[axis].includes('未分類'), `${title}: ${axis}`);
     }
   }
+});
+
+test('Mapterhorn is classified as raster terrain, not vector basemap data', () => {
+  const card = cards.find((card) => card.title === 'Mapterhorn 標高タイル');
+  assert.ok(card);
+  assert.ok(card.category.includes('地形・標高'));
+  assert.ok(card.format.includes('PMTiles') && card.format.includes('WebP'));
+  assert.ok(!card.format.includes('MVT'));
 });
