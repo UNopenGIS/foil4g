@@ -17,7 +17,7 @@
     "app:dev": "vite",
     "app:build": "tsc && vite build",
     "app:preview": "vite preview",
-    "test:build": "node --test tests/site-build.test.mjs",
+    "test:build": "node --test tests/site-build.test.mjs tests/additional-datasets.test.mjs",
     "site:check": "astro check --tsconfig tsconfig.site.json"
   },
   "dependencies": {
