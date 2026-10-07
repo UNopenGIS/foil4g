@@ -1,5 +1,10 @@
 ---
 title: VIRGO ビエンチャン 2015年土地利用データ
+description: "VIRGOプラットフォームが提供するラオス・ビエンチャンの2015年土地利用データ"
+provider_group: "VIRGO"
+categories: ["都市計画", "土地利用・土地被覆"]
+regions: ["アジア", "ラオス", "ビエンチャン"]
+formats: ["Shapefile"]
 id: optgeo_vcc_landuse_final_2015
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

@@ -1,5 +1,10 @@
 ---
 title: ILOSTAT
+description: "国際労働機関 (ILO) が、雇用、失業、賃金、労働時間、非公式経済、児童労働、労働災害などの労働統計を、約 200 の国・地域と地域集計について、指標ごとまたは国ごとに分けた CSV などのファイルと SDMX API で配っている統計データベース"
+provider_group: "ILO"
+categories: ["人口・社会"]
+regions: ["全世界"]
+formats: ["CSV", "TSV", "JSON", "XLSX", "Parquet", "Feather", "Stata", "SDMX-ML"]
 id: ilostat
 provider: [国際労働機関 (ILO, International Labour Organization)]
 source_data: 各国の労働力調査、人口センサス、事業所調査、行政記録などを ILO が集めた値と、ILO 自身の推計 (ILO Modelled Estimates)。IMF、世界銀行 ICP、UNICEF MICS などほかの国際機関の値も含む

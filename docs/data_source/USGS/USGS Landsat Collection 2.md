@@ -1,5 +1,10 @@
 ---
 title: USGS Landsat Collection 2
+description: "USGS が Landsat 4、5、7、8、9 の 1982 年から現在までの観測を大気補正し、全球について WRS-2 のシーンごとの Cloud Optimized GeoTIFF で配っている地表反射率と地表温度 (Landsat Collection 2 Level-2)"
+provider_group: "USGS"
+categories: ["衛星・航空画像"]
+regions: ["全世界"]
+formats: ["COG", "GeoTIFF"]
 id: landsat_c2
 provider: USGS の EROS Center (Earth Resources Observation and Science Center)。Landsat 計画は NASA と USGS の共同事業。Microsoft Planetary Computer と AWS が写しを置いている
 source_data: なし (一次データ)。同じ Collection 2 の Level-1 (大気上端の値) を USGS が大気補正したもの

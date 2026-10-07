@@ -1,5 +1,10 @@
 ---
 title: SmartMaps Uppsala 紛争データ PMTiles
+description: "UN Smart Maps が Uppsala Conflict Data Program の UCDP GED Global 23.1 (1989 年から 2022 年の武力紛争の出来事) を地図表示用に PMTiles にしたファイル"
+provider_group: "SmartMaps"
+categories: ["紛争・人道"]
+regions: ["全世界"]
+formats: ["PMTiles", "MVT"]
 id: smartmaps_uppsala_conflict_pmtiles
 provider: UN Smart Maps (Source Cooperative の UN Smart Maps Group)
 source_data: Uppsala Conflict Data Program の UCDP GED Global version 23.1

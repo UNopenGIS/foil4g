@@ -1,5 +1,10 @@
 ---
 title: OpenStreetMap 標準タイル
+description: "OpenStreetMapの公式タイルサーバーから提供されるラスタータイルマップです。世界中のボランティアによって作成・維持されている地図データを基にしています。"
+provider_group: "OpenStreetMap"
+categories: ["ベースマップ"]
+regions: ["全世界"]
+formats: ["XYZ ラスタータイル"]
 id: openstreetmap_xyz
 provider: [OpenStreetMap contributors, 'https://www.openstreetmap.org/']
 license: [ODbL-1.0]

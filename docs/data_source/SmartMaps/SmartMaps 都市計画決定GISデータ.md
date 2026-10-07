@@ -1,5 +1,10 @@
 ---
 title: SmartMaps 都市計画決定GISデータ
+description: "UN Smart Maps Group が 国土交通省 の都市計画決定 GIS データ (全国) を PMTiles にして、Source Cooperative で配っているベクトルタイル"
+provider_group: "SmartMaps"
+categories: ["都市計画", "土地利用・土地被覆"]
+regions: ["アジア", "日本"]
+formats: ["PMTiles", "MVT"]
 id: smartmaps_toshik
 provider: [国土交通省 都市局都市計画課都市計画調査室 (元データ), UN Smart Maps Group (変換と配布)]
 source_data: https://www.mlit.go.jp/toshi/tosiko/toshi_tosiko_tk_000087.html

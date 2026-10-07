@@ -68,7 +68,12 @@ find docs -name "*.md" -type f | xargs -I {} sh -c 'echo "$(basename "{}" .md)::
 | キー | 内容 |
 | --- | --- |
 | `title` | カードの名前。ファイル名と本文の `#` 見出しと同じにする |
+| `description` | 一覧のカードに表示する短い概要 |
 | `id` | データの識別子。英小文字とアンダースコア |
+| `provider_group` | 探すときの提供元グループ。`SmartMaps`、`NASA` などの短い名前 |
+| `categories` | テーマの配列。人口・社会、地形・標高、建物など、複数指定できる |
+| `regions` | 対象地域の配列。全世界、日本、ルワンダなど、複数指定できる |
+| `formats` | 探すときのデータ形式の配列。PMTiles、GeoTIFF、CSV など |
 | `provider` | 作って配っている組織 |
 | `source_data` | 別のデータを加工したものなら、その出所 |
 | `license` | 提供されている条件の一覧。SPDX の識別子があればそれを使い (`CC-BY-4.0`、`ODbL-1.0`、`CC0-1.0` など)、無ければ `public-domain`、`PDL-1.0`、`other`、`unknown` を使う |
@@ -101,3 +106,39 @@ find docs -name "*.md" -type f | xargs -I {} sh -c 'echo "$(basename "{}" .md)::
 | `unconfirmed` | 確かめていない | |
 
 1 つのデータが複数に当たるときは、主な使い方を `access` に書き、ほかは `access_note` に書きます。
+
+### 複数の切り口から探すための項目
+
+検索用の分類は各カードの YAML frontmatter が元データです。
+`provider`、`format`、`coverage` は説明を含む従来の項目として残し、
+短い分類名を `provider_group`、`categories`、`regions`、`formats` に書きます。
+カードの名前や置き場所から分類を自動推測しません。
+
+```yaml
+provider_group: SmartMaps
+categories: [地形・標高]
+regions: [アジア, 日本, 東北]
+formats: [PMTiles]
+license: [unknown]
+access: range
+```
+
+この例は SmartMaps Global DEM1A の分類です。名前に Global があっても、
+カード本文で確認されている対象は東北地方の太平洋側の一部です。
+
+- 1枚が複数のテーマ、地域、形式、ライセンスを持つ場合は、すべての一覧に掲載します。同じ一覧では1枚を1件と数えます。
+- 地域は明示したタグに一致するカードを探します。国と地方を両方の入口に出す場合は両方を書きます。`全世界` は別の分類であり、各地域の検索に自動で含めません。
+- `全世界` は世界規模の配布を表します。地球上のすべての場所を均一に網羅する意味ではありません。詳しい範囲は `coverage` と本文に書きます。
+- テーマはカードの内容に基づく編集上の分類です。地域・形式は本文や frontmatter に根拠のあるものを指定し、地域を確認できていない場合は `regions: [未確認]` と書きます。
+- データ形式はデータ本体の形式を指定します。`COG` は `GeoTIFF` と両方を指定でき、圧縮や解像度などの補足は `format` に残します。
+- 分類が未記載のカードは該当軸の `未分類` 一覧に掲載します。タグの名前は一覧で既に使われている表記に合わせてください。
+
+トップページと `/browse/` は同じ6つの切り口のカード一覧です。`/browse/category/地形・標高/` などの
+分類別ページは静的HTMLで、JavaScriptが無効でもカードへのリンクをたどれます。
+`/data_source/` は概要付きのデータカード一覧です。「検索・絞り込み」を開くと
+複数の軸とキーワードで絞り込め、条件をURLで共有できます。
+軸が異なる条件とキーワードの各語はANDで組み合わせます。
+キーワードの対象は名前・概要・提供元・元データ・形式・対象範囲と分類です。本文全体はヘッダーの全文検索で探せます。
+
+タグを更新したら `npm run test:site`、`npm run site:check`、`npm run build`、
+`npm run test:build` で分類とリンクを確認してください。

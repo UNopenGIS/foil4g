@@ -1,5 +1,10 @@
 ---
 title: Overture Maps
+description: "Overture Maps Foundation が、OpenStreetMap や各社・各国のオープンデータを統合した全世界の地図データ (住所、基盤、建物、行政区域、施設、交通の 6 テーマ) を、毎月 GeoParquet で Amazon S3 と Microsoft Azure から配り、STAC カタログで目録を公開しているもの"
+provider_group: "Overture Maps"
+categories: ["ベースマップ", "建物", "交通", "行政区域", "施設"]
+regions: ["全世界"]
+formats: ["GeoParquet", "PMTiles"]
 id: overture_maps
 provider: Overture Maps Foundation
 source_data: [OpenStreetMap, Microsoft と Google の機械学習による建物, Esri Community Maps, geoBoundaries 行政区域, ESA WorldCover 土地被覆, Meta や Microsoft などの施設データ, OpenAddresses などの住所データ, TomTom の道路データほか (テーマごとに下で説明)]

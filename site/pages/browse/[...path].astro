@@ -1,0 +1,48 @@
+---
+import type { GetStaticPaths } from "astro";
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import CatalogCards from "../../components/CatalogCards.astro";
+import SourceList from "../../components/SourceList.astro";
+import { axes, getFacets, filterCards, facetHref, writeFilters } from "../../catalog/catalog";
+import { loadCards } from "../../catalog/load";
+
+export const getStaticPaths = (async () => {
+  const base = import.meta.env.BASE_URL;
+  const cards = await loadCards(base);
+  return axes.flatMap((axis) => {
+    const facets = getFacets(cards, axis.id);
+    return [
+      { params: { path: axis.id }, props: { axis, facets, cards: [], value: undefined, label: undefined } },
+      ...facets.map((facet) => ({
+        params: { path: `${axis.id}/${facet.value}` },
+        props: { axis, facets, cards: filterCards(cards, { [axis.id]: facet.value }), value: facet.value, label: facet.label },
+      })),
+    ];
+  });
+}) satisfies GetStaticPaths;
+
+const { axis, facets, cards, value, label } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const title = value === undefined ? `${axis.label}から探す` : `${label}のデータソース`;
+const search = `${base}data_source/?${writeFilters({ [axis.id]: value }).toString()}`;
+---
+
+<StarlightPage frontmatter={{ title, tableOfContents: false, pagefind: false }}>
+  <nav aria-label="データソースの探し方">
+    <a href={base}>切り口から探す</a> · <a href={`${base}data_source/`}>すべてのデータ</a> · <a href={`${base}browse/`}>切り口の一覧</a>
+    {value !== undefined && <> · <a href={facetHref(base, axis.id)}>{axis.label}の一覧</a></>}
+  </nav>
+  {value === undefined ? (
+    <CatalogCards items={facets.map((facet) => ({
+      title: facet.label,
+      href: facetHref(base, axis.id, facet.value),
+      count: facet.count,
+      description: `「${facet.label}」に分類されたデータソースを探せます。`,
+    }))} />
+  ) : (
+    <>
+      <p>{cards.length} 件のデータソースがあります。<a href={search}>ほかの条件も組み合わせる</a></p>
+      <SourceList cards={cards} />
+    </>
+  )}
+</StarlightPage>

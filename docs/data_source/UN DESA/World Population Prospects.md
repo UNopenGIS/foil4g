@@ -1,5 +1,10 @@
 ---
 title: World Population Prospects
+description: "国連経済社会局 (UN DESA) の 国連人口部 が、世界の 237 の国と地域とその集計地域について、1950 年から 2023 年の人口の推計と 2024 年から 2100 年の予測を、CSV と Excel で配っている国連の公式の人口推計"
+provider_group: "UN DESA"
+categories: ["人口・社会"]
+regions: ["全世界"]
+formats: ["CSV", "XLSX"]
 id: un_wpp
 provider: 国連経済社会局 人口部 (国連人口部、United Nations, Department of Economic and Social Affairs, Population Division)
 source_data: なし (一次データ)。人口部が各国の国勢調査、標本調査、人口動態登録などを集めて推計したもの

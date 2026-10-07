@@ -1,5 +1,10 @@
 ---
 title: Kontur Population
+description: "Kontur が全世界の人口を H3 の解像度 8 の六角形 (約 400m) ごとに推計し、Humanitarian Data Exchange (HDX) で全世界版と国別版の GeoPackage として配っているデータ"
+provider_group: "Kontur"
+categories: ["人口・社会"]
+regions: ["全世界"]
+formats: ["GeoPackage"]
 id: kontur_population
 provider: Kontur (Kontur, Inc.)
 source_data: GHSL 人口・建物・都市化度 の GHS-POP R2023A、Facebook (Meta) の High Resolution Settlement Layer (HRSL)、Microsoft Building Footprints、LINZ NZ Building Outlines、Copernicus Global Land Service Land Cover 100m、OpenStreetMap、Geoalert Urban Mapping、国連 World Population Prospects

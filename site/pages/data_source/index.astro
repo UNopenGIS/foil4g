@@ -1,0 +1,10 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import SourceBrowser from "../../components/SourceBrowser.astro";
+import { loadCards } from "../../catalog/load";
+const cards = await loadCards(import.meta.env.BASE_URL);
+---
+
+<StarlightPage frontmatter={{ title: "すべてのデータソース", tableOfContents: false, pagefind: false }}>
+  <SourceBrowser cards={cards} />
+</StarlightPage>

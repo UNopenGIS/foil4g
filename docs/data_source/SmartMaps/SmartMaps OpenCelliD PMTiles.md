@@ -1,5 +1,10 @@
 ---
 title: SmartMaps OpenCelliD PMTiles
+description: "UN Smart Maps Group が OpenCelliD の携帯電話基地局の位置データを PMTiles にして、Source Cooperative で配っているベクトルタイル"
+provider_group: "SmartMaps"
+categories: ["通信"]
+regions: ["全世界"]
+formats: ["PMTiles", "MVT"]
 id: smartmaps_opencellid_pmtiles
 provider: ['OpenCelliD (https://opencellid.org/)', UN Smart Maps Group (変換と配布)]
 license: [CC-BY-SA-4.0]

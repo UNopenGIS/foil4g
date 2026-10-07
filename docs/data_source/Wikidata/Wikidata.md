@@ -1,5 +1,10 @@
 ---
 title: Wikidata
+description: "Wikimedia Foundation が運営し、世界中の編集者が書いている構造化データの知識ベースで、座標 (P625) を持つ約 1,244 万件の項目を含む全世界の事物を、SPARQL の問い合わせと JSON や RDF のダンプで CC0 で配っているもの"
+provider_group: "Wikidata"
+categories: ["地名"]
+regions: ["全世界"]
+formats: ["JSON", "XML", "CSV", "TSV", "RDF"]
 id: wikidata
 provider: [Wikimedia Foundation (運営), Wikidata の編集者 (内容)]
 source_data: なし (一次データ。ただし各ステートメントは編集者が外部の資料から書き写したもので、出典 (reference) が付くものと付かないものがある)

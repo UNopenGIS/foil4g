@@ -1,5 +1,10 @@
 ---
 title: ArcGIS World Imagery 衛星画像タイル
+description: "Esriが提供するArcGIS Onlineの世界衛星画像タイルサービスです。高解像度の衛星画像を世界規模で提供します。"
+provider_group: "ArcGIS"
+categories: ["衛星・航空画像", "ベースマップ"]
+regions: ["全世界"]
+formats: ["XYZ ラスタータイル"]
 id: arcgis_world_imagery
 provider: Esri, Maxar, Earthstar Geographics、https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/
 license: [unknown]

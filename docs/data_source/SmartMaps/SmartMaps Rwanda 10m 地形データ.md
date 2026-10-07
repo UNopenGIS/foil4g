@@ -1,5 +1,10 @@
 ---
 title: SmartMaps Rwanda 10m 地形データ
+description: "UN Smart Mapsにより提供されるルワンダの10m解像度地形タイルデータです。ルワンダの水・衛生公社と国土局のデータから作成されています。"
+provider_group: "SmartMaps"
+categories: ["地形・標高"]
+regions: ["アフリカ", "ルワンダ"]
+formats: ["PMTiles"]
 id: smartmaps_rwanda10
 provider: [Water and Sanitation Corporation (WASAC), National Land Authority (NLA)]
 license: [unknown]

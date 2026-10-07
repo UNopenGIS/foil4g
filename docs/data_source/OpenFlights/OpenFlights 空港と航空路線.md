@@ -1,5 +1,10 @@
 ---
 title: OpenFlights 空港と航空路線
+description: "OpenFlights が GitHub で配っている、全世界の空港、航空会社、航空路線、機材、国の 5 種類の表 (区切りがカンマのテキスト .dat)。路線は 2014 年 6 月、空港は 2019 年 5 月のコミットで止まった古いスナップショット"
+provider_group: "OpenFlights"
+categories: ["交通"]
+regions: ["全世界"]
+formats: ["CSV"]
 id: openflights
 provider: [OpenFlights (openflights.org, GitHub の jpatokal/openflights)]
 source_data: 空港は OurAirports と DAFIF (2006 年 10 月サイクル) に利用者の追加と修正を加えたもの。路線は Airline Route Mapper、航空会社は Wikipedia の List of airlines、機材は Wikipedia の List of ICAO aircraft type designators から

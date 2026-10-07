@@ -1,5 +1,10 @@
 ---
 title: World Bank 世界開発指標
+description: "世界銀行 が、217 の国と地域と 47 の集計地域について、1960 年から 2025 年までの 1,498 の開発指標を、Indicators API と CSV の一括 zip で配っている World Development Indicators (WDI)"
+provider_group: "World Bank"
+categories: ["人口・社会"]
+regions: ["全世界"]
+formats: ["CSV", "XLSX", "JSON", "XML"]
 id: worldbank_wdi
 provider: [世界銀行 (World Bank, Development Data Group)]
 source_data: 一部は一次データ (世界銀行の推計)、多くは各国の統計局と国際機関 (国連人口部、FAO、ILO、ITU、UNESCO、SIPRI など) の統計を集めたもの。出典は指標ごとにメタデータの Source の欄にある

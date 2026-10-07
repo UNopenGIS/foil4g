@@ -1,5 +1,10 @@
 ---
 title: OpenStreetMap Japan Planet PMTiles
+description: "OSMFJ のタイルサーバーが静的に配っている、全世界の OpenStreetMap を OpenMapTiles スキーマのベクトルタイルにした PMTiles ファイル 1 本"
+provider_group: "OpenStreetMap Japan"
+categories: ["ベースマップ"]
+regions: ["全世界"]
+formats: ["PMTiles", "MVT"]
 id: openstreetmap_jp_planet_pmtiles
 provider: [OSMFJ (OpenStreetMap Foundation Japan), OpenStreetMap Contributors]
 license: [CC-BY-4.0, ODbL-1.0]

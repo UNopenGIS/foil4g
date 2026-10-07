@@ -1,5 +1,10 @@
 ---
 title: OpenStreetMap Japan Planet ベクトルタイル
+description: "OSMFJ のタイルサーバーが XYZ で配信している、全世界の OpenStreetMap を OpenMapTiles スキーマにした ベクトルタイル"
+provider_group: "OpenStreetMap Japan"
+categories: ["ベースマップ"]
+regions: ["全世界"]
+formats: ["MVT"]
 id: openstreetmap_jp_planet
 provider: [OSMFJ (OpenStreetMap Foundation Japan), OpenStreetMap Contributors]
 license: [CC-BY-4.0, ODbL-1.0]

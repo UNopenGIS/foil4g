@@ -1,5 +1,10 @@
 ---
 title: GeoNames 地名
+description: "スイスの Unxos GmbH が運営する GeoNames が、全世界の約 1,300 万件の地名 (点) と別名を、国別と全世界のタブ区切りテキストの zip で毎日作り直して配っている地名辞書 (gazetteer)"
+provider_group: "GeoNames"
+categories: ["地名"]
+regions: ["全世界"]
+formats: ["TSV"]
 id: geonames
 provider: GeoNames (Unxos GmbH、スイス St. Gallen。創始者は Marc Wick)
 source_data: 100 を超える出典の集約と、利用者の wiki 編集。主な出典は米国 NGA の GNS、USGS の GNIS、各国の地図機関と統計機関など (datasources ページに 436 件)

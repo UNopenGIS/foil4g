@@ -1,5 +1,10 @@
 ---
 title: Google Open Buildings
+description: "Google Research が、アフリカ、南アジア、東南アジア、中南米・カリブの約 5,800 万 km2 について、衛星画像から機械学習で推定した建物のポリゴン (v1〜v3、CSV) と、建物の有無・件数・高さの年ごとのラスタ (2.5D Temporal、2016〜2023 年、GeoTIFF) を Google Cloud Storage で配っているデータ"
+provider_group: "Google"
+categories: ["建物"]
+regions: ["アフリカ", "アジア", "南アジア", "東南アジア", "中南米・カリブ"]
+formats: ["CSV", "GeoTIFF"]
 id: google_open_buildings
 provider: [Google Research (Open Buildings チーム, ガーナのアクラの拠点が中心)]
 source_data: なし (一次データ)。ポリゴンは Google が使う解像度 50cm の高解像度衛星画像から、2.5D Temporal は Sentinel-2 (Copernicus) の画像から推定したもの。元の画像は配っていない

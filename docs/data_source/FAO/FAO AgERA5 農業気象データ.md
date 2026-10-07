@@ -1,5 +1,10 @@
 ---
 title: FAO AgERA5 農業気象データ
+description: "国際連合食糧農業機関 (FAO) が、Copernicus Climate Change Service の農業気象データ AgERA5 を月ごとに集計し、降水量、基準蒸発散量、最高気温、最低気温の 4 つを全球の陸について 0.1 度格子の Cloud Optimized GeoTIFF で配っているもの"
+provider_group: "FAO"
+categories: ["農業", "環境・気候"]
+regions: ["全世界"]
+formats: ["COG", "GeoTIFF"]
 id: fao_agera5_monthly
 provider: 国際連合食糧農業機関 (FAO) の地理空間データ基盤 GISMGR (ワークスペース `C3S`)
 source_data: Copernicus Climate Change Service (C3S) が ECMWF を通じて作る AgERA5 (Agrometeorological indicators from 1979 to present derived from reanalysis、DOI 10.24381/cds.6c68c9bb)。AgERA5 は ERA5 再解析を元にしている

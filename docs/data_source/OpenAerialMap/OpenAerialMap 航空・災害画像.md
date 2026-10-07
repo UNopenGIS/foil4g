@@ -1,5 +1,10 @@
 ---
 title: OpenAerialMap 航空・災害画像
+description: "Humanitarian OpenStreetMap Team (HOT) が運営する OpenAerialMap の STAC API で、利用者が投稿した世界各地のドローン・航空機・衛星の画像 (約 2 万 2 千件) と、NOAA の災害後航空写真 (2020 年ナッシュビル竜巻の 163 件) を Cloud Optimized GeoTIFF で配っているもの"
+provider_group: "OpenAerialMap"
+categories: ["衛星・航空画像", "防災"]
+regions: ["全世界"]
+formats: ["COG", "GeoTIFF", "PMTiles", "MBTiles"]
 id: openaerialmap
 provider: Humanitarian OpenStreetMap Team (OpenAerialMap と Open Imagery Network)
 source_data: '`openaerialmap` は投稿者が撮影した一次データ (撮影者は Item ごとに `oam:producer_name` と `providers` に記録)。`noaa-emergency-response` は NOAA の Emergency Response Imagery を載せ直したもの'

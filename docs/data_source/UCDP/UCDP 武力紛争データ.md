@@ -1,5 +1,10 @@
 ---
 title: UCDP 武力紛争データ
+description: "Uppsala Conflict Data Program (UCDP) が配っている、世界の組織的暴力の出来事を 1 件 1 行で位置つきにまとめた UCDP Georeferenced Event Dataset (GED)"
+provider_group: "UCDP"
+categories: ["紛争・人道"]
+regions: ["全世界"]
+formats: ["CSV"]
 id: ucdp_ged
 provider: Uppsala Conflict Data Program (ウプサラ大学 平和・紛争研究学部)
 license: [CC-BY-4.0]

@@ -1,5 +1,10 @@
 ---
 title: Natural Earth Coastline Data
+description: "Natural Earth が 1:10m の縮尺で配っている、全世界の海岸線の Shapefile (zip)"
+provider_group: "Natural Earth"
+categories: ["海岸・水域"]
+regions: ["全世界"]
+formats: ["Shapefile"]
 id: ne_10m_coastline
 provider: Natural Earth (https://www.naturalearthdata.com/)
 license: [public-domain]

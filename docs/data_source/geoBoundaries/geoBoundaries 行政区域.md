@@ -1,5 +1,10 @@
 ---
 title: geoBoundaries 行政区域
+description: "William & Mary geoLab が、各国の政府、国連機関、OpenStreetMap などから集めた行政区域の境界 (国境から ADM5 まで) を、国と階層の組ごとに GeoJSON、Shapefile、TopoJSON で配っている全世界のデータベース"
+provider_group: "geoBoundaries"
+categories: ["行政区域"]
+regions: ["全世界"]
+formats: ["GeoJSON", "TopoJSON", "Shapefile", "GeoPackage"]
 id: geoboundaries
 provider: William & Mary geoLab (米国ウィリアム・アンド・メアリー大学) と協力者
 source_data: 国と階層ごとに違う。各国の政府機関、OpenStreetMap (osm-boundaries.com 経由)、HDX の COD-AB、UN SALB、Wikimedia Commons など。各ファイルのメタデータに出所がある

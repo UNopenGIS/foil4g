@@ -1,5 +1,10 @@
 ---
 title: EDGAR 温室効果ガス排出
+description: "欧州委員会 共同研究センター (JRC) が、全世界の温室効果ガス (CO2、CH4、N2O、F ガス) の排出量の推計を、国別・部門別の表 (xlsx) と全球 0.1 度格子 (NetCDF とテキスト) にして、版ごとに配っている EDGAR (Emissions Database for Global Atmospheric Research) の温室効果ガス版"
+provider_group: "EDGAR"
+categories: ["環境・気候"]
+regions: ["全世界"]
+formats: ["XLSX", "NetCDF", "テキスト"]
 id: edgar_ghg
 provider: 欧州委員会 共同研究センター (European Commission, Joint Research Centre, JRC) の EDGAR チーム。化石 CO2 は 国際エネルギー機関 (IEA) との共同
 source_data: なし (一次データ。ただし推計の材料として IEA World Energy Balances、IEA Greenhouse Gas Emissions from Energy、FAOSTAT、USGS、IFA、GFMR/NOAA、UNFCCC、worldsteel などの統計を使っている)

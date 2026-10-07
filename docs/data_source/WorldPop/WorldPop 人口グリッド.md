@@ -1,5 +1,10 @@
 ---
 title: WorldPop 人口グリッド
+description: "英国サウサンプトン大学の WorldPop が、国勢調査の人口を機械学習で約 100m と約 1km の格子に配分して、国ごとの GeoTIFF で配っている、2015 年から 2030 年の毎年の人口推計 (総人口、年齢・性別、都市化度)"
+provider_group: "WorldPop"
+categories: ["人口・社会"]
+regions: ["全世界"]
+formats: ["GeoTIFF", "Shapefile", "XLS"]
 id: worldpop
 provider: WorldPop (University of Southampton, School of Geography and Environmental Science)
 source_data: 各国の国勢調査と公式推計 (行政区域別)、国連の World Population Prospects 2024 年版の国別総数、GHSL 人口・建物・都市化度 の建物データ、Google Open Buildings と Microsoft の建物外形、ESA WorldCover 土地被覆 などの共変量。推計値なので一次データではない

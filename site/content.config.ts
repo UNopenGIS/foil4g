@@ -11,7 +11,11 @@ const stringOrList = z.union([z.string(), z.array(z.string())]);
 
 const cardFields = z.object({
   id: z.string().optional(),
+  categories: z.array(z.string().trim().min(1)).min(1).optional(),
+  regions: z.array(z.string().trim().min(1)).min(1).optional(),
+  formats: z.array(z.string().trim().min(1)).min(1).optional(),
   provider: stringOrList.optional(),
+  provider_group: z.string().trim().min(1).optional(),
   source_data: stringOrList.optional(),
   license: z.array(z.string()).min(1),
   license_note: z.string().optional(),

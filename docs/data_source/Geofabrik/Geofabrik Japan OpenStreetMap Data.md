@@ -1,5 +1,10 @@
 ---
 title: Geofabrik Japan OpenStreetMap Data
+description: "Geofabrik が OpenStreetMap の planet から日本の範囲を切り出して、毎日配っている OSM PBF ファイル"
+provider_group: "Geofabrik"
+categories: ["ベースマップ"]
+regions: ["アジア", "日本"]
+formats: ["OSM PBF"]
 id: geofabrik_asia_japan
 provider: [Geofabrik GmbH, OpenStreetMap Contributors]
 license: [ODbL-1.0]

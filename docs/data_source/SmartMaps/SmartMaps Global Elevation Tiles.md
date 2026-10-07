@@ -1,5 +1,10 @@
 ---
 title: SmartMaps Global Elevation Tiles
+description: "UN Smart Maps Group が NASADEM と地球地図 (Global Map) から作った、全世界の標高を RGB に詰めた WebP タイルを 1 つにまとめた PMTiles ファイル"
+provider_group: "SmartMaps"
+categories: ["地形・標高"]
+regions: ["全世界"]
+formats: ["PMTiles"]
 id: smartmaps_global_elevation_tiles
 provider: UN Smart Maps Group (UN Open GIS Initiative)
 source_data: [NASADEM (ズーム 6 から 12), Global Map (ズーム 2 から 5)]

@@ -1,5 +1,10 @@
 ---
 title: ESA WorldCover 土地被覆
+description: "欧州宇宙機関 (ESA) が Sentinel-1 と Sentinel-2 の観測から作った、2020 年と 2021 年の全球 10m 土地被覆図 (11 区分) で、3 度四方の Cloud Optimized GeoTIFF 2,651 枚として AWS の公開バケットで配っているもの"
+provider_group: "ESA"
+categories: ["土地利用・土地被覆"]
+regions: ["全世界"]
+formats: ["COG", "GeoTIFF"]
 id: esa_worldcover
 provider: 欧州宇宙機関 (ESA) の WorldCover プロジェクト。製作は ESA WorldCover consortium、AWS での配布の管理は VITO
 source_data: Copernicus の Sentinel-1 (レーダー) と Sentinel-2 (光学) の観測 (各基準年の 1 月 1 日から 12 月 31 日)

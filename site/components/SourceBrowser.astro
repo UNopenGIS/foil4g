@@ -1,0 +1,115 @@
+---
+import SourceList from "./SourceList.astro";
+import { axes, getFacets, type Card } from "../catalog/catalog";
+interface Props { cards: Card[]; }
+const { cards } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<div data-source-browser>
+  <p>テーマや地域、使いたい形式など、複数の条件を組み合わせて探せます。</p>
+  <p><a href={`${base}browse/`}>切り口ごとの一覧を見る</a></p>
+  <details hidden data-filter-details>
+    <summary>検索・絞り込み</summary>
+  <form data-filter-form role="search" aria-label="データソースを絞り込む">
+    <label class="keyword">キーワード
+      <input type="search" name="q" placeholder="名前、地域、データ形式など" autocomplete="off" />
+    </label>
+    <div class="filters">
+      {axes.map(({ id, label }) => (
+        <label>{label}
+          <select name={id}>
+            <option value="">すべて</option>
+            {getFacets(cards, id).map((facet) => <option value={facet.value}>{facet.label}（{facet.count} 件）</option>)}
+          </select>
+        </label>
+      ))}
+    </div>
+    <div class="actions">
+      <button type="submit">絞り込む</button>
+      <button type="button" data-clear-filters>条件をクリア</button>
+    </div>
+  </form>
+  </details>
+  <noscript><p>切り口ごとの一覧からデータソースを探せます。</p></noscript>
+  <p role="status" aria-live="polite" data-result-count>{cards.length} 件のデータソース</p>
+  <p hidden data-empty-results>条件に合うデータソースがありません。条件を減らすか、キーワードを変更してください。</p>
+  <SourceList cards={cards} />
+</div>
+
+<script>
+  import { axes, filterCards, readFilters, writeFilters, type Card, type Filters } from "../catalog/catalog";
+
+  const root = document.querySelector<HTMLElement>("[data-source-browser]");
+  if (root) {
+    const form = root.querySelector<HTMLFormElement>("[data-filter-form]")!;
+    const count = root.querySelector<HTMLElement>("[data-result-count]")!;
+    const empty = root.querySelector<HTMLElement>("[data-empty-results]")!;
+    const rows = [...root.querySelectorAll<HTMLElement>("[data-catalog-card]")];
+    const cards: Card[] = rows.map((row) => JSON.parse(row.dataset.catalogCard!));
+    const names = ["q", ...axes.map(({ id }) => id)] as const;
+    const fields = names.map((name) => form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement);
+
+    function render(filters: Filters) {
+      const visible = new Set(filterCards(cards, filters).map((card) => card.id));
+      for (const row of rows) row.hidden = !visible.has(JSON.parse(row.dataset.catalogCard!).id);
+      count.textContent = `${cards.length} 件中 ${visible.size} 件のデータソース`;
+      empty.hidden = visible.size > 0;
+    }
+
+    function restore() {
+      const filters = readFilters(new URLSearchParams(location.search));
+      for (const field of fields) {
+        const value = filters[field.name as keyof Filters] ?? "";
+        if (field instanceof HTMLSelectElement) {
+          field.querySelector("option[data-unknown-filter]")?.remove();
+          if (value && ![...field.options].some((option) => option.value === value)) {
+            const option = new Option(`${value}（該当なし）`, value);
+            option.dataset.unknownFilter = "";
+            field.add(option);
+          }
+        }
+        field.value = value;
+      }
+      render(filters);
+    }
+
+    function update() {
+      const filters = Object.fromEntries(fields.map((field) => [field.name, field.value])) as Filters;
+      const url = new URL(location.href);
+      url.search = writeFilters(filters, url.searchParams).toString();
+      if (url.href !== location.href) history.pushState(null, "", url);
+      render(filters);
+    }
+
+    form.addEventListener("submit", (event) => { event.preventDefault(); update(); });
+    form.addEventListener("change", update);
+    form.querySelector<HTMLInputElement>("[name=q]")!.addEventListener("input", () => {
+      // Typing updates results immediately; submission stores one history entry.
+      render(Object.fromEntries(fields.map((field) => [field.name, field.value])) as Filters);
+    });
+    root.querySelector("[data-clear-filters]")!.addEventListener("click", () => {
+      form.reset();
+      for (const field of fields) field.value = "";
+      update();
+    });
+    window.addEventListener("popstate", restore);
+    restore();
+    const details = root.querySelector<HTMLDetailsElement>("[data-filter-details]")!;
+    details.hidden = false;
+    if (Object.keys(readFilters(new URLSearchParams(location.search))).length) details.open = true;
+  }
+</script>
+
+<style>
+  details { margin-block: 1rem; }
+  summary { cursor: pointer; color: var(--sl-color-text-accent); }
+  form { padding: 1rem; border: 1px solid var(--sl-color-gray-5); border-radius: .5rem; margin-block: 1rem; }
+  label { display: grid; gap: .25rem; font-size: .875rem; min-width: 0; }
+  input, select { width: 100%; min-width: 0; padding: .5rem; color: var(--sl-color-text); background: var(--sl-color-bg); border: 1px solid var(--sl-color-gray-4); border-radius: .25rem; font: inherit; }
+  .filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin-block: .75rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+  button { cursor: pointer; padding: .5rem .75rem; background: var(--sl-color-bg); color: var(--sl-color-text); border: 1px solid var(--sl-color-gray-4); border-radius: .25rem; font: inherit; }
+  button[type=submit] { background: var(--sl-color-text-accent); color: var(--sl-color-bg); }
+  @media (max-width: 480px) { .filters { grid-template-columns: 1fr; } }
+</style>

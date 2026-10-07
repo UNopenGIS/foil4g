@@ -1,5 +1,10 @@
 ---
 title: OpenCelliD 基地局位置データ
+description: "OpenCelliD が利用者の観測から推定した、世界の携帯電話基地局 (セル) の位置を CSV で配っている一括ダウンロード"
+provider_group: "OpenCelliD"
+categories: ["通信"]
+regions: ["全世界"]
+formats: ["CSV"]
 id: opencellid_full
 provider: [OpenCelliD (2017 年から Unwired Labs が運営), OpenCelliD の貢献者]
 license: [CC-BY-SA-4.0]

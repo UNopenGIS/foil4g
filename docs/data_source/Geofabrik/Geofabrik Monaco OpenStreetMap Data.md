@@ -1,5 +1,10 @@
 ---
 title: Geofabrik Monaco OpenStreetMap Data
+description: "Geofabrik が OpenStreetMap の planet からモナコを切り出して、毎日配っている OSM PBF ファイル"
+provider_group: "Geofabrik"
+categories: ["ベースマップ"]
+regions: ["ヨーロッパ", "モナコ"]
+formats: ["OSM PBF", "Shapefile", "GeoPackage"]
 id: geofabrik_europe_monaco
 provider: [Geofabrik GmbH, OpenStreetMap Contributors]
 license: [ODbL-1.0]

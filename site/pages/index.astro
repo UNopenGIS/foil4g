@@ -1,43 +1,10 @@
 ---
-import { getCollection } from "astro:content";
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
-
-const cards = (await getCollection("docs", (e) => e.id.startsWith("data_source/"))).sort((a, b) =>
-  a.data.title.localeCompare(b.data.title, "ja"),
-);
-const base = import.meta.env.BASE_URL;
+import BrowseDirectory from "../components/BrowseDirectory.astro";
+import { loadCards } from "../catalog/load";
+const cards = await loadCards(import.meta.env.BASE_URL);
 ---
 
 <StarlightPage frontmatter={{ title: "データソース", tableOfContents: false }}>
-  <p>{cards.length} 件のデータについて、出所、ライセンス、取り出し方、内容をまとめています。</p>
-  <table>
-    <thead>
-      <tr>
-        <th>名前</th>
-        <th>ライセンス</th>
-        <th>取り出し方</th>
-        <th>確認日</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-        cards.map((card) => (
-          <tr>
-            <td>
-              <a href={`${base}${card.id}/`}>{card.data.title}</a>
-            </td>
-            <td>{card.data.license?.join(", ") ?? ""}</td>
-            <td class="nowrap">{card.data.access}</td>
-            <td class="nowrap">{card.data.checked?.toISOString().slice(0, 10) ?? ""}</td>
-          </tr>
-        ))
-      }
-    </tbody>
-  </table>
+  <BrowseDirectory cards={cards} />
 </StarlightPage>
-
-<style>
-  .nowrap {
-    white-space: nowrap;
-  }
-</style>

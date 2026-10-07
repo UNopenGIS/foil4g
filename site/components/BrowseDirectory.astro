@@ -1,0 +1,30 @@
+---
+import CatalogCards from "./CatalogCards.astro";
+import { axes, getFacets, facetHref, filterCards, type Card } from "../catalog/catalog";
+interface Props { cards: Card[]; }
+const { cards } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<p>テーマや地域、使いたい形式などから、{cards.length} 件のデータソースを探せます。</p>
+<p><a href={`${base}data_source/`}>すべてのデータを見る・検索する</a></p>
+<nav aria-label="探す切り口" class="axis-nav">
+  {axes.map(({ id, label }) => <a href={`#${id}`}>{label}</a>)}
+</nav>
+{axes.map(({ id, label }) => (
+  <section data-browse-axis={id}>
+    <h2 id={id}><a href={facetHref(base, id)}>{label}から探す</a></h2>
+    <CatalogCards heading="h3" items={getFacets(cards, id).map((facet) => ({
+      title: facet.label,
+      href: facetHref(base, id, facet.value),
+      count: facet.count,
+      description: filterCards(cards, { [id]: facet.value }).slice(0, 2).map((card) => card.title).join("、"),
+    }))} />
+  </section>
+))}
+
+<style>
+  .axis-nav { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-block: 1.5rem; }
+  section { margin-block: 2rem; }
+  h2 { scroll-margin-top: 6rem; }
+</style>
