@@ -142,3 +142,20 @@ access: range
 
 タグを更新したら `npm run test:site`、`npm run site:check`、`npm run build`、
 `npm run test:build` で分類とリンクを確認してください。
+
+
+### データ追加時の確認例（2026-10-07）
+
+`study-geoai-algo-py/docs/datasets/` のローカル資料から、既存カードと重複しない7件を選び、公式ページと配布応答を再確認しました。全国のデータ本体をミラーするのではなく、取得先・分類・注意点をカードにまとめています。
+
+| データ | 主な用途 | 参照した資料ディレクトリ |
+| --- | --- | --- |
+| アドレス・ベース・レジストリ | 住所の正規化・代表点 | `abr` |
+| e-Stat 国勢調査小地域境界 | 人口の地域集計 | `estat-boundary` |
+| 国土数値情報 N02 | 鉄道・駅へのアクセス | `ksj-n02-railway` |
+| PLATEAU | 建物の3D形状・都市計画 | `plateau` |
+| 警察庁交通事故 | 事故の空間分布・道路安全 | `npa-traffic-accidents` |
+| Ookla Speedtest | 通信品質の地域差 | `ookla-speedtest` |
+| NYC TLC | 移動需要・時系列 | `nyc-tlc` |
+
+新規カードでは、過去の調査資料の実測を今回の確認として扱わず、確認日に実施した範囲を本文に記載します。Rangeが通る圧縮CSV・ZIPでも、地物や行を選択できないものは `range` に分類しません。独自条件はそのまま記録し、明確なデータライセンスを確認できないものは `unknown` とします。
