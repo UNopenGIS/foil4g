@@ -1,0 +1,15 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<StarlightPage frontmatter={{
+  title: "ページが見つかりません",
+  template: "splash",
+  pagefind: false,
+  hero: {
+    tagline: "URL を確認するか、検索でデータソースを探してください。",
+    actions: [{ text: "データソース一覧に戻る", link: base, variant: "primary" }],
+  },
+}} />

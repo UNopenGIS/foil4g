@@ -1,3 +1,5 @@
+> 開発・ビルド・公開の標準経路は Astro + Starlight です。現在の手順は [README.ja.md](README.ja.md#開発) を参照してください。旧 Vite アプリは `app:dev` / `app:build` / `app:preview` で利用できます。
+
 # FOIL4G: 自由かつオープンな地理空間情報ライブラリ
 
 ## コンセプト
@@ -108,10 +110,10 @@ npm ci
 ### 開発コマンド
 ```bash
 # 開発サーバーの起動
-npm run dev
+npm run app:dev
 
 # プロジェクトのビルド
-npm run build
+npm run app:build
 
 # リンティングの実行
 npm run lint

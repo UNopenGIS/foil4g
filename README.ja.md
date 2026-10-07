@@ -23,13 +23,52 @@
 - これらの情報の共有を通じて、効果的な意思決定と問題解決を促進する。
 - これらの情報の共有を通じて、生成的 AI による地理空間情報の自動処理を促進する。
 
-## 実装
+## 開発
 
-- `lib`
-  - `api`: 地理空間情報にアクセスするための API
-  - `data`: 地理空間情報を参照するための詳細
-  - `skills`: 地理空間情報を扱うためのスキル
-  - `tasks`: 地理空間情報を処理・分析するタスク
+Node.js 24 を使用し、`npm ci` で依存関係をインストールしてください。
+
+```bash
+npm run dev          # http://localhost:4321/foil4g/ で Astro + Starlight を起動
+npm run test:site    # Markdown プラグインと移行設定のテスト
+npm run site:check   # Astro と地図プレビューの型チェック
+npm run build        # dist-site/ に静的サイトを生成
+npm run test:build   # カード・内部リンク・静的ファイル・検索・404 を検証
+npm run preview      # ビルド済みサイトをプレビュー
+```
+
+`docs/data_source/` のカードを、設定したベースパス配下の
+`/data_source/<提供元>/<名前>/` で公開します。Starlight が日本語のナビゲーション、
+全文検索、テーマ切り替え、目次を提供します。Uppsala 紛争データのカードには、
+既存の React 地図コンポーネントによるプレビューがあります。
+
+### 公開設定
+
+GitHub Pages は `actions/configure-pages` が返す origin と base_path を使い、
+`dist-site/` を公開します。push と pull request の CI では `/` と `/foil4g/` の両方を検証します。
+ローカルの既定値は `https://unopengis.org/foil4g/` に対応しています。
+別の公開先では環境変数で指定できます。
+
+```bash
+ASTRO_SITE=https://example.org ASTRO_BASE=/ npm run build
+ASTRO_BASE=/ npm run test:build
+```
+
+Cloudflare Pages では、従来の `npm run site:build` と出力先 `dist-site/` を引き続き使えます。
+`CF_PAGES_URL` がある場合、サイトURLはその値、ベースパスは `/` になります。
+本番の canonical URL を固定する場合は `ASTRO_SITE` を指定してください。
+`site:dev`、`site:build`、`site:preview` も利用できます。
+
+### ディレクトリ構成
+
+- `site/`: Astro ページ、Starlight の表示部品、Markdown プラグイン、地図プレビュー
+- `docs/data_source/`: frontmatter を検証するデータソースカード
+- `src/`: 再利用可能な React の地図、データセット、表示例
+- `public/`: 共通の画像と MapLibre スタイル
+- `tests/`: 生成サイトの検証
+
+地図の表示例を移行する間、旧 Vite アプリと Storybook も保持しています。
+`app:dev`、`app:build`、`app:preview`、`storybook`、`build-storybook` で利用できます。
+GitHub Pages の公開対象は Astro サイトです。
 
 ## 貢献
 

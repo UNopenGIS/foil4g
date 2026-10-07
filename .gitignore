@@ -36,3 +36,6 @@ storybook-static
 # Astro
 dist-site
 .astro
+
+# Local browser verification artifacts
+.playwright-cli/

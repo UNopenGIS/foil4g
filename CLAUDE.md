@@ -5,27 +5,35 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Common Development Commands
 
 ### Development Server
-- `npm run dev` - Start Vite development server
+- `npm run dev` - Start Astro + Starlight at http://localhost:4321/foil4g/
 - `npm run preview` - Preview production build locally
 
 ### Build and Lint
-- `npm run build` - TypeScript compilation + Vite build
+- `npm run build` - Build the Astro site to dist-site/
 - `npm run lint` - ESLint check (max 0 warnings)
 
-### Storybook
+### Astro validation
+- `npm run test:site` - Markdown and migration tests
+- `npm run site:check` - Astro and map preview type checks
+- `npm run test:build` - Validate generated output after `npm run build`
+
+### Legacy Vite app and Storybook
+- `npm run app:dev` / `app:build` / `app:preview` - Previous Vite app
 - `npm run storybook` - Start Storybook dev server on port 6006
 - `npm run build-storybook` - Build static Storybook
 
 ## Architecture Overview
 
-FOIL4G is a React-based web mapping library that provides reusable components for displaying geospatial data. The application follows a component-based architecture centered around mapping libraries and geospatial data sources.
+FOIL4G publishes an Astro + Starlight data source library from `site/`, reading cards from `docs/data_source/`. GitHub Pages deploys `dist-site/`. The default commands run Astro; legacy Storybook and Vite commands remain available during migration. `ASTRO_SITE` and `ASTRO_BASE` configure hosting; Cloudflare Pages uses `CF_PAGES_URL` and `/` by default.
+
+FOIL4G also contains a React-based web mapping library that provides reusable components for displaying geospatial data. The application follows a component-based architecture centered around mapping libraries and geospatial data sources.
 
 ### Core Technology Stack
 - **React 18** with TypeScript and Vite
 - **MapLibre GL JS** as primary mapping engine
 - **react-map-gl** for React MapLibre integration
 - **PMTiles** for efficient vector tile serving
-- **Storybook** for component development and documentation
+- **Astro + Starlight** for the published documentation site; **Storybook** for legacy component development
 
 ### Component Structure
 

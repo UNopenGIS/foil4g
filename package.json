@@ -4,16 +4,21 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "astro dev",
+    "build": "astro build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
+    "preview": "astro preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "site:dev": "astro dev",
     "site:build": "astro build",
     "site:preview": "astro preview",
-    "test:site": "node --test 'site/**/*.test.mjs'"
+    "test:site": "node --test 'site/**/*.test.mjs'",
+    "app:dev": "vite",
+    "app:build": "tsc && vite build",
+    "app:preview": "vite preview",
+    "test:build": "node --test tests/site-build.test.mjs",
+    "site:check": "astro check --tsconfig tsconfig.site.json"
   },
   "dependencies": {
     "@turf/turf": "^7.2.0",
@@ -27,6 +32,7 @@
     "react-map-gl": "^8.1.3"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "@astrojs/markdown-remark": "^7.3.1",
     "@astrojs/react": "^7.0.0",
     "@astrojs/starlight": "^0.42.5",

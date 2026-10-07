@@ -1,6 +1,7 @@
 import { readdirSync } from "node:fs";
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
+import { unified } from "@astrojs/markdown-remark";
 import starlight from "@astrojs/starlight";
 import remarkStripWikilinks from "./site/plugins/remark-strip-wikilinks.mjs";
 import remarkDropLeadingH1 from "./site/plugins/remark-drop-leading-h1.mjs";
@@ -21,14 +22,22 @@ const dataSourceSidebar = readdirSync("./docs/data_source", { withFileTypes: tru
       .map((name) => ({ label: name, link: `/data_source/${provider}/${name}/` })),
   }));
 
-// The Vite app and Storybook keep src/ and public/. The documentation site
-// lives in site/ and builds to dist-site/, reading the cards from docs/.
+// GitHub Pages supplies its origin and base path. Cloudflare Pages uses /.
+// Local development defaults to the existing GitHub Pages location.
+const site = process.env.ASTRO_SITE || process.env.CF_PAGES_URL || "https://unopengis.org";
+const base = process.env.ASTRO_BASE ?? (process.env.CF_PAGES_URL ? "/" : "/foil4g/");
+
+// Keep the reusable React maps in src/ and publish the documentation from site/.
 export default defineConfig({
+  site,
+  base,
   srcDir: "./site",
   outDir: "./dist-site",
   integrations: [
     starlight({
       title: "FOIL4G",
+      // site/pages/404.astro supplies a base-aware return link.
+      disable404Route: true,
       locales: { root: { label: "日本語", lang: "ja" } },
       favicon: "/images/un-open-gis-smart-maps.jpg",
       sidebar: [{ label: "データソース", items: dataSourceSidebar }],
@@ -39,7 +48,16 @@ export default defineConfig({
     }),
     react(),
   ],
+  vite: {
+    build: {
+      // MapLibre is a ~1 MiB lazy-loaded vendor chunk, used only on map cards.
+      // Keep a 1.2 MiB budget rather than warning at the default 500 KiB.
+      chunkSizeWarningLimit: 1200,
+    },
+  },
   markdown: {
-    remarkPlugins: [remarkStripWikilinks, remarkDropLeadingH1],
+    processor: unified({
+      remarkPlugins: [remarkStripWikilinks, remarkDropLeadingH1],
+    }),
   },
 });
