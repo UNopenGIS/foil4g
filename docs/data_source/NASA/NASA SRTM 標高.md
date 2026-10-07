@@ -1,5 +1,10 @@
 ---
 title: NASA SRTM 標高
+description: "NASA が 2000 年 2 月のスペースシャトルのレーダー観測 (SRTM) から作った、北緯 60 度から南緯 56 度の陸地の標高データ (SRTM v3 と、処理し直した NASADEM) で、1 度四方のタイルに分けて LP DAAC (要ログイン)、OpenTopography と Microsoft Planetary Computer (ログイン不要) から配られているもの"
+provider_group: "NASA"
+categories: ["地形・標高"]
+regions: ["全世界"]
+formats: ["HGT", "GeoTIFF", "COG"]
 id: nasa_srtm
 provider: NASA (Jet Propulsion Laboratory の SRTM プロジェクト)。配布は LP DAAC。複製の配布に OpenTopography と Microsoft Planetary Computer
 source_data: なし (一次データ)。ただし SRTM v3 の欠測は ASTER GDEM v2、GMTED2010、NED で、NASADEM の欠測は ASTER GDEM と ALOS AW3D30 などで埋めてある

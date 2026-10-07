@@ -1,5 +1,10 @@
 ---
 title: VIRGO ビエンチャン 消火栓データ
+description: "VIRGOプラットフォームが提供するラオス・ビエンチャンの2023年消火栓データ"
+provider_group: "VIRGO"
+categories: ["都市計画", "防災", "施設"]
+regions: ["アジア", "ラオス", "ビエンチャン"]
+formats: ["Shapefile"]
 id: firehydrant_2023_v1
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

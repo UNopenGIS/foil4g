@@ -1,5 +1,10 @@
 ---
 title: USGS 地震カタログ
+description: "米国地質調査所 (USGS) が、世界の観測網から集めた地震の震源一覧 (ANSS Comprehensive Earthquake Catalog、ComCat) を、期間・範囲・規模で絞れる検索 API と、直近の地震を規模と期間ごとにまとめたリアルタイムの GeoJSON フィードで配っているもの"
+provider_group: "USGS"
+categories: ["防災"]
+regions: ["全世界"]
+formats: ["GeoJSON", "CSV", "QuakeML", "KML", "テキスト"]
 id: usgs_earthquakes
 provider: USGS Earthquake Hazards Program (National Earthquake Information Center ほか)
 source_data: なし (一次データ)。ただし震源の値の一部は、USGS 以外の地域観測網 (Alaska Earthquake Center など) が寄与したもの

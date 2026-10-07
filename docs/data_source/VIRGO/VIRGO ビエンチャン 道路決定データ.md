@@ -1,5 +1,10 @@
 ---
 title: VIRGO ビエンチャン 道路決定データ
+description: "VIRGOプラットフォームが提供するラオス・ビエンチャンの道路決定データ"
+provider_group: "VIRGO"
+categories: ["都市計画", "交通"]
+regions: ["アジア", "ラオス", "ビエンチャン"]
+formats: ["Shapefile"]
 id: determiningroad_v0
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

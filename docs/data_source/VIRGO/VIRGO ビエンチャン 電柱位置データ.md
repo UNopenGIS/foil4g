@@ -1,5 +1,10 @@
 ---
 title: VIRGO ビエンチャン 電柱位置データ
+description: "VIRGOプラットフォームが提供するラオス・ビエンチャンの電柱位置データ"
+provider_group: "VIRGO"
+categories: ["都市計画", "電力"]
+regions: ["アジア", "ラオス", "ビエンチャン"]
+formats: ["Shapefile"]
 id: electric_pole_point_v1
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

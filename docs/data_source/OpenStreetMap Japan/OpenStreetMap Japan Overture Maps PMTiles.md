@@ -1,5 +1,10 @@
 ---
 title: OpenStreetMap Japan Overture Maps PMTiles
+description: "OSMFJ のタイルサーバーがかつて配っていた、Overture Maps のデータをベクトルタイルにした PMTiles ファイル (2026-10-06 時点で削除済み)"
+provider_group: "OpenStreetMap Japan"
+categories: ["ベースマップ"]
+regions: ["未確認"]
+formats: ["PMTiles"]
 id: openstreetmap_jp_overture_pmtiles
 provider: [OSMFJ (OpenStreetMap Foundation Japan), Overture Maps Foundation]
 license: [CC-BY-4.0, ODbL-1.0]

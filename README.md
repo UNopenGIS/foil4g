@@ -41,6 +41,17 @@ The site reads data source cards from `docs/data_source/`. Each card is availabl
 Japanese navigation, full-text search, themes, and a table of contents. The existing
 Uppsala conflict card also loads its React map preview in the browser.
 
+### Finding data sources
+
+The home page and `browse/` show the same directory of cards grouped by theme,
+region, license, provider, format, and access method. Each card opens a static
+classification page, usable without JavaScript. `data_source/` shows all dataset
+cards with descriptions and an expandable search form. Filter URLs can be shared
+and restored with browser back/forward.
+Classification comes from each card's YAML frontmatter: `categories`, `regions`,
+`formats`, and `provider_group`, together with `license` and `access`.
+See [the card authoring guide](docs/README.md#複数の切り口から探すための項目).
+
 ### Hosting
 
 GitHub Pages builds and publishes `dist-site/`, using the origin and base path returned

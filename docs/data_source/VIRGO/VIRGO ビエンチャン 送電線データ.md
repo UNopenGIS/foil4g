@@ -1,5 +1,10 @@
 ---
 title: VIRGO ビエンチャン 送電線データ
+description: "VIRGOプラットフォームが提供するラオス・ビエンチャンの送電線データ"
+provider_group: "VIRGO"
+categories: ["都市計画", "電力"]
+regions: ["アジア", "ラオス", "ビエンチャン"]
+formats: ["Shapefile"]
 id: transmission_line_v1
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

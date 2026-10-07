@@ -1,0 +1,27 @@
+---
+interface Props {
+  items: { title: string; href: string; description: string; count: number }[];
+  heading?: "h2" | "h3";
+}
+const { items, heading = "h2" } = Astro.props;
+const Heading = heading;
+---
+
+<div class="catalog-grid">
+  {items.map((item) => (
+    <a class="catalog-card" href={item.href} data-facet-card>
+      <Heading>{item.title}</Heading>
+      <p>{item.description}</p>
+      <span>{item.count} 件のデータソース <span aria-hidden="true">→</span></span>
+    </a>
+  ))}
+</div>
+
+<style>
+  .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: 1rem; }
+  .catalog-card { display: flex; flex-direction: column; gap: .75rem; padding: 1rem; border: 1px solid var(--sl-color-gray-5); border-radius: .5rem; color: var(--sl-color-text); text-decoration: none; }
+  .catalog-card:hover, .catalog-card:focus-visible { border-color: var(--sl-color-text-accent); outline: 2px solid var(--sl-color-text-accent); outline-offset: 2px; }
+  .catalog-card :is(h2, h3) { margin: 0; font-size: 1.1rem; color: var(--sl-color-text-accent); overflow-wrap: anywhere; }
+  .catalog-card p { margin: 0; font-size: .875rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .catalog-card > span { margin-top: auto; font-size: .8rem; color: var(--sl-color-gray-2); }
+</style>

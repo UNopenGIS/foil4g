@@ -1,5 +1,10 @@
 ---
 title: Geofabrik Japan Kanto OpenStreetMap Data
+description: "Geofabrik が OpenStreetMap の planet から日本の関東地方を切り出して、毎日配っている OSM PBF ファイル"
+provider_group: "Geofabrik"
+categories: ["ベースマップ"]
+regions: ["アジア", "日本", "関東", "東京都", "神奈川県", "埼玉県", "千葉県", "茨城県", "栃木県", "群馬県"]
+formats: ["OSM PBF", "Shapefile", "GeoPackage"]
 id: geofabrik_asia_japan_kanto
 provider: [Geofabrik GmbH, OpenStreetMap Contributors]
 license: [ODbL-1.0]

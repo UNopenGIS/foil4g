@@ -36,3 +36,35 @@ test('the built site includes Japanese navigation, search, and a usable 404 page
   assert.match(read('404.html'), /ページが見つかりません/);
   assert.ok(read('404.html').includes('データソース一覧に戻る'), '404 page needs a link back to the index');
 });
+
+test('every source can be found through all six browse axes without JavaScript', () => {
+  const index = read('data_source/index.html');
+  const data = [...index.matchAll(/data-catalog-card="([^"]+)"/g)].map(([, value]) => JSON.parse(
+    value.replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'),
+  ));
+  const cards = readdirSync('docs/data_source', { recursive: true }).filter((file) => file.endsWith('.md'));
+  assert.equal(data.length, cards.length);
+  for (const axis of ['category', 'region', 'license', 'provider', 'format', 'access']) {
+    assert.ok(existsSync(join(output, `browse/${axis}/index.html`)), `Missing ${axis} index`);
+    for (const card of data) {
+      const values = Array.isArray(card[axis]) ? card[axis] : [card[axis]];
+      assert.ok(values.length > 0 && values.every(Boolean), `${card.id} needs ${axis}`);
+      for (const value of values) {
+        const group = `browse/${axis}/${value}/index.html`;
+        assert.ok(existsSync(join(output, group)), `Missing group ${group}`);
+        assert.ok(read(group).includes(card.title), `${group} is missing ${card.title}`);
+      }
+    }
+  }
+});
+
+test('the home page opens with the same card-based browse directory as /browse/', () => {
+  const home = read('index.html');
+  const browse = read('browse/index.html');
+  assert.ok(!home.includes('data-filter-form'), 'Search belongs on the data listing');
+  for (const axis of ['category', 'region', 'license', 'provider', 'format', 'access']) {
+    assert.ok(home.includes(`data-browse-axis="${axis}"`), `Home is missing ${axis} cards`);
+    assert.ok(browse.includes(`data-browse-axis="${axis}"`), `Browse is missing ${axis} cards`);
+  }
+  assert.ok(home.includes('data-facet-card'));
+});

@@ -1,5 +1,10 @@
 ---
 title: FAOSTAT
+description: "国連食糧農業機関 (FAO) が、食料と農業の国別・年別の統計 (生産、貿易、食料需給表、食料安全保障、土地利用、農業由来の温室効果ガス排出など) を、69 の領域 (domain) ごとの CSV の zip にして全世界分を配っているデータベース"
+provider_group: "FAO"
+categories: ["農業"]
+regions: ["全世界"]
+formats: ["CSV"]
 id: faostat
 provider: 国連食糧農業機関 (FAO、Food and Agriculture Organization of the United Nations) の統計部 (Statistics Division、ESS)。林業は Forestry Division、食事と栄養は Food and Nutrition Division
 source_data: 主に各国政府から FAO が集めた統計と FAO の推計。一部の領域は他機関のデータを使う (OECD、UNSD、ILO、国連人口部など。下の「内容」を参照)

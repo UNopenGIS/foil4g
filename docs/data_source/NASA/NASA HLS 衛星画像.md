@@ -1,5 +1,10 @@
 ---
 title: NASA HLS 衛星画像
+description: "NASA が Landsat 8/9 と Sentinel-2A/B/C の観測を同じ 30m の格子に揃えて作り、LP DAAC と Microsoft Planetary Computer から全球の陸域 (南極を除く) について Cloud Optimized GeoTIFF で配っている地表反射率の衛星画像 (Harmonized Landsat and Sentinel-2、HLS v2.0)"
+provider_group: "NASA"
+categories: ["衛星・航空画像"]
+regions: ["全世界"]
+formats: ["COG", "GeoTIFF"]
 id: nasa_hls
 provider: NASA (処理は Marshall Space Flight Center の IMPACT チーム、保管と配布は LP DAAC)。Microsoft Planetary Computer が写しを置いている
 source_data: L30 は USGS の Landsat 8/9 Collection 2 L1TP (USGS Landsat Collection 2)、S30 は ESA の Sentinel-2 L1C。どちらも大気上端の Level-1 を入力にしている

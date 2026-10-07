@@ -10,6 +10,10 @@ const d = Astro.props.data;
 const list = (v?: string | string[]) => (Array.isArray(v) ? v.join(", ") : v);
 const rows: [string, string | undefined][] = [
   ["データID", d.id],
+  ["テーマ", list(d.categories)],
+  ["対象地域", list(d.regions)],
+  ["提供元グループ", d.provider_group],
+  ["形式の分類", list(d.formats)],
   ["提供元", list(d.provider)],
   ["元データ", list(d.source_data)],
   ["ライセンス", list(d.license)],

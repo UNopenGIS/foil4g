@@ -1,5 +1,10 @@
 ---
 title: OurAirports 空港
+description: "OurAirports が、会員の投稿で作った世界の空港、滑走路、通信周波数、航法援助施設の表を、パブリックドメインとして毎晩 CSV で配っているもの"
+provider_group: "OurAirports"
+categories: ["交通"]
+regions: ["全世界"]
+formats: ["CSV"]
 id: ourairports
 provider: OurAirports (創設者 David Megginson が運営するボランティアのサイト)
 source_data: なし (一次データ)。ただし会員が入力した値には、FAA、DAFIF、GeoNames、navaid.com、Wikipedia などから取り込んだものが含まれる (About ページの Credits)

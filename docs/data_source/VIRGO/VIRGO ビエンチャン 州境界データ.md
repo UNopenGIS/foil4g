@@ -1,5 +1,10 @@
 ---
 title: VIRGO ビエンチャン 州境界データ
+description: "VIRGOプラットフォームが提供するラオス・ビエンチャンの州境界データ（CDUDCP版）"
+provider_group: "VIRGO"
+categories: ["都市計画", "行政区域"]
+regions: ["アジア", "ラオス", "ビエンチャン"]
+formats: ["Shapefile"]
 id: provinceboundary_cdudcp_v1
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

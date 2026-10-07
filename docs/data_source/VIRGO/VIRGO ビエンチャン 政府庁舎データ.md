@@ -1,5 +1,10 @@
 ---
 title: VIRGO ビエンチャン 政府庁舎データ
+description: "VIRGOプラットフォームが提供するラオス・ビエンチャンの政府庁舎データ"
+provider_group: "VIRGO"
+categories: ["都市計画", "施設"]
+regions: ["アジア", "ラオス", "ビエンチャン"]
+formats: ["Shapefile"]
 id: goverment_office_v0
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

@@ -1,5 +1,10 @@
 ---
 title: Meta 移動データ
+description: "AI for Good at Meta (旧 Data for Good at Meta) が、Facebook アプリの位置情報から行政区域ごとに集計した人の移動の指標を、Humanitarian Data Exchange (HDX) で全世界分の CSV として配っているデータ群 (Movement Distribution、Movement Range Maps、Commuting Zones、Business Activity Trends during Crisis)"
+provider_group: "Meta"
+categories: ["人口・社会", "交通"]
+regions: ["全世界"]
+formats: ["CSV", "TSV"]
 id: meta_movement
 provider: [AI for Good at Meta (HDX の組織名 `meta`, データセットの出典欄は「Data for Good at Meta」)]
 source_data: なし (一次データ。位置情報サービスを有効にした Facebook アプリ利用者の位置から Meta が集計したもの。区域の境界と名前は GADM のもの)

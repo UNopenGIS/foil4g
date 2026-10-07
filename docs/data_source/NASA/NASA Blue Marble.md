@@ -1,5 +1,10 @@
 ---
 title: NASA Blue Marble
+description: "NASA Earth Observatory が MODIS の観測から作った、2004 年の 12 か月それぞれの雲の無い全球トゥルーカラー合成画像 (Blue Marble: Next Generation) を、陰影なし・地形陰影つき・地形と水深の陰影つきの 3 版、8km・2km・500m の 3 解像度で、JPEG と GeoTIFF で配っているもの"
+provider_group: "NASA"
+categories: ["衛星・航空画像", "ベースマップ"]
+regions: ["全世界"]
+formats: ["GeoTIFF", "JPEG", "PNG"]
 id: nasa_blue_marble
 provider: NASA Earth Observatory (NASA Goddard Space Flight Center)。作成者は Reto Stöckli
 source_data: MODIS の地表面反射率 MOD09A1 と土地被覆 MOD12Q1。陰影つきの版は、陰影に SRTM (60S から 60N)、GTOPO30 (60N より北と SRTM の欠損の穴埋め)、RAMP II (60S より南)、GEBCO 1 分格子 (海底) を使っている

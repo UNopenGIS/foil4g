@@ -1,5 +1,10 @@
 ---
 title: OpenStreetMap France HOT 人道支援地図タイル
+description: "OpenStreetMap Franceが提供するHOT（Humanitarian OpenStreetMap Team）スタイルの地図タイルです。人道支援組織や緊急事態での一般市民向けに最適化されています。"
+provider_group: "OpenStreetMap France"
+categories: ["ベースマップ", "紛争・人道"]
+regions: ["未確認"]
+formats: ["XYZ ラスタータイル"]
 id: openstreetmap_fr_hot
 provider: [OpenStreetMap contributors, 'https://www.openstreetmap.org/']
 license: [ODbL-1.0]

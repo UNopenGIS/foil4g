@@ -1,5 +1,10 @@
 ---
 title: OpenStreetMap Japan OSM-Bright ベクトルタイル
+description: "OSMFJ のタイルサーバーが配っている、OpenMapTiles の OSM Bright を元にした MapLibre 用のスタイル JSON"
+provider_group: "OpenStreetMap Japan"
+categories: ["ベースマップ"]
+regions: ["未確認"]
+formats: ["MapLibre スタイル JSON"]
 id: openstreetmap_jp_osm_bright
 provider: [OSMFJ (OpenStreetMap Foundation Japan), OpenStreetMap Contributors]
 license: [CC-BY-4.0, ODbL-1.0]

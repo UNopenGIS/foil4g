@@ -1,5 +1,10 @@
 ---
 title: VIRGO ビエンチャン 22kV地下送電線計画データ
+description: "VIRGOプラットフォームが提供するラオス・ビエンチャンの22kV地下送電線将来計画データ"
+provider_group: "VIRGO"
+categories: ["都市計画", "電力"]
+regions: ["アジア", "ラオス", "ビエンチャン"]
+formats: ["Shapefile"]
 id: 22kv_underground_line_future_plan_v1
 provider: Vientiane Integrated Urban Information GIS-based Opendata Platform
 license: [unknown]

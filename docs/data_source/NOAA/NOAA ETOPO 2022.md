@@ -1,5 +1,10 @@
 ---
 title: NOAA ETOPO 2022
+description: "NOAA の NCEI (米国環境情報センター) が、陸の標高と海底の水深を 1 つにつないだ全球の格子を、15 秒、30 秒、60 秒の 3 つの解像度で、GeoTIFF と netCDF で CC0 として配っているもの"
+provider_group: "NOAA"
+categories: ["地形・標高", "海岸・水域"]
+regions: ["全世界"]
+formats: ["GeoTIFF", "NetCDF"]
 id: noaa_etopo_2022
 provider: NOAA NCEI (National Centers for Environmental Information)
 source_data: [GEBCO 2022 (海の水深の土台), Copernicus DEM 30m と FABDEM (陸の標高), BedMachine (氷床の下の岩盤), GMRT, NOAA の沿岸 DEM (CUDEM ほか) など 13 の層を重ねた合成物]

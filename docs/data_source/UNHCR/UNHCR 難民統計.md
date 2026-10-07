@@ -1,5 +1,10 @@
 ---
 title: UNHCR 難民統計
+description: "UNHCR (国連難民高等弁務官事務所) が、難民、庇護希望者、国内避難民、無国籍者などの人数を、年、出身国、庇護国の組み合わせごとに全世界について集計し、Refugee Data Finder とその API (JSON と CSV) で配っている統計"
+provider_group: "UNHCR"
+categories: ["人口・社会", "紛争・人道"]
+regions: ["全世界"]
+formats: ["JSON", "CSV"]
 id: unhcr_refugee_statistics
 provider: UNHCR (UNHCR Refugee Population Statistics Database、Refugee Data Finder)
 source_data: なし (一次データ)。ただし各国政府と UNHCR の現地事務所の報告を UNHCR が集計したもの。パレスチナ難民の値は UNRWA、IDMC の国内避難民の値は IDMC が提供した第三者のデータ

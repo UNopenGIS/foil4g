@@ -40,7 +40,11 @@ export default defineConfig({
       disable404Route: true,
       locales: { root: { label: "日本語", lang: "ja" } },
       favicon: "/images/un-open-gis-smart-maps.jpg",
-      sidebar: [{ label: "データソース", items: dataSourceSidebar }],
+      sidebar: [
+        { label: "切り口から探す", link: "/" },
+        { label: "すべてのデータ", link: "/data_source/" },
+        { label: "データソース", items: dataSourceSidebar },
+      ],
       components: {
         MarkdownContent: "./site/components/MarkdownContent.astro",
         SocialIcons: "./site/components/SocialIcons.astro",

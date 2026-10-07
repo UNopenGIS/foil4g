@@ -1,5 +1,10 @@
 ---
 title: GHSL 人口・建物・都市化度
+description: "欧州委員会の共同研究センター (JRC) が、全世界の人口 (GHS-POP)、建物の面積 (GHS-BUILT-S)、都市化度の区分 (GHS-SMOD) を 1975 年から 2030 年まで 5 年ごとの格子にして、GeoTIFF の zip で配っている Global Human Settlement Layer (GHSL)"
+provider_group: "GHSL"
+categories: ["人口・社会", "建物", "都市計画"]
+regions: ["全世界"]
+formats: ["GeoTIFF", "Shapefile"]
 id: ghsl
 provider: 欧州委員会 共同研究センター (JRC)。Copernicus 緊急管理サービスの一部として公開
 source_data: 衛星画像 (Sentinel-2 の 2018 年合成画像、Landsat)、CIESIN の Gridded Population of the World v4.11 の国勢調査の値、国連 World Population Prospects 2022 と World Urbanization Prospects 2018 を JRC が加工したもの

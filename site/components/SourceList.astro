@@ -1,0 +1,39 @@
+---
+import { axes, facetHref, facetLabel, facetValues, type Card } from "../catalog/catalog";
+interface Props { cards: Card[]; }
+const { cards } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<div class="source-list">
+  {cards.map((card) => (
+    <article class="source" data-catalog-card={JSON.stringify(card)}>
+      <h2><a href={card.href}>{card.title}</a></h2>
+      {card.description && <p class="description">{card.description}</p>}
+      <dl>
+        {axes.map(({ id, label }) => (
+          <div>
+            <dt>{label}</dt>
+            <dd>{facetValues(card, id).map((value) => (
+              <a href={facetHref(base, id, value)}>{facetLabel(id, value)}</a>
+            ))}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="checked">確認日：{card.checked || "未確認"}</p>
+    </article>
+  ))}
+</div>
+
+<style>
+  .source-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1rem; }
+  .source { padding: 1rem; border: 1px solid var(--sl-color-gray-5); border-radius: .5rem; }
+  .source[hidden] { display: none; }
+  .source h2 { margin: 0 0 .75rem; font-size: 1.1rem; }
+  .source .description { margin: 0 0 1rem; font-size: .9rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .source dl, .source dd, .source dt { margin: 0; }
+  .source dl > div { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); gap: .5rem; margin-block: .25rem; }
+  .source dt { color: var(--sl-color-gray-2); font-size: .875rem; }
+  .source dd { display: flex; flex-wrap: wrap; gap: .25rem .75rem; font-size: .875rem; overflow-wrap: anywhere; }
+  .source .checked { margin: .75rem 0 0; font-size: .8rem; color: var(--sl-color-gray-2); }
+</style>

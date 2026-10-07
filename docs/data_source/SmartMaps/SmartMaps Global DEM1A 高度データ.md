@@ -1,5 +1,10 @@
 ---
 title: SmartMaps Global DEM1A 高度データ
+description: "UN Smart Maps Group が 国土地理院 の基盤地図情報 1m メッシュ数値標高モデルを、標高を RGB に詰めた WebP タイルにして 1 つにまとめた PMTiles ファイル (範囲は東北地方の太平洋側の一部)"
+provider_group: "SmartMaps"
+categories: ["地形・標高"]
+regions: ["アジア", "日本", "東北"]
+formats: ["PMTiles"]
 id: smartmaps_global_dem1a
 provider: UN Smart Maps Group (UN Open GIS Initiative)
 source_data: 国土地理院 基盤地図情報 (数値標高モデル) 1m メッシュ (標高)

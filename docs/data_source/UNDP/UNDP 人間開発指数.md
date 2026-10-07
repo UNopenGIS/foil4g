@@ -1,5 +1,10 @@
 ---
 title: UNDP 人間開発指数
+description: "国連開発計画 (UNDP) の人間開発報告書室 (HDRO) が、人間開発指数 (HDI) とそれに連なる複合指数を、195 か国と 11 の集計について 1990 年から 2023 年まで計算し、1 本の CSV と XLSX の表で配っている国別統計"
+provider_group: "UNDP"
+categories: ["人口・社会"]
+regions: ["全世界"]
+formats: ["CSV", "XLSX"]
 id: undp_hdr
 provider: 国連開発計画 (UNDP) の Human Development Report Office (HDRO)。多次元貧困指数 (MPI) は HDRO とオックスフォード大学の OPHI の共同作成
 source_data: 他機関の統計 (UNDESA の World Population Prospects、UNESCO 統計研究所、Barro and Lee、IMF、World Bank、国連統計部、ILOSTAT、IPU、WHO などの共同推計、Global Carbon Project、UNEP) と、DHS・MICS などの世帯調査の個票 (MPI)。HDRO はこれらを集めて指数を計算している
