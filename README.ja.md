@@ -54,6 +54,8 @@ JavaScriptを無効にしていても閲覧できます。
 
 ### 公開設定
 
+ベースパスは末尾スラッシュ付きに正規化し、CIでは `actions/configure-pages` が返す末尾スラッシュなしの値も検証します。
+
 GitHub Pages は `actions/configure-pages` が返す origin と base_path を使い、
 `dist-site/` を公開します。push と pull request の CI では `/` と `/foil4g/` の両方を検証します。
 ローカルの既定値は `https://unopengis.org/foil4g/` に対応しています。

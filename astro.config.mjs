@@ -25,7 +25,10 @@ const dataSourceSidebar = readdirSync("./docs/data_source", { withFileTypes: tru
 // GitHub Pages supplies its origin and base path. Cloudflare Pages uses /.
 // Local development defaults to the existing GitHub Pages location.
 const site = process.env.ASTRO_SITE || process.env.CF_PAGES_URL || "https://unopengis.org";
-const base = process.env.ASTRO_BASE ?? (process.env.CF_PAGES_URL ? "/" : "/foil4g/");
+// configure-pages returns a base path without a trailing slash. Components join
+// BASE_URL with relative paths, so keep one trailing slash for every host.
+const basePath = process.env.ASTRO_BASE ?? (process.env.CF_PAGES_URL ? "/" : "/foil4g/");
+const base = `${basePath.replace(/\/+$/, "")}/`;
 
 // Keep the reusable React maps in src/ and publish the documentation from site/.
 export default defineConfig({
