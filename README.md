@@ -54,6 +54,8 @@ See [the card authoring guide](docs/README.md#複数の切り口から探すた�
 
 ### Hosting
 
+The base path is normalized with a trailing slash; CI also tests the slashless value returned by `actions/configure-pages`.
+
 GitHub Pages builds and publishes `dist-site/`, using the origin and base path returned
 by `actions/configure-pages`. Pull requests and pushes test both `/` and `/foil4g/`.
 Locally, the defaults match `https://unopengis.org/foil4g/`. Override them for another host:

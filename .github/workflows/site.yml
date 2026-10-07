@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        base: ["/", "/foil4g/"]
+        base: ["/", "/foil4g/", "/foil4g"]
     env:
       ASTRO_TELEMETRY_DISABLED: 1
       ASTRO_SITE: https://unopengis.org
