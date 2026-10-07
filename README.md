@@ -23,13 +23,51 @@ In this way, FOIL4G applies Benjamin Franklin’s library concept to modern geos
 - Facilitate effective decision-making and problem-solving through the sharing of that information.
 - Promote the automatic processing of geospatial information by generative AI through the sharing of that information.
 
-## Implementation
+## Development
 
-- `src`: Core React components and application logic for the web-based mapping interface
-- `lib`
-  - `api`: API for accessing geospatial information
-  - `data`: Details for referencing geospatial information
-  - `tasks`: Tasks for processing, analyzing, and transforming geospatial information
+Use Node.js 24 and install dependencies with `npm ci`.
+
+```bash
+npm run dev          # Astro + Starlight at http://localhost:4321/foil4g/
+npm run test:site    # Markdown plugin and migration tests
+npm run site:check   # Astro and map preview type checks
+npm run build        # Static site in dist-site/
+npm run test:build   # Validate the built cards, internal links, assets, search, and 404
+npm run preview      # Preview the production build
+```
+
+The site reads data source cards from `docs/data_source/`. Each card is available at
+`/data_source/<provider>/<name>/` under the configured base path. Starlight provides
+Japanese navigation, full-text search, themes, and a table of contents. The existing
+Uppsala conflict card also loads its React map preview in the browser.
+
+### Hosting
+
+GitHub Pages builds and publishes `dist-site/`, using the origin and base path returned
+by `actions/configure-pages`. Pull requests and pushes test both `/` and `/foil4g/`.
+Locally, the defaults match `https://unopengis.org/foil4g/`. Override them for another host:
+
+```bash
+ASTRO_SITE=https://example.org ASTRO_BASE=/ npm run build
+ASTRO_BASE=/ npm run test:build
+```
+
+Cloudflare Pages can continue to use `npm run site:build` (an alias of the Astro build)
+and `dist-site/`. When `CF_PAGES_URL` is set, the site defaults to that URL and `/`;
+set `ASTRO_SITE` to the production URL when a stable canonical URL is needed.
+The `site:dev`, `site:build`, and `site:preview` commands remain available.
+
+### Repository layout
+
+- `site/`: Astro pages, Starlight overrides, Markdown plugins, and map previews
+- `docs/data_source/`: data source cards with validated frontmatter
+- `src/`: reusable React maps, datasets, and examples
+- `public/`: shared images and MapLibre styles
+- `tests/`: checks for generated site output
+
+The previous Vite app and Storybook remain available while map examples are migrated:
+`npm run app:dev`, `npm run app:build`, `npm run app:preview`, `npm run storybook`, and
+`npm run build-storybook`. GitHub Pages publishes the Astro site.
 
 ## Contributing
 

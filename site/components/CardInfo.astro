@@ -12,7 +12,7 @@ const rows: [string, string | undefined][] = [
   ["データID", d.id],
   ["提供元", list(d.provider)],
   ["元データ", list(d.source_data)],
-  ["ライセンス", d.license.join(", ")],
+  ["ライセンス", list(d.license)],
   ["ライセンスの補足", d.license_note],
   ["取り出し方", d.access],
   ["取り出し方の補足", d.access_note],

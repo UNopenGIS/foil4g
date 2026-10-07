@@ -1,12 +1,17 @@
 name: site
 
-on: push
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        base: ["/", "/foil4g/"]
     env:
       ASTRO_TELEMETRY_DISABLED: 1
+      ASTRO_SITE: https://unopengis.org
+      ASTRO_BASE: ${{ matrix.base }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -14,12 +19,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: latest
+          node-version: 24
           cache: npm
       - name: Install dependencies
         run: npm ci
       - name: Test the site plugins
         run: npm run test:site
+      - name: Check Astro types
+        run: npm run site:check
       # The content schema checks every card's frontmatter during the build.
       - name: Build the site
-        run: npm run site:build
+        run: npm run build
+      - name: Verify built pages and assets
+        run: npm run test:build

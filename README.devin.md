@@ -1,3 +1,5 @@
+> The default development, build, and deployment target is Astro + Starlight. See [README.md](README.md#development) for current commands. Use `app:dev` / `app:build` / `app:preview` for the legacy Vite app.
+
 # FOIL4G Developer Documentation
 
 > **Important Note**: This is the main UNopenGIS/foil4g repository, a significant contribution to the UN Open GIS Initiative. The project supports the initiative's mission of leveraging open-source geospatial solutions for UN peacekeeping and humanitarian operations. If you're working with a fork, please ensure all pull requests are submitted here rather than to other forks to ensure proper contribution tracking.
@@ -94,10 +96,10 @@ npm ci
 ### Development Commands
 ```bash
 # Start development server
-npm run dev
+npm run app:dev
 
 # Build project
-npm run build
+npm run app:build
 
 # Run linting
 npm run lint

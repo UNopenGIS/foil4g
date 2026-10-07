@@ -28,17 +28,34 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install and Build 🔧
-        run: |
-          npm ci
-          npm run build-storybook
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Test the site
+        run: npm run test:site
+      - name: Check Astro types
+        run: npm run site:check
+      - name: Build the Astro site
+        run: npm run build
+        env:
+          ASTRO_TELEMETRY_DISABLED: 1
+          ASTRO_SITE: ${{ steps.pages.outputs.origin }}
+          ASTRO_BASE: ${{ steps.pages.outputs.base_path }}
+      - name: Verify built pages and assets
+        run: npm run test:build
+        env:
+          ASTRO_BASE: ${{ steps.pages.outputs.base_path }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: 'storybook-static'
+          path: 'dist-site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

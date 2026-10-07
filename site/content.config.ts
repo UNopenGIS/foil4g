@@ -1,7 +1,8 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
-import { docsSchema } from "@astrojs/starlight/schema";
+import { docsSchema, i18nSchema } from "@astrojs/starlight/schema";
+import { i18nLoader } from "@astrojs/starlight/loaders";
 
 // Mirrors the frontmatter described in docs/README.md. Starlight's own
 // schema supplies title (and its optional page settings); these are the
@@ -50,4 +51,6 @@ const docs = defineCollection({
     }),
 });
 
-export const collections = { docs };
+const i18n = defineCollection({ loader: i18nLoader(), schema: i18nSchema() });
+
+export const collections = { docs, i18n };
